@@ -59,7 +59,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="0"/>
+    <Option Name="WTXSimLaunchSim" Val="20"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -92,6 +92,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PPRDIR/../../../../../../Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/VGA_controller.sv">
         <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -99,7 +100,7 @@
       </File>
       <File Path="$PPRDIR/../../../../../../Users/merli/lab7_1_provided_sp24/hdmi_text_controller_v1_0_AXI.sv">
         <FileInfo>
-          <Attr Name="Library" Val=""/>
+          <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -107,19 +108,22 @@
       </File>
       <File Path="$PPRDIR/../../../../../../Users/merli/lab7_1_provided_sp24/hdmi_text_controller_v1_0.sv">
         <FileInfo>
-          <Attr Name="Library" Val=""/>
+          <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../../../../../../Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/component.xml">
-        <FileInfo SFType="IPXACT"/>
+        <FileInfo SFType="IPXACT">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </FileInfo>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="hdmi_text_controller_v1_0"/>
         <Option Name="TopRTLFile" Val="$PPRDIR/../../../../../../Users/merli/lab7_1_provided_sp24/hdmi_text_controller_v1_0.sv"/>
+        <Option Name="dataflowViewerSettings" Val="min_width=16"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
@@ -131,6 +135,7 @@
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1" RelGenDir="$PGENDIR/sim_1">
       <File Path="$PPRDIR/../../../../../../Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_tb.sv">
         <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -149,6 +154,7 @@
         <Option Name="PamSignalDriverFile" Val="xil_bypass_driver"/>
         <Option Name="PamPseudoTop" Val="pseudo_tb"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="xsim.simulate.runtime" Val="all"/>
       </Config>
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
@@ -160,10 +166,50 @@
     <FileSet Name="hdmi_tx_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/hdmi_tx_0" RelGenDir="$PGENDIR/hdmi_tx_0">
       <File Path="$PPRDIR/../../../../../../Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_tx_0/hdmi_tx_0.xci">
         <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="hdmi_tx_0_sim_netlist.vhdl">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="hdmi_tx_0_sim_netlist.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="hdmi_tx_0_stub.vhdl">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="hdmi_tx_0_stub.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="hdmi_tx_0.dcp">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="hdmi_tx_0.vho">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="hdmi_tx_0.veo">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="hdl/encode.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="hdl/serdes_10_to_1.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="hdl/srldelay.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="hdl/hdmi_tx_v1_0.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="sim/hdmi_tx_0.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="synth/hdmi_tx_0.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
       </File>
       <Config>
         <Option Name="TopModule" Val="hdmi_tx_0"/>
@@ -173,10 +219,65 @@
     <FileSet Name="clk_wiz_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/clk_wiz_0" RelGenDir="$PGENDIR/clk_wiz_0">
       <File Path="$PPRDIR/../../../../../../Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/clk_wiz_0/clk_wiz_0.xci">
         <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="clk_wiz_0_sim_netlist.vhdl">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="clk_wiz_0_sim_netlist.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="clk_wiz_0_stub.vhdl">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="clk_wiz_0_stub.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="clk_wiz_0.dcp">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="clk_wiz_0.veo">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="doc/clk_wiz_v6_0_changelog.txt">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="clk_wiz_0_board.xdc">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="clk_wiz_0.xdc">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="clk_wiz_0_ooc.xdc">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="mmcm_pll_drp_func_7s_mmcm.vh">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="mmcm_pll_drp_func_7s_pll.vh">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="mmcm_pll_drp_func_us_mmcm.vh">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="mmcm_pll_drp_func_us_pll.vh">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="mmcm_pll_drp_func_us_plus_pll.vh">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="mmcm_pll_drp_func_us_plus_mmcm.vh">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="clk_wiz_0_clk_wiz.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="clk_wiz_0.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
       </File>
       <Config>
         <Option Name="TopModule" Val="clk_wiz_0"/>

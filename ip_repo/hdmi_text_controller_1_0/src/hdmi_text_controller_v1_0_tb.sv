@@ -9,7 +9,7 @@
 //Used for simulation of AXI4-Lite bus as well as generating
 //simulation video image for testing
 
-//`define SIM_VIDEO //Comment out to simulate AXI bus only
+`define SIM_VIDEO //Comment out to simulate AXI bus only
                     //Uncomment to simulate entire screen and write BMP (slow)
 
 module hdmi_text_controller_tb();
@@ -228,6 +228,33 @@ module hdmi_text_controller_tb();
     //Note the read handshake process is simpler than the write
     task axi_read (input logic [31:0] addr, output logic [31:0] data);
         begin
+        #3  read_addr <= addr;	//Put read address on bus
+            read_addr_valid <= 1'b1;	//indicate address is valid
+            read_data_ready <= 1'b1;
+            
+            //wait for one slave ready signal
+            wait(read_addr_ready);
+                
+            @(posedge aclk); //wait for posedge
+            
+            //deassert read_addr_valid    
+            read_addr_valid <= 1'b0;
+            
+            //wait for slave deasserts read_addr_ready
+            wait(~read_addr_ready);
+            
+            //wait for slave to assert read_data_valid
+            wait(read_data_valid); 
+               
+            data <= read_data;
+                        
+            @(posedge aclk); //wait for posedge
+            
+            //deassert read_data_ready (data recieved)
+            read_data_ready <= 1'b0;
+            
+            wait(~read_data_valid); 
+            
         end
     endtask;
   
