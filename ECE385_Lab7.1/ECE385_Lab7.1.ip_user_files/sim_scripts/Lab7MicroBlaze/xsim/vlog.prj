@@ -1,0 +1,17 @@
+verilog xil_defaultlib --include "../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/ec67/hdl" --include "../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/7698" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_xbar_0/sim/Lab7MicroBlaze_xbar_0.v" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0_clk_wiz.v" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0.v" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_lmb_bram_1/sim/Lab7MicroBlaze_lmb_bram_1.v" \
+
+sv xil_defaultlib --include "../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/ec67/hdl" --include "../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/7698" \
+"../../../bd/Lab7MicroBlaze/hdmi_text_controller_v1_0_AXI.sv" \
+"../../../bd/Lab7MicroBlaze/hdmi_text_controller_v1_0.sv" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_0_0/sim/Lab7MicroBlaze_hdmi_text_controller_0_0.sv" \
+
+verilog xil_defaultlib --include "../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/ec67/hdl" --include "../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/7698" \
+"../../../bd/Lab7MicroBlaze/sim/Lab7MicroBlaze.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort

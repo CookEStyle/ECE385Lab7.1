@@ -1041,6 +1041,10 @@ Writing a 1 to this bit position clears the receive FIFO
         </spirit:fileSetRef>
         <spirit:parameters>
           <spirit:parameter>
+            <spirit:name>GENtimestamp</spirit:name>
+            <spirit:value>Thu Mar 28 01:37:05 UTC 2024</spirit:value>
+          </spirit:parameter>
+          <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
             <spirit:value>9:b2ac7a47</spirit:value>
           </spirit:parameter>
