@@ -1,11 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
--- Date        : Tue Mar 26 19:42:15 2024
+-- Date        : Tue Mar 26 19:42:12 2024
 -- Host        : Calypso running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub {c:/Users/Calypso/Documents/- - - UIUC Academics/Spring 2024/ECE
---               385/Lab
---               7/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_rst_clk_wiz_1_100M_0/Lab7MicroBlaze_rst_clk_wiz_1_100M_0_stub.vhdl}
+-- Command     : write_vhdl -force -mode synth_stub -rename_top Lab7MicroBlaze_rst_clk_wiz_1_100M_0 -prefix
+--               Lab7MicroBlaze_rst_clk_wiz_1_100M_0_ Lab7MicroBlaze_rst_clk_wiz_1_100M_0_stub.vhdl
 -- Design      : Lab7MicroBlaze_rst_clk_wiz_1_100M_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7s50csga324-1

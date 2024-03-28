@@ -1,11 +1,10 @@
 // Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-// Date        : Tue Mar 26 19:41:14 2024
-// Host        : Calypso running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {c:/Users/Calypso/Documents/- - - UIUC Academics/Spring 2024/ECE
-//               385/Lab
-//               7/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_axi_intc_0/Lab7MicroBlaze_microblaze_0_axi_intc_0_sim_netlist.v}
+// Date        : Thu Mar 28 13:02:52 2024
+// Host        : DESKTOP-129R2SH running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_axi_intc_0/Lab7MicroBlaze_microblaze_0_axi_intc_0_sim_netlist.v
 // Design      : Lab7MicroBlaze_microblaze_0_axi_intc_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -60,7 +59,7 @@ module Lab7MicroBlaze_microblaze_0_axi_intc_0
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s_axi RRESP" *) output [1:0]s_axi_rresp;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s_axi RVALID" *) output s_axi_rvalid;
   (* x_interface_info = "xilinx.com:interface:aximm:1.0 s_axi RREADY" *) input s_axi_rready;
-  (* x_interface_info = "xilinx.com:signal:interrupt:1.0 interrupt_input INTERRUPT" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt_input, SENSITIVITY LEVEL_HIGH, PORTWIDTH 1" *) input [0:0]intr;
+  (* x_interface_info = "xilinx.com:signal:interrupt:1.0 interrupt_input INTERRUPT" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt_input, SENSITIVITY EDGE_RISING, PORTWIDTH 1" *) input [0:0]intr;
   (* x_interface_info = "xilinx.com:signal:clock:1.0 proc_clock CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME proc_clock, ASSOCIATED_BUSIF interrupt, ASSOCIATED_RESET processor_rst, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *) input processor_clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 proc_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME proc_reset, POLARITY ACTIVE_HIGH, TYPE PROCESSOR, INSERT_VIP 0" *) input processor_rst;
   (* x_interface_info = "xilinx.com:interface:mbinterrupt:1.0 interrupt INTERRUPT" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt, SENSITIVITY LEVEL_HIGH, LOW_LATENCY 1" *) output irq;
@@ -102,7 +101,7 @@ module Lab7MicroBlaze_microblaze_0_axi_intc_0
   GND GND
        (.G(\<const0> ));
   (* C_ADDR_WIDTH = "32" *) 
-  (* C_ASYNC_INTR = "32'b11111111111111111111111111111111" *) 
+  (* C_ASYNC_INTR = "32'b11111111111111111111111111111110" *) 
   (* C_CASCADE_MASTER = "0" *) 
   (* C_DISABLE_SYNCHRONIZERS = "1" *) 
   (* C_ENABLE_ASYNC = "0" *) 
@@ -1143,7 +1142,7 @@ module Lab7MicroBlaze_microblaze_0_axi_intc_0_address_decoder
         .O(ip2bus_wrack_reg));
 endmodule
 
-(* C_ADDR_WIDTH = "32" *) (* C_ASYNC_INTR = "32'b11111111111111111111111111111111" *) (* C_CASCADE_MASTER = "0" *) 
+(* C_ADDR_WIDTH = "32" *) (* C_ASYNC_INTR = "32'b11111111111111111111111111111110" *) (* C_CASCADE_MASTER = "0" *) 
 (* C_DISABLE_SYNCHRONIZERS = "1" *) (* C_ENABLE_ASYNC = "0" *) (* C_EN_CASCADE_MODE = "0" *) 
 (* C_FAMILY = "spartan7" *) (* C_HAS_CIE = "1" *) (* C_HAS_FAST = "1" *) 
 (* C_HAS_ILR = "0" *) (* C_HAS_IPR = "1" *) (* C_HAS_IVR = "1" *) 
@@ -1604,6 +1603,7 @@ module Lab7MicroBlaze_microblaze_0_axi_intc_0_intc_core
     Douta,
     interrupt_address,
     s_axi_aclk,
+    intr,
     \REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0]_0 ,
     \SIE_GEN.SIE_BIT_GEN[0].sie_reg[0]_0 ,
     \CIE_GEN.CIE_BIT_GEN[0].cie_reg[0]_0 ,
@@ -1617,7 +1617,6 @@ module Lab7MicroBlaze_microblaze_0_axi_intc_0_intc_core
     \REG_GEN[0].IAR_FAST_MODE_GEN.iar_reg[0]_0 ,
     p_18_in,
     p_16_in,
-    intr,
     bus2ip_wrce,
     bus2ip_addr_i);
   output s_axi_aresetn_0;
@@ -1634,6 +1633,7 @@ module Lab7MicroBlaze_microblaze_0_axi_intc_0_intc_core
   output [31:0]Douta;
   output [31:0]interrupt_address;
   input s_axi_aclk;
+  input [0:0]intr;
   input \REG_GEN[0].IMR_FAST_MODE_GEN.imr_reg[0]_0 ;
   input \SIE_GEN.SIE_BIT_GEN[0].sie_reg[0]_0 ;
   input \CIE_GEN.CIE_BIT_GEN[0].cie_reg[0]_0 ;
@@ -1647,7 +1647,6 @@ module Lab7MicroBlaze_microblaze_0_axi_intc_0_intc_core
   input \REG_GEN[0].IAR_FAST_MODE_GEN.iar_reg[0]_0 ;
   input p_18_in;
   input p_16_in;
-  input [0:0]intr;
   input [0:0]bus2ip_wrce;
   input [3:0]bus2ip_addr_i;
 
@@ -1655,7 +1654,6 @@ module Lab7MicroBlaze_microblaze_0_axi_intc_0_intc_core
   wire Bus_RNW_reg;
   wire \CIE_GEN.CIE_BIT_GEN[0].cie_reg[0]_0 ;
   wire [31:0]Douta;
-  (* async_reg = "true" *) wire [0:1]\INTR_DETECT_GEN[0].ASYNC_GEN.intr_ff ;
   wire \INTR_DETECT_GEN[0].EDGE_DETECT_GEN.hw_intr[0]_i_1_n_0 ;
   wire \INTR_DETECT_GEN[0].EDGE_DETECT_GEN.intr_d1 ;
   wire \IPR_GEN.ipr[0]_i_1_n_0 ;
@@ -1810,31 +1808,11 @@ module Lab7MicroBlaze_microblaze_0_axi_intc_0_intc_core
         .D(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state__0 [1]),
         .Q(\IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state [1]),
         .R(s_axi_aresetn_0));
-  (* ASYNC_REG *) 
-  (* KEEP = "yes" *) 
-  FDRE #(
-    .INIT(1'b0)) 
-    \INTR_DETECT_GEN[0].ASYNC_GEN.intr_ff_reg[0] 
-       (.C(s_axi_aclk),
-        .CE(1'b1),
-        .D(intr),
-        .Q(\INTR_DETECT_GEN[0].ASYNC_GEN.intr_ff [0]),
-        .R(1'b0));
-  (* ASYNC_REG *) 
-  (* KEEP = "yes" *) 
-  FDRE #(
-    .INIT(1'b0)) 
-    \INTR_DETECT_GEN[0].ASYNC_GEN.intr_ff_reg[1] 
-       (.C(s_axi_aclk),
-        .CE(1'b1),
-        .D(\INTR_DETECT_GEN[0].ASYNC_GEN.intr_ff [0]),
-        .Q(\INTR_DETECT_GEN[0].ASYNC_GEN.intr_ff [1]),
-        .R(1'b0));
   LUT5 #(
     .INIT(32'h0000AE00)) 
     \INTR_DETECT_GEN[0].EDGE_DETECT_GEN.hw_intr[0]_i_1 
        (.I0(hw_intr),
-        .I1(\INTR_DETECT_GEN[0].ASYNC_GEN.intr_ff [1]),
+        .I1(intr),
         .I2(\INTR_DETECT_GEN[0].EDGE_DETECT_GEN.intr_d1 ),
         .I3(s_axi_aresetn),
         .I4(\REG_GEN[0].IAR_FAST_MODE_GEN.iar_reg_n_0_[0] ),
@@ -1848,7 +1826,7 @@ module Lab7MicroBlaze_microblaze_0_axi_intc_0_intc_core
   FDRE \INTR_DETECT_GEN[0].EDGE_DETECT_GEN.intr_d1_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\INTR_DETECT_GEN[0].ASYNC_GEN.intr_ff [1]),
+        .D(intr),
         .Q(\INTR_DETECT_GEN[0].EDGE_DETECT_GEN.intr_d1 ),
         .R(s_axi_aresetn_0));
   LUT2 #(

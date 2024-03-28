@@ -1,10 +1,10 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
--- Date        : Tue Mar 26 19:36:31 2024
+-- Date        : Tue Mar 26 19:36:30 2024
 -- Host        : Calypso running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim {c:/Users/Calypso/Documents/- - - UIUC Academics/Spring 2024/ECE 385/Lab
---               7/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0_sim_netlist.vhdl}
+-- Command     : write_vhdl -force -mode funcsim -rename_top Lab7MicroBlaze_clk_wiz_1_0 -prefix
+--               Lab7MicroBlaze_clk_wiz_1_0_ Lab7MicroBlaze_clk_wiz_1_0_sim_netlist.vhdl
 -- Design      : Lab7MicroBlaze_clk_wiz_1_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,16 +14,16 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity Lab7MicroBlaze_clk_wiz_1_0_clk_wiz is
+entity Lab7MicroBlaze_clk_wiz_1_0_Lab7MicroBlaze_clk_wiz_1_0_clk_wiz is
   port (
     clk_out1 : out STD_LOGIC;
     reset : in STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in1 : in STD_LOGIC
   );
-end Lab7MicroBlaze_clk_wiz_1_0_clk_wiz;
+end Lab7MicroBlaze_clk_wiz_1_0_Lab7MicroBlaze_clk_wiz_1_0_clk_wiz;
 
-architecture STRUCTURE of Lab7MicroBlaze_clk_wiz_1_0_clk_wiz is
+architecture STRUCTURE of Lab7MicroBlaze_clk_wiz_1_0_Lab7MicroBlaze_clk_wiz_1_0_clk_wiz is
   signal clk_in1_Lab7MicroBlaze_clk_wiz_1_0 : STD_LOGIC;
   signal clk_out1_Lab7MicroBlaze_clk_wiz_1_0 : STD_LOGIC;
   signal clkfbout_Lab7MicroBlaze_clk_wiz_1_0 : STD_LOGIC;
@@ -179,7 +179,7 @@ end Lab7MicroBlaze_clk_wiz_1_0;
 
 architecture STRUCTURE of Lab7MicroBlaze_clk_wiz_1_0 is
 begin
-inst: entity work.Lab7MicroBlaze_clk_wiz_1_0_clk_wiz
+inst: entity work.Lab7MicroBlaze_clk_wiz_1_0_Lab7MicroBlaze_clk_wiz_1_0_clk_wiz
      port map (
       clk_in1 => clk_in1,
       clk_out1 => clk_out1,

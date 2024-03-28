@@ -7,7 +7,8 @@
       "name": "Lab7MicroBlaze",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2022.2"
+      "tool_version": "2022.2",
+      "validated": "true"
     },
     "design_tree": {
       "microblaze_0_axi_periph": {
@@ -15,7 +16,8 @@
         "s00_couplers": {},
         "m00_couplers": {},
         "m01_couplers": {},
-        "m02_couplers": {}
+        "m02_couplers": {},
+        "m03_couplers": {}
       },
       "microblaze_0_axi_intc": "",
       "mdm_1": "",
@@ -30,7 +32,7 @@
         "ilmb_bram_if_cntlr": "",
         "lmb_bram": ""
       },
-      "hdmi_text_controller_0": ""
+      "hdmi_text_controller_1": ""
     },
     "interface_ports": {
       "uart_rtl_0": {
@@ -59,7 +61,9 @@
           },
           "TMDS_DATA_N": {
             "physical_name": "HDMI_0_tmds_data_n",
-            "direction": "O"
+            "direction": "O",
+            "left": "2",
+            "right": "0"
           },
           "TMDS_CLK_P": {
             "physical_name": "HDMI_0_tmds_clk_p",
@@ -67,7 +71,9 @@
           },
           "TMDS_DATA_P": {
             "physical_name": "HDMI_0_tmds_data_p",
-            "direction": "O"
+            "direction": "O",
+            "left": "2",
+            "right": "0"
           }
         }
       }
@@ -77,8 +83,24 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "Lab7MicroBlaze_clk_100MHz",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "100000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.0",
+            "value_src": "default"
           }
         }
       },
@@ -86,6 +108,10 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
           "POLARITY": {
             "value": "ACTIVE_LOW"
           }
@@ -100,7 +126,7 @@
         "xci_name": "Lab7MicroBlaze_microblaze_0_axi_periph_0",
         "parameters": {
           "NUM_MI": {
-            "value": "3"
+            "value": "4"
           }
         },
         "interface_ports": {
@@ -120,6 +146,11 @@
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
           },
           "M02_AXI": {
+            "mode": "Master",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "M03_AXI": {
             "mode": "Master",
             "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
@@ -202,6 +233,22 @@
           "M02_ARESETN": {
             "type": "rst",
             "direction": "I"
+          },
+          "M03_ACLK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_BUSIF": {
+                "value": "M03_AXI"
+              },
+              "ASSOCIATED_RESET": {
+                "value": "M03_ARESETN"
+              }
+            }
+          },
+          "M03_ARESETN": {
+            "type": "rst",
+            "direction": "I"
           }
         },
         "components": {
@@ -212,7 +259,7 @@
             "inst_hier_path": "microblaze_0_axi_periph/xbar",
             "parameters": {
               "NUM_MI": {
-                "value": "3"
+                "value": "4"
               },
               "NUM_SI": {
                 "value": "1"
@@ -228,7 +275,8 @@
                 "bridges": [
                   "M00_AXI",
                   "M01_AXI",
-                  "M02_AXI"
+                  "M02_AXI",
+                  "M03_AXI"
                 ]
               }
             }
@@ -456,6 +504,62 @@
                 ]
               }
             }
+          },
+          "m03_couplers": {
+            "interface_ports": {
+              "M_AXI": {
+                "mode": "Master",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              },
+              "S_AXI": {
+                "mode": "Slave",
+                "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+                "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+              }
+            },
+            "ports": {
+              "M_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "M_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "M_ARESETN"
+                  }
+                }
+              },
+              "M_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              },
+              "S_ACLK": {
+                "type": "clk",
+                "direction": "I",
+                "parameters": {
+                  "ASSOCIATED_BUSIF": {
+                    "value": "S_AXI"
+                  },
+                  "ASSOCIATED_RESET": {
+                    "value": "S_ARESETN"
+                  }
+                }
+              },
+              "S_ARESETN": {
+                "type": "rst",
+                "direction": "I"
+              }
+            },
+            "interface_nets": {
+              "m03_couplers_to_m03_couplers": {
+                "interface_ports": [
+                  "S_AXI",
+                  "M_AXI"
+                ]
+              }
+            }
           }
         },
         "interface_nets": {
@@ -475,6 +579,12 @@
             "interface_ports": [
               "M02_AXI",
               "m02_couplers/M_AXI"
+            ]
+          },
+          "m03_couplers_to_microblaze_0_axi_periph": {
+            "interface_ports": [
+              "M03_AXI",
+              "m03_couplers/M_AXI"
             ]
           },
           "microblaze_0_axi_periph_to_s00_couplers": {
@@ -506,6 +616,12 @@
               "xbar/M02_AXI",
               "m02_couplers/S_AXI"
             ]
+          },
+          "xbar_to_m03_couplers": {
+            "interface_ports": [
+              "xbar/M03_AXI",
+              "m03_couplers/S_AXI"
+            ]
           }
         },
         "nets": {
@@ -518,9 +634,11 @@
               "m00_couplers/M_ACLK",
               "m01_couplers/M_ACLK",
               "m02_couplers/M_ACLK",
+              "m03_couplers/M_ACLK",
               "m00_couplers/S_ACLK",
               "m01_couplers/S_ACLK",
-              "m02_couplers/S_ACLK"
+              "m02_couplers/S_ACLK",
+              "m03_couplers/S_ACLK"
             ]
           },
           "microblaze_0_axi_periph_ARESETN_net": {
@@ -532,9 +650,11 @@
               "m00_couplers/M_ARESETN",
               "m01_couplers/M_ARESETN",
               "m02_couplers/M_ARESETN",
+              "m03_couplers/M_ARESETN",
               "m00_couplers/S_ARESETN",
               "m01_couplers/S_ARESETN",
-              "m02_couplers/S_ARESETN"
+              "m02_couplers/S_ARESETN",
+              "m03_couplers/S_ARESETN"
             ]
           }
         }
@@ -821,11 +941,11 @@
           }
         }
       },
-      "hdmi_text_controller_0": {
+      "hdmi_text_controller_1": {
         "vlnv": "xilinx.com:user:hdmi_text_controller:1.0",
-        "xci_name": "Lab7MicroBlaze_hdmi_text_controller_0_1",
-        "xci_path": "ip\\Lab7MicroBlaze_hdmi_text_controller_0_1\\Lab7MicroBlaze_hdmi_text_controller_0_1.xci",
-        "inst_hier_path": "hdmi_text_controller_0"
+        "xci_name": "Lab7MicroBlaze_hdmi_text_controller_1_0",
+        "xci_path": "ip\\Lab7MicroBlaze_hdmi_text_controller_1_0\\Lab7MicroBlaze_hdmi_text_controller_1_0.xci",
+        "inst_hier_path": "hdmi_text_controller_1"
       }
     },
     "interface_nets": {
@@ -835,10 +955,10 @@
           "axi_uartlite_0/UART"
         ]
       },
-      "hdmi_text_controller_0_HDMI": {
+      "hdmi_text_controller_1_HDMI": {
         "interface_ports": [
           "HDMI_0",
-          "hdmi_text_controller_0/HDMI"
+          "hdmi_text_controller_1/HDMI"
         ]
       },
       "microblaze_0_axi_dp": {
@@ -853,10 +973,10 @@
           "axi_uartlite_0/S_AXI"
         ]
       },
-      "microblaze_0_axi_periph_M02_AXI": {
+      "microblaze_0_axi_periph_M03_AXI": {
         "interface_ports": [
-          "microblaze_0_axi_periph/M02_AXI",
-          "hdmi_text_controller_0/AXI"
+          "microblaze_0_axi_periph/M03_AXI",
+          "hdmi_text_controller_1/AXI"
         ]
       },
       "microblaze_0_debug": {
@@ -891,6 +1011,12 @@
       }
     },
     "nets": {
+      "axi_uartlite_0_interrupt": {
+        "ports": [
+          "axi_uartlite_0/interrupt",
+          "microblaze_0_axi_intc/intr"
+        ]
+      },
       "clk_100MHz_1": {
         "ports": [
           "clk_100MHz",
@@ -924,7 +1050,8 @@
           "microblaze_0_axi_intc/processor_clk",
           "microblaze_0_local_memory/LMB_Clk",
           "microblaze_0_axi_periph/M02_ACLK",
-          "hdmi_text_controller_0/axi_aclk"
+          "microblaze_0_axi_periph/M03_ACLK",
+          "hdmi_text_controller_1/axi_aclk"
         ]
       },
       "reset_rtl_0_1": {
@@ -956,7 +1083,8 @@
           "axi_uartlite_0/s_axi_aresetn",
           "microblaze_0_axi_periph/M01_ARESETN",
           "microblaze_0_axi_periph/M02_ARESETN",
-          "hdmi_text_controller_0/axi_aresetn"
+          "microblaze_0_axi_periph/M03_ARESETN",
+          "hdmi_text_controller_1/axi_aresetn"
         ]
       }
     },
@@ -976,9 +1104,9 @@
                 "range": "128K",
                 "offset_high_param": "C_HIGHADDR"
               },
-              "SEG_hdmi_text_controller_0_AXI_reg": {
-                "address_block": "/hdmi_text_controller_0/AXI/AXI_reg",
-                "offset": "0x44A00000",
+              "SEG_hdmi_text_controller_1_AXI_reg": {
+                "address_block": "/hdmi_text_controller_1/AXI/AXI_reg",
+                "offset": "0x44A10000",
                 "range": "64K",
                 "offset_base_param": "C_AXI_BASEADDR",
                 "offset_high_param": "C_AXI_HIGHADDR"

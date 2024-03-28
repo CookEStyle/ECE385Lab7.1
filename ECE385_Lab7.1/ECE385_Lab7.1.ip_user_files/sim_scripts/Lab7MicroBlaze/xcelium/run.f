@@ -97,11 +97,19 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_lmb_bram_1/sim/Lab7MicroBlaze_lmb_bram_1.v" \
+  "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0/src/hdmi_tx_0/hdl/encode.v" \
+  "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0/src/hdmi_tx_0/hdl/serdes_10_to_1.v" \
+  "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0/src/hdmi_tx_0/hdl/srldelay.v" \
+  "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0/src/hdmi_tx_0/hdl/hdmi_tx_v1_0.v" \
+  "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0/src/hdmi_tx_0/sim/hdmi_tx_0.v" \
+  "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0/src/clk_wiz_0/clk_wiz_0_clk_wiz.v" \
+  "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0/src/clk_wiz_0/clk_wiz_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib -sv \
-  "../../../bd/Lab7MicroBlaze/hdmi_text_controller_v1_0_AXI.sv" \
-  "../../../bd/Lab7MicroBlaze/hdmi_text_controller_v1_0.sv" \
-  "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_0_0/sim/Lab7MicroBlaze_hdmi_text_controller_0_0.sv" \
+  "../../../bd/Lab7MicroBlaze/ipshared/9d10/src/VGA_controller.sv" \
+  "../../../../ECE385_Lab7.1.gen/sources_1/bd/lab7_1_provided_sp24/hdmi_text_controller_v1_0_AXI.sv" \
+  "../../../../ECE385_Lab7.1.gen/sources_1/bd/lab7_1_provided_sp24/hdmi_text_controller_v1_0.sv" \
+  "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0/sim/Lab7MicroBlaze_hdmi_text_controller_1_0.sv" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/Lab7MicroBlaze/sim/Lab7MicroBlaze.v" \
