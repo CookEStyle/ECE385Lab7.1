@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"0.837167",
-   "Default View_TopLeft":"-141,-36",
+   "Default View_TopLeft":"616,-7",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
@@ -12,12 +12,13 @@ preplace port port-id_reset_rtl_0 -pg 1 -lvl 0 -x -10 -y 350 -defaultsOSRD
 preplace inst microblaze_0_axi_periph -pg 1 -lvl 5 -x 1550 -y 190 -defaultsOSRD
 preplace inst microblaze_0_axi_intc -pg 1 -lvl 3 -x 730 -y 230 -defaultsOSRD
 preplace inst mdm_1 -pg 1 -lvl 3 -x 730 -y 390 -defaultsOSRD
-preplace inst clk_wiz_1 -pg 1 -lvl 1 -x 110 -y 430 -defaultsOSRD
 preplace inst rst_clk_wiz_1_100M -pg 1 -lvl 2 -x 400 -y 370 -defaultsOSRD
 preplace inst axi_uartlite_0 -pg 1 -lvl 6 -x 1830 -y 380 -defaultsOSRD
 preplace inst microblaze_0 -pg 1 -lvl 4 -x 1130 -y 390 -defaultsOSRD
 preplace inst microblaze_0_local_memory -pg 1 -lvl 5 -x 1550 -y 470 -defaultsOSRD
-preplace inst hdmi_text_controller_1 -pg 1 -lvl 6 -x 1830 -y 240 -defaultsOSRD
+preplace inst hdmi_text_controller_0 -pg 1 -lvl 6 -x 1830 -y 240 -defaultsOSRD
+preplace inst clk_wiz_1 -pg 1 -lvl 1 -x 110 -y 430 -defaultsOSRD
+preplace netloc axi_uartlite_0_interrupt 1 2 5 600 -10 NJ -10 NJ -10 NJ -10 1940
 preplace netloc clk_100MHz_1 1 0 1 NJ 440
 preplace netloc clk_wiz_1_locked 1 1 1 220 410n
 preplace netloc mdm_1_debug_sys_rst 1 0 4 10 500 210 490 NJ 490 850
@@ -26,7 +27,6 @@ preplace netloc reset_rtl_0_1 1 0 2 NJ 350 NJ
 preplace netloc rst_clk_wiz_1_100M_bus_struct_reset 1 2 3 570 500 NJ 500 NJ
 preplace netloc rst_clk_wiz_1_100M_mb_reset 1 2 2 610 480 890J
 preplace netloc rst_clk_wiz_1_100M_peripheral_aresetn 1 2 4 590 460 860J 290 1380 370 1720
-preplace netloc axi_uartlite_0_interrupt 1 2 5 600 -10 NJ -10 NJ -10 NJ -10 1940
 preplace netloc axi_uartlite_0_UART 1 6 1 N 370
 preplace netloc hdmi_text_controller_1_HDMI 1 6 1 N 240
 preplace netloc microblaze_0_axi_dp 1 4 1 1400 70n

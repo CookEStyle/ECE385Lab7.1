@@ -6,7 +6,7 @@
 <Project Version="7" Minor="61" Path="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="803aa2eff47344359da5dbb5f13cd4a0"/>
+    <Option Name="Id" Val="3e43f0eaa975427da500b7626c2972f9"/>
     <Option Name="Part" Val="xc7s50csga324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -59,20 +59,20 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="0"/>
+    <Option Name="WTXSimLaunchSim" Val="2"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="0"/>
-    <Option Name="WTModelSimExportSim" Val="0"/>
-    <Option Name="WTQuestaExportSim" Val="0"/>
+    <Option Name="WTXSimExportSim" Val="2"/>
+    <Option Name="WTModelSimExportSim" Val="2"/>
+    <Option Name="WTQuestaExportSim" Val="2"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="0"/>
-    <Option Name="WTRivieraExportSim" Val="0"/>
-    <Option Name="WTActivehdlExportSim" Val="0"/>
+    <Option Name="WTVcsExportSim" Val="2"/>
+    <Option Name="WTRivieraExportSim" Val="2"/>
+    <Option Name="WTActivehdlExportSim" Val="2"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -92,15 +92,62 @@
       <Filter Type="Srcs"/>
       <File Path="$PPRDIR/../../../../../../Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_tx_0/hdmi_tx_0.xci">
         <FileInfo>
-          <Attr Name="Library" Val=""/>
+          <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/encode.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/serdes_10_to_1.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/srldelay.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/hdmi_tx_v1_0.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="hdmi_tx_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/sim/hdmi_tx_0.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
       </File>
       <File Path="$PPRDIR/../../../../../../Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/clk_wiz_0/clk_wiz_0.xci">
         <FileInfo>
-          <Attr Name="Library" Val=""/>
+          <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/mmcm_pll_drp_func_7s_mmcm.vh">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/mmcm_pll_drp_func_7s_pll.vh">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/mmcm_pll_drp_func_us_mmcm.vh">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/mmcm_pll_drp_func_us_pll.vh">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/mmcm_pll_drp_func_us_plus_pll.vh">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/mmcm_pll_drp_func_us_plus_mmcm.vh">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="clk_wiz_0.xci" FileRelPathName="c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </CompFileExtendedInfo>
+      </File>
+      <File Path="$PPRDIR/../../../../../../Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/Color_Mapper.sv">
+        <FileInfo>
+          <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -108,7 +155,14 @@
       </File>
       <File Path="$PPRDIR/../../../../../../Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/VGA_controller.sv">
         <FileInfo>
-          <Attr Name="Library" Val=""/>
+          <Attr Name="Library" Val="xil_defaultlib"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../../../../../Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/font_rom.sv">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -116,7 +170,7 @@
       </File>
       <File Path="$PPRDIR/../../../../../../Users/merli/lab7_1_provided_sp24/hdmi_text_controller_v1_0_AXI.sv">
         <FileInfo>
-          <Attr Name="Library" Val=""/>
+          <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -124,14 +178,16 @@
       </File>
       <File Path="$PPRDIR/../../../../../../Users/merli/lab7_1_provided_sp24/hdmi_text_controller_v1_0.sv">
         <FileInfo>
-          <Attr Name="Library" Val=""/>
+          <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PPRDIR/../../../../../../Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/component.xml">
-        <FileInfo SFType="IPXACT"/>
+        <FileInfo SFType="IPXACT">
+          <Attr Name="Library" Val="xil_defaultlib"/>
+        </FileInfo>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
@@ -148,7 +204,7 @@
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1" RelGenDir="$PGENDIR/sim_1">
       <File Path="$PPRDIR/../../../../../../Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_tb.sv">
         <FileInfo>
-          <Attr Name="Library" Val=""/>
+          <Attr Name="Library" Val="xil_defaultlib"/>
           <Attr Name="UsedIn" Val="simulation"/>
           <Attr Name="UsedIn" Val="testbench"/>
         </FileInfo>

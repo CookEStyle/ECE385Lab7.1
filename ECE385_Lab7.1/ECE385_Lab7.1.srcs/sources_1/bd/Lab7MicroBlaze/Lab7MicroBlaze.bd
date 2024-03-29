@@ -32,7 +32,7 @@
         "ilmb_bram_if_cntlr": "",
         "lmb_bram": ""
       },
-      "hdmi_text_controller_1": ""
+      "hdmi_text_controller_0": ""
     },
     "interface_ports": {
       "uart_rtl_0": {
@@ -941,11 +941,11 @@
           }
         }
       },
-      "hdmi_text_controller_1": {
+      "hdmi_text_controller_0": {
         "vlnv": "xilinx.com:user:hdmi_text_controller:1.0",
         "xci_name": "Lab7MicroBlaze_hdmi_text_controller_1_0",
-        "xci_path": "ip\\Lab7MicroBlaze_hdmi_text_controller_1_0\\Lab7MicroBlaze_hdmi_text_controller_1_0.xci",
-        "inst_hier_path": "hdmi_text_controller_1"
+        "xci_path": "ip\\Lab7MicroBlaze_hdmi_text_controller_1_0_1\\Lab7MicroBlaze_hdmi_text_controller_1_0.xci",
+        "inst_hier_path": "hdmi_text_controller_0"
       }
     },
     "interface_nets": {
@@ -958,7 +958,7 @@
       "hdmi_text_controller_1_HDMI": {
         "interface_ports": [
           "HDMI_0",
-          "hdmi_text_controller_1/HDMI"
+          "hdmi_text_controller_0/HDMI"
         ]
       },
       "microblaze_0_axi_dp": {
@@ -976,7 +976,7 @@
       "microblaze_0_axi_periph_M03_AXI": {
         "interface_ports": [
           "microblaze_0_axi_periph/M03_AXI",
-          "hdmi_text_controller_1/AXI"
+          "hdmi_text_controller_0/AXI"
         ]
       },
       "microblaze_0_debug": {
@@ -1051,7 +1051,7 @@
           "microblaze_0_local_memory/LMB_Clk",
           "microblaze_0_axi_periph/M02_ACLK",
           "microblaze_0_axi_periph/M03_ACLK",
-          "hdmi_text_controller_1/axi_aclk"
+          "hdmi_text_controller_0/axi_aclk"
         ]
       },
       "reset_rtl_0_1": {
@@ -1084,7 +1084,7 @@
           "microblaze_0_axi_periph/M01_ARESETN",
           "microblaze_0_axi_periph/M02_ARESETN",
           "microblaze_0_axi_periph/M03_ARESETN",
-          "hdmi_text_controller_1/axi_aresetn"
+          "hdmi_text_controller_0/axi_aresetn"
         ]
       }
     },
@@ -1105,7 +1105,7 @@
                 "offset_high_param": "C_HIGHADDR"
               },
               "SEG_hdmi_text_controller_1_AXI_reg": {
-                "address_block": "/hdmi_text_controller_1/AXI/AXI_reg",
+                "address_block": "/hdmi_text_controller_0/AXI/AXI_reg",
                 "offset": "0x44A10000",
                 "range": "64K",
                 "offset_base_param": "C_AXI_BASEADDR",

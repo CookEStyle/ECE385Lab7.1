@@ -1,7 +1,7 @@
 //Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-//Date        : Thu Mar 28 12:44:17 2024
+//Date        : Thu Mar 28 13:02:25 2024
 //Host        : DESKTOP-129R2SH running 64-bit major release  (build 9200)
 //Command     : generate_target Lab7MicroBlaze.bd
 //Design      : Lab7MicroBlaze
@@ -30,6 +30,7 @@ module Lab7MicroBlaze
 
   wire axi_uartlite_0_UART_RxD;
   wire axi_uartlite_0_UART_TxD;
+  wire axi_uartlite_0_interrupt;
   wire clk_100MHz_1;
   wire clk_wiz_1_locked;
   wire hdmi_text_controller_1_HDMI_TMDS_CLK_N;
@@ -155,7 +156,8 @@ module Lab7MicroBlaze
   assign reset_rtl_0_1 = reset_rtl_0;
   assign uart_rtl_0_txd = axi_uartlite_0_UART_TxD;
   Lab7MicroBlaze_axi_uartlite_0_0 axi_uartlite_0
-       (.rx(axi_uartlite_0_UART_RxD),
+       (.interrupt(axi_uartlite_0_interrupt),
+        .rx(axi_uartlite_0_UART_RxD),
         .s_axi_aclk(microblaze_0_Clk),
         .s_axi_araddr(microblaze_0_axi_periph_M01_AXI_ARADDR[3:0]),
         .s_axi_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
@@ -275,7 +277,7 @@ module Lab7MicroBlaze
         .Write_Strobe(microblaze_0_dlmb_1_WRITESTROBE));
   Lab7MicroBlaze_microblaze_0_axi_intc_0 microblaze_0_axi_intc
        (.interrupt_address(microblaze_0_interrupt_ADDRESS),
-        .intr(1'b0),
+        .intr(axi_uartlite_0_interrupt),
         .irq(microblaze_0_interrupt_INTERRUPT),
         .processor_ack({microblaze_0_interrupt_ACK[0],microblaze_0_interrupt_ACK[1]}),
         .processor_clk(microblaze_0_Clk),
