@@ -1,0 +1,12 @@
+vhdl xil_defaultlib  \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_axi_intc_0/sim/Lab7MicroBlaze_microblaze_0_axi_intc_0.vhd" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_mdm_1_0/sim/Lab7MicroBlaze_mdm_1_0.vhd" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_rst_clk_wiz_1_100M_0/sim/Lab7MicroBlaze_rst_clk_wiz_1_100M_0.vhd" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_axi_uartlite_0_0/sim/Lab7MicroBlaze_axi_uartlite_0_0.vhd" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_1/sim/Lab7MicroBlaze_microblaze_0_1.vhd" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_dlmb_v10_1/sim/Lab7MicroBlaze_dlmb_v10_1.vhd" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_ilmb_v10_1/sim/Lab7MicroBlaze_ilmb_v10_1.vhd" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_dlmb_bram_if_cntlr_1/sim/Lab7MicroBlaze_dlmb_bram_if_cntlr_1.vhd" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_ilmb_bram_if_cntlr_1/sim/Lab7MicroBlaze_ilmb_bram_if_cntlr_1.vhd" \
+
+nosort

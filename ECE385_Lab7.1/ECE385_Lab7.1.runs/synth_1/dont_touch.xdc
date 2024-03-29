@@ -45,7 +45,7 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Lab7MicroBl
 # IP: bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_lmb_bram_1/Lab7MicroBlaze_lmb_bram_1.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Lab7MicroBlaze_lmb_bram_1 || ORIG_REF_NAME==Lab7MicroBlaze_lmb_bram_1} -quiet] -quiet
 
-# IP: bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0.xci
+# IP: bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==Lab7MicroBlaze_hdmi_text_controller_1_0 || ORIG_REF_NAME==Lab7MicroBlaze_hdmi_text_controller_1_0} -quiet] -quiet
 
 # XDC: c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/Lab7MicroBlaze_ooc.xdc

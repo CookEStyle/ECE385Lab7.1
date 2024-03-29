@@ -70,6 +70,9 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 3
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {HDL-1065} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
@@ -91,11 +94,7 @@ set_property ip_output_repo c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib -sv {
-  C:/Users/merli/lab6_2_provided/design_source/Color_Mapper.sv
-  C:/Users/merli/lab6_2_provided/design_source/ball.sv
-  C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv
-}
+read_verilog -library xil_defaultlib -sv C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv
 add_files C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/sources_1/bd/Lab7MicroBlaze/Lab7MicroBlaze.bd
 set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_xbar_0/Lab7MicroBlaze_xbar_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_axi_intc_0/Lab7MicroBlaze_microblaze_0_axi_intc_0.xdc]
@@ -120,8 +119,8 @@ set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385L
 set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_dlmb_bram_if_cntlr_1/Lab7MicroBlaze_dlmb_bram_if_cntlr_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_ilmb_bram_if_cntlr_1/Lab7MicroBlaze_ilmb_bram_if_cntlr_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_lmb_bram_1/Lab7MicroBlaze_lmb_bram_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0/src/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0/src/clk_wiz_0/clk_wiz_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0/clk_wiz_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/Lab7MicroBlaze_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_1/data/mb_bootloop_le.elf]
 
@@ -140,6 +139,8 @@ set_property used_in_implementation false [get_files {{C:/Users/merli/ECE385Lab7
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/utils_1/imports/synth_1/mb_usb_hdmi_top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
