@@ -5,6 +5,7 @@
       "device": "xc7s50csga324-1",
       "gen_directory": "../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze",
       "name": "Lab7MicroBlaze",
+      "pfm_name": "xilinx:board:name:0.0",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
       "tool_version": "2022.2",

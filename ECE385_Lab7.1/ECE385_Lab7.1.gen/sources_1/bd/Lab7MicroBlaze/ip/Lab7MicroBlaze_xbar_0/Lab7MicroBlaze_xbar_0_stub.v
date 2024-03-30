@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
 // Date        : Thu Mar 28 12:45:53 2024
 // Host        : DESKTOP-129R2SH running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_xbar_0/Lab7MicroBlaze_xbar_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top Lab7MicroBlaze_xbar_0 -prefix
+//               Lab7MicroBlaze_xbar_0_ Lab7MicroBlaze_xbar_0_stub.v
 // Design      : Lab7MicroBlaze_xbar_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7s50csga324-1

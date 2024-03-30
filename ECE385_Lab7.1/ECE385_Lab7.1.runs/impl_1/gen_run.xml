@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1711694217">
+<GenRun Id="impl_1" LaunchPart="xc7s50csga324-1" LaunchTime="1711742576">
   <File Type="ROUTE-PWR" Name="mb_usb_hdmi_top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="mb_usb_hdmi_top.tcl"/>
   <File Type="BITSTR-MMI" Name="mb_usb_hdmi_top.mmi"/>
@@ -156,7 +156,5 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="Lab7MicroBlaze_microblaze_0_axi_intc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="Lab7MicroBlaze_xbar_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Lab7MicroBlaze_hdmi_text_controller_1_0"/>
 </GenRun>

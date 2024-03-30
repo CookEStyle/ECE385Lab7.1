@@ -2,8 +2,8 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Fri Mar 29 01:36:07 2024
-# Process ID: 37060
+# Start of session at: Fri Mar 29 15:02:05 2024
+# Process ID: 40840
 # Current directory: C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1
 # Command line: vivado.exe -log mb_usb_hdmi_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mb_usb_hdmi_top.tcl
 # Log file: C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/mb_usb_hdmi_top.vds
@@ -27,25 +27,25 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 26424
+INFO: [Synth 8-7075] Helper process launched with PID 39856
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1214.973 ; gain = 409.773
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1213.785 ; gain = 408.504
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'mb_usb_hdmi_top' [C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv:14]
 INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:12]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_axi_uartlite_0_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_axi_uartlite_0_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_axi_uartlite_0_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_axi_uartlite_0_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_clk_wiz_1_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_clk_wiz_1_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_clk_wiz_1_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_clk_wiz_1_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_hdmi_text_controller_1_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_hdmi_text_controller_1_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_hdmi_text_controller_1_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_hdmi_text_controller_1_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_mdm_1_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_mdm_1_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_mdm_1_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_mdm_1_0_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_microblaze_0_1' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_microblaze_0_1_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_microblaze_0_1' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_microblaze_0_1_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_microblaze_0_axi_intc_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_microblaze_0_axi_intc_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_microblaze_0_axi_intc_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_microblaze_0_axi_intc_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_axi_uartlite_0_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_axi_uartlite_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_axi_uartlite_0_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_axi_uartlite_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_clk_wiz_1_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_clk_wiz_1_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_clk_wiz_1_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_clk_wiz_1_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_hdmi_text_controller_1_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_hdmi_text_controller_1_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_hdmi_text_controller_1_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_hdmi_text_controller_1_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_mdm_1_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_mdm_1_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_mdm_1_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_mdm_1_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_microblaze_0_1' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_microblaze_0_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_microblaze_0_1' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_microblaze_0_1_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_microblaze_0_axi_intc_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_microblaze_0_axi_intc_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_microblaze_0_axi_intc_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_microblaze_0_axi_intc_0_stub.v:5]
 INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_microblaze_0_axi_periph_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:430]
 INFO: [Synth 8-6157] synthesizing module 'm00_couplers_imp_1NCDF3Q' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1168]
 INFO: [Synth 8-6155] done synthesizing module 'm00_couplers_imp_1NCDF3Q' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1168]
@@ -57,8 +57,8 @@ INFO: [Synth 8-6157] synthesizing module 'm03_couplers_imp_13EBYCE' [c:/Users/me
 INFO: [Synth 8-6155] done synthesizing module 'm03_couplers_imp_13EBYCE' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1578]
 INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_5WGTS3' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1958]
 INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_5WGTS3' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1958]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_xbar_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_xbar_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_xbar_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_xbar_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_xbar_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_xbar_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_xbar_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_xbar_0_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_microblaze_0_axi_periph_0' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:430]
 WARNING: [Synth 8-7071] port 'M02_AXI_araddr' of module 'Lab7MicroBlaze_microblaze_0_axi_periph_0' is unconnected for instance 'microblaze_0_axi_periph' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:304]
 WARNING: [Synth 8-7071] port 'M02_AXI_arprot' of module 'Lab7MicroBlaze_microblaze_0_axi_periph_0' is unconnected for instance 'microblaze_0_axi_periph' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:304]
@@ -73,35 +73,31 @@ WARNING: [Synth 8-7071] port 'M02_AXI_wstrb' of module 'Lab7MicroBlaze_microblaz
 WARNING: [Synth 8-7071] port 'M02_AXI_wvalid' of module 'Lab7MicroBlaze_microblaze_0_axi_periph_0' is unconnected for instance 'microblaze_0_axi_periph' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:304]
 WARNING: [Synth 8-7023] instance 'microblaze_0_axi_periph' of module 'Lab7MicroBlaze_microblaze_0_axi_periph_0' has 103 connections declared, but only 92 given [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:304]
 INFO: [Synth 8-6157] synthesizing module 'microblaze_0_local_memory_imp_1OCZ5JA' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1724]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_dlmb_bram_if_cntlr_1' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_dlmb_bram_if_cntlr_1_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_dlmb_bram_if_cntlr_1' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_dlmb_bram_if_cntlr_1_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_dlmb_v10_1' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_dlmb_v10_1_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_dlmb_v10_1' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_dlmb_v10_1_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_dlmb_bram_if_cntlr_1' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_dlmb_bram_if_cntlr_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_dlmb_bram_if_cntlr_1' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_dlmb_bram_if_cntlr_1_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_dlmb_v10_1' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_dlmb_v10_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_dlmb_v10_1' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_dlmb_v10_1_stub.v:5]
 WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'Lab7MicroBlaze_dlmb_v10_1' is unconnected for instance 'dlmb_v10' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1870]
 WARNING: [Synth 8-7023] instance 'dlmb_v10' of module 'Lab7MicroBlaze_dlmb_v10_1' has 25 connections declared, but only 24 given [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1870]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_ilmb_bram_if_cntlr_1' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_ilmb_bram_if_cntlr_1_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_ilmb_bram_if_cntlr_1' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_ilmb_bram_if_cntlr_1_stub.v:5]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_ilmb_v10_1' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_ilmb_v10_1_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_ilmb_v10_1' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_ilmb_v10_1_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_ilmb_bram_if_cntlr_1' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_ilmb_bram_if_cntlr_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_ilmb_bram_if_cntlr_1' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_ilmb_bram_if_cntlr_1_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_ilmb_v10_1' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_ilmb_v10_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_ilmb_v10_1' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_ilmb_v10_1_stub.v:5]
 WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'Lab7MicroBlaze_ilmb_v10_1' is unconnected for instance 'ilmb_v10' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1916]
 WARNING: [Synth 8-7023] instance 'ilmb_v10' of module 'Lab7MicroBlaze_ilmb_v10_1' has 25 connections declared, but only 24 given [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1916]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_lmb_bram_1' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_lmb_bram_1_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_lmb_bram_1' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_lmb_bram_1_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_lmb_bram_1' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_lmb_bram_1_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_lmb_bram_1' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_lmb_bram_1_stub.v:5]
 WARNING: [Synth 8-7071] port 'rsta_busy' of module 'Lab7MicroBlaze_lmb_bram_1' is unconnected for instance 'lmb_bram' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1941]
 WARNING: [Synth 8-7071] port 'rstb_busy' of module 'Lab7MicroBlaze_lmb_bram_1' is unconnected for instance 'lmb_bram' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1941]
 WARNING: [Synth 8-7023] instance 'lmb_bram' of module 'Lab7MicroBlaze_lmb_bram_1' has 16 connections declared, but only 14 given [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1941]
 INFO: [Synth 8-6155] done synthesizing module 'microblaze_0_local_memory_imp_1OCZ5JA' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:1724]
-INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_rst_clk_wiz_1_100M_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_rst_clk_wiz_1_100M_0_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_rst_clk_wiz_1_100M_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-37060-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_rst_clk_wiz_1_100M_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_rst_clk_wiz_1_100M_0' [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_rst_clk_wiz_1_100M_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_rst_clk_wiz_1_100M_0' (0#1) [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/.Xil/Vivado-40840-DESKTOP-129R2SH/realtime/Lab7MicroBlaze_rst_clk_wiz_1_100M_0_stub.v:5]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'Lab7MicroBlaze_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:419]
 WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'Lab7MicroBlaze_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:419]
 WARNING: [Synth 8-7023] instance 'rst_clk_wiz_1_100M' of module 'Lab7MicroBlaze_rst_clk_wiz_1_100M_0' has 10 connections declared, but only 8 given [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:419]
 INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/synth/Lab7MicroBlaze.v:12]
 INFO: [Synth 8-6155] done synthesizing module 'mb_usb_hdmi_top' (0#1) [C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv:14]
-WARNING: [Synth 8-3848] Net gpio_usb_rst_tri_o in module/entity mb_usb_hdmi_top does not have driver. [C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv:20]
-WARNING: [Synth 8-3848] Net usb_spi_mosi in module/entity mb_usb_hdmi_top does not have driver. [C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv:22]
-WARNING: [Synth 8-3848] Net usb_spi_sclk in module/entity mb_usb_hdmi_top does not have driver. [C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv:23]
-WARNING: [Synth 8-3848] Net usb_spi_ss in module/entity mb_usb_hdmi_top does not have driver. [C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv:24]
 WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_5WGTS3 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M_ARESETN in module s00_couplers_imp_5WGTS3 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_ACLK in module s00_couplers_imp_5WGTS3 is either unconnected or has no load
@@ -132,25 +128,19 @@ WARNING: [Synth 8-7129] Port M03_ACLK in module Lab7MicroBlaze_microblaze_0_axi_
 WARNING: [Synth 8-7129] Port M03_ARESETN in module Lab7MicroBlaze_microblaze_0_axi_periph_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_ACLK in module Lab7MicroBlaze_microblaze_0_axi_periph_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_ARESETN in module Lab7MicroBlaze_microblaze_0_axi_periph_0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port gpio_usb_rst_tri_o in module mb_usb_hdmi_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port usb_spi_mosi in module mb_usb_hdmi_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port usb_spi_sclk in module mb_usb_hdmi_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port usb_spi_ss in module mb_usb_hdmi_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port gpio_usb_int_tri_i[0] in module mb_usb_hdmi_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port usb_spi_miso in module mb_usb_hdmi_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1311.582 ; gain = 506.383
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1311.227 ; gain = 505.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1311.582 ; gain = 506.383
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1311.227 ; gain = 505.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1311.582 ; gain = 506.383
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1311.227 ; gain = 505.945
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1311.582 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1311.227 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -186,6 +176,18 @@ CRITICAL WARNING: [Constraints 18-1056] Clock 'clk_100' completely overrides clo
 New: create_clock -period 10.000 -name clk_100 -waveform {0.000 5.000} [get_ports Clk], [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:1]
 Previous: create_clock -period 10.000 [get_ports Clk], [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0_in_context.xdc:1]
 Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+WARNING: [Vivado 12-584] No ports matched 'gpio_usb_int_tri_i[0]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:12]
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_miso'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_mosi'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:14]
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_sclk'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:15]
+WARNING: [Vivado 12-584] No ports matched 'gpio_usb_int_tri_i[0]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:16]
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_sclk'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_mosi'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:18]
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_miso'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:19]
+WARNING: [Vivado 12-584] No ports matched 'gpio_usb_rst_tri_o'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:21]
+WARNING: [Vivado 12-584] No ports matched 'gpio_usb_rst_tri_o'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_ss'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_ss'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:24]
 WARNING: [Vivado 12-584] No ports matched 'hex_gridA[3]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:27]
 WARNING: [Vivado 12-584] No ports matched 'hex_gridA[2]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:28]
 WARNING: [Vivado 12-584] No ports matched 'hex_gridA[1]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:29]
@@ -242,30 +244,46 @@ Parsing XDC File [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/s
 Finished Parsing XDC File [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1331.570 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1311.227 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1331.570 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1311.227 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'mb_block_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1331.582 ; gain = 526.383
+Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1311.227 ; gain = 505.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1331.582 ; gain = 526.383
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1311.227 ; gain = 505.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property IO_BUFFER_TYPE = NONE for Clk. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0_in_context.xdc, line 3).
 Applied set_property CLOCK_BUFFER_TYPE = NONE for Clk. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tmds_clk_n. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tmds_clk_n. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tmds_clk_p. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tmds_clk_p. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tmds_data_n[0]. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 8).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tmds_data_n[0]. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 9).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tmds_data_n[1]. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 10).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tmds_data_n[1]. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 11).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tmds_data_n[2]. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 12).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tmds_data_n[2]. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 13).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tmds_data_p[0]. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 14).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tmds_data_p[0]. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 15).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tmds_data_p[1]. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 16).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tmds_data_p[1]. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 17).
+Applied set_property IO_BUFFER_TYPE = NONE for hdmi_tmds_data_p[2]. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 18).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for hdmi_tmds_data_p[2]. (constraint file  c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0/Lab7MicroBlaze_hdmi_text_controller_1_0_in_context.xdc, line 19).
 Applied set_property KEEP_HIERARCHY = SOFT for mb_block_i. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for mb_block_i/microblaze_0_axi_periph/xbar. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for mb_block_i/microblaze_0_axi_periph. (constraint file  auto generated constraint).
@@ -282,10 +300,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for mb_block_i/microblaze_0_local_mem
 Applied set_property KEEP_HIERARCHY = SOFT for mb_block_i/microblaze_0_local_memory/lmb_bram. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for mb_block_i/hdmi_text_controller_0. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1331.582 ; gain = 526.383
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1311.227 ; gain = 505.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1331.582 ; gain = 526.383
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1311.227 ; gain = 505.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -317,32 +335,26 @@ WARNING: [Synth 8-7129] Port M03_ACLK in module Lab7MicroBlaze_microblaze_0_axi_
 WARNING: [Synth 8-7129] Port M03_ARESETN in module Lab7MicroBlaze_microblaze_0_axi_periph_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_ACLK in module Lab7MicroBlaze_microblaze_0_axi_periph_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_ARESETN in module Lab7MicroBlaze_microblaze_0_axi_periph_0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port gpio_usb_rst_tri_o in module mb_usb_hdmi_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port usb_spi_mosi in module mb_usb_hdmi_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port usb_spi_sclk in module mb_usb_hdmi_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port usb_spi_ss in module mb_usb_hdmi_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port gpio_usb_int_tri_i[0] in module mb_usb_hdmi_top is either unconnected or has no load
-WARNING: [Synth 8-7129] Port usb_spi_miso in module mb_usb_hdmi_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1331.582 ; gain = 526.383
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1311.227 ; gain = 505.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1331.582 ; gain = 526.383
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1311.227 ; gain = 505.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1331.582 ; gain = 526.383
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1311.227 ; gain = 505.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1331.582 ; gain = 526.383
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 1312.387 ; gain = 507.105
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -360,37 +372,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1335.359 ; gain = 530.160
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1317.121 ; gain = 511.840
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1335.359 ; gain = 530.160
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1317.121 ; gain = 511.840
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1335.359 ; gain = 530.160
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1317.121 ; gain = 511.840
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1335.359 ; gain = 530.160
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1317.121 ; gain = 511.840
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1335.359 ; gain = 530.160
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1317.121 ; gain = 511.840
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1335.359 ; gain = 530.160
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1317.121 ; gain = 511.840
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -434,29 +446,28 @@ Report Cell Usage:
 |13    |Lab7MicroBlaze_xbar                   |     1|
 |14    |LUT1                                  |     1|
 |15    |IBUF                                  |     2|
-|16    |OBUF                                  |     9|
-|17    |OBUFT                                 |     4|
+|16    |OBUF                                  |     1|
 +------+--------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1335.359 ; gain = 530.160
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1317.121 ; gain = 511.840
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 17 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1335.359 ; gain = 510.160
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1335.359 ; gain = 530.160
+Synthesis finished with 0 errors, 0 critical warnings and 11 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1317.121 ; gain = 511.840
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1317.121 ; gain = 511.840
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1347.480 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1331.188 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1351.113 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1336.824 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: aa20f736
+Synth Design complete, checksum: 1f3da886
 INFO: [Common 17-83] Releasing license: Synthesis
-69 Infos, 129 Warnings, 1 Critical Warnings and 0 Errors encountered.
+69 Infos, 125 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1351.113 ; gain = 921.875
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1336.824 ; gain = 906.438
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/synth_1/mb_usb_hdmi_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file mb_usb_hdmi_top_utilization_synth.rpt -pb mb_usb_hdmi_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Mar 29 01:36:51 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri Mar 29 15:02:49 2024...
