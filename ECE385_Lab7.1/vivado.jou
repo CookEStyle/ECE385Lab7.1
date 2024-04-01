@@ -12,3 +12,9 @@
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv] -no_script -reset -force -quiet
+remove_files  C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv
+update_compile_order -fileset sources_1
+import_files -norecurse C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv
+update_compile_order -fileset sources_1

@@ -149,3 +149,52 @@ Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 // Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0'. INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/merli/RD_hdmi_ip2020'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'. 
 // [Engine Memory]: 1,025 MB (+38110kb) [00:00:16]
 // Tcl Message: open_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:11 . Memory (MB): peak = 1171.297 ; gain = 297.832 
+// Project name: ECE385_Lab7.1; location: C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1; part: xc7s50csga324-1
+dismissDialog("Open Project"); // bq
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv)]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv)]", 1, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("mb_usb_hdmi_top.sv", 303, 241); // ac
+typeControlKey((HResource) null, "mb_usb_hdmi_top.sv", 'c'); // ac
+// Elapsed time: 19 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv)]", 1, true); // D - Node
+// [GUI Memory]: 133 MB (+9009kb) [00:00:50]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv)]", 1, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ao
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a
+dismissDialog("Remove Sources"); // U
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv 
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // al
+selectMenuItem(PAResourceCommand.PACommandNames_ADD_SOURCES, "Add Sources..."); // ao
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // ag
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+setFileChooser("C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv");
+// HMemoryUtils.trashcanNow. Engine heap size: 1,062 MB. GUI used memory: 73 MB. Current time: 3/31/24, 10:14:15 PM CDT
+selectButton("FINISH", "Finish"); // JButton
+// 'f' command handler elapsed time: 8 seconds
+dismissDialog("Add Sources"); // c
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: import_files -norecurse C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv)]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_usb_hdmi_top (mb_usb_hdmi_top.sv)]", 1, true, false, false, false, false, true); // D - Double Click - Node
+selectCodeEditor("mb_usb_hdmi_top.sv", 361, 281); // ac
+selectCodeEditor("mb_usb_hdmi_top.sv", 334, 235, false, false, false, true, false); // ac - Popup Trigger
+selectCodeEditor("mb_usb_hdmi_top.sv", 179, 243); // ac
