@@ -108,14 +108,16 @@
           <Proxy FileSetName="Lab7MicroBlaze_hdmi_text_controller_1_0"/>
         </CompFileExtendedInfo>
       </File>
-      <File Path="$PPRDIR/../../lab6_2_provided/design_source/mb_usb_hdmi_top.sv">
+      <File Path="$PSRCDIR/sources_1/imports/design_source/mb_usb_hdmi_top.sv">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../lab6_2_provided/design_source/mb_usb_hdmi_top.sv"/>
+          <Attr Name="ImportTime" Val="1711695517"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../lab6_2_provided/design_source/hex_driver.sv">
+      <File Path="$PGENDIR/sources_1/bd/Lab7MicroBlaze/hdl/Lab7MicroBlaze_wrapper.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -123,7 +125,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PGENDIR/sources_1/bd/Lab7MicroBlaze/hdl/Lab7MicroBlaze_wrapper.v">
+      <File Path="$PPRDIR/../../lab6_2_provided/design_source/hex_driver.sv">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
