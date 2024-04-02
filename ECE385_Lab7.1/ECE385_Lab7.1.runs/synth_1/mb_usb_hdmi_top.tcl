@@ -70,6 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param chipscope.maxJobs 3
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
@@ -91,7 +92,7 @@ set_property ip_output_repo c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib -sv C:/Users/merli/lab6_2_provided/design_source/mb_usb_hdmi_top.sv
+read_verilog -library xil_defaultlib -sv C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/sources_1/imports/design_source/mb_usb_hdmi_top.sv
 add_files C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/sources_1/bd/Lab7MicroBlaze/Lab7MicroBlaze.bd
 set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_xbar_0/Lab7MicroBlaze_xbar_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_axi_intc_0/Lab7MicroBlaze_microblaze_0_axi_intc_0.xdc]
