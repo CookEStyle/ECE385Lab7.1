@@ -154,3 +154,12 @@ con
 
 20:51:44 INFO  : Launch script is exported to file 'C:\Users\merli\ECE385Lab7.1\ECE385_Lab7.1\mb_hdmi_text_controller_system\_ide\scripts\debugger_mb_hdmi_text_controller-default.tcl'
 20:53:48 INFO  : Disconnected from the channel tcfchan#4.
+21:05:43 DEBUG : Logs will be stored at 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/IDE.log'.
+21:05:44 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\merli\ECE385Lab7.1\ECE385_Lab7.1\temp_xsdb_launch_script.tcl
+21:05:48 INFO  : XSCT server has started successfully.
+21:05:48 INFO  : plnx-install-location is set to ''
+21:05:48 INFO  : Successfully done setting XSCT server connection channel  
+21:05:48 INFO  : Successfully done setting workspace for the tool. 
+21:05:50 INFO  : Registering command handlers for Vitis TCF services
+21:05:50 INFO  : Platform repository initialization has completed.
+21:05:50 INFO  : Successfully done query RDI_DATADIR 

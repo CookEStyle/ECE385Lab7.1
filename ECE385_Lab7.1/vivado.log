@@ -2,10 +2,10 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Sun Mar 31 22:20:19 2024
-# Process ID: 30996
+# Start of session at: Mon Apr  1 21:04:33 2024
+# Process ID: 48152
 # Current directory: C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent37728 C:\Users\merli\ECE385Lab7.1\ECE385_Lab7.1\ECE385_Lab7.1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12484 C:\Users\merli\ECE385Lab7.1\ECE385_Lab7.1\ECE385_Lab7.1.xpr
 # Log file: C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/vivado.log
 # Journal file: C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1\vivado.jou
 # Running On: DESKTOP-129R2SH, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 16929 MB
@@ -82,11 +82,624 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/merli/RD_hdmi_ip2020'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
-open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:10 . Memory (MB): peak = 1134.988 ; gain = 355.469
+open_project: Time (s): cpu = 00:00:29 ; elapsed = 00:00:13 . Memory (MB): peak = 1177.086 ; gain = 389.270
 update_compile_order -fileset sources_1
-reset_run impl_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Couldn't access process for termination
+INFO: [Vivado 12-8231] Launching Vitis
+INFO: [Vivado 12-417] Running vitis
+INFO: [Vivado 12-8232] Vitis launch initiated. Please check console for any further messages.
+open_bd_design {C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/sources_1/bd/Lab7MicroBlaze/Lab7MicroBlaze.bd}
+Reading block design file <C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/sources_1/bd/Lab7MicroBlaze/Lab7MicroBlaze.bd>...
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - microblaze_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:axi_intc:4.1 - microblaze_0_axi_intc
+Adding component instance block -- xilinx.com:ip:mdm:3.2 - mdm_1
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_1
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_clk_wiz_1_100M
+Adding component instance block -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding component instance block -- xilinx.com:ip:microblaze:11.0 - microblaze_0
+Adding component instance block -- xilinx.com:ip:lmb_v10:3.0 - dlmb_v10
+Adding component instance block -- xilinx.com:ip:lmb_v10:3.0 - ilmb_v10
+Adding component instance block -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - dlmb_bram_if_cntlr
+Adding component instance block -- xilinx.com:ip:lmb_bram_if_cntlr:4.0 - ilmb_bram_if_cntlr
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - lmb_bram
+Adding component instance block -- xilinx.com:user:hdmi_text_controller:1.0 - hdmi_text_controller_0
+Successfully read diagram <Lab7MicroBlaze> from block design file <C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/sources_1/bd/Lab7MicroBlaze/Lab7MicroBlaze.bd>
+ipx::edit_ip_in_project -upgrade true -name hdmi_text_controller_v1_0_project -directory C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.tmp/hdmi_text_controller_v1_0_project c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/component.xml
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:ac701:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/ac701/1.4/board.xml as part xc7a200tfbg676-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26c:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.2/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.3/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:k26i:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26i/1.4/board.xml as part xck26-sfvc784-2lvi-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.4/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu116:part0:1.5 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu116/1.5/board.xml as part xcku5p-ffvb676-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu1500:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu1500/1.2/board.xml as part xcku115-flvb2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.0/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kr260_som:part0:1.1 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kr260_som/1.1/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.2/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.3/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:kv260_som:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kv260_som/1.4/board.xml as part xck26-sfvc784-2lv-c specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc707:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc707/1.4/board.xml as part xc7vx485tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vc709:part0:1.8 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vc709/1.8/board.xml as part xc7vx690tffg1761-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:2.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/2.2/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190:part0:3.1 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190/production/3.1/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vck190_newl:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vck190_newl/production/1.0/board.xml as part xcvc1902-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.6 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.6/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu108:part0:1.7 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu108/1.7/board.xml as part xcvu095-ffva2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu110:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu110/1.4/board.xml as part xcvu190-flgc2104-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.0/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.3/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu118:part0:2.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu118/2.4/board.xml as part xcvu9p-flga2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu128:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu128/production/1.0/board.xml as part xcvu37p-fsvh2892-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu129/production/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu1525:part0:1.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vcu1525/1.3/board.xml as part xcvu9p-fsgd2104-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_mpsoc:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_mpsoc/1.0/board.xml as part xczu19eg-ffvd1760-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vermeo_t1_rfsoc:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vermeo_t1_rfsoc/1.0/board.xml as part xczu21dr-ffvd1156-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:2.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/2.2/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180:part0:3.1 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180/production/3.1/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vmk180_newl:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vmk180_newl/production/1.0/board.xml as part xcvm1802-vsva2197-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/production/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc702:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc702/1.4/board.xml as part xc7z020clg484-1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zc706:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zc706/1.4/board.xml as part xc7z045ffg900-2 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.3/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu102:part0:3.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu102/3.4/board.xml as part xczu9eg-ffvb1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu104:part0:1.1 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu104/1.1/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.4/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.5 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.5/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu106:part0:2.6 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu106/2.6/board.xml as part xczu7ev-ffvc1156-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.2/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.3 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.3/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu111:part0:1.4 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu111/1.4/board.xml as part xczu28dr-ffvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1275:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1275/1.0/board.xml as part xczu29dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu1285:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu1285/1.0/board.xml as part xczu39dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208/production/2.0/board.xml as part xczu48dr-fsvg1517-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216/production/2.0/board.xml as part xczu49dr-ffvf1760-2-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 1342.477 ; gain = 41.375
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/merli/RD_hdmi_ip2020'.
+INFO: [IP_Flow 19-795] Syncing license key meta-data
+ipx::edit_ip_in_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 1342.477 ; gain = 41.375
+update_compile_order -fileset sources_1
+ipx::merge_project_changes files [ipx::current_core]
+WARNING: [IP_Flow 19-5226] Project source file 'c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/component.xml' ignored by IP packager.
+generate_target all [get_files c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_tx_0_3/hdmi_tx_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'vga_to_hdmi'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'vga_to_hdmi'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'vga_to_hdmi'...
+generate_target all [get_files c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/clk_wiz_0_4/clk_wiz_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_wiz_0'...
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+Command: synth_design -rtl -rtl_skip_mlo -name rtl_1
+Starting synth_design
+Using part: xc7s50csga324-1
+Top: hdmi_text_controller_v1_0
+INFO: [Device 21-403] Loading part xc7s50csga324-1
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+WARNING: [Synth 8-11065] parameter 'CTRLTOKEN0' becomes localparam in 'encode' with formal parameter declaration list [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/encode.v:145]
+WARNING: [Synth 8-11065] parameter 'CTRLTOKEN1' becomes localparam in 'encode' with formal parameter declaration list [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/encode.v:146]
+WARNING: [Synth 8-11065] parameter 'CTRLTOKEN2' becomes localparam in 'encode' with formal parameter declaration list [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/encode.v:147]
+WARNING: [Synth 8-11065] parameter 'CTRLTOKEN3' becomes localparam in 'encode' with formal parameter declaration list [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/encode.v:148]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2091.270 ; gain = 394.629
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'hdmi_text_controller_v1_0' [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_text_controller_v1_0_AXI' [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:27]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 16 - type: integer 
+WARNING: [Synth 8-324] index 601 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 602 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 603 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 604 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 605 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 606 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 607 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 608 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 609 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 610 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 611 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 612 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 613 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 614 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 615 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 616 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 617 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 618 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 619 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 620 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 621 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 622 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 623 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 624 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 625 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 626 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 627 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 628 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 629 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 630 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 631 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 632 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 633 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 634 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 635 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 636 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 637 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 638 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 639 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 640 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 641 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 642 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 643 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 644 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 645 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 646 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 647 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 648 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 649 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 650 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 651 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 652 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 653 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 654 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 655 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 656 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 657 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 658 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 659 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 660 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 661 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 662 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 663 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 664 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 665 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 666 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 667 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 668 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 669 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 670 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 671 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 672 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 673 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 674 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 675 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 676 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 677 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 678 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 679 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 680 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 681 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 682 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 683 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 684 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 685 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 686 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 687 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 688 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 689 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 690 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 691 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 692 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 693 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 694 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 695 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 696 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 697 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 698 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 699 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+WARNING: [Synth 8-324] index 700 out of range [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:254]
+INFO: [Common 17-14] Message 'Synth 8-324' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_text_controller_v1_0_AXI' (0#1) [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:27]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v:69]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0_clk_wiz' [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v:69]
+INFO: [Synth 8-6157] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:71326]
+INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:71326]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79852]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 10.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 40.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT1_DIVIDE bound to: 8 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79852]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1082]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1082]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0_clk_wiz' (0#1) [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v:69]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v:69]
+INFO: [Synth 8-6157] synthesizing module 'vga_controller' [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/VGA_controller.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (0#1) [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/VGA_controller.sv:26]
+WARNING: [Synth 8-7071] port 'sync' of module 'vga_controller' is unconnected for instance 'vga' [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:111]
+WARNING: [Synth 8-7023] instance 'vga' of module 'vga_controller' has 8 connections declared, but only 7 given [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:111]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_tx_0' [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/synth/hdmi_tx_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_tx_v1_0' [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/hdmi_tx_v1_0.v:70]
+INFO: [Synth 8-6157] synthesizing module 'srldelay' [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/srldelay.v:70]
+INFO: [Synth 8-6157] synthesizing module 'SRL16E' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:131644]
+INFO: [Synth 8-6155] done synthesizing module 'SRL16E' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:131644]
+INFO: [Synth 8-6155] done synthesizing module 'srldelay' (0#1) [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/srldelay.v:70]
+INFO: [Synth 8-6157] synthesizing module 'encode' [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/encode.v:79]
+INFO: [Synth 8-6155] done synthesizing module 'encode' (0#1) [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/encode.v:79]
+INFO: [Synth 8-6157] synthesizing module 'encode__parameterized0' [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/encode.v:79]
+INFO: [Synth 8-6155] done synthesizing module 'encode__parameterized0' (0#1) [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/encode.v:79]
+INFO: [Synth 8-6157] synthesizing module 'encode__parameterized1' [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/encode.v:79]
+INFO: [Synth 8-6155] done synthesizing module 'encode__parameterized1' (0#1) [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/encode.v:79]
+INFO: [Synth 8-6157] synthesizing module 'serdes_10_to_1' [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/serdes_10_to_1.v:43]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94875]
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94875]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2__parameterized0' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94875]
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2__parameterized0' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:94875]
+INFO: [Synth 8-6155] done synthesizing module 'serdes_10_to_1' (0#1) [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/serdes_10_to_1.v:43]
+INFO: [Synth 8-6157] synthesizing module 'OBUFDS' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:90676]
+INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:90676]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_tx_v1_0' (0#1) [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/hdmi_tx_v1_0.v:70]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_tx_0' (0#1) [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/synth/hdmi_tx_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'color_mapper' [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/Color_Mapper.sv:17]
+INFO: [Synth 8-6157] synthesizing module 'font_rom' [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/font_rom.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'font_rom' (0#1) [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/font_rom.sv:1]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/Color_Mapper.sv:126]
+INFO: [Synth 8-226] default block is never used [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/Color_Mapper.sv:126]
+INFO: [Synth 8-6155] done synthesizing module 'color_mapper' (0#1) [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/Color_Mapper.sv:17]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_text_controller_v1_0' (0#1) [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:9]
+WARNING: [Synth 8-6014] Unused sequential element hdmi_ctl1_reg was removed.  [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/hdmi_tx_0/hdl/hdmi_tx_v1_0.v:148]
+WARNING: [Synth 8-3848] Net ballxsig in module/entity hdmi_text_controller_v1_0 does not have driver. [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:61]
+WARNING: [Synth 8-3848] Net ballysig in module/entity hdmi_text_controller_v1_0 does not have driver. [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:61]
+WARNING: [Synth 8-3848] Net ballsizesig in module/entity hdmi_text_controller_v1_0 does not have driver. [c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:61]
+WARNING: [Synth 8-7129] Port BallX[9] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallX[8] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallX[7] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallX[6] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallX[5] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallX[4] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallX[3] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallX[2] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallX[1] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallX[0] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallY[9] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallY[8] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallY[7] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallY[6] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallY[5] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallY[4] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallY[3] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallY[2] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallY[1] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port BallY[0] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DrawX[9] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port DrawY[9] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Ball_size[9] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Ball_size[8] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Ball_size[7] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Ball_size[6] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Ball_size[5] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Ball_size[4] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Ball_size[3] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Ball_size[2] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Ball_size[1] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Ball_size[0] in module color_mapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[2] in module hdmi_text_controller_v1_0_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[1] in module hdmi_text_controller_v1_0_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[0] in module hdmi_text_controller_v1_0_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[2] in module hdmi_text_controller_v1_0_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[1] in module hdmi_text_controller_v1_0_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_ARPROT[0] in module hdmi_text_controller_v1_0_AXI is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:54 ; elapsed = 00:00:50 . Memory (MB): peak = 2746.309 ; gain = 1049.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:00:51 . Memory (MB): peak = 2746.309 ; gain = 1049.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:55 ; elapsed = 00:00:51 . Memory (MB): peak = 2746.309 ; gain = 1049.668
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2746.309 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
 
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'clk_wiz/inst'
+Finished Parsing XDC File [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'clk_wiz/inst'
+Parsing XDC File [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'clk_wiz/inst'
+Finished Parsing XDC File [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'clk_wiz/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/hdmi_text_controller_v1_0_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/hdmi_text_controller_v1_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 2746.309 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:01:23 ; elapsed = 00:01:10 . Memory (MB): peak = 2746.309 ; gain = 1049.668
+53 Infos, 148 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:30 ; elapsed = 00:01:26 . Memory (MB): peak = 2746.309 ; gain = 1395.180
+current_project ECE385_Lab7.1
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7s50csga324-1
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_axi_uartlite_0_0/Lab7MicroBlaze_axi_uartlite_0_0.dcp' for cell 'mb_block_i/axi_uartlite_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0.dcp' for cell 'mb_block_i/clk_wiz_1'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0.dcp' for cell 'mb_block_i/hdmi_text_controller_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_mdm_1_0/Lab7MicroBlaze_mdm_1_0.dcp' for cell 'mb_block_i/mdm_1'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_1/Lab7MicroBlaze_microblaze_0_1.dcp' for cell 'mb_block_i/microblaze_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_axi_intc_0/Lab7MicroBlaze_microblaze_0_axi_intc_0.dcp' for cell 'mb_block_i/microblaze_0_axi_intc'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_rst_clk_wiz_1_100M_0/Lab7MicroBlaze_rst_clk_wiz_1_100M_0.dcp' for cell 'mb_block_i/rst_clk_wiz_1_100M'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_xbar_0/Lab7MicroBlaze_xbar_0.dcp' for cell 'mb_block_i/microblaze_0_axi_periph/xbar'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_dlmb_bram_if_cntlr_1/Lab7MicroBlaze_dlmb_bram_if_cntlr_1.dcp' for cell 'mb_block_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_dlmb_v10_1/Lab7MicroBlaze_dlmb_v10_1.dcp' for cell 'mb_block_i/microblaze_0_local_memory/dlmb_v10'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_ilmb_bram_if_cntlr_1/Lab7MicroBlaze_ilmb_bram_if_cntlr_1.dcp' for cell 'mb_block_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_ilmb_v10_1/Lab7MicroBlaze_ilmb_v10_1.dcp' for cell 'mb_block_i/microblaze_0_local_memory/ilmb_v10'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_lmb_bram_1/Lab7MicroBlaze_lmb_bram_1.dcp' for cell 'mb_block_i/microblaze_0_local_memory/lmb_bram'
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.569 . Memory (MB): peak = 2746.309 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 8464 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-43] Netlist 'mb_usb_hdmi_top' is not ideal for floorplanning, since the cellview 'Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0_AXI' defined in file 'Lab7MicroBlaze_hdmi_text_controller_1_0.edf' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-479] Netlist was created with Vivado 2022.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-32] Removing redundant IBUF since it is not being driven by a top-level port. mb_block_i/hdmi_text_controller_0/inst/clk_wiz/inst/clkin1_ibufg 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'mb_block_i/hdmi_text_controller_0/axi_aclk' is not directly connected to top level port. Synthesis is ignored for IBUF_LOW_PWR but preserved for implementation.
+Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_axi_intc_0/Lab7MicroBlaze_microblaze_0_axi_intc_0.xdc] for cell 'mb_block_i/microblaze_0_axi_intc/U0'
+Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_axi_intc_0/Lab7MicroBlaze_microblaze_0_axi_intc_0.xdc] for cell 'mb_block_i/microblaze_0_axi_intc/U0'
+Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0_board.xdc] for cell 'mb_block_i/clk_wiz_1/inst'
+Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0_board.xdc] for cell 'mb_block_i/clk_wiz_1/inst'
+Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0.xdc] for cell 'mb_block_i/clk_wiz_1/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0.xdc:57]
+Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0.xdc] for cell 'mb_block_i/clk_wiz_1/inst'
+Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_rst_clk_wiz_1_100M_0/Lab7MicroBlaze_rst_clk_wiz_1_100M_0_board.xdc] for cell 'mb_block_i/rst_clk_wiz_1_100M/U0'
+Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_rst_clk_wiz_1_100M_0/Lab7MicroBlaze_rst_clk_wiz_1_100M_0_board.xdc] for cell 'mb_block_i/rst_clk_wiz_1_100M/U0'
+Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_rst_clk_wiz_1_100M_0/Lab7MicroBlaze_rst_clk_wiz_1_100M_0.xdc] for cell 'mb_block_i/rst_clk_wiz_1_100M/U0'
+Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_rst_clk_wiz_1_100M_0/Lab7MicroBlaze_rst_clk_wiz_1_100M_0.xdc] for cell 'mb_block_i/rst_clk_wiz_1_100M/U0'
+Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_axi_uartlite_0_0/Lab7MicroBlaze_axi_uartlite_0_0_board.xdc] for cell 'mb_block_i/axi_uartlite_0/U0'
+Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_axi_uartlite_0_0/Lab7MicroBlaze_axi_uartlite_0_0_board.xdc] for cell 'mb_block_i/axi_uartlite_0/U0'
+Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_axi_uartlite_0_0/Lab7MicroBlaze_axi_uartlite_0_0.xdc] for cell 'mb_block_i/axi_uartlite_0/U0'
+Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_axi_uartlite_0_0/Lab7MicroBlaze_axi_uartlite_0_0.xdc] for cell 'mb_block_i/axi_uartlite_0/U0'
+Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_1/Lab7MicroBlaze_microblaze_0_1.xdc] for cell 'mb_block_i/microblaze_0/U0'
+Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_1/Lab7MicroBlaze_microblaze_0_1.xdc] for cell 'mb_block_i/microblaze_0/U0'
+Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0.xdc] for cell 'mb_block_i/hdmi_text_controller_0/inst/clk_wiz/inst'
+INFO: [Timing 38-2] Deriving generated clocks [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0.xdc:57]
+Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0.xdc] for cell 'mb_block_i/hdmi_text_controller_0/inst/clk_wiz/inst'
+Parsing XDC File [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc]
+CRITICAL WARNING: [Constraints 18-1055] Clock 'clk_100' completely overrides clock 'Clk', which is referenced by one or more other constraints. Any constraints that refer to the overridden clock will be ignored.
+New: create_clock -period 10.000 -name clk_100 -waveform {0.000 5.000} [get_ports Clk], [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:1]
+Previous: create_clock -period 10.000 [get_ports Clk], [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_clk_wiz_1_0/Lab7MicroBlaze_clk_wiz_1_0.xdc:56]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+WARNING: [Vivado 12-584] No ports matched 'gpio_usb_int_tri_i[0]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_miso'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_mosi'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_sclk'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:15]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:15]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_usb_int_tri_i[0]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:16]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:16]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_sclk'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_mosi'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_miso'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_usb_rst_tri_o'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'gpio_usb_rst_tri_o'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_ss'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'usb_spi_ss'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridA[3]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridA[2]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridA[1]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridA[0]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridB[3]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridB[2]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridB[1]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridB[0]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[7]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[6]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[5]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[4]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[3]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[2]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[1]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[0]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[7]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[6]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[5]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[4]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[3]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[2]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[1]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[0]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridA[0]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridA[1]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridA[2]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:53]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:53]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridA[3]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[0]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:55]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:55]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[1]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:56]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:56]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[2]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:57]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:57]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[3]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:58]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:58]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[4]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:59]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:59]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[5]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:60]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:60]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[6]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:61]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:61]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segA[7]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:62]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:62]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[0]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:63]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:63]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[1]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:64]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:64]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[2]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:65]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:65]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[3]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:66]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:66]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[4]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:67]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:67]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[5]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:68]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:68]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[6]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:69]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:69]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_segB[7]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:70]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:70]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridB[0]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:71]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:71]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridB[1]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:72]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:72]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridB[2]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:73]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:73]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'hex_gridB[3]'. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:74]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc:74]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/constrs_1/imports/Lab 7/mb_usb_hdmi_top.xdc]
+Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_axi_intc_0/Lab7MicroBlaze_microblaze_0_axi_intc_0_clocks.xdc] for cell 'mb_block_i/microblaze_0_axi_intc/U0'
+Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_axi_intc_0/Lab7MicroBlaze_microblaze_0_axi_intc_0_clocks.xdc] for cell 'mb_block_i/microblaze_0_axi_intc/U0'
+Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_mdm_1_0/Lab7MicroBlaze_mdm_1_0.xdc] for cell 'mb_block_i/mdm_1/U0'
+INFO: [Timing 38-2] Deriving generated clocks [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_mdm_1_0/Lab7MicroBlaze_mdm_1_0.xdc:50]
+Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_mdm_1_0/Lab7MicroBlaze_mdm_1_0.xdc] for cell 'mb_block_i/mdm_1/U0'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Generating merged BMM file for the design top 'mb_usb_hdmi_top'...
+INFO: [Memdata 28-144] Successfully populated the BRAM INIT strings from the following elf files: c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_microblaze_0_1/data/mb_bootloop_le.elf 
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 3219.605 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 241 instances were transformed.
+  LUT6_2 => LUT6_2 (LUT5, LUT6): 145 instances
+  RAM16X1D => RAM32X1D (RAMD32(x2)): 32 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 64 instances
+
+open_run: Time (s): cpu = 00:00:45 ; elapsed = 00:00:36 . Memory (MB): peak = 3219.605 ; gain = 473.297
+current_project hdmi_text_controller_v1_0_project
+current_project ECE385_Lab7.1
+close_project
 exit
-INFO: [Common 17-206] Exiting Vivado at Sun Mar 31 22:22:39 2024...
+INFO: [Common 17-206] Exiting Vivado at Tue Apr  2 13:04:06 2024...
