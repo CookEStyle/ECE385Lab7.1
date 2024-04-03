@@ -163,3 +163,12 @@ con
 13:08:59 INFO  : plnx-install-location is set to ''
 13:08:59 INFO  : Successfully done query RDI_DATADIR 
 13:08:59 INFO  : Successfully done setting workspace for the tool. 
+14:28:11 DEBUG : Logs will be stored at 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/IDE.log'.
+14:28:12 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\merli\ECE385Lab7.1\ECE385_Lab7.1\temp_xsdb_launch_script.tcl
+14:28:16 INFO  : XSCT server has started successfully.
+14:28:16 INFO  : Successfully done setting XSCT server connection channel  
+14:28:16 INFO  : plnx-install-location is set to ''
+14:28:16 INFO  : Successfully done setting workspace for the tool. 
+14:28:17 INFO  : Platform repository initialization has completed.
+14:28:17 INFO  : Registering command handlers for Vitis TCF services
+14:28:17 INFO  : Successfully done query RDI_DATADIR 

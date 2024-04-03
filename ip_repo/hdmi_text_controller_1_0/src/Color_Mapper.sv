@@ -15,7 +15,8 @@
 
 
 module  color_mapper ( input  logic [9:0] BallX, BallY, DrawX, DrawY, Ball_size,
-                       input  logic [31:0] vram[601],
+                       output  logic [11:0] addr,
+                       input  logic [31:0] word,
                        output logic [3:0]  Red, Green, Blue );
 
     
@@ -119,8 +120,8 @@ module  color_mapper ( input  logic [9:0] BallX, BallY, DrawX, DrawY, Ball_size,
         g_x = DrawX[8:3]; //DrawX / 8 
         g_y = DrawY[8:4]; //DrawY / 16
         v_i = g_x + g_y * 80; //Figures out which index of VRAM to access
-        v_irec = v_i[11:2]; //v_i / 4, Rectifies v_i as each index has 4 glyphs
-        word = vram[v_irec]; //Getting out 32 bit word
+        addr = v_i[11:2]; //v_i / 4, Rectifies v_i as each index has 4 glyphs
+        word = data; //Getting out 32 bit word
         
         //Gets our glyph info based off v_i[1:0]
         unique case(v_i[1:0])

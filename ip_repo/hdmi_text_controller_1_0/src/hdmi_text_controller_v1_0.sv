@@ -64,7 +64,12 @@ module hdmi_text_controller_v1_0 #
     logic [3:0] red, green, blue;
     
     logic [31:0] vram[601];
-    
+//Lab 7 Week 2 logic
+    logic [10:0] addra, addrb;
+    logic clka, ena, clkb, enb;
+    logic [0:0] wea, web;
+    logic [31:0] dina, douta, dinb, doutb;   
+     
 // Instantiation of Axi Bus Interface AXI
 hdmi_text_controller_v1_0_AXI # ( 
     .C_S_AXI_DATA_WIDTH(C_AXI_DATA_WIDTH),
@@ -91,7 +96,13 @@ hdmi_text_controller_v1_0_AXI # (
     .S_AXI_RRESP(axi_rresp),
     .S_AXI_RVALID(axi_rvalid),
     .S_AXI_RREADY(axi_rready),
-    .vram(vram)
+//    .vram(vram)
+//WEEK 2 PORTS
+    .bram_in(dina),
+    .bram_out(douta),
+    .bram_addr(addra),
+    .bram_en(ena),
+    .bram_wen(wena)
 );
 
 
@@ -158,6 +169,22 @@ hdmi_text_controller_v1_0_AXI # (
         .Green(green), 
         .Blue(blue), 
         .vram(vram)
+    );
+    
+    //BRAM
+    blk_mem_gen_0 bram(
+        .addra(addra),
+        .clka(clka),
+        .dina(dina),
+        .douta(douta),
+        .ena(ena),
+        .wea(wea),
+        .addrb(addrb),
+        .clkb(clkb),
+        .dinb(dinb),
+        .doutb(doutb),
+        .enb(enb),
+        .web(web)
     );
 // User logic ends
 
