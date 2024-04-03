@@ -40,11 +40,10 @@ module hdmi_text_controller_v1_0_AXI #
     // Users to add ports here
 //    output logic [C_S_AXI_DATA_WIDTH-1:0] vram [601],
     //Week 2 ports
-    input logic [C_S_AXI_DATA_WIDTH-1:0] bram_in, 
-    output logic [C_S_AXI_DATA_WIDTH-1:0] bram_out,
+    input logic [C_S_AXI_DATA_WIDTH-1:0] bram_out, 
+    output logic [C_S_AXI_DATA_WIDTH-1:0] bram_in,
     output logic [13:0] bram_addr,
-    output logic bram_en,
-    output logic [0:0] bram_wen,
+    output logic [3:0] bram_wen,
     // User ports ends
     // Do not modify the ports beyond this line
 
@@ -149,32 +148,19 @@ integer	 byte_index;
 logic	 aw_en;
 
 //Week 2 logic
-logic [C_S_AXI_DATA_WIDTH-1:0] bram_w;
-logic [ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB] addr;
-
+logic [31:0] bram_out_new, bram_in_new;
 always_comb begin
-    if(S_AXI_WSTRB[0] == 1) begin
-        bram_w[7:0] = S_AXI_WDATA[7:0];
+    if(slv_reg_wren) begin
+        bram_addr = axi_awaddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB];
+        bram_wen = S_AXI_WSTRB;
     end else begin
-        bram_w[7:0] = 8'b0;
-    end
-    if(S_AXI_WSTRB[1] == 1) begin
-        bram_w[15:8] = S_AXI_WDATA[15:8];
-    end else begin
-        bram_w[15:8] = 8'b0;
-    end
-    if(S_AXI_WSTRB[2] == 1) begin
-        bram_w[23:16] = S_AXI_WDATA[23:16];
-    end else begin
-        bram_w[23:16] = 8'b0;
-    end
-    if(S_AXI_WSTRB[3] == 1) begin
-        bram_w[31:24] = S_AXI_WDATA[31:24];
-    end else begin
-        bram_w[31:24] = 8'b0;
-    end
+        bram_addr = axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB];
+        bram_wen = 4'b0;
+    end  
 end
 
+assign bram_out = bram_out_new;
+assign bram_in = bram_in_new;
 // I/O Connections assignments
 //assign vram = slv_regs;
 
@@ -236,9 +222,7 @@ begin
       if (~axi_awready && S_AXI_AWVALID && S_AXI_WVALID && aw_en)
         begin
           // Write Address latching 
-//          axi_awaddr <= S_AXI_AWADDR;
-          //WEEK 2 code
-          bram_addr <= S_AXI_ARADDR[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB];
+          axi_awaddr <= S_AXI_AWADDR;
         end
     end 
 end       
@@ -288,8 +272,7 @@ begin
 //        begin
 //           slv_regs[i] <= 0;
 //        end
-          bram_en <= 1'b0;
-          bram_en <= 1'b0;
+        bram_in_new <= 32'b0;
     end
   else begin
     if (slv_reg_wren)
@@ -300,13 +283,7 @@ begin
 //			// '+:', you will need to understand how this operator works.
 //            slv_regs[axi_awaddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB]][(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
 //          end  
-          bram_out <= bram_w;
-          bram_addr <= addr;
-          bram_en <= 1'b1;
-          bram_wen <= 1'b1;
-      end else begin //WEEK 2 ADDED THIS ELSE
-          bram_en <= 1'b0;
-          bram_wen <= 1'b0;
+        bram_in_new <= S_AXI_WDATA;
       end
   end
 end    
@@ -357,8 +334,6 @@ begin
     begin
       axi_arready <= 1'b0;
       axi_araddr  <= 32'b0;
-      bram_en <= 1'b0;
-      bram_wen <= 1'b0;
     end 
   else
     begin    
@@ -367,17 +342,11 @@ begin
           // indicates that the slave has acceped the valid read address
           axi_arready <= 1'b1;
           // Read address latching
-//          axi_araddr  <= S_AXI_ARADDR;
-          //WEEK 2 CODE
-          bram_addr <= S_AXI_ARADDR[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB];
-          bram_en <= 1'b1;
-          bram_wen <= 1'b0;
+          axi_araddr  <= S_AXI_ARADDR;
         end 
       else
         begin
           axi_arready <= 1'b0;
-          bram_en <= 1'b0;
-          bram_wen <= 1'b0;
         end
     end 
 end       
@@ -429,7 +398,7 @@ always_ff @( posedge S_AXI_ACLK )
 begin
   if ( S_AXI_ARESETN == 1'b0 )
     begin
-      axi_rdata  <= 0;
+      axi_rdata  <= 32'b0;
     end 
   else
     begin    
