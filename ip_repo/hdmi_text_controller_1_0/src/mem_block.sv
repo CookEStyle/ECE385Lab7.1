@@ -94,7 +94,7 @@ module mem_block(
         .enb(1'b1),
         .web(4'b0)
     );
-
+    
     load_reg control_reg(
         .clk(clka), 
 	    .reset(~reset), 
