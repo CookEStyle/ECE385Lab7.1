@@ -70,8 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.statsThreshold 360
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7s50csga324-1
 
@@ -93,12 +91,16 @@ set_property ip_output_repo c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib -sv {
+read_verilog -library "" -sv {
   c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/Color_Mapper.sv
   c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/VGA_controller.sv
   c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/font_rom.sv
   c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv
   c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv
+}
+read_verilog -library xil_defaultlib -sv {
+  c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/load_reg.sv
+  c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv
 }
 read_ip -quiet c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0/src/blk_mem_gen_0_1/blk_mem_gen_0.xci
 set_property used_in_implementation false [get_files -all c:/users/merli/ece385lab7.1/ece385_lab7.1/ece385_lab7.1.tmp/hdmi_text_controller_v1_0_project/hdmi_text_controller_v1_0_project.gen/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_ooc.xdc]

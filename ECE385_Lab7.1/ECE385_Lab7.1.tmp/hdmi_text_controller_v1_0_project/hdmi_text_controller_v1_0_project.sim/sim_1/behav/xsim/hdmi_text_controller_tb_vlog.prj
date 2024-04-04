@@ -16,6 +16,8 @@ sv xil_defaultlib  --include "../../../../hdmi_text_controller_v1_0_project.gen/
 "../../../../../../../ip_repo/hdmi_text_controller_1_0/src/font_rom.sv" \
 "../../../../../../../ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv" \
 "../../../../../../../ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv" \
+"../../../../../../../ip_repo/hdmi_text_controller_1_0/src/load_reg.sv" \
+"../../../../../../../ip_repo/hdmi_text_controller_1_0/src/mem_block.sv" \
 "../../../../../../../ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_tb.sv" \
 
 # compile glbl module

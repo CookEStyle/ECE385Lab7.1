@@ -7,8 +7,11 @@ Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'axi_awaddr' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_tb.sv:74]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'axi_araddr' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_tb.sv:88]
 WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 12 for port 'bram_addr_b' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:171]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'wea' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:182]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:188]
+WARNING: [VRFC 10-3091] actual bit length 14 differs from formal bit length 11 for port 'addra' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:84]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'wea' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:89]
+WARNING: [VRFC 10-3091] actual bit length 14 differs from formal bit length 11 for port 'addrb' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:90]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:95]
+WARNING: [VRFC 10-3823] variable 'douta_bram' might have multiple concurrent drivers [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:93]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/VGA_controller.sv" Line 26. Module vga_controller doesn't have a timescale but at least one module in design has a timescale.
@@ -44,6 +47,8 @@ Compiling module xil_defaultlib.blk_mem_gen_v8_4_5_mem_module(C_...
 Compiling module xil_defaultlib.blk_mem_axi_regs_fwd_v8_4(C_DATA...
 Compiling module xil_defaultlib.blk_mem_gen_v8_4_5(C_FAMILY="spa...
 Compiling module xil_defaultlib.blk_mem_gen_0
+Compiling module xil_defaultlib.load_reg
+Compiling module xil_defaultlib.mem_block
 Compiling module xil_defaultlib.hdmi_text_controller_v1_0
 Compiling module xil_defaultlib.hdmi_text_controller_tb
 Compiling module xil_defaultlib.glbl

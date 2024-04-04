@@ -16,7 +16,7 @@
 
 module  color_mapper ( input  logic [9:0] BallX, BallY, DrawX, DrawY, Ball_size,
                        output  logic [11:0] bram_addr_b,
-                       input  logic [31:0] bram_data_b,
+                       input  logic [31:0] bram_data_b, control_reg,
                        output logic [3:0]  Red, Green, Blue );
 
     

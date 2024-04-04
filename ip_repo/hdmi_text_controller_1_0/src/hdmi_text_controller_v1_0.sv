@@ -69,7 +69,7 @@ module hdmi_text_controller_v1_0 #
     logic clka, ena, clkb, enb;
     logic [3:0] wea, web;
     logic [31:0] dina, douta, dinb, doutb;   
-     
+    logic [31:0] control; 
 // Instantiation of Axi Bus Interface AXI
 hdmi_text_controller_v1_0_AXI # ( 
     .C_S_AXI_DATA_WIDTH(C_AXI_DATA_WIDTH),
@@ -169,11 +169,27 @@ hdmi_text_controller_v1_0_AXI # (
         .Blue(blue), 
 //        .vram(vram)
         .bram_addr_b(addrb),
-        .bram_data_b(doutb)
+        .bram_data_b(doutb),
+        .control_reg(control)
     );
     
     //BRAM
-    blk_mem_gen_0 bram(
+//    blk_mem_gen_0 bram(
+//        .addra(addra),
+//        .clka(axi_aclk),
+//        .dina(dina),
+//        .douta(douta),
+//        .ena(1'b1),
+//        .wea(wea),
+//        .addrb(addrb),
+//        .clkb(axi_aclk),
+//        .dinb(32'b0),
+//        .doutb(doutb),
+//        .enb(1'b1),
+//        .web(4'b0)
+//    );
+    
+    mem_block mem(
         .addra(addra),
         .clka(axi_aclk),
         .dina(dina),
@@ -185,8 +201,11 @@ hdmi_text_controller_v1_0_AXI # (
         .dinb(32'b0),
         .doutb(doutb),
         .enb(1'b1),
-        .web(4'b0)
+        .web(4'b0),
+        .reset(axi_aresetn),
+        .control_out(control)
     );
+    
 // User logic ends
 
 endmodule
