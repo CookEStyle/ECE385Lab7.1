@@ -52,12 +52,12 @@ module  color_mapper ( input  logic [9:0] BallX, BallY, DrawX, DrawY, Ball_size,
     logic [3:0] b_blue;
     
     assign f_red = 4'h0;
-    assign f_green = 4'hf;
-    assign f_blue = 4'h0;
+    assign f_green = 4'h0;
+    assign f_blue = 4'hf;
     
-    assign b_red = 4'hf;
-    assign b_green = 4'hf;
-    assign b_blue = 4'hf;
+    assign b_red = 4'h0;
+    assign b_green = 4'h0;
+    assign b_blue = 4'h0;
     
 //    //Get Word Code
 //    logic [10:0] col;

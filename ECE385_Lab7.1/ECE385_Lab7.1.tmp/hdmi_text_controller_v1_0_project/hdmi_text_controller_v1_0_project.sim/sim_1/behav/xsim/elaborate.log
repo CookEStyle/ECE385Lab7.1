@@ -6,7 +6,6 @@ Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'axi_awaddr' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_tb.sv:74]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'axi_araddr' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_tb.sv:88]
-WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 14 for port 'bram_addr' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:103]
 WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 12 for port 'bram_addr_b' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:171]
 WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'wea' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:182]
 WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:188]

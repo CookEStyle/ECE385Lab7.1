@@ -20,7 +20,7 @@ vlog -work blk_mem_gen_v8_4_5  -v2k5 \
 "../../../ipstatic/simulation/blk_mem_gen_v8_4.v" \
 
 vlog -work xil_defaultlib  -v2k5 \
-"../../../../../../../ip_repo/hdmi_text_controller_1_0/src/blk_mem_gen_0_1/sim/blk_mem_gen_0.v" \
+"../../../../hdmi_text_controller_v1_0_project.gen/sources_1/ip/blk_mem_gen_0/sim/blk_mem_gen_0.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

@@ -42,7 +42,7 @@ module hdmi_text_controller_v1_0_AXI #
     //Week 2 ports
     input logic [C_S_AXI_DATA_WIDTH-1:0] bram_out, 
     output logic [C_S_AXI_DATA_WIDTH-1:0] bram_in,
-    output logic [13:0] bram_addr,
+    output logic [10:0] bram_addr,
     output logic [3:0] bram_wen,
     // User ports ends
     // Do not modify the ports beyond this line
@@ -127,7 +127,7 @@ logic  	axi_rvalid;
 // ADDR_LSB = 2 for 32 bits (n downto 2)
 // ADDR_LSB = 3 for 64 bits (n downto 3)
 localparam integer ADDR_LSB = (C_S_AXI_DATA_WIDTH/32) + 1;
-localparam integer OPT_MEM_ADDR_BITS = 13;
+localparam integer OPT_MEM_ADDR_BITS = 10;
 //----------------------------------------------
 //-- Signals for user logic register space example
 //------------------------------------------------
