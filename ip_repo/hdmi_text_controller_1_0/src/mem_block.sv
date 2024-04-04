@@ -46,6 +46,9 @@ module mem_block(
     
     assign control_out = data_q;
     
+    logic test_signal;
+    assign test_signal = (addrb != 12'd600 && web == 4'b0000);
+    
     always_comb begin
         if(addra == 12'd600 && wea == 4'b1111) begin //Write Control A
             load_control = 1'b1; 
@@ -90,7 +93,7 @@ module mem_block(
         .addrb(addrb_bram),
         .clkb(clka),
         .dinb(32'b0),
-        .doutb(douta_bram),
+        .doutb(doutb_bram),
         .enb(1'b1),
         .web(4'b0)
     );

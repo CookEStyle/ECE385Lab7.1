@@ -17,7 +17,7 @@ sv xil_defaultlib  --include "../../../../hdmi_text_controller_v1_0_project.gen/
 "../../../../../../../ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv" \
 "../../../../../../../ip_repo/hdmi_text_controller_1_0/src/load_reg.sv" \
 "../../../../../../../ip_repo/hdmi_text_controller_1_0/src/mem_block.sv" \
-"../../../../hdmi_text_controller_v1_0_project.srcs/sim_1/imports/Lab7-MyFiles/testbenchcustom.sv" \
+"../../../../../../../ip_repo/hdmi_text_controller_1_0/src/testbenchcustom.sv" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"
