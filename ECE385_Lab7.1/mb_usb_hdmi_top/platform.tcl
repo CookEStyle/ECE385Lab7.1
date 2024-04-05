@@ -19,3 +19,29 @@ platform active {mb_usb_hdmi_top}
 platform generate -quick
 platform generate
 platform generate
+platform generate
+platform active {mb_usb_hdmi_top}
+platform config -updatehw {C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform clean
+platform generate
+platform clean
+platform config -updatehw {C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/mb_usb_hdmi_top.xsa}
+platform generate
+platform config -updatehw {C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform active {mb_usb_hdmi_top}
+platform config -updatehw {C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform config -updatehw {C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/mb_usb_hdmi_top.xsa}
+platform generate -domains 
+platform clean
+platform generate
+platform config -updatehw {C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/mb_usb_hdmi_top.xsa}
+platform clean
+platform generate
+platform active {mb_usb_hdmi_top}
+platform config -updatehw {C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/mb_usb_hdmi_top.xsa}
+platform generate -domains 

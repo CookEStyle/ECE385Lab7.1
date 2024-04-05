@@ -214,16 +214,23 @@ module testbenchcustom();
     endtask;
     
     //testbench
-    logic [31:0] data[601];
+    logic [31:0] data[1200];
+    logic [31:0] palette_data[8];
+    int palette_start = 12'h800;
     initial begin
         arstn <= 1'b0;
         repeat (10) @ (posedge aclk);
         arstn <= 1'b1;
-        
-        for(int i=0; i < 601; i++) begin 
+//          //Writing into BRAM
+        for(int i=0; i < 1200; i++) begin 
 		  repeat (4) @(posedge aclk) axi_write(4*i, i);
 		  repeat (4) @(posedge aclk) axi_read(4*i, data[i]);
         end
+          //repeat (4) @(posedge aclk) axi_write(0, 32'b000000001000000010000);
+        //  for(int i = 0; i < 8 ; i++) begin
+        //      repeat (4) @(posedge aclk) axi_write(4*(i + palette_start), 32'b0000000100100011010001010);
+		//      repeat (4) @(posedge aclk) axi_read(4*(i + palette_start), palette_data[i]);
+        //  end
 //        repeat (4) @(posedge aclk) axi_write(4*300, 32'b1);
 //        repeat (4) @(posedge aclk) axi_read(4*300, data);
         repeat (100) @ (posedge aclk);

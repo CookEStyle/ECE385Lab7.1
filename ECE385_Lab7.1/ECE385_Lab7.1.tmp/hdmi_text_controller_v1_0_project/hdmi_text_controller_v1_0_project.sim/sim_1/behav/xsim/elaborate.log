@@ -1,16 +1,15 @@
 Vivado Simulator v2022.2
 Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot hdmi_text_controller_tb_behav xil_defaultlib.hdmi_text_controller_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_5 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbenchcustom_behav xil_defaultlib.testbenchcustom xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'axi_awaddr' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_tb.sv:74]
-WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'axi_araddr' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_tb.sv:88]
-WARNING: [VRFC 10-3091] actual bit length 11 differs from formal bit length 12 for port 'bram_addr_b' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0.sv:171]
-WARNING: [VRFC 10-3091] actual bit length 14 differs from formal bit length 10 for port 'addra' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:87]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'wea' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:92]
-WARNING: [VRFC 10-3091] actual bit length 14 differs from formal bit length 10 for port 'addrb' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:93]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:98]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'axi_awaddr' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/testbenchcustom.sv:82]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'axi_araddr' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/testbenchcustom.sv:96]
+WARNING: [VRFC 10-3091] actual bit length 14 differs from formal bit length 11 for port 'addra' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:121]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'wea' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:126]
+WARNING: [VRFC 10-3091] actual bit length 14 differs from formal bit length 11 for port 'addrb' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:127]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/mem_block.sv:132]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/VGA_controller.sv" Line 26. Module vga_controller doesn't have a timescale but at least one module in design has a timescale.
@@ -46,9 +45,8 @@ Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_mem_module(C_...
 Compiling module blk_mem_gen_v8_4_5.blk_mem_axi_regs_fwd_v8_4(C_DATA...
 Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5(C_FAMILY="spa...
 Compiling module xil_defaultlib.blk_mem_gen_0
-Compiling module xil_defaultlib.load_reg
 Compiling module xil_defaultlib.mem_block
 Compiling module xil_defaultlib.hdmi_text_controller_v1_0
-Compiling module xil_defaultlib.hdmi_text_controller_tb
+Compiling module xil_defaultlib.testbenchcustom
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot hdmi_text_controller_tb_behav
+Built simulation snapshot testbenchcustom_behav

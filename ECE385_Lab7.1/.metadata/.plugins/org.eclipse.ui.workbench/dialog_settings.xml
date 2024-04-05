@@ -4,6 +4,7 @@
 		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
 		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="false"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\merli\lab7_2_provided_fa23_2_11_1\drivers_src"/>
 			<item value="C:\Users\merli\lab7_1_provided_sp24\drivers_src"/>
 		</list>
 	</section>
