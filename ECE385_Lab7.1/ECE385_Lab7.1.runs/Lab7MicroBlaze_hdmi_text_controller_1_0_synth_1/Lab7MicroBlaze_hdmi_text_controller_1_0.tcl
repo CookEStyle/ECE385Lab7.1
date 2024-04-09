@@ -70,9 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "Lab7MicroBlaze_hdmi_text_controller_1_0_synth_1" START { ROLLUP_AUTO }
-set_param tcl.statsThreshold 360
-set_param chipscope.maxJobs 3
-set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL-1065} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 OPTRACE "Creating in-memory project" START { }
@@ -97,10 +94,10 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_ip -quiet C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.srcs/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0.xci
-set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/blk_mem_gen_0_1/blk_mem_gen_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0_late.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/blk_mem_gen_0_1/blk_mem_gen_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

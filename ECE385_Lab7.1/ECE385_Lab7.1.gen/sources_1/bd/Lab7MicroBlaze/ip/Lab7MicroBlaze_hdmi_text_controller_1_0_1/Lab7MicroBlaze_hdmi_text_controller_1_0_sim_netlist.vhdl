@@ -1,7 +1,7 @@
 -- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
--- Date        : Fri Apr  5 13:45:43 2024
+-- Date        : Sat Apr  6 04:37:40 2024
 -- Host        : DESKTOP-129R2SH running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/Lab7MicroBlaze_hdmi_text_controller_1_0_sim_netlist.vhdl
@@ -46,11 +46,11 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_clk_wiz_0_clk_
   signal NLW_mmcm_adv_inst_DRDY_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_PSDONE_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_DO_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
-  attribute BOX_TYPE : string;
-  attribute BOX_TYPE of clkf_buf : label is "PRIMITIVE";
-  attribute BOX_TYPE of clkout1_buf : label is "PRIMITIVE";
-  attribute BOX_TYPE of clkout2_buf : label is "PRIMITIVE";
-  attribute BOX_TYPE of mmcm_adv_inst : label is "PRIMITIVE";
+  attribute box_type : string;
+  attribute box_type of clkf_buf : label is "PRIMITIVE";
+  attribute box_type of clkout1_buf : label is "PRIMITIVE";
+  attribute box_type of clkout2_buf : label is "PRIMITIVE";
+  attribute box_type of mmcm_adv_inst : label is "PRIMITIVE";
 begin
 clkf_buf: unisim.vcomponents.BUFG
      port map (
@@ -162,7 +162,7 @@ entity Lab7MicroBlaze_hdmi_text_controller_1_0_color_mapper is
   port (
     S : out STD_LOGIC_VECTOR ( 1 downto 0 );
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    \addrb_bram_reg[5]_i_1\ : in STD_LOGIC_VECTOR ( 1 downto 0 )
+    \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram\ : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of Lab7MicroBlaze_hdmi_text_controller_1_0_color_mapper : entity is "color_mapper";
@@ -170,22 +170,22 @@ end Lab7MicroBlaze_hdmi_text_controller_1_0_color_mapper;
 
 architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_color_mapper is
 begin
-\addrb_bram_reg[5]_i_3\: unisim.vcomponents.LUT2
+bram_i_10: unisim.vcomponents.LUT2
     generic map(
       INIT => X"6"
     )
         port map (
       I0 => Q(1),
-      I1 => \addrb_bram_reg[5]_i_1\(1),
+      I1 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram\(1),
       O => S(1)
     );
-\addrb_bram_reg[5]_i_4\: unisim.vcomponents.LUT2
+bram_i_11: unisim.vcomponents.LUT2
     generic map(
       INIT => X"6"
     )
         port map (
       I0 => Q(0),
-      I1 => \addrb_bram_reg[5]_i_1\(0),
+      I1 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram\(0),
       O => S(0)
     );
 end STRUCTURE;
@@ -5294,1829 +5294,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0_AXI is
-  port (
-    axi_awready : out STD_LOGIC;
-    p_0_in : out STD_LOGIC;
-    axi_wready : out STD_LOGIC;
-    axi_arready : out STD_LOGIC;
-    axi_bvalid : out STD_LOGIC;
-    axi_rvalid : out STD_LOGIC;
-    E : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    wea_bram18_out : out STD_LOGIC;
-    \axi_awaddr_reg[13]_0\ : out STD_LOGIC;
-    axi_wstrb_0_sp_1 : out STD_LOGIC;
-    addra : out STD_LOGIC_VECTOR ( 10 downto 0 );
-    \axi_wstrb[3]\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \axi_wstrb[3]_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \axi_wstrb[3]_1\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \axi_wstrb[3]_2\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \axi_wstrb[3]_3\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \axi_wstrb[3]_4\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \axi_wstrb[3]_5\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \axi_wstrb[0]_0\ : out STD_LOGIC_VECTOR ( 0 to 0 );
-    \axi_awaddr_reg[13]_1\ : out STD_LOGIC;
-    axi_awready_reg_0 : out STD_LOGIC;
-    Q : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
-    axi_aclk : in STD_LOGIC;
-    axi_awvalid : in STD_LOGIC;
-    axi_wvalid : in STD_LOGIC;
-    axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    axi_aresetn : in STD_LOGIC;
-    axi_bready : in STD_LOGIC;
-    axi_arvalid : in STD_LOGIC;
-    axi_rready : in STD_LOGIC;
-    axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    axi_araddr : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    axi_awaddr : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    \axi_rdata_reg[31]_0\ : in STD_LOGIC_VECTOR ( 31 downto 0 )
-  );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0_AXI : entity is "hdmi_text_controller_v1_0_AXI";
-end Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0_AXI;
-
-architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0_AXI is
-  signal \^addra\ : STD_LOGIC_VECTOR ( 10 downto 0 );
-  signal \addra_bram_reg[10]_i_3_n_0\ : STD_LOGIC;
-  signal \addra_bram_reg[10]_i_4_n_0\ : STD_LOGIC;
-  signal aw_en_i_1_n_0 : STD_LOGIC;
-  signal aw_en_reg_n_0 : STD_LOGIC;
-  signal axi_araddr_0 : STD_LOGIC_VECTOR ( 13 downto 2 );
-  signal \^axi_arready\ : STD_LOGIC;
-  signal axi_arready0 : STD_LOGIC;
-  signal axi_awaddr_1 : STD_LOGIC_VECTOR ( 13 downto 2 );
-  signal \^axi_awaddr_reg[13]_0\ : STD_LOGIC;
-  signal \^axi_awready\ : STD_LOGIC;
-  signal axi_awready0 : STD_LOGIC;
-  signal \^axi_bvalid\ : STD_LOGIC;
-  signal axi_bvalid_i_1_n_0 : STD_LOGIC;
-  signal \^axi_rvalid\ : STD_LOGIC;
-  signal axi_rvalid_i_1_n_0 : STD_LOGIC;
-  signal \^axi_wready\ : STD_LOGIC;
-  signal axi_wready0 : STD_LOGIC;
-  signal axi_wstrb_0_sn_1 : STD_LOGIC;
-  signal \dina_bram_reg[31]_i_2_n_0\ : STD_LOGIC;
-  signal \dina_bram_reg[31]_i_3_n_0\ : STD_LOGIC;
-  signal \dina_bram_reg[31]_i_4_n_0\ : STD_LOGIC;
-  signal \douta_reg[31]_i_6_n_0\ : STD_LOGIC;
-  signal \douta_reg[31]_i_7_n_0\ : STD_LOGIC;
-  signal \^p_0_in\ : STD_LOGIC;
-  signal \palette_new_reg[0][31]_i_2_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[0][31]_i_3_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[0][31]_i_4_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[1][31]_i_2_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[1][31]_i_3_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[1][31]_i_4_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[1][31]_i_5_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[2][31]_i_2_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[2][31]_i_3_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[3][31]_i_2_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[3][31]_i_3_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[4][31]_i_2_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[5][31]_i_2_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[6][31]_i_2_n_0\ : STD_LOGIC;
-  signal \palette_new_reg[7][31]_i_2_n_0\ : STD_LOGIC;
-  signal \slv_reg_rden__0\ : STD_LOGIC;
-  signal slv_reg_wren : STD_LOGIC;
-  signal \^wea_bram18_out\ : STD_LOGIC;
-  attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of \douta_reg[31]_i_2\ : label is "soft_lutpair64";
-  attribute SOFT_HLUTNM of \palette_new_reg[0][15]_i_1\ : label is "soft_lutpair61";
-  attribute SOFT_HLUTNM of \palette_new_reg[0][23]_i_1\ : label is "soft_lutpair62";
-  attribute SOFT_HLUTNM of \palette_new_reg[0][31]_i_1\ : label is "soft_lutpair63";
-  attribute SOFT_HLUTNM of \palette_new_reg[0][7]_i_1\ : label is "soft_lutpair60";
-  attribute SOFT_HLUTNM of \palette_new_reg[1][15]_i_1\ : label is "soft_lutpair61";
-  attribute SOFT_HLUTNM of \palette_new_reg[1][23]_i_1\ : label is "soft_lutpair62";
-  attribute SOFT_HLUTNM of \palette_new_reg[1][31]_i_1\ : label is "soft_lutpair63";
-  attribute SOFT_HLUTNM of \palette_new_reg[1][31]_i_5\ : label is "soft_lutpair65";
-  attribute SOFT_HLUTNM of \palette_new_reg[1][7]_i_1\ : label is "soft_lutpair60";
-  attribute SOFT_HLUTNM of \palette_new_reg[2][15]_i_1\ : label is "soft_lutpair57";
-  attribute SOFT_HLUTNM of \palette_new_reg[2][23]_i_1\ : label is "soft_lutpair58";
-  attribute SOFT_HLUTNM of \palette_new_reg[2][31]_i_1\ : label is "soft_lutpair59";
-  attribute SOFT_HLUTNM of \palette_new_reg[2][31]_i_3\ : label is "soft_lutpair65";
-  attribute SOFT_HLUTNM of \palette_new_reg[2][7]_i_1\ : label is "soft_lutpair56";
-  attribute SOFT_HLUTNM of \palette_new_reg[3][15]_i_1\ : label is "soft_lutpair53";
-  attribute SOFT_HLUTNM of \palette_new_reg[3][23]_i_1\ : label is "soft_lutpair54";
-  attribute SOFT_HLUTNM of \palette_new_reg[3][31]_i_1\ : label is "soft_lutpair55";
-  attribute SOFT_HLUTNM of \palette_new_reg[3][7]_i_1\ : label is "soft_lutpair52";
-  attribute SOFT_HLUTNM of \palette_new_reg[4][15]_i_1\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of \palette_new_reg[4][23]_i_1\ : label is "soft_lutpair50";
-  attribute SOFT_HLUTNM of \palette_new_reg[4][31]_i_1\ : label is "soft_lutpair51";
-  attribute SOFT_HLUTNM of \palette_new_reg[4][7]_i_1\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \palette_new_reg[5][15]_i_1\ : label is "soft_lutpair57";
-  attribute SOFT_HLUTNM of \palette_new_reg[5][23]_i_1\ : label is "soft_lutpair58";
-  attribute SOFT_HLUTNM of \palette_new_reg[5][31]_i_1\ : label is "soft_lutpair59";
-  attribute SOFT_HLUTNM of \palette_new_reg[5][7]_i_1\ : label is "soft_lutpair56";
-  attribute SOFT_HLUTNM of \palette_new_reg[6][15]_i_1\ : label is "soft_lutpair53";
-  attribute SOFT_HLUTNM of \palette_new_reg[6][23]_i_1\ : label is "soft_lutpair54";
-  attribute SOFT_HLUTNM of \palette_new_reg[6][31]_i_1\ : label is "soft_lutpair55";
-  attribute SOFT_HLUTNM of \palette_new_reg[6][7]_i_1\ : label is "soft_lutpair52";
-  attribute SOFT_HLUTNM of \palette_new_reg[7][15]_i_1\ : label is "soft_lutpair49";
-  attribute SOFT_HLUTNM of \palette_new_reg[7][23]_i_1\ : label is "soft_lutpair50";
-  attribute SOFT_HLUTNM of \palette_new_reg[7][31]_i_1\ : label is "soft_lutpair51";
-  attribute SOFT_HLUTNM of \palette_new_reg[7][7]_i_1\ : label is "soft_lutpair48";
-  attribute SOFT_HLUTNM of \wea_bram_reg[0]_i_2\ : label is "soft_lutpair64";
-begin
-  addra(10 downto 0) <= \^addra\(10 downto 0);
-  axi_arready <= \^axi_arready\;
-  \axi_awaddr_reg[13]_0\ <= \^axi_awaddr_reg[13]_0\;
-  axi_awready <= \^axi_awready\;
-  axi_bvalid <= \^axi_bvalid\;
-  axi_rvalid <= \^axi_rvalid\;
-  axi_wready <= \^axi_wready\;
-  axi_wstrb_0_sp_1 <= axi_wstrb_0_sn_1;
-  p_0_in <= \^p_0_in\;
-  wea_bram18_out <= \^wea_bram18_out\;
-\addra_bram_reg[0]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAA2AAAAAAA"
-    )
-        port map (
-      I0 => axi_araddr_0(2),
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => axi_awaddr_1(2),
-      O => \^addra\(0)
-    );
-\addra_bram_reg[10]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAA2AAAAAAA"
-    )
-        port map (
-      I0 => axi_araddr_0(12),
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => axi_awaddr_1(12),
-      O => \^addra\(10)
-    );
-\addra_bram_reg[10]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"001D001D001D1D1D"
-    )
-        port map (
-      I0 => axi_awaddr_1(13),
-      I1 => \palette_new_reg[0][31]_i_3_n_0\,
-      I2 => axi_araddr_0(13),
-      I3 => \^addra\(10),
-      I4 => \addra_bram_reg[10]_i_3_n_0\,
-      I5 => \addra_bram_reg[10]_i_4_n_0\,
-      O => \^axi_awaddr_reg[13]_0\
-    );
-\addra_bram_reg[10]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFB8FF0000000000"
-    )
-        port map (
-      I0 => axi_araddr_0(7),
-      I1 => \palette_new_reg[0][31]_i_3_n_0\,
-      I2 => axi_awaddr_1(7),
-      I3 => \^addra\(6),
-      I4 => \^addra\(4),
-      I5 => \^addra\(7),
-      O => \addra_bram_reg[10]_i_3_n_0\
-    );
-\addra_bram_reg[10]_i_4\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFFACCFA"
-    )
-        port map (
-      I0 => axi_awaddr_1(11),
-      I1 => axi_araddr_0(11),
-      I2 => axi_awaddr_1(10),
-      I3 => \palette_new_reg[0][31]_i_3_n_0\,
-      I4 => axi_araddr_0(10),
-      O => \addra_bram_reg[10]_i_4_n_0\
-    );
-\addra_bram_reg[1]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAA2AAAAAAA"
-    )
-        port map (
-      I0 => axi_araddr_0(3),
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => axi_awaddr_1(3),
-      O => \^addra\(1)
-    );
-\addra_bram_reg[2]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAA2AAAAAAA"
-    )
-        port map (
-      I0 => axi_araddr_0(4),
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => axi_awaddr_1(4),
-      O => \^addra\(2)
-    );
-\addra_bram_reg[3]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAA2AAAAAAA"
-    )
-        port map (
-      I0 => axi_araddr_0(5),
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => axi_awaddr_1(5),
-      O => \^addra\(3)
-    );
-\addra_bram_reg[4]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAA2AAAAAAA"
-    )
-        port map (
-      I0 => axi_araddr_0(6),
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => axi_awaddr_1(6),
-      O => \^addra\(4)
-    );
-\addra_bram_reg[5]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAA2AAAAAAA"
-    )
-        port map (
-      I0 => axi_araddr_0(7),
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => axi_awaddr_1(7),
-      O => \^addra\(5)
-    );
-\addra_bram_reg[6]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAA2AAAAAAA"
-    )
-        port map (
-      I0 => axi_araddr_0(8),
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => axi_awaddr_1(8),
-      O => \^addra\(6)
-    );
-\addra_bram_reg[7]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAA2AAAAAAA"
-    )
-        port map (
-      I0 => axi_araddr_0(9),
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => axi_awaddr_1(9),
-      O => \^addra\(7)
-    );
-\addra_bram_reg[8]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAA2AAAAAAA"
-    )
-        port map (
-      I0 => axi_araddr_0(10),
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => axi_awaddr_1(10),
-      O => \^addra\(8)
-    );
-\addra_bram_reg[9]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"EAAAAAAA2AAAAAAA"
-    )
-        port map (
-      I0 => axi_araddr_0(11),
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => axi_awaddr_1(11),
-      O => \^addra\(9)
-    );
-aw_en_i_1: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFF88880FFF8888"
-    )
-        port map (
-      I0 => \^axi_bvalid\,
-      I1 => axi_bready,
-      I2 => axi_wvalid,
-      I3 => axi_awvalid,
-      I4 => aw_en_reg_n_0,
-      I5 => \^axi_awready\,
-      O => aw_en_i_1_n_0
-    );
-aw_en_reg: unisim.vcomponents.FDSE
-     port map (
-      C => axi_aclk,
-      CE => '1',
-      D => aw_en_i_1_n_0,
-      Q => aw_en_reg_n_0,
-      S => \^p_0_in\
-    );
-\axi_araddr_reg[10]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_arready0,
-      D => axi_araddr(8),
-      Q => axi_araddr_0(10),
-      R => \^p_0_in\
-    );
-\axi_araddr_reg[11]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_arready0,
-      D => axi_araddr(9),
-      Q => axi_araddr_0(11),
-      R => \^p_0_in\
-    );
-\axi_araddr_reg[12]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_arready0,
-      D => axi_araddr(10),
-      Q => axi_araddr_0(12),
-      R => \^p_0_in\
-    );
-\axi_araddr_reg[13]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_arready0,
-      D => axi_araddr(11),
-      Q => axi_araddr_0(13),
-      R => \^p_0_in\
-    );
-\axi_araddr_reg[2]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_arready0,
-      D => axi_araddr(0),
-      Q => axi_araddr_0(2),
-      R => \^p_0_in\
-    );
-\axi_araddr_reg[3]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_arready0,
-      D => axi_araddr(1),
-      Q => axi_araddr_0(3),
-      R => \^p_0_in\
-    );
-\axi_araddr_reg[4]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_arready0,
-      D => axi_araddr(2),
-      Q => axi_araddr_0(4),
-      R => \^p_0_in\
-    );
-\axi_araddr_reg[5]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_arready0,
-      D => axi_araddr(3),
-      Q => axi_araddr_0(5),
-      R => \^p_0_in\
-    );
-\axi_araddr_reg[6]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_arready0,
-      D => axi_araddr(4),
-      Q => axi_araddr_0(6),
-      R => \^p_0_in\
-    );
-\axi_araddr_reg[7]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_arready0,
-      D => axi_araddr(5),
-      Q => axi_araddr_0(7),
-      R => \^p_0_in\
-    );
-\axi_araddr_reg[8]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_arready0,
-      D => axi_araddr(6),
-      Q => axi_araddr_0(8),
-      R => \^p_0_in\
-    );
-\axi_araddr_reg[9]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_arready0,
-      D => axi_araddr(7),
-      Q => axi_araddr_0(9),
-      R => \^p_0_in\
-    );
-axi_arready_i_1: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"2"
-    )
-        port map (
-      I0 => axi_arvalid,
-      I1 => \^axi_arready\,
-      O => axi_arready0
-    );
-axi_arready_reg: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => '1',
-      D => axi_arready0,
-      Q => \^axi_arready\,
-      R => \^p_0_in\
-    );
-\axi_awaddr_reg[10]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_awready0,
-      D => axi_awaddr(8),
-      Q => axi_awaddr_1(10),
-      R => \^p_0_in\
-    );
-\axi_awaddr_reg[11]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_awready0,
-      D => axi_awaddr(9),
-      Q => axi_awaddr_1(11),
-      R => \^p_0_in\
-    );
-\axi_awaddr_reg[12]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_awready0,
-      D => axi_awaddr(10),
-      Q => axi_awaddr_1(12),
-      R => \^p_0_in\
-    );
-\axi_awaddr_reg[13]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_awready0,
-      D => axi_awaddr(11),
-      Q => axi_awaddr_1(13),
-      R => \^p_0_in\
-    );
-\axi_awaddr_reg[2]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_awready0,
-      D => axi_awaddr(0),
-      Q => axi_awaddr_1(2),
-      R => \^p_0_in\
-    );
-\axi_awaddr_reg[3]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_awready0,
-      D => axi_awaddr(1),
-      Q => axi_awaddr_1(3),
-      R => \^p_0_in\
-    );
-\axi_awaddr_reg[4]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_awready0,
-      D => axi_awaddr(2),
-      Q => axi_awaddr_1(4),
-      R => \^p_0_in\
-    );
-\axi_awaddr_reg[5]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_awready0,
-      D => axi_awaddr(3),
-      Q => axi_awaddr_1(5),
-      R => \^p_0_in\
-    );
-\axi_awaddr_reg[6]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_awready0,
-      D => axi_awaddr(4),
-      Q => axi_awaddr_1(6),
-      R => \^p_0_in\
-    );
-\axi_awaddr_reg[7]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_awready0,
-      D => axi_awaddr(5),
-      Q => axi_awaddr_1(7),
-      R => \^p_0_in\
-    );
-\axi_awaddr_reg[8]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_awready0,
-      D => axi_awaddr(6),
-      Q => axi_awaddr_1(8),
-      R => \^p_0_in\
-    );
-\axi_awaddr_reg[9]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => axi_awready0,
-      D => axi_awaddr(7),
-      Q => axi_awaddr_1(9),
-      R => \^p_0_in\
-    );
-axi_awready_i_1: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"4000"
-    )
-        port map (
-      I0 => \^axi_awready\,
-      I1 => aw_en_reg_n_0,
-      I2 => axi_awvalid,
-      I3 => axi_wvalid,
-      O => axi_awready0
-    );
-axi_awready_reg: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => '1',
-      D => axi_awready0,
-      Q => \^axi_awready\,
-      R => \^p_0_in\
-    );
-axi_bvalid_i_1: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"55555555C0000000"
-    )
-        port map (
-      I0 => axi_bready,
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => \^axi_bvalid\,
-      O => axi_bvalid_i_1_n_0
-    );
-axi_bvalid_reg: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => '1',
-      D => axi_bvalid_i_1_n_0,
-      Q => \^axi_bvalid\,
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[0]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(0),
-      Q => axi_rdata(0),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[10]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(10),
-      Q => axi_rdata(10),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[11]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(11),
-      Q => axi_rdata(11),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[12]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(12),
-      Q => axi_rdata(12),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[13]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(13),
-      Q => axi_rdata(13),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[14]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(14),
-      Q => axi_rdata(14),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[15]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(15),
-      Q => axi_rdata(15),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[16]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(16),
-      Q => axi_rdata(16),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[17]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(17),
-      Q => axi_rdata(17),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[18]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(18),
-      Q => axi_rdata(18),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[19]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(19),
-      Q => axi_rdata(19),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[1]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(1),
-      Q => axi_rdata(1),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[20]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(20),
-      Q => axi_rdata(20),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[21]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(21),
-      Q => axi_rdata(21),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[22]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(22),
-      Q => axi_rdata(22),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[23]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(23),
-      Q => axi_rdata(23),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[24]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(24),
-      Q => axi_rdata(24),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[25]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(25),
-      Q => axi_rdata(25),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[26]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(26),
-      Q => axi_rdata(26),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[27]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(27),
-      Q => axi_rdata(27),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[28]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(28),
-      Q => axi_rdata(28),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[29]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(29),
-      Q => axi_rdata(29),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[2]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(2),
-      Q => axi_rdata(2),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[30]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(30),
-      Q => axi_rdata(30),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[31]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(31),
-      Q => axi_rdata(31),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[3]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(3),
-      Q => axi_rdata(3),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[4]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(4),
-      Q => axi_rdata(4),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[5]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(5),
-      Q => axi_rdata(5),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[6]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(6),
-      Q => axi_rdata(6),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[7]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(7),
-      Q => axi_rdata(7),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[8]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(8),
-      Q => axi_rdata(8),
-      R => \^p_0_in\
-    );
-\axi_rdata_reg[9]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => \slv_reg_rden__0\,
-      D => \axi_rdata_reg[31]_0\(9),
-      Q => axi_rdata(9),
-      R => \^p_0_in\
-    );
-axi_rvalid_i_1: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"08F8"
-    )
-        port map (
-      I0 => \^axi_arready\,
-      I1 => axi_arvalid,
-      I2 => \^axi_rvalid\,
-      I3 => axi_rready,
-      O => axi_rvalid_i_1_n_0
-    );
-axi_rvalid_reg: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => '1',
-      D => axi_rvalid_i_1_n_0,
-      Q => \^axi_rvalid\,
-      R => \^p_0_in\
-    );
-axi_wready_i_1: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"4000"
-    )
-        port map (
-      I0 => \^axi_wready\,
-      I1 => aw_en_reg_n_0,
-      I2 => axi_awvalid,
-      I3 => axi_wvalid,
-      O => axi_wready0
-    );
-axi_wready_reg: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => '1',
-      D => axi_wready0,
-      Q => \^axi_wready\,
-      R => \^p_0_in\
-    );
-\bram_in_new[31]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"8000"
-    )
-        port map (
-      I0 => axi_awvalid,
-      I1 => axi_wvalid,
-      I2 => \^axi_wready\,
-      I3 => \^axi_awready\,
-      O => slv_reg_wren
-    );
-\bram_in_new_reg[0]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(0),
-      Q => Q(0),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[10]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(10),
-      Q => Q(10),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[11]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(11),
-      Q => Q(11),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[12]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(12),
-      Q => Q(12),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[13]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(13),
-      Q => Q(13),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[14]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(14),
-      Q => Q(14),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[15]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(15),
-      Q => Q(15),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[16]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(16),
-      Q => Q(16),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[17]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(17),
-      Q => Q(17),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[18]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(18),
-      Q => Q(18),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[19]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(19),
-      Q => Q(19),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[1]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(1),
-      Q => Q(1),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[20]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(20),
-      Q => Q(20),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[21]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(21),
-      Q => Q(21),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[22]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(22),
-      Q => Q(22),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[23]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(23),
-      Q => Q(23),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[24]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(24),
-      Q => Q(24),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[25]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(25),
-      Q => Q(25),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[26]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(26),
-      Q => Q(26),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[27]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(27),
-      Q => Q(27),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[28]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(28),
-      Q => Q(28),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[29]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(29),
-      Q => Q(29),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[2]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(2),
-      Q => Q(2),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[30]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(30),
-      Q => Q(30),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[31]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(31),
-      Q => Q(31),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[3]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(3),
-      Q => Q(3),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[4]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(4),
-      Q => Q(4),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[5]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(5),
-      Q => Q(5),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[6]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(6),
-      Q => Q(6),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[7]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(7),
-      Q => Q(7),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[8]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(8),
-      Q => Q(8),
-      R => \^p_0_in\
-    );
-\bram_in_new_reg[9]\: unisim.vcomponents.FDRE
-     port map (
-      C => axi_aclk,
-      CE => slv_reg_wren,
-      D => axi_wdata(9),
-      Q => Q(9),
-      R => \^p_0_in\
-    );
-\dina_bram_reg[31]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000051FF0000"
-    )
-        port map (
-      I0 => \addra_bram_reg[10]_i_4_n_0\,
-      I1 => \dina_bram_reg[31]_i_2_n_0\,
-      I2 => \dina_bram_reg[31]_i_3_n_0\,
-      I3 => \^addra\(10),
-      I4 => \dina_bram_reg[31]_i_4_n_0\,
-      I5 => axi_wstrb_0_sn_1,
-      O => \^wea_bram18_out\
-    );
-\dina_bram_reg[31]_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FFFACCFA"
-    )
-        port map (
-      I0 => axi_awaddr_1(8),
-      I1 => axi_araddr_0(8),
-      I2 => axi_awaddr_1(7),
-      I3 => \palette_new_reg[0][31]_i_3_n_0\,
-      I4 => axi_araddr_0(7),
-      O => \dina_bram_reg[31]_i_2_n_0\
-    );
-\dina_bram_reg[31]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"333F5555333F5F5F"
-    )
-        port map (
-      I0 => axi_awaddr_1(9),
-      I1 => axi_araddr_0(9),
-      I2 => \^addra\(4),
-      I3 => axi_araddr_0(8),
-      I4 => \palette_new_reg[0][31]_i_3_n_0\,
-      I5 => axi_awaddr_1(8),
-      O => \dina_bram_reg[31]_i_3_n_0\
-    );
-\dina_bram_reg[31]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"15555555D5555555"
-    )
-        port map (
-      I0 => axi_araddr_0(13),
-      I1 => \^axi_awready\,
-      I2 => \^axi_wready\,
-      I3 => axi_wvalid,
-      I4 => axi_awvalid,
-      I5 => axi_awaddr_1(13),
-      O => \dina_bram_reg[31]_i_4_n_0\
-    );
-\douta_reg[31]_i_2\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"A2"
-    )
-        port map (
-      I0 => axi_wstrb_0_sn_1,
-      I1 => \douta_reg[31]_i_6_n_0\,
-      I2 => \^axi_awaddr_reg[13]_0\,
-      O => \axi_wstrb[0]_0\(0)
-    );
-\douta_reg[31]_i_3\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"FF00FF01"
-    )
-        port map (
-      I0 => axi_wstrb(0),
-      I1 => axi_wstrb(2),
-      I2 => axi_wstrb(1),
-      I3 => \palette_new_reg[0][31]_i_3_n_0\,
-      I4 => axi_wstrb(3),
-      O => axi_wstrb_0_sn_1
-    );
-\douta_reg[31]_i_6\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FEFFFEFEFEFFFFFF"
-    )
-        port map (
-      I0 => \douta_reg[31]_i_7_n_0\,
-      I1 => \^addra\(4),
-      I2 => \^addra\(3),
-      I3 => axi_araddr_0(13),
-      I4 => \palette_new_reg[0][31]_i_3_n_0\,
-      I5 => axi_awaddr_1(13),
-      O => \douta_reg[31]_i_6_n_0\
-    );
-\douta_reg[31]_i_7\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFFFE"
-    )
-        port map (
-      I0 => \^addra\(8),
-      I1 => \^addra\(9),
-      I2 => \^addra\(7),
-      I3 => \^addra\(10),
-      I4 => \^addra\(6),
-      I5 => \^addra\(5),
-      O => \douta_reg[31]_i_7_n_0\
-    );
-\palette_new_reg[0][15]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0020"
-    )
-        port map (
-      I0 => \palette_new_reg[0][31]_i_2_n_0\,
-      I1 => \^wea_bram18_out\,
-      I2 => axi_wstrb(1),
-      I3 => \palette_new_reg[0][31]_i_3_n_0\,
-      O => \axi_wstrb[3]_5\(1)
-    );
-\palette_new_reg[0][23]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0200"
-    )
-        port map (
-      I0 => \palette_new_reg[0][31]_i_2_n_0\,
-      I1 => \^axi_awaddr_reg[13]_0\,
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => axi_wstrb(2),
-      O => \axi_wstrb[3]_5\(2)
-    );
-\palette_new_reg[0][31]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0020"
-    )
-        port map (
-      I0 => \palette_new_reg[0][31]_i_2_n_0\,
-      I1 => \^axi_awaddr_reg[13]_0\,
-      I2 => axi_wstrb(3),
-      I3 => \palette_new_reg[0][31]_i_3_n_0\,
-      O => \axi_wstrb[3]_5\(3)
-    );
-\palette_new_reg[0][31]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0000000000000001"
-    )
-        port map (
-      I0 => \^addra\(4),
-      I1 => \^addra\(3),
-      I2 => \dina_bram_reg[31]_i_4_n_0\,
-      I3 => axi_wstrb_0_sn_1,
-      I4 => \palette_new_reg[0][31]_i_4_n_0\,
-      I5 => \douta_reg[31]_i_7_n_0\,
-      O => \palette_new_reg[0][31]_i_2_n_0\
-    );
-\palette_new_reg[0][31]_i_3\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"7FFF"
-    )
-        port map (
-      I0 => \^axi_awready\,
-      I1 => \^axi_wready\,
-      I2 => axi_wvalid,
-      I3 => axi_awvalid,
-      O => \palette_new_reg[0][31]_i_3_n_0\
-    );
-\palette_new_reg[0][31]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFFFE"
-    )
-        port map (
-      I0 => \^addra\(0),
-      I1 => \^addra\(1),
-      I2 => \^addra\(5),
-      I3 => \^addra\(3),
-      I4 => \^addra\(4),
-      I5 => \^addra\(2),
-      O => \palette_new_reg[0][31]_i_4_n_0\
-    );
-\palette_new_reg[0][7]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0020"
-    )
-        port map (
-      I0 => \palette_new_reg[0][31]_i_2_n_0\,
-      I1 => \^wea_bram18_out\,
-      I2 => axi_wstrb(0),
-      I3 => \palette_new_reg[0][31]_i_3_n_0\,
-      O => \axi_wstrb[3]_5\(0)
-    );
-\palette_new_reg[1][15]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(1),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[1][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_4\(1)
-    );
-\palette_new_reg[1][23]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0010"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => \palette_new_reg[0][31]_i_3_n_0\,
-      I2 => axi_wstrb(2),
-      I3 => \palette_new_reg[1][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_4\(2)
-    );
-\palette_new_reg[1][31]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => axi_wstrb(3),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[1][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_4\(3)
-    );
-\palette_new_reg[1][31]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFFFE"
-    )
-        port map (
-      I0 => \palette_new_reg[1][31]_i_3_n_0\,
-      I1 => \^addra\(2),
-      I2 => axi_wstrb_0_sn_1,
-      I3 => \palette_new_reg[1][31]_i_4_n_0\,
-      I4 => \douta_reg[31]_i_7_n_0\,
-      I5 => \palette_new_reg[1][31]_i_5_n_0\,
-      O => \palette_new_reg[1][31]_i_2_n_0\
-    );
-\palette_new_reg[1][31]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFAFFFFFFFAFCFC"
-    )
-        port map (
-      I0 => axi_araddr_0(5),
-      I1 => axi_awaddr_1(5),
-      I2 => \^addra\(4),
-      I3 => axi_araddr_0(7),
-      I4 => \palette_new_reg[0][31]_i_3_n_0\,
-      I5 => axi_awaddr_1(7),
-      O => \palette_new_reg[1][31]_i_3_n_0\
-    );
-\palette_new_reg[1][31]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFF3FFF355"
-    )
-        port map (
-      I0 => axi_awaddr_1(13),
-      I1 => axi_araddr_0(13),
-      I2 => axi_araddr_0(5),
-      I3 => \palette_new_reg[0][31]_i_3_n_0\,
-      I4 => axi_awaddr_1(5),
-      I5 => \^addra\(4),
-      O => \palette_new_reg[1][31]_i_4_n_0\
-    );
-\palette_new_reg[1][31]_i_5\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => \^addra\(1),
-      I1 => \^addra\(0),
-      O => \palette_new_reg[1][31]_i_5_n_0\
-    );
-\palette_new_reg[1][7]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(0),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[1][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_4\(0)
-    );
-\palette_new_reg[2][15]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(1),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[2][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_2\(1)
-    );
-\palette_new_reg[2][23]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0010"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => \palette_new_reg[0][31]_i_3_n_0\,
-      I2 => axi_wstrb(2),
-      I3 => \palette_new_reg[2][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_2\(2)
-    );
-\palette_new_reg[2][31]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => axi_wstrb(3),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[2][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_2\(3)
-    );
-\palette_new_reg[2][31]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFFFE"
-    )
-        port map (
-      I0 => \palette_new_reg[1][31]_i_3_n_0\,
-      I1 => \^addra\(2),
-      I2 => axi_wstrb_0_sn_1,
-      I3 => \palette_new_reg[1][31]_i_4_n_0\,
-      I4 => \douta_reg[31]_i_7_n_0\,
-      I5 => \palette_new_reg[2][31]_i_3_n_0\,
-      O => \palette_new_reg[2][31]_i_2_n_0\
-    );
-\palette_new_reg[2][31]_i_3\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => \^addra\(0),
-      I1 => \^addra\(1),
-      O => \palette_new_reg[2][31]_i_3_n_0\
-    );
-\palette_new_reg[2][7]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(0),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[2][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_2\(0)
-    );
-\palette_new_reg[3][15]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(1),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[3][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_0\(1)
-    );
-\palette_new_reg[3][23]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0010"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => \palette_new_reg[0][31]_i_3_n_0\,
-      I2 => axi_wstrb(2),
-      I3 => \palette_new_reg[3][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_0\(2)
-    );
-\palette_new_reg[3][31]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => axi_wstrb(3),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[3][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_0\(3)
-    );
-\palette_new_reg[3][31]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFFFE"
-    )
-        port map (
-      I0 => \palette_new_reg[1][31]_i_3_n_0\,
-      I1 => \^addra\(2),
-      I2 => axi_wstrb_0_sn_1,
-      I3 => \palette_new_reg[1][31]_i_4_n_0\,
-      I4 => \douta_reg[31]_i_7_n_0\,
-      I5 => \palette_new_reg[3][31]_i_3_n_0\,
-      O => \palette_new_reg[3][31]_i_2_n_0\
-    );
-\palette_new_reg[3][31]_i_3\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => \^addra\(0),
-      I1 => \^addra\(1),
-      O => \palette_new_reg[3][31]_i_3_n_0\
-    );
-\palette_new_reg[3][7]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(0),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[3][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_0\(0)
-    );
-\palette_new_reg[4][15]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(1),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[4][31]_i_2_n_0\,
-      O => E(1)
-    );
-\palette_new_reg[4][23]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0010"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => \palette_new_reg[0][31]_i_3_n_0\,
-      I2 => axi_wstrb(2),
-      I3 => \palette_new_reg[4][31]_i_2_n_0\,
-      O => E(2)
-    );
-\palette_new_reg[4][31]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => axi_wstrb(3),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[4][31]_i_2_n_0\,
-      O => E(3)
-    );
-\palette_new_reg[4][31]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFEFF"
-    )
-        port map (
-      I0 => \douta_reg[31]_i_7_n_0\,
-      I1 => \palette_new_reg[1][31]_i_4_n_0\,
-      I2 => axi_wstrb_0_sn_1,
-      I3 => \^addra\(2),
-      I4 => \^addra\(0),
-      I5 => \^addra\(1),
-      O => \palette_new_reg[4][31]_i_2_n_0\
-    );
-\palette_new_reg[4][7]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(0),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[4][31]_i_2_n_0\,
-      O => E(0)
-    );
-\palette_new_reg[5][15]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(1),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[5][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_3\(1)
-    );
-\palette_new_reg[5][23]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0010"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => \palette_new_reg[0][31]_i_3_n_0\,
-      I2 => axi_wstrb(2),
-      I3 => \palette_new_reg[5][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_3\(2)
-    );
-\palette_new_reg[5][31]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => axi_wstrb(3),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[5][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_3\(3)
-    );
-\palette_new_reg[5][31]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFEFF"
-    )
-        port map (
-      I0 => axi_wstrb_0_sn_1,
-      I1 => \palette_new_reg[1][31]_i_4_n_0\,
-      I2 => \palette_new_reg[1][31]_i_5_n_0\,
-      I3 => \^addra\(2),
-      I4 => \douta_reg[31]_i_7_n_0\,
-      I5 => \palette_new_reg[1][31]_i_3_n_0\,
-      O => \palette_new_reg[5][31]_i_2_n_0\
-    );
-\palette_new_reg[5][7]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(0),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[5][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_3\(0)
-    );
-\palette_new_reg[6][15]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(1),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[6][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_1\(1)
-    );
-\palette_new_reg[6][23]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0010"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => \palette_new_reg[0][31]_i_3_n_0\,
-      I2 => axi_wstrb(2),
-      I3 => \palette_new_reg[6][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_1\(2)
-    );
-\palette_new_reg[6][31]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => axi_wstrb(3),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[6][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_1\(3)
-    );
-\palette_new_reg[6][31]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFEFF"
-    )
-        port map (
-      I0 => axi_wstrb_0_sn_1,
-      I1 => \palette_new_reg[1][31]_i_4_n_0\,
-      I2 => \palette_new_reg[2][31]_i_3_n_0\,
-      I3 => \^addra\(2),
-      I4 => \douta_reg[31]_i_7_n_0\,
-      I5 => \palette_new_reg[1][31]_i_3_n_0\,
-      O => \palette_new_reg[6][31]_i_2_n_0\
-    );
-\palette_new_reg[6][7]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(0),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[6][31]_i_2_n_0\,
-      O => \axi_wstrb[3]_1\(0)
-    );
-\palette_new_reg[7][15]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(1),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[7][31]_i_2_n_0\,
-      O => \axi_wstrb[3]\(1)
-    );
-\palette_new_reg[7][23]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0010"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => \palette_new_reg[0][31]_i_3_n_0\,
-      I2 => axi_wstrb(2),
-      I3 => \palette_new_reg[7][31]_i_2_n_0\,
-      O => \axi_wstrb[3]\(2)
-    );
-\palette_new_reg[7][31]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => axi_wstrb(3),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[7][31]_i_2_n_0\,
-      O => \axi_wstrb[3]\(3)
-    );
-\palette_new_reg[7][31]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFFFFFFFFFFFEFF"
-    )
-        port map (
-      I0 => axi_wstrb_0_sn_1,
-      I1 => \palette_new_reg[1][31]_i_4_n_0\,
-      I2 => \palette_new_reg[3][31]_i_3_n_0\,
-      I3 => \^addra\(2),
-      I4 => \douta_reg[31]_i_7_n_0\,
-      I5 => \palette_new_reg[1][31]_i_3_n_0\,
-      O => \palette_new_reg[7][31]_i_2_n_0\
-    );
-\palette_new_reg[7][7]_i_1\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0004"
-    )
-        port map (
-      I0 => \^wea_bram18_out\,
-      I1 => axi_wstrb(0),
-      I2 => \palette_new_reg[0][31]_i_3_n_0\,
-      I3 => \palette_new_reg[7][31]_i_2_n_0\,
-      O => \axi_wstrb[3]\(0)
-    );
-slv_reg_rden: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"20"
-    )
-        port map (
-      I0 => axi_arvalid,
-      I1 => \^axi_rvalid\,
-      I2 => \^axi_arready\,
-      O => \slv_reg_rden__0\
-    );
-vga_to_hdmi_i_1: unisim.vcomponents.LUT1
-    generic map(
-      INIT => X"1"
-    )
-        port map (
-      I0 => axi_aresetn,
-      O => \^p_0_in\
-    );
-\wea_bram_reg[0]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"8000000000000000"
-    )
-        port map (
-      I0 => \^axi_awready\,
-      I1 => \^axi_wready\,
-      I2 => axi_wvalid,
-      I3 => axi_awvalid,
-      I4 => axi_wstrb(0),
-      I5 => \^wea_bram18_out\,
-      O => axi_awready_reg_0
-    );
-\wea_bram_reg[0]_i_2\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"B"
-    )
-        port map (
-      I0 => \^axi_awaddr_reg[13]_0\,
-      I1 => \douta_reg[31]_i_6_n_0\,
-      O => \axi_awaddr_reg[13]_1\
-    );
-end STRUCTURE;
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-library UNISIM;
-use UNISIM.VCOMPONENTS.ALL;
 entity Lab7MicroBlaze_hdmi_text_controller_1_0_serdes_10_to_1 is
   port (
     iob_data_out : out STD_LOGIC;
@@ -7143,9 +5320,9 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_serdes_10_to_1
   signal NLW_oserdes_s_TBYTEOUT_UNCONNECTED : STD_LOGIC;
   signal NLW_oserdes_s_TFB_UNCONNECTED : STD_LOGIC;
   signal NLW_oserdes_s_TQ_UNCONNECTED : STD_LOGIC;
-  attribute BOX_TYPE : string;
-  attribute BOX_TYPE of oserdes_m : label is "PRIMITIVE";
-  attribute BOX_TYPE of oserdes_s : label is "PRIMITIVE";
+  attribute box_type : string;
+  attribute box_type of oserdes_m : label is "PRIMITIVE";
+  attribute box_type of oserdes_s : label is "PRIMITIVE";
 begin
 oserdes_m: unisim.vcomponents.OSERDESE2
     generic map(
@@ -7291,9 +5468,9 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_serdes_10_to_1
   signal NLW_oserdes_s_TBYTEOUT_UNCONNECTED : STD_LOGIC;
   signal NLW_oserdes_s_TFB_UNCONNECTED : STD_LOGIC;
   signal NLW_oserdes_s_TQ_UNCONNECTED : STD_LOGIC;
-  attribute BOX_TYPE : string;
-  attribute BOX_TYPE of oserdes_m : label is "PRIMITIVE";
-  attribute BOX_TYPE of oserdes_s : label is "PRIMITIVE";
+  attribute box_type : string;
+  attribute box_type of oserdes_m : label is "PRIMITIVE";
+  attribute box_type of oserdes_s : label is "PRIMITIVE";
 begin
 oserdes_m: unisim.vcomponents.OSERDESE2
     generic map(
@@ -7440,9 +5617,9 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_serdes_10_to_1
   signal NLW_oserdes_s_TBYTEOUT_UNCONNECTED : STD_LOGIC;
   signal NLW_oserdes_s_TFB_UNCONNECTED : STD_LOGIC;
   signal NLW_oserdes_s_TQ_UNCONNECTED : STD_LOGIC;
-  attribute BOX_TYPE : string;
-  attribute BOX_TYPE of oserdes_m : label is "PRIMITIVE";
-  attribute BOX_TYPE of oserdes_s : label is "PRIMITIVE";
+  attribute box_type : string;
+  attribute box_type of oserdes_m : label is "PRIMITIVE";
+  attribute box_type of oserdes_s : label is "PRIMITIVE";
 begin
 oserdes_m: unisim.vcomponents.OSERDESE2
     generic map(
@@ -7589,9 +5766,9 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_serdes_10_to_1
   signal NLW_oserdes_s_TBYTEOUT_UNCONNECTED : STD_LOGIC;
   signal NLW_oserdes_s_TFB_UNCONNECTED : STD_LOGIC;
   signal NLW_oserdes_s_TQ_UNCONNECTED : STD_LOGIC;
-  attribute BOX_TYPE : string;
-  attribute BOX_TYPE of oserdes_m : label is "PRIMITIVE";
-  attribute BOX_TYPE of oserdes_s : label is "PRIMITIVE";
+  attribute box_type : string;
+  attribute box_type of oserdes_m : label is "PRIMITIVE";
+  attribute box_type of oserdes_s : label is "PRIMITIVE";
 begin
 oserdes_m: unisim.vcomponents.OSERDESE2
     generic map(
@@ -7723,121 +5900,121 @@ entity Lab7MicroBlaze_hdmi_text_controller_1_0_srldelay is
 end Lab7MicroBlaze_hdmi_text_controller_1_0_srldelay;
 
 architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_srldelay is
-  attribute BOX_TYPE : string;
-  attribute BOX_TYPE of \srl[0].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type : string;
+  attribute box_type of \srl[0].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name : string;
   attribute srl_bus_name of \srl[0].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name : string;
   attribute srl_name of \srl[0].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[0].srl16_i ";
-  attribute BOX_TYPE of \srl[10].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[10].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[10].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[10].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[10].srl16_i ";
-  attribute BOX_TYPE of \srl[11].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[11].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[11].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[11].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[11].srl16_i ";
-  attribute BOX_TYPE of \srl[14].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[14].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[14].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[14].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[14].srl16_i ";
-  attribute BOX_TYPE of \srl[15].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[15].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[15].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[15].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[15].srl16_i ";
-  attribute BOX_TYPE of \srl[16].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[16].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[16].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[16].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[16].srl16_i ";
-  attribute BOX_TYPE of \srl[17].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[17].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[17].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[17].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[17].srl16_i ";
-  attribute BOX_TYPE of \srl[18].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[18].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[18].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[18].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[18].srl16_i ";
-  attribute BOX_TYPE of \srl[19].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[19].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[19].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[19].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[19].srl16_i ";
-  attribute BOX_TYPE of \srl[1].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[1].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[1].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[1].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[1].srl16_i ";
-  attribute BOX_TYPE of \srl[20].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[20].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[20].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[20].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[20].srl16_i ";
-  attribute BOX_TYPE of \srl[21].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[21].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[21].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[21].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[21].srl16_i ";
-  attribute BOX_TYPE of \srl[22].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[22].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[22].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[22].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[22].srl16_i ";
-  attribute BOX_TYPE of \srl[23].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[23].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[23].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[23].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[23].srl16_i ";
-  attribute BOX_TYPE of \srl[24].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[24].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[24].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[24].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[24].srl16_i ";
-  attribute BOX_TYPE of \srl[25].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[25].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[25].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[25].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[25].srl16_i ";
-  attribute BOX_TYPE of \srl[26].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[26].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[26].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[26].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[26].srl16_i ";
-  attribute BOX_TYPE of \srl[27].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[27].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[27].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[27].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[27].srl16_i ";
-  attribute BOX_TYPE of \srl[28].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[28].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[28].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[28].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[28].srl16_i ";
-  attribute BOX_TYPE of \srl[29].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[29].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[29].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[29].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[29].srl16_i ";
-  attribute BOX_TYPE of \srl[2].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[2].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[2].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[2].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[2].srl16_i ";
-  attribute BOX_TYPE of \srl[30].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[30].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[30].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[30].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[30].srl16_i ";
-  attribute BOX_TYPE of \srl[31].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[31].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[31].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[31].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[31].srl16_i ";
-  attribute BOX_TYPE of \srl[32].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[32].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[32].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[32].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[32].srl16_i ";
-  attribute BOX_TYPE of \srl[33].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[33].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[33].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[33].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[33].srl16_i ";
-  attribute BOX_TYPE of \srl[34].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[34].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[34].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[34].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[34].srl16_i ";
-  attribute BOX_TYPE of \srl[35].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[35].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[35].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[35].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[35].srl16_i ";
-  attribute BOX_TYPE of \srl[36].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[36].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[36].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[36].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[36].srl16_i ";
-  attribute BOX_TYPE of \srl[37].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[37].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[37].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[37].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[37].srl16_i ";
-  attribute BOX_TYPE of \srl[38].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[38].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[38].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[38].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[38].srl16_i ";
-  attribute BOX_TYPE of \srl[39].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[39].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[39].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[39].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[39].srl16_i ";
-  attribute BOX_TYPE of \srl[3].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[3].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[3].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[3].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[3].srl16_i ";
-  attribute BOX_TYPE of \srl[4].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[4].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[4].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[4].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[4].srl16_i ";
-  attribute BOX_TYPE of \srl[5].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[5].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[5].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[5].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[5].srl16_i ";
-  attribute BOX_TYPE of \srl[6].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[6].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[6].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[6].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[6].srl16_i ";
-  attribute BOX_TYPE of \srl[7].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[7].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[7].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[7].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[7].srl16_i ";
-  attribute BOX_TYPE of \srl[8].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[8].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[8].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[8].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[8].srl16_i ";
-  attribute BOX_TYPE of \srl[9].srl16_i\ : label is "PRIMITIVE";
+  attribute box_type of \srl[9].srl16_i\ : label is "PRIMITIVE";
   attribute srl_bus_name of \srl[9].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl ";
   attribute srl_name of \srl[9].srl16_i\ : label is "\inst/vga_to_hdmi /\inst/srldly_0/srl[9].srl16_i ";
 begin
@@ -8420,24 +6597,24 @@ entity Lab7MicroBlaze_hdmi_text_controller_1_0_vga_controller is
   port (
     hsync : out STD_LOGIC;
     vsync : out STD_LOGIC;
-    Q : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \vc_reg[5]_0\ : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    \hc_reg[2]_0\ : out STD_LOGIC;
-    \vc_reg[0]_0\ : out STD_LOGIC;
-    \vc_reg[0]_1\ : out STD_LOGIC;
-    \vc_reg[0]_2\ : out STD_LOGIC;
-    \vc_reg[0]_3\ : out STD_LOGIC;
-    \vc_reg[0]_4\ : out STD_LOGIC;
-    \vc_reg[0]_5\ : out STD_LOGIC;
-    \vc_reg[0]_6\ : out STD_LOGIC;
+    Q : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    \hc_reg[8]_0\ : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    \vc_reg[0]_rep_0\ : out STD_LOGIC;
+    \vc_reg[0]_rep_1\ : out STD_LOGIC;
+    \vc_reg[0]_rep_2\ : out STD_LOGIC;
+    \vc_reg[0]_rep_3\ : out STD_LOGIC;
+    \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram\ : out STD_LOGIC;
+    \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\ : out STD_LOGIC;
+    \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1\ : out STD_LOGIC;
     \hc_reg[1]_0\ : out STD_LOGIC;
     \hc_reg[1]_1\ : out STD_LOGIC;
     vde : out STD_LOGIC;
-    D : out STD_LOGIC_VECTOR ( 8 downto 0 );
+    \hc_reg[2]_0\ : out STD_LOGIC;
+    addrb : out STD_LOGIC_VECTOR ( 8 downto 0 );
     clk_out1 : in STD_LOGIC;
     p_0_in : in STD_LOGIC;
-    vga_to_hdmi_i_45_0 : in STD_LOGIC_VECTOR ( 6 downto 0 );
-    vga_to_hdmi_i_16_0 : in STD_LOGIC;
+    doutb : in STD_LOGIC_VECTOR ( 6 downto 0 );
+    vga_to_hdmi_i_18_0 : in STD_LOGIC;
     S : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
@@ -8445,17 +6622,19 @@ entity Lab7MicroBlaze_hdmi_text_controller_1_0_vga_controller is
 end Lab7MicroBlaze_hdmi_text_controller_1_0_vga_controller;
 
 architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_vga_controller is
-  signal \^q\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \addrb_bram_reg[10]_i_2_n_0\ : STD_LOGIC;
-  signal \addrb_bram_reg[5]_i_1_n_0\ : STD_LOGIC;
-  signal \addrb_bram_reg[5]_i_1_n_1\ : STD_LOGIC;
-  signal \addrb_bram_reg[5]_i_1_n_2\ : STD_LOGIC;
-  signal \addrb_bram_reg[5]_i_1_n_3\ : STD_LOGIC;
-  signal \addrb_bram_reg[9]_i_1_n_0\ : STD_LOGIC;
-  signal \addrb_bram_reg[9]_i_1_n_1\ : STD_LOGIC;
-  signal \addrb_bram_reg[9]_i_1_n_2\ : STD_LOGIC;
-  signal \addrb_bram_reg[9]_i_1_n_3\ : STD_LOGIC;
-  signal \color_mapper/bram_addr_b1\ : STD_LOGIC_VECTOR ( 10 downto 6 );
+  signal \^q\ : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal bram_i_2_n_0 : STD_LOGIC;
+  signal bram_i_2_n_1 : STD_LOGIC;
+  signal bram_i_2_n_2 : STD_LOGIC;
+  signal bram_i_2_n_3 : STD_LOGIC;
+  signal bram_i_3_n_0 : STD_LOGIC;
+  signal bram_i_3_n_1 : STD_LOGIC;
+  signal bram_i_3_n_2 : STD_LOGIC;
+  signal bram_i_3_n_3 : STD_LOGIC;
+  signal bram_i_4_n_0 : STD_LOGIC;
+  signal bram_i_6_n_0 : STD_LOGIC;
+  signal bram_i_8_n_0 : STD_LOGIC;
+  signal \color_mapper/cm_addr1\ : STD_LOGIC_VECTOR ( 10 downto 6 );
   signal \color_mapper/data0\ : STD_LOGIC;
   signal \color_mapper/data2\ : STD_LOGIC;
   signal \color_mapper/data3\ : STD_LOGIC;
@@ -8694,38 +6873,38 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_vga_controller
   signal g9_b6_n_0 : STD_LOGIC;
   signal g9_b7_n_0 : STD_LOGIC;
   signal hc : STD_LOGIC_VECTOR ( 9 downto 0 );
-  signal \hc[2]_i_1_n_0\ : STD_LOGIC;
+  signal \hc[3]_i_1_n_0\ : STD_LOGIC;
+  signal \hc[7]_i_2_n_0\ : STD_LOGIC;
   signal \hc[9]_i_2_n_0\ : STD_LOGIC;
+  signal \^hc_reg[8]_0\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal hs_i_2_n_0 : STD_LOGIC;
   signal hs_i_3_n_0 : STD_LOGIC;
-  signal hs_i_4_n_0 : STD_LOGIC;
   signal p_0_in_0 : STD_LOGIC;
   signal vc : STD_LOGIC;
   signal \vc[0]_i_1_n_0\ : STD_LOGIC;
+  signal \vc[0]_i_2_n_0\ : STD_LOGIC;
   signal \vc[0]_rep_i_1_n_0\ : STD_LOGIC;
   signal \vc[1]_i_1_n_0\ : STD_LOGIC;
   signal \vc[1]_rep_i_1_n_0\ : STD_LOGIC;
   signal \vc[2]_i_1_n_0\ : STD_LOGIC;
-  signal \vc[2]_rep_i_1_n_0\ : STD_LOGIC;
   signal \vc[3]_i_1_n_0\ : STD_LOGIC;
-  signal \vc[3]_rep_i_1__0_n_0\ : STD_LOGIC;
-  signal \vc[3]_rep_i_1_n_0\ : STD_LOGIC;
+  signal \vc[3]_i_2_n_0\ : STD_LOGIC;
   signal \vc[4]_i_1_n_0\ : STD_LOGIC;
   signal \vc[5]_i_1_n_0\ : STD_LOGIC;
   signal \vc[6]_i_1_n_0\ : STD_LOGIC;
   signal \vc[7]_i_1_n_0\ : STD_LOGIC;
   signal \vc[8]_i_1_n_0\ : STD_LOGIC;
-  signal \vc[8]_i_2_n_0\ : STD_LOGIC;
   signal \vc[9]_i_2_n_0\ : STD_LOGIC;
   signal \vc[9]_i_3_n_0\ : STD_LOGIC;
   signal \vc[9]_i_4_n_0\ : STD_LOGIC;
-  signal \^vc_reg[0]_3\ : STD_LOGIC;
+  signal \vc[9]_i_5_n_0\ : STD_LOGIC;
+  signal \^vc_reg[0]_rep_3\ : STD_LOGIC;
   signal \vc_reg[0]_rep_n_0\ : STD_LOGIC;
   signal \vc_reg[1]_rep_n_0\ : STD_LOGIC;
-  signal \vc_reg[2]_rep_n_0\ : STD_LOGIC;
-  signal \vc_reg[3]_rep__0_n_0\ : STD_LOGIC;
-  signal \vc_reg[3]_rep_n_0\ : STD_LOGIC;
-  signal \^vc_reg[5]_0\ : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal vga_to_hdmi_i_101_n_0 : STD_LOGIC;
+  signal vga_to_hdmi_i_102_n_0 : STD_LOGIC;
+  signal vga_to_hdmi_i_103_n_0 : STD_LOGIC;
+  signal vga_to_hdmi_i_104_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_105_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_106_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_107_n_0 : STD_LOGIC;
@@ -8738,14 +6917,14 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_vga_controller
   signal vga_to_hdmi_i_114_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_115_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_116_n_0 : STD_LOGIC;
-  signal vga_to_hdmi_i_117_n_0 : STD_LOGIC;
-  signal vga_to_hdmi_i_118_n_0 : STD_LOGIC;
-  signal vga_to_hdmi_i_119_n_0 : STD_LOGIC;
-  signal vga_to_hdmi_i_120_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_213_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_214_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_215_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_216_n_0 : STD_LOGIC;
+  signal vga_to_hdmi_i_217_n_0 : STD_LOGIC;
+  signal vga_to_hdmi_i_218_n_0 : STD_LOGIC;
+  signal vga_to_hdmi_i_219_n_0 : STD_LOGIC;
+  signal vga_to_hdmi_i_220_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_221_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_222_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_223_n_0 : STD_LOGIC;
@@ -8794,10 +6973,6 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_vga_controller
   signal vga_to_hdmi_i_266_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_267_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_268_n_0 : STD_LOGIC;
-  signal vga_to_hdmi_i_269_n_0 : STD_LOGIC;
-  signal vga_to_hdmi_i_270_n_0 : STD_LOGIC;
-  signal vga_to_hdmi_i_271_n_0 : STD_LOGIC;
-  signal vga_to_hdmi_i_272_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_273_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_274_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_275_n_0 : STD_LOGIC;
@@ -8850,181 +7025,181 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_vga_controller
   signal vga_to_hdmi_i_323_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_324_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_42_n_0 : STD_LOGIC;
-  signal vga_to_hdmi_i_45_n_0 : STD_LOGIC;
-  signal vga_to_hdmi_i_46_n_0 : STD_LOGIC;
+  signal vga_to_hdmi_i_49_n_0 : STD_LOGIC;
+  signal vga_to_hdmi_i_50_n_0 : STD_LOGIC;
   signal vs_i_1_n_0 : STD_LOGIC;
   signal vs_i_2_n_0 : STD_LOGIC;
-  signal \NLW_addrb_bram_reg[10]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_addrb_bram_reg[10]_i_1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
+  signal NLW_bram_i_1_CO_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal NLW_bram_i_1_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 1 );
   attribute ADDER_THRESHOLD : integer;
-  attribute ADDER_THRESHOLD of \addrb_bram_reg[10]_i_1\ : label is 35;
-  attribute ADDER_THRESHOLD of \addrb_bram_reg[5]_i_1\ : label is 35;
-  attribute ADDER_THRESHOLD of \addrb_bram_reg[9]_i_1\ : label is 35;
+  attribute ADDER_THRESHOLD of bram_i_1 : label is 35;
+  attribute ADDER_THRESHOLD of bram_i_2 : label is 35;
+  attribute ADDER_THRESHOLD of bram_i_3 : label is 35;
   attribute SOFT_HLUTNM : string;
-  attribute SOFT_HLUTNM of g11_b7 : label is "soft_lutpair66";
-  attribute SOFT_HLUTNM of g19_b0 : label is "soft_lutpair67";
-  attribute SOFT_HLUTNM of g27_b0 : label is "soft_lutpair67";
-  attribute SOFT_HLUTNM of g5_b0 : label is "soft_lutpair66";
-  attribute SOFT_HLUTNM of \hc[2]_i_1\ : label is "soft_lutpair75";
-  attribute SOFT_HLUTNM of \hc[3]_i_1\ : label is "soft_lutpair73";
-  attribute SOFT_HLUTNM of \hc[4]_i_1\ : label is "soft_lutpair69";
-  attribute SOFT_HLUTNM of \hc[6]_i_1\ : label is "soft_lutpair74";
-  attribute SOFT_HLUTNM of \hc[7]_i_1\ : label is "soft_lutpair74";
-  attribute SOFT_HLUTNM of \hc[9]_i_2\ : label is "soft_lutpair69";
-  attribute SOFT_HLUTNM of hs_i_4 : label is "soft_lutpair73";
-  attribute SOFT_HLUTNM of \vc[0]_i_1\ : label is "soft_lutpair71";
-  attribute SOFT_HLUTNM of \vc[2]_i_1\ : label is "soft_lutpair71";
-  attribute SOFT_HLUTNM of \vc[4]_i_1\ : label is "soft_lutpair70";
-  attribute SOFT_HLUTNM of \vc[7]_i_1\ : label is "soft_lutpair72";
-  attribute SOFT_HLUTNM of \vc[8]_i_1\ : label is "soft_lutpair68";
-  attribute SOFT_HLUTNM of \vc[8]_i_2\ : label is "soft_lutpair70";
-  attribute SOFT_HLUTNM of \vc[9]_i_3\ : label is "soft_lutpair68";
+  attribute SOFT_HLUTNM of g11_b7 : label is "soft_lutpair57";
+  attribute SOFT_HLUTNM of g19_b0 : label is "soft_lutpair58";
+  attribute SOFT_HLUTNM of g27_b0 : label is "soft_lutpair58";
+  attribute SOFT_HLUTNM of g5_b0 : label is "soft_lutpair57";
+  attribute SOFT_HLUTNM of \hc[2]_i_1\ : label is "soft_lutpair64";
+  attribute SOFT_HLUTNM of \hc[3]_i_1\ : label is "soft_lutpair64";
+  attribute SOFT_HLUTNM of \hc[4]_i_1\ : label is "soft_lutpair61";
+  attribute SOFT_HLUTNM of \hc[7]_i_2\ : label is "soft_lutpair65";
+  attribute SOFT_HLUTNM of \hc[9]_i_2\ : label is "soft_lutpair61";
+  attribute SOFT_HLUTNM of \vc[0]_i_2\ : label is "soft_lutpair56";
+  attribute SOFT_HLUTNM of \vc[2]_i_1\ : label is "soft_lutpair59";
+  attribute SOFT_HLUTNM of \vc[3]_i_1\ : label is "soft_lutpair59";
+  attribute SOFT_HLUTNM of \vc[3]_i_2\ : label is "soft_lutpair60";
+  attribute SOFT_HLUTNM of \vc[4]_i_1\ : label is "soft_lutpair62";
+  attribute SOFT_HLUTNM of \vc[7]_i_1\ : label is "soft_lutpair63";
+  attribute SOFT_HLUTNM of \vc[8]_i_1\ : label is "soft_lutpair63";
+  attribute SOFT_HLUTNM of \vc[9]_i_3\ : label is "soft_lutpair62";
+  attribute SOFT_HLUTNM of \vc[9]_i_4\ : label is "soft_lutpair60";
+  attribute SOFT_HLUTNM of \vc[9]_i_5\ : label is "soft_lutpair56";
   attribute ORIG_CELL_NAME : string;
   attribute ORIG_CELL_NAME of \vc_reg[0]\ : label is "vc_reg[0]";
   attribute ORIG_CELL_NAME of \vc_reg[0]_rep\ : label is "vc_reg[0]";
   attribute ORIG_CELL_NAME of \vc_reg[1]\ : label is "vc_reg[1]";
   attribute ORIG_CELL_NAME of \vc_reg[1]_rep\ : label is "vc_reg[1]";
-  attribute ORIG_CELL_NAME of \vc_reg[2]\ : label is "vc_reg[2]";
-  attribute ORIG_CELL_NAME of \vc_reg[2]_rep\ : label is "vc_reg[2]";
-  attribute ORIG_CELL_NAME of \vc_reg[3]\ : label is "vc_reg[3]";
-  attribute ORIG_CELL_NAME of \vc_reg[3]_rep\ : label is "vc_reg[3]";
-  attribute ORIG_CELL_NAME of \vc_reg[3]_rep__0\ : label is "vc_reg[3]";
-  attribute SOFT_HLUTNM of vga_to_hdmi_i_17 : label is "soft_lutpair75";
-  attribute SOFT_HLUTNM of vga_to_hdmi_i_42 : label is "soft_lutpair72";
+  attribute SOFT_HLUTNM of vga_to_hdmi_i_17 : label is "soft_lutpair65";
+  attribute SOFT_HLUTNM of vga_to_hdmi_i_42 : label is "soft_lutpair55";
+  attribute SOFT_HLUTNM of vs_i_2 : label is "soft_lutpair55";
 begin
-  Q(3 downto 0) <= \^q\(3 downto 0);
-  \vc_reg[0]_3\ <= \^vc_reg[0]_3\;
-  \vc_reg[5]_0\(1 downto 0) <= \^vc_reg[5]_0\(1 downto 0);
-\addrb_bram_reg[10]_i_1\: unisim.vcomponents.CARRY4
+  Q(1 downto 0) <= \^q\(1 downto 0);
+  \hc_reg[8]_0\(3 downto 0) <= \^hc_reg[8]_0\(3 downto 0);
+  \vc_reg[0]_rep_3\ <= \^vc_reg[0]_rep_3\;
+bram_i_1: unisim.vcomponents.CARRY4
      port map (
-      CI => \addrb_bram_reg[9]_i_1_n_0\,
-      CO(3 downto 0) => \NLW_addrb_bram_reg[10]_i_1_CO_UNCONNECTED\(3 downto 0),
+      CI => bram_i_2_n_0,
+      CO(3 downto 0) => NLW_bram_i_1_CO_UNCONNECTED(3 downto 0),
       CYINIT => '0',
       DI(3 downto 0) => B"0000",
-      O(3 downto 1) => \NLW_addrb_bram_reg[10]_i_1_O_UNCONNECTED\(3 downto 1),
-      O(0) => D(8),
+      O(3 downto 1) => NLW_bram_i_1_O_UNCONNECTED(3 downto 1),
+      O(0) => addrb(8),
       S(3 downto 1) => B"000",
-      S(0) => \addrb_bram_reg[10]_i_2_n_0\
+      S(0) => bram_i_4_n_0
     );
-\addrb_bram_reg[10]_i_2\: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"A800"
-    )
-        port map (
-      I0 => drawY(7),
-      I1 => \^vc_reg[5]_0\(1),
-      I2 => drawY(6),
-      I3 => drawY(8),
-      O => \addrb_bram_reg[10]_i_2_n_0\
+bram_i_2: unisim.vcomponents.CARRY4
+     port map (
+      CI => bram_i_3_n_0,
+      CO(3) => bram_i_2_n_0,
+      CO(2) => bram_i_2_n_1,
+      CO(1) => bram_i_2_n_2,
+      CO(0) => bram_i_2_n_3,
+      CYINIT => '0',
+      DI(3 downto 0) => B"0000",
+      O(3 downto 0) => addrb(7 downto 4),
+      S(3) => \color_mapper/cm_addr1\(10),
+      S(2) => bram_i_6_n_0,
+      S(1) => \color_mapper/cm_addr1\(8),
+      S(0) => bram_i_8_n_0
     );
-\addrb_bram_reg[5]_i_1\: unisim.vcomponents.CARRY4
+bram_i_3: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
-      CO(3) => \addrb_bram_reg[5]_i_1_n_0\,
-      CO(2) => \addrb_bram_reg[5]_i_1_n_1\,
-      CO(1) => \addrb_bram_reg[5]_i_1_n_2\,
-      CO(0) => \addrb_bram_reg[5]_i_1_n_3\,
+      CO(3) => bram_i_3_n_0,
+      CO(2) => bram_i_3_n_1,
+      CO(1) => bram_i_3_n_2,
+      CO(0) => bram_i_3_n_3,
       CYINIT => '0',
       DI(3) => '0',
-      DI(2 downto 1) => \^q\(3 downto 2),
+      DI(2 downto 1) => \^hc_reg[8]_0\(3 downto 2),
       DI(0) => '0',
-      O(3 downto 0) => D(3 downto 0),
-      S(3) => \color_mapper/bram_addr_b1\(6),
+      O(3 downto 0) => addrb(3 downto 0),
+      S(3) => \color_mapper/cm_addr1\(6),
       S(2 downto 1) => S(1 downto 0),
       S(0) => drawX(6)
     );
-\addrb_bram_reg[5]_i_2\: unisim.vcomponents.LUT2
+bram_i_4: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"6"
+      INIT => X"E000"
     )
         port map (
-      I0 => \^vc_reg[5]_0\(0),
+      I0 => drawY(6),
+      I1 => \^q\(1),
+      I2 => drawY(7),
+      I3 => drawY(8),
+      O => bram_i_4_n_0
+    );
+bram_i_5: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"03FFC800"
+    )
+        port map (
+      I0 => \^q\(0),
       I1 => drawY(6),
-      O => \color_mapper/bram_addr_b1\(6)
-    );
-\addrb_bram_reg[9]_i_1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \addrb_bram_reg[5]_i_1_n_0\,
-      CO(3) => \addrb_bram_reg[9]_i_1_n_0\,
-      CO(2) => \addrb_bram_reg[9]_i_1_n_1\,
-      CO(1) => \addrb_bram_reg[9]_i_1_n_2\,
-      CO(0) => \addrb_bram_reg[9]_i_1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => D(7 downto 4),
-      S(3 downto 0) => \color_mapper/bram_addr_b1\(10 downto 7)
-    );
-\addrb_bram_reg[9]_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"5577A800"
-    )
-        port map (
-      I0 => drawY(7),
-      I1 => \^vc_reg[5]_0\(1),
-      I2 => \^vc_reg[5]_0\(0),
-      I3 => drawY(6),
+      I2 => \^q\(1),
+      I3 => drawY(7),
       I4 => drawY(8),
-      O => \color_mapper/bram_addr_b1\(10)
+      O => \color_mapper/cm_addr1\(10)
     );
-\addrb_bram_reg[9]_i_3\: unisim.vcomponents.LUT5
+bram_i_6: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"1137C888"
+      INIT => X"0717E0C0"
     )
         port map (
-      I0 => drawY(8),
-      I1 => drawY(6),
-      I2 => \^vc_reg[5]_0\(0),
-      I3 => \^vc_reg[5]_0\(1),
+      I0 => \^q\(1),
+      I1 => drawY(8),
+      I2 => drawY(6),
+      I3 => \^q\(0),
       I4 => drawY(7),
-      O => \color_mapper/bram_addr_b1\(9)
+      O => bram_i_6_n_0
     );
-\addrb_bram_reg[9]_i_4\: unisim.vcomponents.LUT5
+bram_i_7: unisim.vcomponents.LUT5
     generic map(
       INIT => X"E8173FC0"
     )
         port map (
-      I0 => \^vc_reg[5]_0\(0),
-      I1 => \^vc_reg[5]_0\(1),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
       I2 => drawY(7),
       I3 => drawY(8),
       I4 => drawY(6),
-      O => \color_mapper/bram_addr_b1\(8)
+      O => \color_mapper/cm_addr1\(8)
     );
-\addrb_bram_reg[9]_i_5\: unisim.vcomponents.LUT4
+bram_i_8: unisim.vcomponents.LUT4
     generic map(
       INIT => X"8778"
     )
         port map (
       I0 => drawY(6),
-      I1 => \^vc_reg[5]_0\(0),
-      I2 => \^vc_reg[5]_0\(1),
+      I1 => \^q\(0),
+      I2 => \^q\(1),
       I3 => drawY(7),
-      O => \color_mapper/bram_addr_b1\(7)
+      O => bram_i_8_n_0
+    );
+bram_i_9: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"6"
+    )
+        port map (
+      I0 => \^q\(0),
+      I1 => drawY(6),
+      O => \color_mapper/cm_addr1\(6)
     );
 g0_b0: unisim.vcomponents.LUT6
     generic map(
       INIT => X"000007F807F80000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
-      O => \vc_reg[0]_0\
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
+      O => \vc_reg[0]_rep_0\
     );
 g0_b1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"01E00FFC08040000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g0_b1_n_0
     );
 g0_b2: unisim.vcomponents.LUT6
@@ -9032,12 +7207,12 @@ g0_b2: unisim.vcomponents.LUT6
       INIT => X"03F00F6C08940000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g0_b2_n_0
     );
 g0_b3: unisim.vcomponents.LUT6
@@ -9045,12 +7220,12 @@ g0_b3: unisim.vcomponents.LUT6
       INIT => X"07F00E7C09840000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g0_b3_n_0
     );
 g0_b4: unisim.vcomponents.LUT6
@@ -9058,12 +7233,12 @@ g0_b4: unisim.vcomponents.LUT6
       INIT => X"0FE00E7C09840000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g0_b4_n_0
     );
 g0_b5: unisim.vcomponents.LUT6
@@ -9071,12 +7246,12 @@ g0_b5: unisim.vcomponents.LUT6
       INIT => X"07F00F6C08940000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g0_b5_n_0
     );
 g0_b6: unisim.vcomponents.LUT6
@@ -9084,12 +7259,12 @@ g0_b6: unisim.vcomponents.LUT6
       INIT => X"03F00FFC08040000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g0_b6_n_0
     );
 g0_b7: unisim.vcomponents.LUT6
@@ -9097,12 +7272,12 @@ g0_b7: unisim.vcomponents.LUT6
       INIT => X"01E007F807F80000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g0_b7_n_0
     );
 g10_b1: unisim.vcomponents.LUT6
@@ -9110,12 +7285,12 @@ g10_b1: unisim.vcomponents.LUT6
       INIT => X"008002A000000000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g10_b1_n_0
     );
 g10_b2: unisim.vcomponents.LUT6
@@ -9123,12 +7298,12 @@ g10_b2: unisim.vcomponents.LUT6
       INIT => X"008003E003F00804"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g10_b2_n_0
     );
 g10_b3: unisim.vcomponents.LUT6
@@ -9136,12 +7311,12 @@ g10_b3: unisim.vcomponents.LUT6
       INIT => X"03E001C007F80C0C"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g10_b3_n_0
     );
 g10_b4: unisim.vcomponents.LUT6
@@ -9149,12 +7324,12 @@ g10_b4: unisim.vcomponents.LUT6
       INIT => X"03E001C00C0C07F8"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g10_b4_n_0
     );
 g10_b5: unisim.vcomponents.LUT6
@@ -9162,12 +7337,12 @@ g10_b5: unisim.vcomponents.LUT6
       INIT => X"008003E0080403F0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g10_b5_n_0
     );
 g10_b7: unisim.vcomponents.LUT6
@@ -9175,25 +7350,25 @@ g10_b7: unisim.vcomponents.LUT6
       INIT => X"0000008000000000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
-      O => \^vc_reg[0]_3\
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
+      O => \^vc_reg[0]_rep_3\
     );
 g11_b1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0030000000800000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g11_b1_n_0
     );
 g11_b2: unisim.vcomponents.LUT6
@@ -9201,12 +7376,12 @@ g11_b2: unisim.vcomponents.LUT6
       INIT => X"0060000000800000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g11_b2_n_0
     );
 g11_b3: unisim.vcomponents.LUT6
@@ -9214,12 +7389,12 @@ g11_b3: unisim.vcomponents.LUT6
       INIT => X"00C00C0000800E00"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g11_b3_n_0
     );
 g11_b4: unisim.vcomponents.LUT6
@@ -9227,12 +7402,12 @@ g11_b4: unisim.vcomponents.LUT6
       INIT => X"01800C0000801E00"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g11_b4_n_0
     );
 g11_b5: unisim.vcomponents.LUT6
@@ -9240,12 +7415,12 @@ g11_b5: unisim.vcomponents.LUT6
       INIT => X"0300000000801000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g11_b5_n_0
     );
 g11_b6: unisim.vcomponents.LUT6
@@ -9253,12 +7428,12 @@ g11_b6: unisim.vcomponents.LUT6
       INIT => X"0600000000800000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g11_b6_n_0
     );
 g11_b7: unisim.vcomponents.LUT5
@@ -9268,9 +7443,9 @@ g11_b7: unisim.vcomponents.LUT5
         port map (
       I0 => \vc_reg[1]_rep_n_0\,
       I1 => drawY(2),
-      I2 => \vc_reg[3]_rep__0_n_0\,
-      I3 => vga_to_hdmi_i_45_0(0),
-      I4 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(3),
+      I3 => doutb(0),
+      I4 => doutb(1),
       O => g11_b7_n_0
     );
 g12_b1: unisim.vcomponents.LUT6
@@ -9278,12 +7453,12 @@ g12_b1: unisim.vcomponents.LUT6
       INIT => X"07B80C18080007F8"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g12_b1_n_0
     );
 g12_b2: unisim.vcomponents.LUT6
@@ -9291,12 +7466,12 @@ g12_b2: unisim.vcomponents.LUT6
       INIT => X"0FFC0C3C08000FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g12_b2_n_0
     );
 g12_b3: unisim.vcomponents.LUT6
@@ -9304,12 +7479,12 @@ g12_b3: unisim.vcomponents.LUT6
       INIT => X"084408640FFC0864"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g12_b3_n_0
     );
 g12_b4: unisim.vcomponents.LUT6
@@ -9317,12 +7492,12 @@ g12_b4: unisim.vcomponents.LUT6
       INIT => X"084408C40FFC08C4"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g12_b4_n_0
     );
 g12_b5: unisim.vcomponents.LUT6
@@ -9330,12 +7505,12 @@ g12_b5: unisim.vcomponents.LUT6
       INIT => X"0844098408180984"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g12_b5_n_0
     );
 g12_b6: unisim.vcomponents.LUT6
@@ -9343,12 +7518,12 @@ g12_b6: unisim.vcomponents.LUT6
       INIT => X"0C0C0F0C08100FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g12_b6_n_0
     );
 g12_b7: unisim.vcomponents.LUT6
@@ -9356,12 +7531,12 @@ g12_b7: unisim.vcomponents.LUT6
       INIT => X"04080E08000007F8"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g12_b7_n_0
     );
 g13_b1: unisim.vcomponents.LUT6
@@ -9369,12 +7544,12 @@ g13_b1: unisim.vcomponents.LUT6
       INIT => X"003C078007840880"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g13_b1_n_0
     );
 g13_b2: unisim.vcomponents.LUT6
@@ -9382,12 +7557,12 @@ g13_b2: unisim.vcomponents.LUT6
       INIT => X"007C0FC00FC40FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g13_b2_n_0
     );
 g13_b3: unisim.vcomponents.LUT6
@@ -9395,12 +7570,12 @@ g13_b3: unisim.vcomponents.LUT6
       INIT => X"00C4084408440FFC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g13_b3_n_0
     );
 g13_b4: unisim.vcomponents.LUT6
@@ -9408,12 +7583,12 @@ g13_b4: unisim.vcomponents.LUT6
       INIT => X"0F84084408440898"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g13_b4_n_0
     );
 g13_b5: unisim.vcomponents.LUT6
@@ -9421,12 +7596,12 @@ g13_b5: unisim.vcomponents.LUT6
       INIT => X"0F04084C084400B0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g13_b5_n_0
     );
 g13_b6: unisim.vcomponents.LUT6
@@ -9434,12 +7609,12 @@ g13_b6: unisim.vcomponents.LUT6
       INIT => X"000C0FF80C7C00E0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g13_b6_n_0
     );
 g13_b7: unisim.vcomponents.LUT6
@@ -9447,12 +7622,12 @@ g13_b7: unisim.vcomponents.LUT6
       INIT => X"000C07F0047C00C0"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g13_b7_n_0
     );
 g14_b1: unisim.vcomponents.LUT6
@@ -9460,12 +7635,12 @@ g14_b1: unisim.vcomponents.LUT6
       INIT => X"0000000003F807B8"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g14_b1_n_0
     );
 g14_b2: unisim.vcomponents.LUT6
@@ -9473,12 +7648,12 @@ g14_b2: unisim.vcomponents.LUT6
       INIT => X"0000000007FC0FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g14_b2_n_0
     );
 g14_b3: unisim.vcomponents.LUT6
@@ -9486,12 +7661,12 @@ g14_b3: unisim.vcomponents.LUT6
       INIT => X"063006300C440844"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g14_b3_n_0
     );
 g14_b4: unisim.vcomponents.LUT6
@@ -9499,12 +7674,12 @@ g14_b4: unisim.vcomponents.LUT6
       INIT => X"0E30063008440844"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g14_b4_n_0
     );
 g14_b5: unisim.vcomponents.LUT6
@@ -9512,12 +7687,12 @@ g14_b5: unisim.vcomponents.LUT6
       INIT => X"0800000008440844"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g14_b5_n_0
     );
 g14_b6: unisim.vcomponents.LUT6
@@ -9525,12 +7700,12 @@ g14_b6: unisim.vcomponents.LUT6
       INIT => X"00000000087C0FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g14_b6_n_0
     );
 g14_b7: unisim.vcomponents.LUT6
@@ -9538,12 +7713,12 @@ g14_b7: unisim.vcomponents.LUT6
       INIT => X"00000000003807B8"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g14_b7_n_0
     );
 g15_b1: unisim.vcomponents.LUT6
@@ -9551,12 +7726,12 @@ g15_b1: unisim.vcomponents.LUT6
       INIT => X"0018008001200808"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g15_b1_n_0
     );
 g15_b2: unisim.vcomponents.LUT6
@@ -9564,12 +7739,12 @@ g15_b2: unisim.vcomponents.LUT6
       INIT => X"003C01C001200C18"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g15_b2_n_0
     );
 g15_b3: unisim.vcomponents.LUT6
@@ -9577,12 +7752,12 @@ g15_b3: unisim.vcomponents.LUT6
       INIT => X"0DE4036001200630"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g15_b3_n_0
     );
 g15_b4: unisim.vcomponents.LUT6
@@ -9590,12 +7765,12 @@ g15_b4: unisim.vcomponents.LUT6
       INIT => X"0DC4063001200360"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g15_b4_n_0
     );
 g15_b5: unisim.vcomponents.LUT6
@@ -9603,12 +7778,12 @@ g15_b5: unisim.vcomponents.LUT6
       INIT => X"00040C18012001C0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g15_b5_n_0
     );
 g15_b6: unisim.vcomponents.LUT6
@@ -9616,12 +7791,12 @@ g15_b6: unisim.vcomponents.LUT6
       INIT => X"001C080801200080"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g15_b6_n_0
     );
 g15_b7: unisim.vcomponents.LUT6
@@ -9629,12 +7804,12 @@ g15_b7: unisim.vcomponents.LUT6
       INIT => X"0018000000000000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g15_b7_n_0
     );
 g16_b1: unisim.vcomponents.LUT6
@@ -9642,12 +7817,12 @@ g16_b1: unisim.vcomponents.LUT6
       INIT => X"061807B80FE001F8"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g16_b1_n_0
     );
 g16_b2: unisim.vcomponents.LUT6
@@ -9655,12 +7830,12 @@ g16_b2: unisim.vcomponents.LUT6
       INIT => X"0C0C0FFC0FF00BFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g16_b2_n_0
     );
 g16_b3: unisim.vcomponents.LUT6
@@ -9668,12 +7843,12 @@ g16_b3: unisim.vcomponents.LUT6
       INIT => X"0804084400980BC4"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g16_b3_n_0
     );
 g16_b4: unisim.vcomponents.LUT6
@@ -9681,12 +7856,12 @@ g16_b4: unisim.vcomponents.LUT6
       INIT => X"08040844008C0BC4"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g16_b4_n_0
     );
 g16_b5: unisim.vcomponents.LUT6
@@ -9694,12 +7869,12 @@ g16_b5: unisim.vcomponents.LUT6
       INIT => X"0C0C0FFC00980804"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g16_b5_n_0
     );
 g16_b6: unisim.vcomponents.LUT6
@@ -9707,12 +7882,12 @@ g16_b6: unisim.vcomponents.LUT6
       INIT => X"07F80FFC0FF00FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g16_b6_n_0
     );
 g16_b7: unisim.vcomponents.LUT6
@@ -9720,12 +7895,12 @@ g16_b7: unisim.vcomponents.LUT6
       INIT => X"03F008040FE007F8"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g16_b7_n_0
     );
 g17_b1: unisim.vcomponents.LUT6
@@ -9733,12 +7908,12 @@ g17_b1: unisim.vcomponents.LUT6
       INIT => X"0F98001C0E1C03F0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g17_b1_n_0
     );
 g17_b2: unisim.vcomponents.LUT6
@@ -9746,12 +7921,12 @@ g17_b2: unisim.vcomponents.LUT6
       INIT => X"078C000C0C0C07F8"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g17_b2_n_0
     );
 g17_b3: unisim.vcomponents.LUT6
@@ -9759,12 +7934,12 @@ g17_b3: unisim.vcomponents.LUT6
       INIT => X"088400E408E40C0C"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g17_b3_n_0
     );
 g17_b4: unisim.vcomponents.LUT6
@@ -9772,12 +7947,12 @@ g17_b4: unisim.vcomponents.LUT6
       INIT => X"0884084408440804"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g17_b4_n_0
     );
 g17_b5: unisim.vcomponents.LUT5
@@ -9786,10 +7961,10 @@ g17_b5: unisim.vcomponents.LUT5
     )
         port map (
       I0 => drawY(1),
-      I1 => \vc_reg[2]_rep_n_0\,
-      I2 => \vc_reg[3]_rep_n_0\,
-      I3 => vga_to_hdmi_i_45_0(0),
-      I4 => vga_to_hdmi_i_45_0(1),
+      I1 => drawY(2),
+      I2 => drawY(3),
+      I3 => doutb(0),
+      I4 => doutb(1),
       O => g17_b5_n_0
     );
 g17_b6: unisim.vcomponents.LUT6
@@ -9797,12 +7972,12 @@ g17_b6: unisim.vcomponents.LUT6
       INIT => X"07F80FFC0FFC0FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g17_b6_n_0
     );
 g17_b7: unisim.vcomponents.LUT6
@@ -9810,12 +7985,12 @@ g17_b7: unisim.vcomponents.LUT6
       INIT => X"03F0080408040804"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g17_b7_n_0
     );
 g18_b1: unisim.vcomponents.LUT6
@@ -9823,12 +7998,12 @@ g18_b1: unisim.vcomponents.LUT6
       INIT => X"0E1C000400000FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g18_b1_n_0
     );
 g18_b2: unisim.vcomponents.LUT6
@@ -9837,11 +8012,11 @@ g18_b2: unisim.vcomponents.LUT6
     )
         port map (
       I0 => \vc_reg[0]_rep_n_0\,
-      I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I1 => \vc_reg[1]_rep_n_0\,
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g18_b2_n_0
     );
 g18_b3: unisim.vcomponents.LUT6
@@ -9849,12 +8024,12 @@ g18_b3: unisim.vcomponents.LUT6
       INIT => X"01E00FFC0FFC0040"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g18_b3_n_0
     );
 g18_b4: unisim.vcomponents.LUT6
@@ -9862,12 +8037,12 @@ g18_b4: unisim.vcomponents.LUT6
       INIT => X"00C008040FFC0040"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g18_b4_n_0
     );
 g18_b5: unisim.vcomponents.LUT6
@@ -9875,12 +8050,12 @@ g18_b5: unisim.vcomponents.LUT6
       INIT => X"0FFC080008040040"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g18_b5_n_0
     );
 g18_b6: unisim.vcomponents.LUT5
@@ -9889,10 +8064,10 @@ g18_b6: unisim.vcomponents.LUT5
     )
         port map (
       I0 => drawY(1),
-      I1 => \vc_reg[2]_rep_n_0\,
-      I2 => \vc_reg[3]_rep_n_0\,
-      I3 => vga_to_hdmi_i_45_0(0),
-      I4 => vga_to_hdmi_i_45_0(1),
+      I1 => drawY(2),
+      I2 => drawY(3),
+      I3 => doutb(0),
+      I4 => doutb(1),
       O => g18_b6_n_0
     );
 g18_b7: unisim.vcomponents.LUT6
@@ -9900,12 +8075,12 @@ g18_b7: unisim.vcomponents.LUT6
       INIT => X"0804070000000FFC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g18_b7_n_0
     );
 g19_b0: unisim.vcomponents.LUT5
@@ -9915,9 +8090,9 @@ g19_b0: unisim.vcomponents.LUT5
         port map (
       I0 => \vc_reg[1]_rep_n_0\,
       I1 => drawY(2),
-      I2 => \vc_reg[3]_rep__0_n_0\,
-      I3 => vga_to_hdmi_i_45_0(0),
-      I4 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(3),
+      I3 => doutb(0),
+      I4 => doutb(1),
       O => g19_b0_n_0
     );
 g19_b1: unisim.vcomponents.LUT6
@@ -9925,12 +8100,12 @@ g19_b1: unisim.vcomponents.LUT6
       INIT => X"07F80FFC0FFC0E00"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g19_b1_n_0
     );
 g19_b2: unisim.vcomponents.LUT6
@@ -9938,12 +8113,12 @@ g19_b2: unisim.vcomponents.LUT6
       INIT => X"0FFC0FFC00380C00"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
-      I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I0 => drawY(0),
+      I1 => \vc_reg[1]_rep_n_0\,
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g19_b2_n_0
     );
 g19_b3: unisim.vcomponents.LUT6
@@ -9951,12 +8126,12 @@ g19_b3: unisim.vcomponents.LUT6
       INIT => X"080400E000700800"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g19_b3_n_0
     );
 g19_b4: unisim.vcomponents.LUT6
@@ -9964,12 +8139,12 @@ g19_b4: unisim.vcomponents.LUT6
       INIT => X"0804007000700804"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g19_b4_n_0
     );
 g19_b5: unisim.vcomponents.LUT6
@@ -9977,12 +8152,12 @@ g19_b5: unisim.vcomponents.LUT6
       INIT => X"0804003800380FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g19_b5_n_0
     );
 g19_b6: unisim.vcomponents.LUT3
@@ -9991,8 +8166,8 @@ g19_b6: unisim.vcomponents.LUT3
     )
         port map (
       I0 => drawY(1),
-      I1 => \vc_reg[2]_rep_n_0\,
-      I2 => \vc_reg[3]_rep_n_0\,
+      I1 => drawY(2),
+      I2 => drawY(3),
       O => g19_b6_n_0
     );
 g19_b7: unisim.vcomponents.LUT6
@@ -10000,12 +8175,12 @@ g19_b7: unisim.vcomponents.LUT6
       INIT => X"07F80FFC0FFC0804"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g19_b7_n_0
     );
 g1_b0: unisim.vcomponents.LUT6
@@ -10013,25 +8188,25 @@ g1_b0: unisim.vcomponents.LUT6
       INIT => X"000000C001C00000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
-      O => \vc_reg[0]_1\
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
+      O => \vc_reg[0]_rep_1\
     );
 g1_b1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"000001E001C00080"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g1_b1_n_0
     );
 g1_b2: unisim.vcomponents.LUT6
@@ -10039,12 +8214,12 @@ g1_b2: unisim.vcomponents.LUT6
       INIT => X"018009F009F001C0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g1_b2_n_0
     );
 g1_b3: unisim.vcomponents.LUT6
@@ -10052,12 +8227,12 @@ g1_b3: unisim.vcomponents.LUT6
       INIT => X"03C00FF80E3803E0"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g1_b3_n_0
     );
 g1_b4: unisim.vcomponents.LUT6
@@ -10065,12 +8240,12 @@ g1_b4: unisim.vcomponents.LUT6
       INIT => X"03C00FF80E3807F0"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g1_b4_n_0
     );
 g1_b5: unisim.vcomponents.LUT6
@@ -10078,12 +8253,12 @@ g1_b5: unisim.vcomponents.LUT6
       INIT => X"018009F009F003E0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g1_b5_n_0
     );
 g1_b6: unisim.vcomponents.LUT6
@@ -10091,12 +8266,12 @@ g1_b6: unisim.vcomponents.LUT6
       INIT => X"000001E001C001C0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g1_b6_n_0
     );
 g1_b7: unisim.vcomponents.LUT6
@@ -10104,12 +8279,12 @@ g1_b7: unisim.vcomponents.LUT6
       INIT => X"000000C001C00080"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g1_b7_n_0
     );
 g20_b1: unisim.vcomponents.LUT6
@@ -10117,12 +8292,12 @@ g20_b1: unisim.vcomponents.LUT6
       INIT => X"07180F3827F80038"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g20_b1_n_0
     );
 g20_b2: unisim.vcomponents.LUT6
@@ -10131,11 +8306,11 @@ g20_b2: unisim.vcomponents.LUT6
     )
         port map (
       I0 => \vc_reg[0]_rep_n_0\,
-      I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I1 => \vc_reg[1]_rep_n_0\,
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g20_b2_n_0
     );
 g20_b3: unisim.vcomponents.LUT6
@@ -10143,12 +8318,12 @@ g20_b3: unisim.vcomponents.LUT6
       INIT => X"08C400C43C040044"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g20_b3_n_0
     );
 g20_b4: unisim.vcomponents.LUT6
@@ -10156,12 +8331,12 @@ g20_b4: unisim.vcomponents.LUT6
       INIT => X"084400440E040844"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g20_b4_n_0
     );
 g20_b5: unisim.vcomponents.LUT6
@@ -10169,12 +8344,12 @@ g20_b5: unisim.vcomponents.LUT6
       INIT => X"08640FFC08040FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g20_b5_n_0
     );
 g20_b6: unisim.vcomponents.LUT6
@@ -10182,12 +8357,12 @@ g20_b6: unisim.vcomponents.LUT6
       INIT => X"0E3C0FFC0FFC0FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g20_b6_n_0
     );
 g20_b7: unisim.vcomponents.LUT6
@@ -10195,12 +8370,12 @@ g20_b7: unisim.vcomponents.LUT6
       INIT => X"0618080407F80804"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g20_b7_n_0
     );
 g21_b0: unisim.vcomponents.LUT6
@@ -10208,12 +8383,12 @@ g21_b0: unisim.vcomponents.LUT6
       INIT => X"03FC01FC0000001C"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g21_b0_n_0
     );
 g21_b1: unisim.vcomponents.LUT6
@@ -10221,12 +8396,12 @@ g21_b1: unisim.vcomponents.LUT6
       INIT => X"0FFC03FC07FC000C"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g21_b1_n_0
     );
 g21_b2: unisim.vcomponents.LUT6
@@ -10235,11 +8410,11 @@ g21_b2: unisim.vcomponents.LUT6
     )
         port map (
       I0 => \vc_reg[0]_rep_n_0\,
-      I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I1 => \vc_reg[1]_rep_n_0\,
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g21_b2_n_0
     );
 g21_b3: unisim.vcomponents.LUT6
@@ -10247,12 +8422,12 @@ g21_b3: unisim.vcomponents.LUT6
       INIT => X"03800C0008000FFC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g21_b3_n_0
     );
 g21_b5: unisim.vcomponents.LUT6
@@ -10260,12 +8435,12 @@ g21_b5: unisim.vcomponents.LUT6
       INIT => X"0E00060008000804"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g21_b5_n_0
     );
 g21_b6: unisim.vcomponents.LUT5
@@ -10274,10 +8449,10 @@ g21_b6: unisim.vcomponents.LUT5
     )
         port map (
       I0 => drawY(1),
-      I1 => \vc_reg[2]_rep_n_0\,
-      I2 => \vc_reg[3]_rep_n_0\,
-      I3 => vga_to_hdmi_i_45_0(0),
-      I4 => vga_to_hdmi_i_45_0(1),
+      I1 => drawY(2),
+      I2 => drawY(3),
+      I3 => doutb(0),
+      I4 => doutb(1),
       O => g21_b6_n_0
     );
 g21_b7: unisim.vcomponents.LUT6
@@ -10285,12 +8460,12 @@ g21_b7: unisim.vcomponents.LUT6
       INIT => X"03FC01FC07FC001C"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g21_b7_n_0
     );
 g22_b0: unisim.vcomponents.LUT6
@@ -10298,12 +8473,12 @@ g22_b0: unisim.vcomponents.LUT6
       INIT => X"00000E0C001C0C0C"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g22_b0_n_0
     );
 g22_b1: unisim.vcomponents.LUT6
@@ -10311,12 +8486,12 @@ g22_b1: unisim.vcomponents.LUT6
       INIT => X"00000C1C003C0E1C"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g22_b1_n_0
     );
 g22_b2: unisim.vcomponents.LUT6
@@ -10324,12 +8499,12 @@ g22_b2: unisim.vcomponents.LUT6
       INIT => X"0804083408600330"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g22_b2_n_0
     );
 g22_b3: unisim.vcomponents.LUT6
@@ -10337,12 +8512,12 @@ g22_b3: unisim.vcomponents.LUT6
       INIT => X"080408640FC001E0"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g22_b3_n_0
     );
 g22_b4: unisim.vcomponents.LUT6
@@ -10350,12 +8525,12 @@ g22_b4: unisim.vcomponents.LUT6
       INIT => X"0FFC08C40FC001E0"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g22_b4_n_0
     );
 g22_b5: unisim.vcomponents.LUT6
@@ -10363,12 +8538,12 @@ g22_b5: unisim.vcomponents.LUT6
       INIT => X"0FFC098408600330"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g22_b5_n_0
     );
 g22_b6: unisim.vcomponents.LUT6
@@ -10376,12 +8551,12 @@ g22_b6: unisim.vcomponents.LUT6
       INIT => X"00000F0C003C0E1C"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g22_b6_n_0
     );
 g22_b7: unisim.vcomponents.LUT6
@@ -10389,12 +8564,12 @@ g22_b7: unisim.vcomponents.LUT6
       INIT => X"00000E1C001C0C0C"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g22_b7_n_0
     );
 g23_b0: unisim.vcomponents.LUT6
@@ -10402,12 +8577,12 @@ g23_b0: unisim.vcomponents.LUT6
       INIT => X"2000000000000000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g23_b0_n_0
     );
 g23_b1: unisim.vcomponents.LUT6
@@ -10415,12 +8590,12 @@ g23_b1: unisim.vcomponents.LUT6
       INIT => X"2000000800000E00"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g23_b1_n_0
     );
 g23_b2: unisim.vcomponents.LUT6
@@ -10428,12 +8603,12 @@ g23_b2: unisim.vcomponents.LUT6
       INIT => X"2000000C0FFC0700"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g23_b2_n_0
     );
 g23_b3: unisim.vcomponents.LUT6
@@ -10441,12 +8616,12 @@ g23_b3: unisim.vcomponents.LUT6
       INIT => X"200000060FFC0380"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g23_b3_n_0
     );
 g23_b4: unisim.vcomponents.LUT6
@@ -10454,12 +8629,12 @@ g23_b4: unisim.vcomponents.LUT6
       INIT => X"20000003080401C0"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g23_b4_n_0
     );
 g23_b5: unisim.vcomponents.LUT6
@@ -10467,12 +8642,12 @@ g23_b5: unisim.vcomponents.LUT6
       INIT => X"20000006080400E0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g23_b5_n_0
     );
 g23_b6: unisim.vcomponents.LUT6
@@ -10480,12 +8655,12 @@ g23_b6: unisim.vcomponents.LUT6
       INIT => X"2000000C00000070"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g23_b6_n_0
     );
 g23_b7: unisim.vcomponents.LUT6
@@ -10493,12 +8668,12 @@ g23_b7: unisim.vcomponents.LUT6
       INIT => X"2000000800000038"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g23_b7_n_0
     );
 g24_b1: unisim.vcomponents.LUT6
@@ -10506,12 +8681,12 @@ g24_b1: unisim.vcomponents.LUT6
       INIT => X"0440078008000000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g24_b1_n_0
     );
 g24_b2: unisim.vcomponents.LUT6
@@ -10519,12 +8694,12 @@ g24_b2: unisim.vcomponents.LUT6
       INIT => X"0C600FC00FC00000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g24_b2_n_0
     );
 g24_b3: unisim.vcomponents.LUT6
@@ -10532,12 +8707,12 @@ g24_b3: unisim.vcomponents.LUT6
       INIT => X"0820086007E00004"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g24_b3_n_0
     );
 g24_b4: unisim.vcomponents.LUT6
@@ -10545,12 +8720,12 @@ g24_b4: unisim.vcomponents.LUT6
       INIT => X"0820082008A00007"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g24_b4_n_0
     );
 g24_b5: unisim.vcomponents.LUT6
@@ -10558,12 +8733,12 @@ g24_b5: unisim.vcomponents.LUT6
       INIT => X"08200FFC08A00003"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g24_b5_n_0
     );
 g24_b6: unisim.vcomponents.LUT6
@@ -10571,12 +8746,12 @@ g24_b6: unisim.vcomponents.LUT6
       INIT => X"0FE00FFC0FA00000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g24_b6_n_0
     );
 g24_b7: unisim.vcomponents.LUT6
@@ -10584,12 +8759,12 @@ g24_b7: unisim.vcomponents.LUT6
       INIT => X"07C0000407000000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g24_b7_n_0
     );
 g25_b1: unisim.vcomponents.LUT6
@@ -10597,12 +8772,12 @@ g25_b1: unisim.vcomponents.LUT6
       INIT => X"0020000004C00800"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g25_b1_n_0
     );
 g25_b2: unisim.vcomponents.LUT6
@@ -10610,12 +8785,12 @@ g25_b2: unisim.vcomponents.LUT6
       INIT => X"3FE000180CE00FFC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g25_b2_n_0
     );
 g25_b3: unisim.vcomponents.LUT6
@@ -10623,12 +8798,12 @@ g25_b3: unisim.vcomponents.LUT6
       INIT => X"7FC0000C08A007FC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g25_b3_n_0
     );
 g25_b4: unisim.vcomponents.LUT6
@@ -10636,12 +8811,12 @@ g25_b4: unisim.vcomponents.LUT6
       INIT => X"4820084408A00824"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g25_b4_n_0
     );
 g25_b5: unisim.vcomponents.LUT6
@@ -10649,12 +8824,12 @@ g25_b5: unisim.vcomponents.LUT6
       INIT => X"48200FFC08A00860"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g25_b5_n_0
     );
 g25_b6: unisim.vcomponents.LUT6
@@ -10662,12 +8837,12 @@ g25_b6: unisim.vcomponents.LUT6
       INIT => X"6FE00FF80FE00FC0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g25_b6_n_0
     );
 g25_b7: unisim.vcomponents.LUT6
@@ -10675,12 +8850,12 @@ g25_b7: unisim.vcomponents.LUT6
       INIT => X"27C0084007C00780"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g25_b7_n_0
     );
 g26_b1: unisim.vcomponents.LUT6
@@ -10688,12 +8863,12 @@ g26_b1: unisim.vcomponents.LUT6
       INIT => X"0C203FEC00000FC0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g26_b1_n_0
     );
 g26_b2: unisim.vcomponents.LUT6
@@ -10701,12 +8876,12 @@ g26_b2: unisim.vcomponents.LUT6
       INIT => X"0E607FEC08000FE0"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g26_b2_n_0
     );
 g26_b3: unisim.vcomponents.LUT6
@@ -10714,12 +8889,12 @@ g26_b3: unisim.vcomponents.LUT6
       INIT => X"03C040200FEC0020"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g26_b3_n_0
     );
 g26_b4: unisim.vcomponents.LUT6
@@ -10727,12 +8902,12 @@ g26_b4: unisim.vcomponents.LUT6
       INIT => X"018040000FEC0040"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g26_b4_n_0
     );
 g26_b5: unisim.vcomponents.LUT6
@@ -10740,12 +8915,12 @@ g26_b5: unisim.vcomponents.LUT6
       INIT => X"0FFC700008200FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g26_b5_n_0
     );
 g26_b6: unisim.vcomponents.LUT5
@@ -10754,10 +8929,10 @@ g26_b6: unisim.vcomponents.LUT5
     )
         port map (
       I0 => drawY(1),
-      I1 => \vc_reg[2]_rep_n_0\,
-      I2 => \vc_reg[3]_rep_n_0\,
-      I3 => vga_to_hdmi_i_45_0(0),
-      I4 => vga_to_hdmi_i_45_0(1),
+      I1 => drawY(2),
+      I2 => drawY(3),
+      I3 => doutb(0),
+      I4 => doutb(1),
       O => g26_b6_n_0
     );
 g26_b7: unisim.vcomponents.LUT6
@@ -10765,12 +8940,12 @@ g26_b7: unisim.vcomponents.LUT6
       INIT => X"0804000000000804"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g26_b7_n_0
     );
 g27_b0: unisim.vcomponents.LUT5
@@ -10780,9 +8955,9 @@ g27_b0: unisim.vcomponents.LUT5
         port map (
       I0 => \vc_reg[1]_rep_n_0\,
       I1 => drawY(2),
-      I2 => \vc_reg[3]_rep__0_n_0\,
-      I3 => vga_to_hdmi_i_45_0(0),
-      I4 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(3),
+      I3 => doutb(0),
+      I4 => doutb(1),
       O => g27_b0_n_0
     );
 g27_b1: unisim.vcomponents.LUT6
@@ -10790,12 +8965,12 @@ g27_b1: unisim.vcomponents.LUT6
       INIT => X"07C00FC00FE00000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g27_b1_n_0
     );
 g27_b2: unisim.vcomponents.LUT6
@@ -10803,12 +8978,12 @@ g27_b2: unisim.vcomponents.LUT6
       INIT => X"0FE00FE000600800"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g27_b2_n_0
     );
 g27_b3: unisim.vcomponents.LUT6
@@ -10816,12 +8991,12 @@ g27_b3: unisim.vcomponents.LUT6
       INIT => X"082000200FC00FFC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g27_b3_n_0
     );
 g27_b5: unisim.vcomponents.LUT6
@@ -10829,12 +9004,12 @@ g27_b5: unisim.vcomponents.LUT6
       INIT => X"08200FC000600804"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g27_b5_n_0
     );
 g27_b6: unisim.vcomponents.LUT6
@@ -10842,12 +9017,12 @@ g27_b6: unisim.vcomponents.LUT6
       INIT => X"0FE00FE00FE00000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g27_b6_n_0
     );
 g27_b7: unisim.vcomponents.LUT6
@@ -10855,12 +9030,12 @@ g27_b7: unisim.vcomponents.LUT6
       INIT => X"07C000200FE00000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g27_b7_n_0
     );
 g28_b1: unisim.vcomponents.LUT6
@@ -10868,12 +9043,12 @@ g28_b1: unisim.vcomponents.LUT6
       INIT => X"044000C0402007C0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g28_b1_n_0
     );
 g28_b2: unisim.vcomponents.LUT6
@@ -10881,12 +9056,12 @@ g28_b2: unisim.vcomponents.LUT6
       INIT => X"0E6000E07FE00FE0"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g28_b2_n_0
     );
 g28_b3: unisim.vcomponents.LUT6
@@ -10894,12 +9069,12 @@ g28_b3: unisim.vcomponents.LUT6
       INIT => X"0B2000207FC00820"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g28_b3_n_0
     );
 g28_b4: unisim.vcomponents.LUT6
@@ -10907,12 +9082,12 @@ g28_b4: unisim.vcomponents.LUT6
       INIT => X"0920086048204820"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g28_b4_n_0
     );
 g28_b5: unisim.vcomponents.LUT6
@@ -10920,12 +9095,12 @@ g28_b5: unisim.vcomponents.LUT6
       INIT => X"09A00FC008207FC0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g28_b5_n_0
     );
 g28_b6: unisim.vcomponents.LUT6
@@ -10933,12 +9108,12 @@ g28_b6: unisim.vcomponents.LUT6
       INIT => X"0CE00FE00FE07FE0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g28_b6_n_0
     );
 g28_b7: unisim.vcomponents.LUT6
@@ -10946,12 +9121,12 @@ g28_b7: unisim.vcomponents.LUT6
       INIT => X"0440082007C04020"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g28_b7_n_0
     );
 g29_b0: unisim.vcomponents.LUT6
@@ -10959,12 +9134,12 @@ g29_b0: unisim.vcomponents.LUT6
       INIT => X"07E001E000000000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g29_b0_n_0
     );
 g29_b1: unisim.vcomponents.LUT6
@@ -10972,12 +9147,12 @@ g29_b1: unisim.vcomponents.LUT6
       INIT => X"0FE003E008000400"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g29_b1_n_0
     );
 g29_b2: unisim.vcomponents.LUT6
@@ -10985,12 +9160,12 @@ g29_b2: unisim.vcomponents.LUT6
       INIT => X"0C0006000FE00C20"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g29_b2_n_0
     );
 g29_b3: unisim.vcomponents.LUT6
@@ -10998,12 +9173,12 @@ g29_b3: unisim.vcomponents.LUT6
       INIT => X"07000C0007E00820"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g29_b3_n_0
     );
 g29_b4: unisim.vcomponents.LUT6
@@ -11011,12 +9186,12 @@ g29_b4: unisim.vcomponents.LUT6
       INIT => X"07000C0008000FFC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g29_b4_n_0
     );
 g29_b5: unisim.vcomponents.LUT6
@@ -11024,12 +9199,12 @@ g29_b5: unisim.vcomponents.LUT6
       INIT => X"0C000600080007F8"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g29_b5_n_0
     );
 g29_b6: unisim.vcomponents.LUT6
@@ -11037,12 +9212,12 @@ g29_b6: unisim.vcomponents.LUT6
       INIT => X"0FE003E00FE00020"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g29_b6_n_0
     );
 g29_b7: unisim.vcomponents.LUT6
@@ -11050,12 +9225,12 @@ g29_b7: unisim.vcomponents.LUT6
       INIT => X"07E001E007E00020"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g29_b7_n_0
     );
 g2_b1: unisim.vcomponents.LUT5
@@ -11064,10 +9239,10 @@ g2_b1: unisim.vcomponents.LUT5
     )
         port map (
       I0 => drawY(1),
-      I1 => \vc_reg[2]_rep_n_0\,
-      I2 => \vc_reg[3]_rep_n_0\,
-      I3 => vga_to_hdmi_i_45_0(0),
-      I4 => vga_to_hdmi_i_45_0(1),
+      I1 => drawY(2),
+      I2 => drawY(3),
+      I3 => doutb(0),
+      I4 => doutb(1),
       O => g2_b1_n_0
     );
 g2_b2: unisim.vcomponents.LUT6
@@ -11075,12 +9250,12 @@ g2_b2: unisim.vcomponents.LUT6
       INIT => X"078CF99F0660FE7F"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g2_b2_n_0
     );
 g2_b3: unisim.vcomponents.LUT6
@@ -11088,12 +9263,12 @@ g2_b3: unisim.vcomponents.LUT6
       INIT => X"0FDCFBDF0420FC3F"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g2_b3_n_0
     );
 g2_b4: unisim.vcomponents.LUT6
@@ -11101,12 +9276,12 @@ g2_b4: unisim.vcomponents.LUT6
       INIT => X"0874FBDF0420FC3F"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g2_b4_n_0
     );
 g2_b5: unisim.vcomponents.LUT6
@@ -11114,12 +9289,12 @@ g2_b5: unisim.vcomponents.LUT6
       INIT => X"0860F99F0660FE7F"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g2_b5_n_0
     );
 g2_b6: unisim.vcomponents.LUT5
@@ -11128,10 +9303,10 @@ g2_b6: unisim.vcomponents.LUT5
     )
         port map (
       I0 => drawY(1),
-      I1 => \vc_reg[2]_rep_n_0\,
-      I2 => \vc_reg[3]_rep_n_0\,
-      I3 => vga_to_hdmi_i_45_0(0),
-      I4 => vga_to_hdmi_i_45_0(1),
+      I1 => drawY(2),
+      I2 => drawY(3),
+      I3 => doutb(0),
+      I4 => doutb(1),
       O => g2_b6_n_0
     );
 g2_b7: unisim.vcomponents.LUT6
@@ -11139,12 +9314,12 @@ g2_b7: unisim.vcomponents.LUT6
       INIT => X"0780FFFF0000FFFF"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g2_b7_n_0
     );
 g30_b0: unisim.vcomponents.LUT6
@@ -11152,12 +9327,12 @@ g30_b0: unisim.vcomponents.LUT6
       INIT => X"0000000000000820"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g30_b0_n_0
     );
 g30_b1: unisim.vcomponents.LUT6
@@ -11165,12 +9340,12 @@ g30_b1: unisim.vcomponents.LUT6
       INIT => X"08040C201FE00C60"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g30_b1_n_0
     );
 g30_b2: unisim.vcomponents.LUT6
@@ -11178,12 +9353,12 @@ g30_b2: unisim.vcomponents.LUT6
       INIT => X"08040C603FE006C0"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g30_b2_n_0
     );
 g30_b3: unisim.vcomponents.LUT6
@@ -11191,12 +9366,12 @@ g30_b3: unisim.vcomponents.LUT6
       INIT => X"0FBC08E068000380"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g30_b3_n_0
     );
 g30_b4: unisim.vcomponents.LUT6
@@ -11204,12 +9379,12 @@ g30_b4: unisim.vcomponents.LUT6
       INIT => X"07F809A048000380"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g30_b4_n_0
     );
 g30_b5: unisim.vcomponents.LUT6
@@ -11217,12 +9392,12 @@ g30_b5: unisim.vcomponents.LUT6
       INIT => X"00400B20480006C0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g30_b5_n_0
     );
 g30_b6: unisim.vcomponents.LUT6
@@ -11230,12 +9405,12 @@ g30_b6: unisim.vcomponents.LUT6
       INIT => X"00400E604FE00C60"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g30_b6_n_0
     );
 g30_b7: unisim.vcomponents.LUT6
@@ -11243,12 +9418,12 @@ g30_b7: unisim.vcomponents.LUT6
       INIT => X"00000C6047E00820"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g30_b7_n_0
     );
 g31_b1: unisim.vcomponents.LUT6
@@ -11256,12 +9431,12 @@ g31_b1: unisim.vcomponents.LUT6
       INIT => X"0780000400400000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g31_b1_n_0
     );
 g31_b2: unisim.vcomponents.LUT6
@@ -11269,12 +9444,12 @@ g31_b2: unisim.vcomponents.LUT6
       INIT => X"07C0000C00400000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g31_b2_n_0
     );
 g31_b3: unisim.vcomponents.LUT6
@@ -11282,12 +9457,12 @@ g31_b3: unisim.vcomponents.LUT6
       INIT => X"0460000807F80FBC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g31_b3_n_0
     );
 g31_b4: unisim.vcomponents.LUT6
@@ -11295,12 +9470,12 @@ g31_b4: unisim.vcomponents.LUT6
       INIT => X"0430000C0FBC0FBC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g31_b4_n_0
     );
 g31_b5: unisim.vcomponents.LUT6
@@ -11308,12 +9483,12 @@ g31_b5: unisim.vcomponents.LUT6
       INIT => X"0460000408040000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g31_b5_n_0
     );
 g31_b6: unisim.vcomponents.LUT6
@@ -11321,12 +9496,12 @@ g31_b6: unisim.vcomponents.LUT6
       INIT => X"07C0000C08040000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g31_b6_n_0
     );
 g31_b7: unisim.vcomponents.LUT6
@@ -11334,12 +9509,12 @@ g31_b7: unisim.vcomponents.LUT6
       INIT => X"0780000800000000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g31_b7_n_0
     );
 g3_b0: unisim.vcomponents.LUT6
@@ -11347,25 +9522,25 @@ g3_b0: unisim.vcomponents.LUT6
       INIT => X"02A007FC001C0000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
-      O => \vc_reg[0]_2\
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
+      O => \vc_reg[0]_rep_2\
     );
 g3_b1: unisim.vcomponents.LUT6
     generic map(
       INIT => X"02A00FFC001C0278"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g3_b1_n_0
     );
 g3_b2: unisim.vcomponents.LUT6
@@ -11373,12 +9548,12 @@ g3_b2: unisim.vcomponents.LUT6
       INIT => X"01C00E14001402FC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g3_b2_n_0
     );
 g3_b3: unisim.vcomponents.LUT6
@@ -11386,12 +9561,12 @@ g3_b3: unisim.vcomponents.LUT6
       INIT => X"0F78001400140F84"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g3_b3_n_0
     );
 g3_b4: unisim.vcomponents.LUT6
@@ -11399,12 +9574,12 @@ g3_b4: unisim.vcomponents.LUT6
       INIT => X"0F78001407FC0F84"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g3_b4_n_0
     );
 g3_b5: unisim.vcomponents.LUT6
@@ -11412,12 +9587,12 @@ g3_b5: unisim.vcomponents.LUT6
       INIT => X"01C00FFC0FFC02FC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g3_b5_n_0
     );
 g3_b6: unisim.vcomponents.LUT6
@@ -11425,12 +9600,12 @@ g3_b6: unisim.vcomponents.LUT6
       INIT => X"02A01FFC0E000278"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g3_b6_n_0
     );
 g3_b7: unisim.vcomponents.LUT6
@@ -11438,12 +9613,12 @@ g3_b7: unisim.vcomponents.LUT6
       INIT => X"02A01C000C000000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g3_b7_n_0
     );
 g4_b1: unisim.vcomponents.LUT6
@@ -11451,12 +9626,12 @@ g4_b1: unisim.vcomponents.LUT6
       INIT => X"0DFC01100FFE0040"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g4_b1_n_0
     );
 g4_b2: unisim.vcomponents.LUT6
@@ -11464,12 +9639,12 @@ g4_b2: unisim.vcomponents.LUT6
       INIT => X"0DFC031807FC0040"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g4_b2_n_0
     );
 g4_b3: unisim.vcomponents.LUT6
@@ -11477,12 +9652,12 @@ g4_b3: unisim.vcomponents.LUT6
       INIT => X"000007FC03F800E0"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g4_b3_n_0
     );
 g4_b4: unisim.vcomponents.LUT6
@@ -11490,12 +9665,12 @@ g4_b4: unisim.vcomponents.LUT6
       INIT => X"000007FC01F001F0"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g4_b4_n_0
     );
 g4_b5: unisim.vcomponents.LUT6
@@ -11503,12 +9678,12 @@ g4_b5: unisim.vcomponents.LUT6
       INIT => X"0DFC031800E003F8"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g4_b5_n_0
     );
 g4_b6: unisim.vcomponents.LUT6
@@ -11516,12 +9691,12 @@ g4_b6: unisim.vcomponents.LUT6
       INIT => X"0DFC0110004007FC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g4_b6_n_0
     );
 g4_b7: unisim.vcomponents.LUT6
@@ -11529,12 +9704,12 @@ g4_b7: unisim.vcomponents.LUT6
       INIT => X"0000000000400FFE"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g4_b7_n_0
     );
 g5_b0: unisim.vcomponents.LUT5
@@ -11544,9 +9719,9 @@ g5_b0: unisim.vcomponents.LUT5
         port map (
       I0 => \vc_reg[1]_rep_n_0\,
       I1 => drawY(2),
-      I2 => \vc_reg[3]_rep__0_n_0\,
-      I3 => vga_to_hdmi_i_45_0(0),
-      I4 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(3),
+      I3 => doutb(0),
+      I4 => doutb(1),
       O => g5_b0_n_0
     );
 g5_b1: unisim.vcomponents.LUT6
@@ -11554,12 +9729,12 @@ g5_b1: unisim.vcomponents.LUT6
       INIT => X"09100F0008C40FFC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g5_b1_n_0
     );
 g5_b2: unisim.vcomponents.LUT6
@@ -11567,12 +9742,12 @@ g5_b2: unisim.vcomponents.LUT6
       INIT => X"0B180F001DE60004"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g5_b2_n_0
     );
 g5_b3: unisim.vcomponents.LUT6
@@ -11580,12 +9755,12 @@ g5_b3: unisim.vcomponents.LUT6
       INIT => X"0FFC0F0017320FFC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g5_b3_n_0
     );
 g5_b4: unisim.vcomponents.LUT6
@@ -11593,12 +9768,12 @@ g5_b4: unisim.vcomponents.LUT6
       INIT => X"1FFC0F0012120FFC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g5_b4_n_0
     );
 g5_b5: unisim.vcomponents.LUT6
@@ -11606,12 +9781,12 @@ g5_b5: unisim.vcomponents.LUT6
       INIT => X"1B180F00133A0044"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g5_b5_n_0
     );
 g5_b6: unisim.vcomponents.LUT6
@@ -11619,12 +9794,12 @@ g5_b6: unisim.vcomponents.LUT6
       INIT => X"09100F0019EE007C"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g5_b6_n_0
     );
 g5_b7: unisim.vcomponents.LUT6
@@ -11632,12 +9807,12 @@ g5_b7: unisim.vcomponents.LUT6
       INIT => X"00000F0008C40038"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g5_b7_n_0
     );
 g6_b1: unisim.vcomponents.LUT6
@@ -11645,12 +9820,12 @@ g6_b1: unisim.vcomponents.LUT6
       INIT => X"0080008002000010"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g6_b1_n_0
     );
 g6_b2: unisim.vcomponents.LUT6
@@ -11658,12 +9833,12 @@ g6_b2: unisim.vcomponents.LUT6
       INIT => X"008001C006000018"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g6_b2_n_0
     );
 g6_b3: unisim.vcomponents.LUT6
@@ -11671,12 +9846,12 @@ g6_b3: unisim.vcomponents.LUT6
       INIT => X"008003E00FFC0FFC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g6_b3_n_0
     );
 g6_b4: unisim.vcomponents.LUT5
@@ -11684,11 +9859,11 @@ g6_b4: unisim.vcomponents.LUT5
       INIT => X"02A00FFC"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(1),
       O => g6_b4_n_0
     );
 g6_b5: unisim.vcomponents.LUT6
@@ -11696,12 +9871,12 @@ g6_b5: unisim.vcomponents.LUT6
       INIT => X"03E0008006000018"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g6_b5_n_0
     );
 g6_b6: unisim.vcomponents.LUT6
@@ -11709,12 +9884,12 @@ g6_b6: unisim.vcomponents.LUT6
       INIT => X"01C0008002000010"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g6_b6_n_0
     );
 g6_b7: unisim.vcomponents.LUT5
@@ -11722,11 +9897,11 @@ g6_b7: unisim.vcomponents.LUT5
       INIT => X"00800000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(1),
       O => g6_b7_n_0
     );
 g7_b0: unisim.vcomponents.LUT6
@@ -11734,12 +9909,12 @@ g7_b0: unisim.vcomponents.LUT6
       INIT => X"0000000000800000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g7_b0_n_0
     );
 g7_b1: unisim.vcomponents.LUT6
@@ -11747,12 +9922,12 @@ g7_b1: unisim.vcomponents.LUT6
       INIT => X"0030060001C00200"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g7_b1_n_0
     );
 g7_b2: unisim.vcomponents.LUT6
@@ -11760,12 +9935,12 @@ g7_b2: unisim.vcomponents.LUT6
       INIT => X"00F0078003E00200"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g7_b2_n_0
     );
 g7_b3: unisim.vcomponents.LUT6
@@ -11773,12 +9948,12 @@ g7_b3: unisim.vcomponents.LUT6
       INIT => X"03F007E000800200"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g7_b3_n_0
     );
 g7_b4: unisim.vcomponents.LUT6
@@ -11786,12 +9961,12 @@ g7_b4: unisim.vcomponents.LUT6
       INIT => X"07F007F000800200"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g7_b4_n_0
     );
 g7_b5: unisim.vcomponents.LUT6
@@ -11799,12 +9974,12 @@ g7_b5: unisim.vcomponents.LUT6
       INIT => X"03F007E003E00200"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g7_b5_n_0
     );
 g7_b6: unisim.vcomponents.LUT6
@@ -11812,12 +9987,12 @@ g7_b6: unisim.vcomponents.LUT6
       INIT => X"00F0078001C003C0"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g7_b6_n_0
     );
 g7_b7: unisim.vcomponents.LUT6
@@ -11825,12 +10000,12 @@ g7_b7: unisim.vcomponents.LUT6
       INIT => X"00300600008003C0"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g7_b7_n_0
     );
 g8_b1: unisim.vcomponents.LUT6
@@ -11838,12 +10013,12 @@ g8_b1: unisim.vcomponents.LUT6
       INIT => X"0220000E00000000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g8_b1_n_0
     );
 g8_b2: unisim.vcomponents.LUT6
@@ -11851,12 +10026,12 @@ g8_b2: unisim.vcomponents.LUT6
       INIT => X"0FF8001E00380000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g8_b2_n_0
     );
 g8_b3: unisim.vcomponents.LUT6
@@ -11864,12 +10039,12 @@ g8_b3: unisim.vcomponents.LUT6
       INIT => X"0FF800000DFC0000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g8_b3_n_0
     );
 g8_b4: unisim.vcomponents.LUT6
@@ -11877,12 +10052,12 @@ g8_b4: unisim.vcomponents.LUT6
       INIT => X"022000000DFC0000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g8_b4_n_0
     );
 g8_b6: unisim.vcomponents.LUT6
@@ -11890,12 +10065,12 @@ g8_b6: unisim.vcomponents.LUT6
       INIT => X"0FF8000E00000000"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g8_b6_n_0
     );
 g8_b7: unisim.vcomponents.LUT6
@@ -11903,12 +10078,12 @@ g8_b7: unisim.vcomponents.LUT6
       INIT => X"0220000000000000"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g8_b7_n_0
     );
 g9_b1: unisim.vcomponents.LUT6
@@ -11916,12 +10091,12 @@ g9_b1: unisim.vcomponents.LUT6
       INIT => X"000008400C300798"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g9_b1_n_0
     );
 g9_b2: unisim.vcomponents.LUT6
@@ -11929,12 +10104,12 @@ g9_b2: unisim.vcomponents.LUT6
       INIT => X"00000FD80C600FCC"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g9_b2_n_0
     );
 g9_b3: unisim.vcomponents.LUT6
@@ -11942,12 +10117,12 @@ g9_b3: unisim.vcomponents.LUT6
       INIT => X"000007BC00C03847"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g9_b3_n_0
     );
 g9_b4: unisim.vcomponents.LUT6
@@ -11955,12 +10130,12 @@ g9_b4: unisim.vcomponents.LUT6
       INIT => X"000E08E401803847"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g9_b4_n_0
     );
 g9_b5: unisim.vcomponents.LUT6
@@ -11968,12 +10143,12 @@ g9_b5: unisim.vcomponents.LUT6
       INIT => X"001E087C03000844"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g9_b5_n_0
     );
 g9_b6: unisim.vcomponents.LUT6
@@ -11981,12 +10156,12 @@ g9_b6: unisim.vcomponents.LUT6
       INIT => X"00100FD806300C7C"
     )
         port map (
-      I0 => \vc_reg[0]_rep_n_0\,
+      I0 => drawY(0),
       I1 => drawY(1),
-      I2 => \vc_reg[2]_rep_n_0\,
-      I3 => \vc_reg[3]_rep_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I2 => drawY(2),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g9_b6_n_0
     );
 g9_b7: unisim.vcomponents.LUT6
@@ -11994,12 +10169,12 @@ g9_b7: unisim.vcomponents.LUT6
       INIT => X"000007800C300638"
     )
         port map (
-      I0 => drawY(0),
+      I0 => \vc_reg[0]_rep_n_0\,
       I1 => \vc_reg[1]_rep_n_0\,
       I2 => drawY(2),
-      I3 => \vc_reg[3]_rep__0_n_0\,
-      I4 => vga_to_hdmi_i_45_0(0),
-      I5 => vga_to_hdmi_i_45_0(1),
+      I3 => drawY(3),
+      I4 => doutb(0),
+      I5 => doutb(1),
       O => g9_b7_n_0
     );
 \hc[0]_i_1\: unisim.vcomponents.LUT1
@@ -12025,31 +10200,31 @@ g9_b7: unisim.vcomponents.LUT6
     )
         port map (
       I0 => drawX(2),
-      I1 => drawX(0),
-      I2 => drawX(1),
-      O => \hc[2]_i_1_n_0\
+      I1 => drawX(1),
+      I2 => drawX(0),
+      O => hc(2)
     );
 \hc[3]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"7F80"
+      INIT => X"6AAA"
     )
         port map (
-      I0 => drawX(0),
-      I1 => drawX(1),
-      I2 => drawX(2),
-      I3 => drawX(3),
-      O => hc(3)
+      I0 => drawX(3),
+      I1 => drawX(2),
+      I2 => drawX(1),
+      I3 => drawX(0),
+      O => \hc[3]_i_1_n_0\
     );
 \hc[4]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"6AAAAAAA"
+      INIT => X"7FFF8000"
     )
         port map (
-      I0 => \^q\(0),
-      I1 => drawX(0),
-      I2 => drawX(1),
-      I3 => drawX(2),
-      I4 => drawX(3),
+      I0 => drawX(2),
+      I1 => drawX(1),
+      I2 => drawX(0),
+      I3 => drawX(3),
+      I4 => \^hc_reg[8]_0\(0),
       O => hc(4)
     );
 \hc[5]_i_1\: unisim.vcomponents.LUT6
@@ -12057,46 +10232,60 @@ g9_b7: unisim.vcomponents.LUT6
       INIT => X"9999999999998999"
     )
         port map (
-      I0 => \^q\(1),
+      I0 => \^hc_reg[8]_0\(1),
       I1 => \hc[9]_i_2_n_0\,
       I2 => drawX(9),
-      I3 => \^q\(3),
+      I3 => \^hc_reg[8]_0\(3),
       I4 => drawX(6),
-      I5 => \^q\(2),
+      I5 => \^hc_reg[8]_0\(2),
       O => hc(5)
     );
-\hc[6]_i_1\: unisim.vcomponents.LUT3
+\hc[6]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"9A"
+      INIT => X"FF7F0080"
     )
         port map (
-      I0 => drawX(6),
-      I1 => \hc[9]_i_2_n_0\,
-      I2 => \^q\(1),
+      I0 => \^hc_reg[8]_0\(1),
+      I1 => \^hc_reg[8]_0\(0),
+      I2 => drawX(3),
+      I3 => \hc[7]_i_2_n_0\,
+      I4 => drawX(6),
       O => hc(6)
     );
-\hc[7]_i_1\: unisim.vcomponents.LUT4
+\hc[7]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"F708"
+      INIT => X"A6AAAAAAAAAAAAAA"
     )
         port map (
-      I0 => drawX(6),
-      I1 => \^q\(1),
-      I2 => \hc[9]_i_2_n_0\,
-      I3 => \^q\(2),
+      I0 => \^hc_reg[8]_0\(2),
+      I1 => \^hc_reg[8]_0\(1),
+      I2 => \hc[7]_i_2_n_0\,
+      I3 => drawX(3),
+      I4 => \^hc_reg[8]_0\(0),
+      I5 => drawX(6),
       O => hc(7)
+    );
+\hc[7]_i_2\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"7F"
+    )
+        port map (
+      I0 => drawX(0),
+      I1 => drawX(1),
+      I2 => drawX(2),
+      O => \hc[7]_i_2_n_0\
     );
 \hc[8]_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"DD22FF00FF00EF00"
     )
         port map (
-      I0 => \^q\(1),
+      I0 => \^hc_reg[8]_0\(1),
       I1 => \hc[9]_i_2_n_0\,
       I2 => drawX(9),
-      I3 => \^q\(3),
+      I3 => \^hc_reg[8]_0\(3),
       I4 => drawX(6),
-      I5 => \^q\(2),
+      I5 => \^hc_reg[8]_0\(2),
       O => hc(8)
     );
 \hc[9]_i_1\: unisim.vcomponents.LUT6
@@ -12104,12 +10293,12 @@ g9_b7: unisim.vcomponents.LUT6
       INIT => X"D2F0F0F0F0F0E0F0"
     )
         port map (
-      I0 => \^q\(1),
+      I0 => \^hc_reg[8]_0\(1),
       I1 => \hc[9]_i_2_n_0\,
       I2 => drawX(9),
-      I3 => \^q\(3),
+      I3 => \^hc_reg[8]_0\(3),
       I4 => drawX(6),
-      I5 => \^q\(2),
+      I5 => \^hc_reg[8]_0\(2),
       O => hc(9)
     );
 \hc[9]_i_2\: unisim.vcomponents.LUT5
@@ -12117,11 +10306,11 @@ g9_b7: unisim.vcomponents.LUT6
       INIT => X"7FFFFFFF"
     )
         port map (
-      I0 => \^q\(0),
-      I1 => drawX(0),
-      I2 => drawX(1),
-      I3 => drawX(2),
-      I4 => drawX(3),
+      I0 => drawX(2),
+      I1 => drawX(1),
+      I2 => drawX(0),
+      I3 => drawX(3),
+      I4 => \^hc_reg[8]_0\(0),
       O => \hc[9]_i_2_n_0\
     );
 \hc_reg[0]\: unisim.vcomponents.FDCE
@@ -12145,7 +10334,7 @@ g9_b7: unisim.vcomponents.LUT6
       C => clk_out1,
       CE => '1',
       CLR => p_0_in,
-      D => \hc[2]_i_1_n_0\,
+      D => hc(2),
       Q => drawX(2)
     );
 \hc_reg[3]\: unisim.vcomponents.FDCE
@@ -12153,7 +10342,7 @@ g9_b7: unisim.vcomponents.LUT6
       C => clk_out1,
       CE => '1',
       CLR => p_0_in,
-      D => hc(3),
+      D => \hc[3]_i_1_n_0\,
       Q => drawX(3)
     );
 \hc_reg[4]\: unisim.vcomponents.FDCE
@@ -12162,7 +10351,7 @@ g9_b7: unisim.vcomponents.LUT6
       CE => '1',
       CLR => p_0_in,
       D => hc(4),
-      Q => \^q\(0)
+      Q => \^hc_reg[8]_0\(0)
     );
 \hc_reg[5]\: unisim.vcomponents.FDCE
      port map (
@@ -12170,7 +10359,7 @@ g9_b7: unisim.vcomponents.LUT6
       CE => '1',
       CLR => p_0_in,
       D => hc(5),
-      Q => \^q\(1)
+      Q => \^hc_reg[8]_0\(1)
     );
 \hc_reg[6]\: unisim.vcomponents.FDCE
      port map (
@@ -12186,7 +10375,7 @@ g9_b7: unisim.vcomponents.LUT6
       CE => '1',
       CLR => p_0_in,
       D => hc(7),
-      Q => \^q\(2)
+      Q => \^hc_reg[8]_0\(2)
     );
 \hc_reg[8]\: unisim.vcomponents.FDCE
      port map (
@@ -12194,7 +10383,7 @@ g9_b7: unisim.vcomponents.LUT6
       CE => '1',
       CLR => p_0_in,
       D => hc(8),
-      Q => \^q\(3)
+      Q => \^hc_reg[8]_0\(3)
     );
 \hc_reg[9]\: unisim.vcomponents.FDCE
      port map (
@@ -12204,51 +10393,42 @@ g9_b7: unisim.vcomponents.LUT6
       D => hc(9),
       Q => drawX(9)
     );
-hs_i_1: unisim.vcomponents.LUT2
+hs_i_1: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"E"
+      INIT => X"EFFD"
     )
         port map (
-      I0 => hs_i_2_n_0,
-      I1 => hs_i_3_n_0,
+      I0 => drawX(9),
+      I1 => hs_i_2_n_0,
+      I2 => \^hc_reg[8]_0\(3),
+      I3 => hs_i_3_n_0,
       O => p_0_in_0
     );
 hs_i_2: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"6555555555555555"
+      INIT => X"88A81101FFFFFFFF"
     )
         port map (
-      I0 => drawX(9),
-      I1 => \hc[9]_i_2_n_0\,
-      I2 => \^q\(1),
-      I3 => drawX(6),
-      I4 => \^q\(2),
-      I5 => \^q\(3),
+      I0 => drawX(6),
+      I1 => \^hc_reg[8]_0\(0),
+      I2 => drawX(3),
+      I3 => \hc[7]_i_2_n_0\,
+      I4 => \^hc_reg[8]_0\(1),
+      I5 => \^hc_reg[8]_0\(2),
       O => hs_i_2_n_0
     );
 hs_i_3: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"EAEAEAABFFFFFFFF"
+      INIT => X"0800000000000000"
     )
         port map (
-      I0 => \^q\(3),
-      I1 => \^q\(1),
-      I2 => drawX(6),
-      I3 => hs_i_4_n_0,
-      I4 => \^q\(0),
-      I5 => \^q\(2),
+      I0 => \^hc_reg[8]_0\(2),
+      I1 => \^hc_reg[8]_0\(1),
+      I2 => \hc[7]_i_2_n_0\,
+      I3 => drawX(3),
+      I4 => \^hc_reg[8]_0\(0),
+      I5 => drawX(6),
       O => hs_i_3_n_0
-    );
-hs_i_4: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"8000"
-    )
-        port map (
-      I0 => drawX(3),
-      I1 => drawX(2),
-      I2 => drawX(1),
-      I3 => drawX(0),
-      O => hs_i_4_n_0
     );
 hs_reg: unisim.vcomponents.FDCE
      port map (
@@ -12258,28 +10438,42 @@ hs_reg: unisim.vcomponents.FDCE
       D => p_0_in_0,
       Q => hsync
     );
-\vc[0]_i_1\: unisim.vcomponents.LUT5
+\vc[0]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"0000F7FF"
+      INIT => X"00000000FFFFFFFD"
     )
         port map (
-      I0 => \vc[9]_i_4_n_0\,
-      I1 => drawY(2),
-      I2 => drawY(1),
-      I3 => drawY(9),
-      I4 => drawY(0),
+      I0 => drawY(2),
+      I1 => drawY(6),
+      I2 => drawY(8),
+      I3 => drawY(7),
+      I4 => \vc[0]_i_2_n_0\,
+      I5 => drawY(0),
       O => \vc[0]_i_1_n_0\
     );
-\vc[0]_rep_i_1\: unisim.vcomponents.LUT5
+\vc[0]_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0000F7FF"
+      INIT => X"FEFFFFFF"
     )
         port map (
-      I0 => \vc[9]_i_4_n_0\,
-      I1 => drawY(2),
+      I0 => \^q\(0),
+      I1 => \^q\(1),
       I2 => drawY(1),
-      I3 => drawY(9),
-      I4 => drawY(0),
+      I3 => drawY(3),
+      I4 => drawY(9),
+      O => \vc[0]_i_2_n_0\
+    );
+\vc[0]_rep_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"00000000FFFFFFFD"
+    )
+        port map (
+      I0 => drawY(2),
+      I1 => drawY(6),
+      I2 => drawY(8),
+      I3 => drawY(7),
+      I4 => \vc[0]_i_2_n_0\,
+      I5 => drawY(0),
       O => \vc[0]_rep_i_1_n_0\
     );
 \vc[1]_i_1\: unisim.vcomponents.LUT2
@@ -12288,7 +10482,7 @@ hs_reg: unisim.vcomponents.FDCE
     )
         port map (
       I0 => drawY(0),
-      I1 => \vc_reg[1]_rep_n_0\,
+      I1 => drawY(1),
       O => \vc[1]_i_1_n_0\
     );
 \vc[1]_rep_i_1\: unisim.vcomponents.LUT2
@@ -12297,192 +10491,161 @@ hs_reg: unisim.vcomponents.FDCE
     )
         port map (
       I0 => drawY(0),
-      I1 => \vc_reg[1]_rep_n_0\,
+      I1 => drawY(1),
       O => \vc[1]_rep_i_1_n_0\
     );
-\vc[2]_i_1\: unisim.vcomponents.LUT5
+\vc[2]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"686A6A6A"
+      INIT => X"2A80"
     )
         port map (
-      I0 => drawY(2),
-      I1 => drawY(1),
-      I2 => drawY(0),
-      I3 => \vc[9]_i_4_n_0\,
-      I4 => drawY(9),
+      I0 => \vc[3]_i_2_n_0\,
+      I1 => drawY(0),
+      I2 => drawY(1),
+      I3 => drawY(2),
       O => \vc[2]_i_1_n_0\
     );
-\vc[2]_rep_i_1\: unisim.vcomponents.LUT5
+\vc[3]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"686A6A6A"
+      INIT => X"7800F0F0"
     )
         port map (
-      I0 => drawY(2),
-      I1 => drawY(1),
-      I2 => drawY(0),
-      I3 => \vc[9]_i_4_n_0\,
-      I4 => drawY(9),
-      O => \vc[2]_rep_i_1_n_0\
-    );
-\vc[3]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0FF7FFFFF0000000"
-    )
-        port map (
-      I0 => \vc[9]_i_4_n_0\,
-      I1 => drawY(9),
-      I2 => drawY(1),
-      I3 => drawY(0),
+      I0 => drawY(1),
+      I1 => drawY(0),
+      I2 => drawY(3),
+      I3 => \vc[3]_i_2_n_0\,
       I4 => drawY(2),
-      I5 => drawY(3),
       O => \vc[3]_i_1_n_0\
     );
-\vc[3]_rep_i_1\: unisim.vcomponents.LUT6
+\vc[3]_i_2\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"0FF7FFFFF0000000"
+      INIT => X"FFFFFFFE"
     )
         port map (
-      I0 => \vc[9]_i_4_n_0\,
-      I1 => drawY(9),
-      I2 => drawY(1),
+      I0 => drawY(7),
+      I1 => drawY(8),
+      I2 => drawY(6),
       I3 => drawY(0),
-      I4 => drawY(2),
-      I5 => drawY(3),
-      O => \vc[3]_rep_i_1_n_0\
-    );
-\vc[3]_rep_i_1__0\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0FF7FFFFF0000000"
-    )
-        port map (
-      I0 => \vc[9]_i_4_n_0\,
-      I1 => drawY(9),
-      I2 => drawY(1),
-      I3 => drawY(0),
-      I4 => drawY(2),
-      I5 => drawY(3),
-      O => \vc[3]_rep_i_1__0_n_0\
+      I4 => \vc[0]_i_2_n_0\,
+      O => \vc[3]_i_2_n_0\
     );
 \vc[4]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"6AAAAAAA"
+      INIT => X"7FFF8000"
     )
         port map (
-      I0 => \^vc_reg[5]_0\(0),
-      I1 => drawY(2),
-      I2 => drawY(0),
-      I3 => drawY(1),
-      I4 => drawY(3),
+      I0 => drawY(3),
+      I1 => drawY(0),
+      I2 => drawY(1),
+      I3 => drawY(2),
+      I4 => \^q\(0),
       O => \vc[4]_i_1_n_0\
     );
 \vc[5]_i_1\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"6AAAAAAAAAAAAAAA"
+      INIT => X"7FFFFFFF80000000"
     )
         port map (
-      I0 => \^vc_reg[5]_0\(1),
-      I1 => drawY(3),
-      I2 => drawY(1),
-      I3 => drawY(0),
-      I4 => drawY(2),
-      I5 => \^vc_reg[5]_0\(0),
+      I0 => drawY(2),
+      I1 => drawY(1),
+      I2 => drawY(0),
+      I3 => drawY(3),
+      I4 => \^q\(0),
+      I5 => \^q\(1),
       O => \vc[5]_i_1_n_0\
     );
 \vc[6]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"A6"
+      INIT => X"9A"
     )
         port map (
       I0 => drawY(6),
-      I1 => \^vc_reg[5]_0\(1),
-      I2 => \vc[8]_i_2_n_0\,
+      I1 => \vc[9]_i_3_n_0\,
+      I2 => \^q\(1),
       O => \vc[6]_i_1_n_0\
     );
 \vc[7]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"DF20"
+      INIT => X"AA6A"
     )
         port map (
-      I0 => \^vc_reg[5]_0\(1),
-      I1 => \vc[8]_i_2_n_0\,
-      I2 => drawY(6),
-      I3 => drawY(7),
+      I0 => drawY(7),
+      I1 => drawY(6),
+      I2 => \^q\(1),
+      I3 => \vc[9]_i_3_n_0\,
       O => \vc[7]_i_1_n_0\
     );
 \vc[8]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"A6AAAAAA"
+      INIT => X"9AAAAAAA"
     )
         port map (
       I0 => drawY(8),
-      I1 => \^vc_reg[5]_0\(1),
-      I2 => \vc[8]_i_2_n_0\,
+      I1 => \vc[9]_i_3_n_0\,
+      I2 => \^q\(1),
       I3 => drawY(6),
       I4 => drawY(7),
       O => \vc[8]_i_1_n_0\
-    );
-\vc[8]_i_2\: unisim.vcomponents.LUT5
-    generic map(
-      INIT => X"7FFFFFFF"
-    )
-        port map (
-      I0 => drawY(3),
-      I1 => drawY(1),
-      I2 => drawY(0),
-      I3 => drawY(2),
-      I4 => \^vc_reg[5]_0\(0),
-      O => \vc[8]_i_2_n_0\
     );
 \vc[9]_i_1\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"0000000000001000"
     )
         port map (
-      I0 => \^q\(2),
+      I0 => \^hc_reg[8]_0\(2),
       I1 => drawX(6),
-      I2 => \^q\(3),
+      I2 => \^hc_reg[8]_0\(3),
       I3 => drawX(9),
       I4 => \hc[9]_i_2_n_0\,
-      I5 => \^q\(1),
+      I5 => \^hc_reg[8]_0\(1),
       O => vc
     );
 \vc[9]_i_2\: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"6666662666666666"
+      INIT => X"E1E1E1E1E101E1E1"
     )
         port map (
-      I0 => \vc[9]_i_3_n_0\,
-      I1 => drawY(9),
-      I2 => drawY(2),
-      I3 => drawY(1),
-      I4 => drawY(0),
-      I5 => \vc[9]_i_4_n_0\,
+      I0 => vga_to_hdmi_i_42_n_0,
+      I1 => \vc[9]_i_3_n_0\,
+      I2 => drawY(9),
+      I3 => \vc[9]_i_4_n_0\,
+      I4 => drawY(2),
+      I5 => \vc[9]_i_5_n_0\,
       O => \vc[9]_i_2_n_0\
     );
 \vc[9]_i_3\: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"00008000"
+      INIT => X"7FFFFFFF"
     )
         port map (
-      I0 => drawY(6),
-      I1 => drawY(8),
-      I2 => drawY(7),
-      I3 => \^vc_reg[5]_0\(1),
-      I4 => \vc[8]_i_2_n_0\,
+      I0 => drawY(2),
+      I1 => drawY(1),
+      I2 => drawY(0),
+      I3 => drawY(3),
+      I4 => \^q\(0),
       O => \vc[9]_i_3_n_0\
     );
-\vc[9]_i_4\: unisim.vcomponents.LUT6
+\vc[9]_i_4\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"0000000000000100"
+      INIT => X"FFFE"
     )
         port map (
-      I0 => \^vc_reg[5]_0\(1),
+      I0 => drawY(0),
       I1 => drawY(6),
-      I2 => \^vc_reg[5]_0\(0),
-      I3 => drawY(3),
-      I4 => drawY(7),
-      I5 => drawY(8),
+      I2 => drawY(8),
+      I3 => drawY(7),
       O => \vc[9]_i_4_n_0\
+    );
+\vc[9]_i_5\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"FFFD"
+    )
+        port map (
+      I0 => drawY(3),
+      I1 => drawY(1),
+      I2 => \^q\(1),
+      I3 => \^q\(0),
+      O => \vc[9]_i_5_n_0\
     );
 \vc_reg[0]\: unisim.vcomponents.FDCE
      port map (
@@ -12524,14 +10687,6 @@ hs_reg: unisim.vcomponents.FDCE
       D => \vc[2]_i_1_n_0\,
       Q => drawY(2)
     );
-\vc_reg[2]_rep\: unisim.vcomponents.FDCE
-     port map (
-      C => clk_out1,
-      CE => vc,
-      CLR => p_0_in,
-      D => \vc[2]_rep_i_1_n_0\,
-      Q => \vc_reg[2]_rep_n_0\
-    );
 \vc_reg[3]\: unisim.vcomponents.FDCE
      port map (
       C => clk_out1,
@@ -12540,29 +10695,13 @@ hs_reg: unisim.vcomponents.FDCE
       D => \vc[3]_i_1_n_0\,
       Q => drawY(3)
     );
-\vc_reg[3]_rep\: unisim.vcomponents.FDCE
-     port map (
-      C => clk_out1,
-      CE => vc,
-      CLR => p_0_in,
-      D => \vc[3]_rep_i_1_n_0\,
-      Q => \vc_reg[3]_rep_n_0\
-    );
-\vc_reg[3]_rep__0\: unisim.vcomponents.FDCE
-     port map (
-      C => clk_out1,
-      CE => vc,
-      CLR => p_0_in,
-      D => \vc[3]_rep_i_1__0_n_0\,
-      Q => \vc_reg[3]_rep__0_n_0\
-    );
 \vc_reg[4]\: unisim.vcomponents.FDCE
      port map (
       C => clk_out1,
       CE => vc,
       CLR => p_0_in,
       D => \vc[4]_i_1_n_0\,
-      Q => \^vc_reg[5]_0\(0)
+      Q => \^q\(0)
     );
 \vc_reg[5]\: unisim.vcomponents.FDCE
      port map (
@@ -12570,7 +10709,7 @@ hs_reg: unisim.vcomponents.FDCE
       CE => vc,
       CLR => p_0_in,
       D => \vc[5]_i_1_n_0\,
-      Q => \^vc_reg[5]_0\(1)
+      Q => \^q\(1)
     );
 \vc_reg[6]\: unisim.vcomponents.FDCE
      port map (
@@ -12611,49 +10750,56 @@ vga_to_hdmi_i_101: unisim.vcomponents.LUT6
         port map (
       I0 => vga_to_hdmi_i_213_n_0,
       I1 => vga_to_hdmi_i_214_n_0,
-      I2 => vga_to_hdmi_i_45_0(6),
+      I2 => doutb(4),
       I3 => vga_to_hdmi_i_215_n_0,
-      I4 => vga_to_hdmi_i_45_0(5),
+      I4 => doutb(3),
       I5 => vga_to_hdmi_i_216_n_0,
-      O => \color_mapper/data0\
+      O => vga_to_hdmi_i_101_n_0
     );
-vga_to_hdmi_i_103: unisim.vcomponents.LUT6
+vga_to_hdmi_i_102: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
+      I0 => vga_to_hdmi_i_217_n_0,
+      I1 => vga_to_hdmi_i_218_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_219_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_220_n_0,
+      O => vga_to_hdmi_i_102_n_0
+    );
+vga_to_hdmi_i_103: unisim.vcomponents.MUXF7
+     port map (
       I0 => vga_to_hdmi_i_221_n_0,
       I1 => vga_to_hdmi_i_222_n_0,
-      I2 => vga_to_hdmi_i_45_0(6),
-      I3 => vga_to_hdmi_i_223_n_0,
-      I4 => vga_to_hdmi_i_45_0(5),
-      I5 => vga_to_hdmi_i_224_n_0,
-      O => \color_mapper/data2\
+      O => vga_to_hdmi_i_103_n_0,
+      S => doutb(4)
     );
 vga_to_hdmi_i_104: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => vga_to_hdmi_i_225_n_0,
-      I1 => vga_to_hdmi_i_226_n_0,
-      I2 => vga_to_hdmi_i_45_0(6),
-      I3 => vga_to_hdmi_i_227_n_0,
-      I4 => vga_to_hdmi_i_45_0(5),
-      I5 => vga_to_hdmi_i_228_n_0,
-      O => \color_mapper/data3\
+      I0 => vga_to_hdmi_i_223_n_0,
+      I1 => vga_to_hdmi_i_224_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_225_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_226_n_0,
+      O => vga_to_hdmi_i_104_n_0
     );
 vga_to_hdmi_i_105: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => vga_to_hdmi_i_229_n_0,
-      I1 => vga_to_hdmi_i_230_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_231_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_232_n_0,
+      I0 => vga_to_hdmi_i_227_n_0,
+      I1 => vga_to_hdmi_i_228_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_229_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_230_n_0,
       O => vga_to_hdmi_i_105_n_0
     );
 vga_to_hdmi_i_106: unisim.vcomponents.LUT6
@@ -12661,105 +10807,99 @@ vga_to_hdmi_i_106: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => vga_to_hdmi_i_233_n_0,
-      I1 => vga_to_hdmi_i_234_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_235_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_236_n_0,
+      I0 => vga_to_hdmi_i_231_n_0,
+      I1 => vga_to_hdmi_i_232_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_233_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_234_n_0,
       O => vga_to_hdmi_i_106_n_0
     );
 vga_to_hdmi_i_107: unisim.vcomponents.MUXF7
      port map (
-      I0 => vga_to_hdmi_i_237_n_0,
-      I1 => vga_to_hdmi_i_238_n_0,
+      I0 => vga_to_hdmi_i_235_n_0,
+      I1 => vga_to_hdmi_i_236_n_0,
       O => vga_to_hdmi_i_107_n_0,
-      S => vga_to_hdmi_i_45_0(4)
+      S => doutb(4)
     );
 vga_to_hdmi_i_108: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => vga_to_hdmi_i_239_n_0,
-      I1 => vga_to_hdmi_i_240_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_241_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_242_n_0,
+      I0 => vga_to_hdmi_i_237_n_0,
+      I1 => vga_to_hdmi_i_238_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_239_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_240_n_0,
       O => vga_to_hdmi_i_108_n_0
     );
-vga_to_hdmi_i_109: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
+vga_to_hdmi_i_109: unisim.vcomponents.MUXF7
+     port map (
+      I0 => vga_to_hdmi_i_241_n_0,
+      I1 => vga_to_hdmi_i_242_n_0,
+      O => vga_to_hdmi_i_109_n_0,
+      S => doutb(4)
+    );
+vga_to_hdmi_i_110: unisim.vcomponents.MUXF7
+     port map (
       I0 => vga_to_hdmi_i_243_n_0,
       I1 => vga_to_hdmi_i_244_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_245_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_246_n_0,
-      O => vga_to_hdmi_i_109_n_0
+      O => vga_to_hdmi_i_110_n_0,
+      S => doutb(4)
     );
-vga_to_hdmi_i_110: unisim.vcomponents.LUT6
+vga_to_hdmi_i_111: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => vga_to_hdmi_i_247_n_0,
-      I1 => vga_to_hdmi_i_248_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_249_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_250_n_0,
-      O => vga_to_hdmi_i_110_n_0
-    );
-vga_to_hdmi_i_111: unisim.vcomponents.MUXF7
-     port map (
-      I0 => vga_to_hdmi_i_251_n_0,
-      I1 => vga_to_hdmi_i_252_n_0,
-      O => vga_to_hdmi_i_111_n_0,
-      S => vga_to_hdmi_i_45_0(4)
+      I0 => vga_to_hdmi_i_245_n_0,
+      I1 => vga_to_hdmi_i_246_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_247_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_248_n_0,
+      O => vga_to_hdmi_i_111_n_0
     );
 vga_to_hdmi_i_112: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => vga_to_hdmi_i_253_n_0,
-      I1 => vga_to_hdmi_i_254_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_255_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_256_n_0,
+      I0 => vga_to_hdmi_i_249_n_0,
+      I1 => vga_to_hdmi_i_250_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_251_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_252_n_0,
       O => vga_to_hdmi_i_112_n_0
     );
 vga_to_hdmi_i_113: unisim.vcomponents.MUXF7
      port map (
-      I0 => vga_to_hdmi_i_257_n_0,
-      I1 => vga_to_hdmi_i_258_n_0,
+      I0 => vga_to_hdmi_i_253_n_0,
+      I1 => vga_to_hdmi_i_254_n_0,
       O => vga_to_hdmi_i_113_n_0,
-      S => vga_to_hdmi_i_45_0(4)
+      S => doutb(4)
     );
 vga_to_hdmi_i_114: unisim.vcomponents.MUXF7
      port map (
-      I0 => vga_to_hdmi_i_259_n_0,
-      I1 => vga_to_hdmi_i_260_n_0,
+      I0 => vga_to_hdmi_i_255_n_0,
+      I1 => vga_to_hdmi_i_256_n_0,
       O => vga_to_hdmi_i_114_n_0,
-      S => vga_to_hdmi_i_45_0(4)
+      S => doutb(4)
     );
 vga_to_hdmi_i_115: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => vga_to_hdmi_i_261_n_0,
-      I1 => vga_to_hdmi_i_262_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_263_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_264_n_0,
+      I0 => vga_to_hdmi_i_257_n_0,
+      I1 => vga_to_hdmi_i_258_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_259_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_260_n_0,
       O => vga_to_hdmi_i_115_n_0
     );
 vga_to_hdmi_i_116: unisim.vcomponents.LUT6
@@ -12767,27 +10907,26 @@ vga_to_hdmi_i_116: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => vga_to_hdmi_i_265_n_0,
-      I1 => vga_to_hdmi_i_266_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_267_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_268_n_0,
+      I0 => vga_to_hdmi_i_261_n_0,
+      I1 => vga_to_hdmi_i_262_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_263_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_264_n_0,
       O => vga_to_hdmi_i_116_n_0
     );
-vga_to_hdmi_i_117: unisim.vcomponents.MUXF7
-     port map (
-      I0 => vga_to_hdmi_i_269_n_0,
-      I1 => vga_to_hdmi_i_270_n_0,
-      O => vga_to_hdmi_i_117_n_0,
-      S => vga_to_hdmi_i_45_0(4)
-    );
-vga_to_hdmi_i_118: unisim.vcomponents.MUXF7
-     port map (
-      I0 => vga_to_hdmi_i_271_n_0,
-      I1 => vga_to_hdmi_i_272_n_0,
-      O => vga_to_hdmi_i_118_n_0,
-      S => vga_to_hdmi_i_45_0(4)
+vga_to_hdmi_i_117: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_265_n_0,
+      I1 => vga_to_hdmi_i_266_n_0,
+      I2 => doutb(6),
+      I3 => vga_to_hdmi_i_267_n_0,
+      I4 => doutb(5),
+      I5 => vga_to_hdmi_i_268_n_0,
+      O => \color_mapper/data0\
     );
 vga_to_hdmi_i_119: unisim.vcomponents.LUT6
     generic map(
@@ -12796,11 +10935,11 @@ vga_to_hdmi_i_119: unisim.vcomponents.LUT6
         port map (
       I0 => vga_to_hdmi_i_273_n_0,
       I1 => vga_to_hdmi_i_274_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
+      I2 => doutb(6),
       I3 => vga_to_hdmi_i_275_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
+      I4 => doutb(5),
       I5 => vga_to_hdmi_i_276_n_0,
-      O => vga_to_hdmi_i_119_n_0
+      O => \color_mapper/data2\
     );
 vga_to_hdmi_i_120: unisim.vcomponents.LUT6
     generic map(
@@ -12809,42 +10948,25 @@ vga_to_hdmi_i_120: unisim.vcomponents.LUT6
         port map (
       I0 => vga_to_hdmi_i_277_n_0,
       I1 => vga_to_hdmi_i_278_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
+      I2 => doutb(6),
       I3 => vga_to_hdmi_i_279_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
+      I4 => doutb(5),
       I5 => vga_to_hdmi_i_280_n_0,
-      O => vga_to_hdmi_i_120_n_0
+      O => \color_mapper/data3\
     );
 vga_to_hdmi_i_14: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"00000057"
+      INIT => X"00005700"
     )
         port map (
       I0 => drawX(9),
-      I1 => \^q\(2),
-      I2 => \^q\(3),
+      I1 => \^hc_reg[8]_0\(2),
+      I2 => \^hc_reg[8]_0\(3),
       I3 => vga_to_hdmi_i_42_n_0,
       I4 => drawY(9),
       O => vde
     );
-vga_to_hdmi_i_16: unisim.vcomponents.MUXF8
-     port map (
-      I0 => vga_to_hdmi_i_45_n_0,
-      I1 => vga_to_hdmi_i_46_n_0,
-      O => \hc_reg[1]_0\,
-      S => hc(1)
-    );
-vga_to_hdmi_i_17: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"56"
-    )
-        port map (
-      I0 => drawX(2),
-      I1 => drawX(0),
-      I2 => drawX(1),
-      O => \hc_reg[2]_0\
-    );
-vga_to_hdmi_i_18: unisim.vcomponents.LUT6
+vga_to_hdmi_i_16: unisim.vcomponents.LUT6
     generic map(
       INIT => X"FACF0ACFFAC00AC0"
     )
@@ -12857,89 +10979,90 @@ vga_to_hdmi_i_18: unisim.vcomponents.LUT6
       I5 => \color_mapper/data4\,
       O => \hc_reg[1]_1\
     );
-vga_to_hdmi_i_213: unisim.vcomponents.LUT6
+vga_to_hdmi_i_17: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
+      INIT => X"A9"
     )
         port map (
-      I0 => vga_to_hdmi_i_281_n_0,
-      I1 => vga_to_hdmi_i_282_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_283_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_284_n_0,
-      O => vga_to_hdmi_i_213_n_0
+      I0 => drawX(2),
+      I1 => drawX(0),
+      I2 => drawX(1),
+      O => \hc_reg[2]_0\
     );
-vga_to_hdmi_i_214: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => vga_to_hdmi_i_285_n_0,
-      I1 => vga_to_hdmi_i_286_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_287_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_288_n_0,
-      O => vga_to_hdmi_i_214_n_0
+vga_to_hdmi_i_18: unisim.vcomponents.MUXF8
+     port map (
+      I0 => vga_to_hdmi_i_49_n_0,
+      I1 => vga_to_hdmi_i_50_n_0,
+      O => \hc_reg[1]_0\,
+      S => hc(1)
+    );
+vga_to_hdmi_i_213: unisim.vcomponents.MUXF7
+     port map (
+      I0 => g30_b6_n_0,
+      I1 => g31_b6_n_0,
+      O => vga_to_hdmi_i_213_n_0,
+      S => doutb(2)
+    );
+vga_to_hdmi_i_214: unisim.vcomponents.MUXF7
+     port map (
+      I0 => g28_b6_n_0,
+      I1 => g29_b6_n_0,
+      O => vga_to_hdmi_i_214_n_0,
+      S => doutb(2)
     );
 vga_to_hdmi_i_215: unisim.vcomponents.MUXF7
      port map (
-      I0 => vga_to_hdmi_i_289_n_0,
-      I1 => vga_to_hdmi_i_290_n_0,
+      I0 => g26_b6_n_0,
+      I1 => g27_b6_n_0,
       O => vga_to_hdmi_i_215_n_0,
-      S => vga_to_hdmi_i_45_0(4)
+      S => doutb(2)
     );
-vga_to_hdmi_i_216: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => vga_to_hdmi_i_291_n_0,
-      I1 => vga_to_hdmi_i_292_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_293_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_294_n_0,
-      O => vga_to_hdmi_i_216_n_0
+vga_to_hdmi_i_216: unisim.vcomponents.MUXF7
+     port map (
+      I0 => g24_b6_n_0,
+      I1 => g25_b6_n_0,
+      O => vga_to_hdmi_i_216_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_217: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"0FC000C0A000A000"
-    )
-        port map (
-      I0 => g30_b0_n_0,
-      I1 => g29_b0_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_45_0(3),
-      I4 => g27_b0_n_0,
-      I5 => vga_to_hdmi_i_45_0(2),
-      O => \vc_reg[0]_6\
+vga_to_hdmi_i_217: unisim.vcomponents.MUXF7
+     port map (
+      I0 => g22_b6_n_0,
+      I1 => g23_b6_n_0,
+      O => vga_to_hdmi_i_217_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_218: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFC0A0C0A000A000"
-    )
-        port map (
-      I0 => vga_to_hdmi_i_295_n_0,
-      I1 => g21_b0_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_45_0(3),
-      I4 => g19_b0_n_0,
-      I5 => vga_to_hdmi_i_45_0(2),
-      O => \vc_reg[0]_5\
+vga_to_hdmi_i_218: unisim.vcomponents.MUXF7
+     port map (
+      I0 => g20_b6_n_0,
+      I1 => g21_b6_n_0,
+      O => vga_to_hdmi_i_218_n_0,
+      S => doutb(2)
+    );
+vga_to_hdmi_i_219: unisim.vcomponents.MUXF7
+     port map (
+      I0 => g18_b6_n_0,
+      I1 => g19_b6_n_0,
+      O => vga_to_hdmi_i_219_n_0,
+      S => doutb(2)
+    );
+vga_to_hdmi_i_220: unisim.vcomponents.MUXF7
+     port map (
+      I0 => g16_b6_n_0,
+      I1 => g17_b6_n_0,
+      O => vga_to_hdmi_i_220_n_0,
+      S => doutb(2)
     );
 vga_to_hdmi_i_221: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => vga_to_hdmi_i_297_n_0,
-      I1 => vga_to_hdmi_i_298_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_299_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_300_n_0,
+      I0 => g11_b6_n_0,
+      I1 => g10_b1_n_0,
+      I2 => doutb(3),
+      I3 => g9_b6_n_0,
+      I4 => doutb(2),
+      I5 => g8_b6_n_0,
       O => vga_to_hdmi_i_221_n_0
     );
 vga_to_hdmi_i_222: unisim.vcomponents.LUT6
@@ -12947,571 +11070,587 @@ vga_to_hdmi_i_222: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => vga_to_hdmi_i_301_n_0,
-      I1 => vga_to_hdmi_i_302_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_303_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_304_n_0,
+      I0 => g15_b6_n_0,
+      I1 => g14_b6_n_0,
+      I2 => doutb(3),
+      I3 => g13_b6_n_0,
+      I4 => doutb(2),
+      I5 => g12_b6_n_0,
       O => vga_to_hdmi_i_222_n_0
     );
 vga_to_hdmi_i_223: unisim.vcomponents.MUXF7
      port map (
-      I0 => vga_to_hdmi_i_305_n_0,
-      I1 => vga_to_hdmi_i_306_n_0,
-      O => vga_to_hdmi_i_223_n_0,
-      S => vga_to_hdmi_i_45_0(4)
-    );
-vga_to_hdmi_i_224: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => vga_to_hdmi_i_307_n_0,
-      I1 => vga_to_hdmi_i_308_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_309_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_310_n_0,
-      O => vga_to_hdmi_i_224_n_0
-    );
-vga_to_hdmi_i_225: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => vga_to_hdmi_i_311_n_0,
-      I1 => vga_to_hdmi_i_312_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_313_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_314_n_0,
-      O => vga_to_hdmi_i_225_n_0
-    );
-vga_to_hdmi_i_226: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => vga_to_hdmi_i_315_n_0,
-      I1 => vga_to_hdmi_i_316_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_317_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_318_n_0,
-      O => vga_to_hdmi_i_226_n_0
-    );
-vga_to_hdmi_i_227: unisim.vcomponents.MUXF7
-     port map (
-      I0 => vga_to_hdmi_i_319_n_0,
-      I1 => vga_to_hdmi_i_320_n_0,
-      O => vga_to_hdmi_i_227_n_0,
-      S => vga_to_hdmi_i_45_0(4)
-    );
-vga_to_hdmi_i_228: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => vga_to_hdmi_i_321_n_0,
-      I1 => vga_to_hdmi_i_322_n_0,
-      I2 => vga_to_hdmi_i_45_0(4),
-      I3 => vga_to_hdmi_i_323_n_0,
-      I4 => vga_to_hdmi_i_45_0(3),
-      I5 => vga_to_hdmi_i_324_n_0,
-      O => vga_to_hdmi_i_228_n_0
-    );
-vga_to_hdmi_i_229: unisim.vcomponents.MUXF7
-     port map (
-      I0 => g30_b6_n_0,
-      I1 => g31_b6_n_0,
-      O => vga_to_hdmi_i_229_n_0,
-      S => vga_to_hdmi_i_45_0(2)
-    );
-vga_to_hdmi_i_230: unisim.vcomponents.MUXF7
-     port map (
-      I0 => g28_b6_n_0,
-      I1 => g29_b6_n_0,
-      O => vga_to_hdmi_i_230_n_0,
-      S => vga_to_hdmi_i_45_0(2)
-    );
-vga_to_hdmi_i_231: unisim.vcomponents.MUXF7
-     port map (
-      I0 => g26_b6_n_0,
-      I1 => g27_b6_n_0,
-      O => vga_to_hdmi_i_231_n_0,
-      S => vga_to_hdmi_i_45_0(2)
-    );
-vga_to_hdmi_i_232: unisim.vcomponents.MUXF7
-     port map (
-      I0 => g24_b6_n_0,
-      I1 => g25_b6_n_0,
-      O => vga_to_hdmi_i_232_n_0,
-      S => vga_to_hdmi_i_45_0(2)
-    );
-vga_to_hdmi_i_233: unisim.vcomponents.MUXF7
-     port map (
-      I0 => g22_b6_n_0,
-      I1 => g23_b6_n_0,
-      O => vga_to_hdmi_i_233_n_0,
-      S => vga_to_hdmi_i_45_0(2)
-    );
-vga_to_hdmi_i_234: unisim.vcomponents.MUXF7
-     port map (
-      I0 => g20_b6_n_0,
-      I1 => g21_b6_n_0,
-      O => vga_to_hdmi_i_234_n_0,
-      S => vga_to_hdmi_i_45_0(2)
-    );
-vga_to_hdmi_i_235: unisim.vcomponents.MUXF7
-     port map (
-      I0 => g18_b6_n_0,
-      I1 => g19_b6_n_0,
-      O => vga_to_hdmi_i_235_n_0,
-      S => vga_to_hdmi_i_45_0(2)
-    );
-vga_to_hdmi_i_236: unisim.vcomponents.MUXF7
-     port map (
-      I0 => g16_b6_n_0,
-      I1 => g17_b6_n_0,
-      O => vga_to_hdmi_i_236_n_0,
-      S => vga_to_hdmi_i_45_0(2)
-    );
-vga_to_hdmi_i_237: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => g11_b6_n_0,
-      I1 => g10_b1_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
-      I3 => g9_b6_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
-      I5 => g8_b6_n_0,
-      O => vga_to_hdmi_i_237_n_0
-    );
-vga_to_hdmi_i_238: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => g15_b6_n_0,
-      I1 => g14_b6_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
-      I3 => g13_b6_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
-      I5 => g12_b6_n_0,
-      O => vga_to_hdmi_i_238_n_0
-    );
-vga_to_hdmi_i_239: unisim.vcomponents.MUXF7
-     port map (
       I0 => g6_b6_n_0,
       I1 => g7_b6_n_0,
-      O => vga_to_hdmi_i_239_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_223_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_240: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_224: unisim.vcomponents.MUXF7
      port map (
       I0 => g4_b6_n_0,
       I1 => g5_b6_n_0,
-      O => vga_to_hdmi_i_240_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_224_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_241: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_225: unisim.vcomponents.MUXF7
      port map (
       I0 => g2_b6_n_0,
       I1 => g3_b6_n_0,
-      O => vga_to_hdmi_i_241_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_225_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_242: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_226: unisim.vcomponents.MUXF7
      port map (
       I0 => g0_b6_n_0,
       I1 => g1_b6_n_0,
-      O => vga_to_hdmi_i_242_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_226_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_243: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_227: unisim.vcomponents.MUXF7
      port map (
       I0 => g30_b5_n_0,
       I1 => g31_b5_n_0,
-      O => vga_to_hdmi_i_243_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_227_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_244: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_228: unisim.vcomponents.MUXF7
      port map (
       I0 => g28_b5_n_0,
       I1 => g29_b5_n_0,
-      O => vga_to_hdmi_i_244_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_228_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_245: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_229: unisim.vcomponents.MUXF7
      port map (
       I0 => g26_b5_n_0,
       I1 => g27_b5_n_0,
-      O => vga_to_hdmi_i_245_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_229_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_246: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_230: unisim.vcomponents.MUXF7
      port map (
       I0 => g24_b5_n_0,
       I1 => g25_b5_n_0,
-      O => vga_to_hdmi_i_246_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_230_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_247: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_231: unisim.vcomponents.MUXF7
      port map (
       I0 => g22_b5_n_0,
       I1 => g23_b5_n_0,
-      O => vga_to_hdmi_i_247_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_231_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_248: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_232: unisim.vcomponents.MUXF7
      port map (
       I0 => g20_b5_n_0,
       I1 => g21_b5_n_0,
-      O => vga_to_hdmi_i_248_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_232_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_249: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_233: unisim.vcomponents.MUXF7
      port map (
       I0 => g18_b5_n_0,
       I1 => g19_b5_n_0,
-      O => vga_to_hdmi_i_249_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_233_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_250: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_234: unisim.vcomponents.MUXF7
      port map (
       I0 => g16_b5_n_0,
       I1 => g17_b5_n_0,
-      O => vga_to_hdmi_i_250_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_234_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_251: unisim.vcomponents.LUT6
+vga_to_hdmi_i_235: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => g11_b5_n_0,
       I1 => g10_b5_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g9_b5_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g8_b2_n_0,
-      O => vga_to_hdmi_i_251_n_0
+      O => vga_to_hdmi_i_235_n_0
     );
-vga_to_hdmi_i_252: unisim.vcomponents.LUT6
+vga_to_hdmi_i_236: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => g15_b5_n_0,
       I1 => g14_b5_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g13_b5_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g12_b5_n_0,
-      O => vga_to_hdmi_i_252_n_0
+      O => vga_to_hdmi_i_236_n_0
     );
-vga_to_hdmi_i_253: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_237: unisim.vcomponents.MUXF7
      port map (
       I0 => g6_b5_n_0,
       I1 => g7_b5_n_0,
-      O => vga_to_hdmi_i_253_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_237_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_254: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_238: unisim.vcomponents.MUXF7
      port map (
       I0 => g4_b5_n_0,
       I1 => g5_b5_n_0,
-      O => vga_to_hdmi_i_254_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_238_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_255: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_239: unisim.vcomponents.MUXF7
      port map (
       I0 => g2_b5_n_0,
       I1 => g3_b5_n_0,
-      O => vga_to_hdmi_i_255_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_239_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_256: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_240: unisim.vcomponents.MUXF7
      port map (
       I0 => g0_b5_n_0,
       I1 => g1_b5_n_0,
-      O => vga_to_hdmi_i_256_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_240_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_257: unisim.vcomponents.LUT6
+vga_to_hdmi_i_241: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => g27_b3_n_0,
       I1 => g26_b4_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g25_b4_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g24_b4_n_0,
-      O => vga_to_hdmi_i_257_n_0
+      O => vga_to_hdmi_i_241_n_0
     );
-vga_to_hdmi_i_258: unisim.vcomponents.LUT6
+vga_to_hdmi_i_242: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => g31_b4_n_0,
       I1 => g30_b4_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g29_b4_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g28_b4_n_0,
-      O => vga_to_hdmi_i_258_n_0
+      O => vga_to_hdmi_i_242_n_0
     );
-vga_to_hdmi_i_259: unisim.vcomponents.LUT6
+vga_to_hdmi_i_243: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => g19_b4_n_0,
       I1 => g18_b4_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g17_b4_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g16_b4_n_0,
-      O => vga_to_hdmi_i_259_n_0
+      O => vga_to_hdmi_i_243_n_0
     );
-vga_to_hdmi_i_260: unisim.vcomponents.LUT6
+vga_to_hdmi_i_244: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => g23_b4_n_0,
       I1 => g22_b4_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g21_b3_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g20_b4_n_0,
-      O => vga_to_hdmi_i_260_n_0
+      O => vga_to_hdmi_i_244_n_0
     );
-vga_to_hdmi_i_261: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_245: unisim.vcomponents.MUXF7
      port map (
       I0 => g14_b4_n_0,
       I1 => g15_b4_n_0,
-      O => vga_to_hdmi_i_261_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_245_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_262: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_246: unisim.vcomponents.MUXF7
      port map (
       I0 => g12_b4_n_0,
       I1 => g13_b4_n_0,
-      O => vga_to_hdmi_i_262_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_246_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_263: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_247: unisim.vcomponents.MUXF7
      port map (
       I0 => g10_b4_n_0,
       I1 => g11_b4_n_0,
-      O => vga_to_hdmi_i_263_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_247_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_264: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_248: unisim.vcomponents.MUXF7
      port map (
       I0 => g8_b4_n_0,
       I1 => g9_b4_n_0,
-      O => vga_to_hdmi_i_264_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_248_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_265: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_249: unisim.vcomponents.MUXF7
      port map (
       I0 => g6_b4_n_0,
       I1 => g7_b4_n_0,
-      O => vga_to_hdmi_i_265_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_249_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_266: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_250: unisim.vcomponents.MUXF7
      port map (
       I0 => g4_b4_n_0,
       I1 => g5_b4_n_0,
-      O => vga_to_hdmi_i_266_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_250_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_267: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_251: unisim.vcomponents.MUXF7
      port map (
       I0 => g2_b4_n_0,
       I1 => g3_b4_n_0,
-      O => vga_to_hdmi_i_267_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_251_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_268: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_252: unisim.vcomponents.MUXF7
      port map (
       I0 => g0_b4_n_0,
       I1 => g1_b4_n_0,
-      O => vga_to_hdmi_i_268_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_252_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_269: unisim.vcomponents.LUT6
+vga_to_hdmi_i_253: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => g27_b3_n_0,
       I1 => g26_b3_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g25_b3_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g24_b3_n_0,
-      O => vga_to_hdmi_i_269_n_0
+      O => vga_to_hdmi_i_253_n_0
     );
-vga_to_hdmi_i_270: unisim.vcomponents.LUT6
+vga_to_hdmi_i_254: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => g31_b3_n_0,
       I1 => g30_b3_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g29_b3_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g28_b3_n_0,
-      O => vga_to_hdmi_i_270_n_0
+      O => vga_to_hdmi_i_254_n_0
     );
-vga_to_hdmi_i_271: unisim.vcomponents.LUT6
+vga_to_hdmi_i_255: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => g19_b3_n_0,
       I1 => g18_b3_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g17_b3_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g16_b3_n_0,
-      O => vga_to_hdmi_i_271_n_0
+      O => vga_to_hdmi_i_255_n_0
     );
-vga_to_hdmi_i_272: unisim.vcomponents.LUT6
+vga_to_hdmi_i_256: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => g23_b3_n_0,
       I1 => g22_b3_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g21_b3_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g20_b3_n_0,
-      O => vga_to_hdmi_i_272_n_0
+      O => vga_to_hdmi_i_256_n_0
     );
-vga_to_hdmi_i_273: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_257: unisim.vcomponents.MUXF7
      port map (
       I0 => g14_b3_n_0,
       I1 => g15_b3_n_0,
-      O => vga_to_hdmi_i_273_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_257_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_274: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_258: unisim.vcomponents.MUXF7
      port map (
       I0 => g12_b3_n_0,
       I1 => g13_b3_n_0,
-      O => vga_to_hdmi_i_274_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_258_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_275: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_259: unisim.vcomponents.MUXF7
      port map (
       I0 => g10_b3_n_0,
       I1 => g11_b3_n_0,
-      O => vga_to_hdmi_i_275_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_259_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_276: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_260: unisim.vcomponents.MUXF7
      port map (
       I0 => g8_b3_n_0,
       I1 => g9_b3_n_0,
-      O => vga_to_hdmi_i_276_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_260_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_277: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_261: unisim.vcomponents.MUXF7
      port map (
       I0 => g6_b3_n_0,
       I1 => g7_b3_n_0,
-      O => vga_to_hdmi_i_277_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_261_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_278: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_262: unisim.vcomponents.MUXF7
      port map (
       I0 => g4_b3_n_0,
       I1 => g5_b3_n_0,
-      O => vga_to_hdmi_i_278_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_262_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_279: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_263: unisim.vcomponents.MUXF7
      port map (
       I0 => g2_b3_n_0,
       I1 => g3_b3_n_0,
-      O => vga_to_hdmi_i_279_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_263_n_0,
+      S => doutb(2)
     );
-vga_to_hdmi_i_280: unisim.vcomponents.MUXF7
+vga_to_hdmi_i_264: unisim.vcomponents.MUXF7
      port map (
       I0 => g0_b3_n_0,
       I1 => g1_b3_n_0,
-      O => vga_to_hdmi_i_280_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      O => vga_to_hdmi_i_264_n_0,
+      S => doutb(2)
+    );
+vga_to_hdmi_i_265: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_281_n_0,
+      I1 => vga_to_hdmi_i_282_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_283_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_284_n_0,
+      O => vga_to_hdmi_i_265_n_0
+    );
+vga_to_hdmi_i_266: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_285_n_0,
+      I1 => vga_to_hdmi_i_286_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_287_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_288_n_0,
+      O => vga_to_hdmi_i_266_n_0
+    );
+vga_to_hdmi_i_267: unisim.vcomponents.MUXF7
+     port map (
+      I0 => vga_to_hdmi_i_289_n_0,
+      I1 => vga_to_hdmi_i_290_n_0,
+      O => vga_to_hdmi_i_267_n_0,
+      S => doutb(4)
+    );
+vga_to_hdmi_i_268: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_291_n_0,
+      I1 => vga_to_hdmi_i_292_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_293_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_294_n_0,
+      O => vga_to_hdmi_i_268_n_0
+    );
+vga_to_hdmi_i_269: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0FC000C0A000A000"
+    )
+        port map (
+      I0 => g30_b0_n_0,
+      I1 => g29_b0_n_0,
+      I2 => doutb(4),
+      I3 => doutb(3),
+      I4 => g27_b0_n_0,
+      I5 => doutb(2),
+      O => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1\
+    );
+vga_to_hdmi_i_270: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFC0A0C0A000A000"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_295_n_0,
+      I1 => g21_b0_n_0,
+      I2 => doutb(4),
+      I3 => doutb(3),
+      I4 => g19_b0_n_0,
+      I5 => doutb(2),
+      O => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\
+    );
+vga_to_hdmi_i_273: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_297_n_0,
+      I1 => vga_to_hdmi_i_298_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_299_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_300_n_0,
+      O => vga_to_hdmi_i_273_n_0
+    );
+vga_to_hdmi_i_274: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_301_n_0,
+      I1 => vga_to_hdmi_i_302_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_303_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_304_n_0,
+      O => vga_to_hdmi_i_274_n_0
+    );
+vga_to_hdmi_i_275: unisim.vcomponents.MUXF7
+     port map (
+      I0 => vga_to_hdmi_i_305_n_0,
+      I1 => vga_to_hdmi_i_306_n_0,
+      O => vga_to_hdmi_i_275_n_0,
+      S => doutb(4)
+    );
+vga_to_hdmi_i_276: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_307_n_0,
+      I1 => vga_to_hdmi_i_308_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_309_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_310_n_0,
+      O => vga_to_hdmi_i_276_n_0
+    );
+vga_to_hdmi_i_277: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_311_n_0,
+      I1 => vga_to_hdmi_i_312_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_313_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_314_n_0,
+      O => vga_to_hdmi_i_277_n_0
+    );
+vga_to_hdmi_i_278: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_315_n_0,
+      I1 => vga_to_hdmi_i_316_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_317_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_318_n_0,
+      O => vga_to_hdmi_i_278_n_0
+    );
+vga_to_hdmi_i_279: unisim.vcomponents.MUXF7
+     port map (
+      I0 => vga_to_hdmi_i_319_n_0,
+      I1 => vga_to_hdmi_i_320_n_0,
+      O => vga_to_hdmi_i_279_n_0,
+      S => doutb(4)
+    );
+vga_to_hdmi_i_280: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_321_n_0,
+      I1 => vga_to_hdmi_i_322_n_0,
+      I2 => doutb(4),
+      I3 => vga_to_hdmi_i_323_n_0,
+      I4 => doutb(3),
+      I5 => vga_to_hdmi_i_324_n_0,
+      O => vga_to_hdmi_i_280_n_0
     );
 vga_to_hdmi_i_281: unisim.vcomponents.MUXF7
      port map (
       I0 => g30_b7_n_0,
       I1 => g31_b7_n_0,
       O => vga_to_hdmi_i_281_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_282: unisim.vcomponents.MUXF7
      port map (
       I0 => g28_b7_n_0,
       I1 => g29_b7_n_0,
       O => vga_to_hdmi_i_282_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_283: unisim.vcomponents.MUXF7
      port map (
       I0 => g26_b7_n_0,
       I1 => g27_b7_n_0,
       O => vga_to_hdmi_i_283_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_284: unisim.vcomponents.MUXF7
      port map (
       I0 => g24_b7_n_0,
       I1 => g25_b7_n_0,
       O => vga_to_hdmi_i_284_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_285: unisim.vcomponents.MUXF7
      port map (
       I0 => g22_b7_n_0,
       I1 => g23_b7_n_0,
       O => vga_to_hdmi_i_285_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_286: unisim.vcomponents.MUXF7
      port map (
       I0 => g20_b7_n_0,
       I1 => g21_b7_n_0,
       O => vga_to_hdmi_i_286_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_287: unisim.vcomponents.MUXF7
      port map (
       I0 => g18_b7_n_0,
       I1 => g19_b7_n_0,
       O => vga_to_hdmi_i_287_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_288: unisim.vcomponents.MUXF7
      port map (
       I0 => g16_b7_n_0,
       I1 => g17_b7_n_0,
       O => vga_to_hdmi_i_288_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_289: unisim.vcomponents.LUT6
     generic map(
@@ -13519,10 +11658,10 @@ vga_to_hdmi_i_289: unisim.vcomponents.LUT6
     )
         port map (
       I0 => g11_b7_n_0,
-      I1 => \^vc_reg[0]_3\,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I1 => \^vc_reg[0]_rep_3\,
+      I2 => doutb(3),
       I3 => g9_b7_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g8_b7_n_0,
       O => vga_to_hdmi_i_289_n_0
     );
@@ -13533,9 +11672,9 @@ vga_to_hdmi_i_290: unisim.vcomponents.LUT6
         port map (
       I0 => g15_b7_n_0,
       I1 => g14_b7_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g13_b7_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g12_b7_n_0,
       O => vga_to_hdmi_i_290_n_0
     );
@@ -13544,35 +11683,35 @@ vga_to_hdmi_i_291: unisim.vcomponents.MUXF7
       I0 => g6_b7_n_0,
       I1 => g7_b7_n_0,
       O => vga_to_hdmi_i_291_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_292: unisim.vcomponents.MUXF7
      port map (
       I0 => g4_b7_n_0,
       I1 => g5_b7_n_0,
       O => vga_to_hdmi_i_292_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_293: unisim.vcomponents.MUXF7
      port map (
       I0 => g2_b7_n_0,
       I1 => g3_b7_n_0,
       O => vga_to_hdmi_i_293_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_294: unisim.vcomponents.MUXF7
      port map (
       I0 => g0_b7_n_0,
       I1 => g1_b7_n_0,
       O => vga_to_hdmi_i_294_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_295: unisim.vcomponents.MUXF7
      port map (
       I0 => g22_b0_n_0,
       I1 => g23_b0_n_0,
       O => vga_to_hdmi_i_295_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_296: unisim.vcomponents.LUT4
     generic map(
@@ -13580,66 +11719,66 @@ vga_to_hdmi_i_296: unisim.vcomponents.LUT4
     )
         port map (
       I0 => g7_b0_n_0,
-      I1 => vga_to_hdmi_i_45_0(3),
-      I2 => vga_to_hdmi_i_45_0(2),
+      I1 => doutb(3),
+      I2 => doutb(2),
       I3 => g5_b0_n_0,
-      O => \vc_reg[0]_4\
+      O => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram\
     );
 vga_to_hdmi_i_297: unisim.vcomponents.MUXF7
      port map (
       I0 => g30_b1_n_0,
       I1 => g31_b1_n_0,
       O => vga_to_hdmi_i_297_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_298: unisim.vcomponents.MUXF7
      port map (
       I0 => g28_b1_n_0,
       I1 => g29_b1_n_0,
       O => vga_to_hdmi_i_298_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_299: unisim.vcomponents.MUXF7
      port map (
       I0 => g26_b1_n_0,
       I1 => g27_b1_n_0,
       O => vga_to_hdmi_i_299_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_300: unisim.vcomponents.MUXF7
      port map (
       I0 => g24_b1_n_0,
       I1 => g25_b1_n_0,
       O => vga_to_hdmi_i_300_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_301: unisim.vcomponents.MUXF7
      port map (
       I0 => g22_b1_n_0,
       I1 => g23_b1_n_0,
       O => vga_to_hdmi_i_301_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_302: unisim.vcomponents.MUXF7
      port map (
       I0 => g20_b1_n_0,
       I1 => g21_b1_n_0,
       O => vga_to_hdmi_i_302_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_303: unisim.vcomponents.MUXF7
      port map (
       I0 => g18_b1_n_0,
       I1 => g19_b1_n_0,
       O => vga_to_hdmi_i_303_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_304: unisim.vcomponents.MUXF7
      port map (
       I0 => g16_b1_n_0,
       I1 => g17_b1_n_0,
       O => vga_to_hdmi_i_304_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_305: unisim.vcomponents.LUT6
     generic map(
@@ -13648,9 +11787,9 @@ vga_to_hdmi_i_305: unisim.vcomponents.LUT6
         port map (
       I0 => g11_b1_n_0,
       I1 => g10_b1_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g9_b1_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g8_b1_n_0,
       O => vga_to_hdmi_i_305_n_0
     );
@@ -13661,9 +11800,9 @@ vga_to_hdmi_i_306: unisim.vcomponents.LUT6
         port map (
       I0 => g15_b1_n_0,
       I1 => g14_b1_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g13_b1_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g12_b1_n_0,
       O => vga_to_hdmi_i_306_n_0
     );
@@ -13672,84 +11811,84 @@ vga_to_hdmi_i_307: unisim.vcomponents.MUXF7
       I0 => g6_b1_n_0,
       I1 => g7_b1_n_0,
       O => vga_to_hdmi_i_307_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_308: unisim.vcomponents.MUXF7
      port map (
       I0 => g4_b1_n_0,
       I1 => g5_b1_n_0,
       O => vga_to_hdmi_i_308_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_309: unisim.vcomponents.MUXF7
      port map (
       I0 => g2_b1_n_0,
       I1 => g3_b1_n_0,
       O => vga_to_hdmi_i_309_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_310: unisim.vcomponents.MUXF7
      port map (
       I0 => g0_b1_n_0,
       I1 => g1_b1_n_0,
       O => vga_to_hdmi_i_310_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_311: unisim.vcomponents.MUXF7
      port map (
       I0 => g30_b2_n_0,
       I1 => g31_b2_n_0,
       O => vga_to_hdmi_i_311_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_312: unisim.vcomponents.MUXF7
      port map (
       I0 => g28_b2_n_0,
       I1 => g29_b2_n_0,
       O => vga_to_hdmi_i_312_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_313: unisim.vcomponents.MUXF7
      port map (
       I0 => g26_b2_n_0,
       I1 => g27_b2_n_0,
       O => vga_to_hdmi_i_313_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_314: unisim.vcomponents.MUXF7
      port map (
       I0 => g24_b2_n_0,
       I1 => g25_b2_n_0,
       O => vga_to_hdmi_i_314_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_315: unisim.vcomponents.MUXF7
      port map (
       I0 => g22_b2_n_0,
       I1 => g23_b2_n_0,
       O => vga_to_hdmi_i_315_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_316: unisim.vcomponents.MUXF7
      port map (
       I0 => g20_b2_n_0,
       I1 => g21_b2_n_0,
       O => vga_to_hdmi_i_316_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_317: unisim.vcomponents.MUXF7
      port map (
       I0 => g18_b2_n_0,
       I1 => g19_b2_n_0,
       O => vga_to_hdmi_i_317_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_318: unisim.vcomponents.MUXF7
      port map (
       I0 => g16_b2_n_0,
       I1 => g17_b2_n_0,
       O => vga_to_hdmi_i_318_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_319: unisim.vcomponents.LUT6
     generic map(
@@ -13758,9 +11897,9 @@ vga_to_hdmi_i_319: unisim.vcomponents.LUT6
         port map (
       I0 => g11_b2_n_0,
       I1 => g10_b2_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g9_b2_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g8_b2_n_0,
       O => vga_to_hdmi_i_319_n_0
     );
@@ -13771,9 +11910,9 @@ vga_to_hdmi_i_320: unisim.vcomponents.LUT6
         port map (
       I0 => g15_b2_n_0,
       I1 => g14_b2_n_0,
-      I2 => vga_to_hdmi_i_45_0(3),
+      I2 => doutb(3),
       I3 => g13_b2_n_0,
-      I4 => vga_to_hdmi_i_45_0(2),
+      I4 => doutb(2),
       I5 => g12_b2_n_0,
       O => vga_to_hdmi_i_320_n_0
     );
@@ -13782,126 +11921,129 @@ vga_to_hdmi_i_321: unisim.vcomponents.MUXF7
       I0 => g6_b2_n_0,
       I1 => g7_b2_n_0,
       O => vga_to_hdmi_i_321_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_322: unisim.vcomponents.MUXF7
      port map (
       I0 => g4_b2_n_0,
       I1 => g5_b2_n_0,
       O => vga_to_hdmi_i_322_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_323: unisim.vcomponents.MUXF7
      port map (
       I0 => g2_b2_n_0,
       I1 => g3_b2_n_0,
       O => vga_to_hdmi_i_323_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_324: unisim.vcomponents.MUXF7
      port map (
       I0 => g0_b2_n_0,
       I1 => g1_b2_n_0,
       O => vga_to_hdmi_i_324_n_0,
-      S => vga_to_hdmi_i_45_0(2)
+      S => doutb(2)
     );
 vga_to_hdmi_i_42: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"8000"
+      INIT => X"7FFF"
     )
         port map (
-      I0 => \^vc_reg[5]_0\(1),
-      I1 => drawY(7),
-      I2 => drawY(8),
-      I3 => drawY(6),
+      I0 => drawY(8),
+      I1 => drawY(6),
+      I2 => \^q\(1),
+      I3 => drawY(7),
       O => vga_to_hdmi_i_42_n_0
     );
-vga_to_hdmi_i_45: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \color_mapper/data0\,
-      I1 => vga_to_hdmi_i_16_0,
-      O => vga_to_hdmi_i_45_n_0,
-      S => drawX(0)
+vga_to_hdmi_i_45: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_101_n_0,
+      I1 => vga_to_hdmi_i_102_n_0,
+      I2 => doutb(6),
+      I3 => vga_to_hdmi_i_103_n_0,
+      I4 => doutb(5),
+      I5 => vga_to_hdmi_i_104_n_0,
+      O => \color_mapper/data7\
     );
-vga_to_hdmi_i_46: unisim.vcomponents.MUXF7
-     port map (
-      I0 => \color_mapper/data2\,
-      I1 => \color_mapper/data3\,
-      O => vga_to_hdmi_i_46_n_0,
-      S => drawX(0)
-    );
-vga_to_hdmi_i_47: unisim.vcomponents.LUT6
+vga_to_hdmi_i_46: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => vga_to_hdmi_i_105_n_0,
       I1 => vga_to_hdmi_i_106_n_0,
-      I2 => vga_to_hdmi_i_45_0(6),
+      I2 => doutb(6),
       I3 => vga_to_hdmi_i_107_n_0,
-      I4 => vga_to_hdmi_i_45_0(5),
+      I4 => doutb(5),
       I5 => vga_to_hdmi_i_108_n_0,
-      O => \color_mapper/data7\
+      O => \color_mapper/data6\
     );
-vga_to_hdmi_i_48: unisim.vcomponents.LUT6
+vga_to_hdmi_i_47: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => vga_to_hdmi_i_109_n_0,
       I1 => vga_to_hdmi_i_110_n_0,
-      I2 => vga_to_hdmi_i_45_0(6),
+      I2 => doutb(6),
       I3 => vga_to_hdmi_i_111_n_0,
-      I4 => vga_to_hdmi_i_45_0(5),
+      I4 => doutb(5),
       I5 => vga_to_hdmi_i_112_n_0,
-      O => \color_mapper/data6\
+      O => \color_mapper/data5\
     );
-vga_to_hdmi_i_49: unisim.vcomponents.LUT6
+vga_to_hdmi_i_48: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
       I0 => vga_to_hdmi_i_113_n_0,
       I1 => vga_to_hdmi_i_114_n_0,
-      I2 => vga_to_hdmi_i_45_0(6),
+      I2 => doutb(6),
       I3 => vga_to_hdmi_i_115_n_0,
-      I4 => vga_to_hdmi_i_45_0(5),
+      I4 => doutb(5),
       I5 => vga_to_hdmi_i_116_n_0,
-      O => \color_mapper/data5\
-    );
-vga_to_hdmi_i_50: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => vga_to_hdmi_i_117_n_0,
-      I1 => vga_to_hdmi_i_118_n_0,
-      I2 => vga_to_hdmi_i_45_0(6),
-      I3 => vga_to_hdmi_i_119_n_0,
-      I4 => vga_to_hdmi_i_45_0(5),
-      I5 => vga_to_hdmi_i_120_n_0,
       O => \color_mapper/data4\
     );
-vs_i_1: unisim.vcomponents.LUT5
+vga_to_hdmi_i_49: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \color_mapper/data0\,
+      I1 => vga_to_hdmi_i_18_0,
+      O => vga_to_hdmi_i_49_n_0,
+      S => drawX(0)
+    );
+vga_to_hdmi_i_50: unisim.vcomponents.MUXF7
+     port map (
+      I0 => \color_mapper/data2\,
+      I1 => \color_mapper/data3\,
+      O => vga_to_hdmi_i_50_n_0,
+      S => drawX(0)
+    );
+vs_i_1: unisim.vcomponents.LUT6
     generic map(
-      INIT => X"FF7F7FFF"
+      INIT => X"FFFFFBBFFFFFFFFF"
     )
         port map (
-      I0 => drawY(3),
-      I1 => vga_to_hdmi_i_42_n_0,
-      I2 => vs_i_2_n_0,
-      I3 => \vc_reg[0]_rep_n_0\,
-      I4 => drawY(1),
+      I0 => \^q\(0),
+      I1 => drawY(3),
+      I2 => drawY(0),
+      I3 => drawY(1),
+      I4 => drawY(2),
+      I5 => vs_i_2_n_0,
       O => vs_i_1_n_0
     );
-vs_i_2: unisim.vcomponents.LUT3
+vs_i_2: unisim.vcomponents.LUT5
     generic map(
-      INIT => X"01"
+      INIT => X"40000000"
     )
         port map (
-      I0 => drawY(2),
-      I1 => drawY(9),
-      I2 => \^vc_reg[5]_0\(0),
+      I0 => drawY(9),
+      I1 => drawY(7),
+      I2 => \^q\(1),
+      I3 => drawY(6),
+      I4 => drawY(8),
       O => vs_i_2_n_0
     );
 vs_reg: unisim.vcomponents.FDCE
@@ -14017,714 +12159,714 @@ v04ESDEN31cSUzqUYcayvMFOnI/WNsWbFIa5+Q==
 `protect data_method = "AES128-CBC"
 `protect encoding = (enctype = "BASE64", line_length = 76, bytes = 40320)
 `protect data_block
-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
-CzLml4h55fYAHKRjdQz+6d37eShY
+vFnDOiRcHUC6eGYjixmacGuskb8xpOIdDZ2Ml9bLlaOLH9wlKXvpSNy+7XqEa/5c1w6K75v8F75u
+dAFOCu/8HHAw0g32Y+1EphcTinGG23QGo+s49ZW3i5o+1eZ6RFBQ7xY1rIjCzOcSjVe+6XBucVR7
+3i47C7PK1iO3PHvoWhUgiSDvtDrNo5Su5tF1u06Uh2E57dCqX1Oej7Hlg2DdlQ2FgLRRrPq8Tfjb
+Vu8FemD1WAPBTqvO/xQUnxkQ3iWjYZaprZBTrxz5ZEFo74/Y4lY7T7SbQuVtMrGwhU7Lvo8kVUB4
+FEabU0oiLUnu3htNnK9WGloX0YYhl0XTegDGNPmxuwC53FMGaWYopPj+GtF4HbHsNRKgajlnK9qh
+cXgKFzvNrd9vFIgtsH8MUIpVVrJGol8kpHL1F4QKnj3rZXIjapep6/lYat33eQIggTYniuc8idp+
+Sk1CcieDBkdJon7nafiR2zi6G0+II1vsBYu+MByWCLLRi8tLM3A9eEAyq/+vECLABzDGYXTLFGje
+sl19f9nMuKDd0QyeNY7x1Na8ukceuTeAjbM6gZ09HvnXhMgwp5JGF4gor9N6ut8QNeYjU87VQYEQ
+5dDegA0WrO9MYQSlmt99axhOTt3mCA+9l7RMiuqquNJ5Q1jkKbetoKLi8lIdRuUIQTFL3C+exr6K
+nI40T0IpGVxcMhNrsKoPgoBaPo/m2ksMBZWGPi2O66Y69NueHH3ujOXnPUZGGWl4582XXHXL5eAp
+eBCQE9wlI60jS9Zc0cE9Iz9mHYP59biYzhNC0lvUfMGIlbQdAzOrNRG9fF519mIkpMAmzhMtvkVZ
+q2I93HKgd4SEBXibURBGEYC9TQyZNGGnUCmanhfXl+3ss7h9wYQrtD0w5cHm0U2nRKoTU3quO4Ki
+eu+iERqUfq0aPzNtSGBz7d0JEkAkY/abHYx5h6qmXW4ByV+lP3xDpMmG05MJYSoKIsF+nR5VhIKv
+AplFnvYREi9+0GFAXJJXzbTD9DFPkNrKqogWSLQke3deY1TZhm2FxhN6y1MkWvAqMs1IxYxy5GHk
+37lIlbBy+1sEmV+Fk/NGmsVjq0OgL0w769upLs58lq4zv0iJQpiPxaUEQ6IE/x1XlM2THpaI+RGR
+q83/Y9KKQvt0+11jHfdo8zrvDn8UbGQCuiFRkLvKCebIEVUSpKTpm24T8qO/+qUIPHe2XSyxKzUv
+QFK7jedT06UhkcIfKB/p7cZOxPHXiDSJdp05wVBdDIh8hggYlTBXjrKq9J3t2IjWbujbuPdeTmQd
+8N0p70iEOl8vIVYdV5Aiecq1SrSHF/V+FoyDjU4ViImklhVbgW6TOz4cTMCB0kyvOiDEKC6uBpVo
+kTnQ8gVCd6Oram+S/B4vgsC494xabB90Tb4l5edskIKN22S1ogq7he3N7y36jLS9spl7v27Ep0Dl
+HqWI1QSSnFj05k4LlHRAAAZN2mi1w50YMaKDmlrPPbNDntiFNPDomS65/k862QoDQndW1Dl9a0xX
+vVdLzUWrL8X0zjxeWeCK7AoiAPFOzF2ws1WDHyPDWS6rOZlsDXQ21KunaUNoWAzO9VEHkhObyKib
+tMZ90vZS4EH1jecpeU9TZBOoeRPAs3IXjdUaoD9byiGijduv8j7w8giPypjIEYLbOXMDhQPtafpV
+47cVZp+OWz3wMQB5gpkeISjIGTYB1JUHivSYXRoRisP1LEtRtwJfA2XWy6UhuVWcr6rhHHk941Yd
+442XVlrGcnWwqJyPR0tN1JGDDN7DURER2aJgihigCLwpsY8lWx+GxJAhkAye/RlkzhAabw6bmPgp
+IUd7ptstH3uZO65D3t6ivHcRY/N7PdSNCmx2jIy881BrR+vTzB8UsC4vHbd7Dp9rdqFkJwlAaCH4
+b3jJnusV0xjCJtFYAvXhBI5mtRsxxY+1cfgjERk5n0ZRhQ6+zVv5dVqoWLRITYau61kBNzyHhcsZ
+nhWjBbf0kFb8q72xn51cRkDPd9zPSB+WHngQV0nslFim5zM1PJzlDXrbdxplhQwo87OsNTjD/xLH
+P/zb5Wp08fdFhFjGCQ0s17UZDegWB9E3tmoanlb3jZScP9kQznJb/5uf6E24cD470VK+BBhrYcKl
+9RnOdIaHl8iwnxXwhCgs6UVPxvXILJNd2KZZ8qHvP/JGinAVm/GTxw39OshEXLf8liCPNaFfQ+bJ
+unDg2wklNTc84gX+z4o5lLmOw4A5qxn50abJx1HqHr1xR+K+OvH1d7hX2pNrlhT/QC88YJUmqEnM
+S/3XzfhNk7oajIThsju98L27AwwhihZ/vDP2fUnVltBRuERtcSyUkpMRyWJ3VzaHH6RleMNsbX28
+zZKiOvB3RpOjvv/mYq4HnQqsRLpkqkMl6Lxxe+8KRhYweys4wgb3WCwOuxDwPSQ3ZRkgPV06L7hY
+tyXXqlC8oNqt306v3KdIUOgnABgRU94kHvIF5E4S83t28n5kjrsVTUlIQrk51hSG2UHiB9o3ZK08
+MNCapWGNk4LP7niLHySt37NAjLVkXNchwNkuM3R8Eug2CUSTg5BPH0V34U1hazUbMGfLVHc82ysK
+g4CEpBG4hV1GUZg5NqjdQr9+VEOJCpFiIXS9jnVZYE4nnL+ugjEWnvyD1Id2XAKOorpXeoJKYhoY
+s9o7frsCQJZPFABeUoz1UbZK9Fr56RGtmp266XAdGasQ91wIU0jvV6w5YRLmcG1hUJNtxk2sKDEb
+Z1s/p9y7xjHwuqmTLU6XtUFhS+siX7v6ulAirOTLlRsljqbmdHBT/WYSyqfQdWNyghPK5XqilsVq
+vNwL33/ypFx3tWsKedx3iMvxtSUAgg4i8qg5oC8+glei7nMSSBLcWj3goZW8paka18C0/NIb26cS
+K3PkBrV+fEMpri10/FyY9hLn+OAAvtBQhQw9YXYCmpMHlwnpI1o5zruhoVwWDyLpyirtwcsO4mBB
+4i45FlSYXOubUz57ai0/Je+bxbzHtsGEtFgBkJYHVSEAEN8w8ssZaUXnaSVD30bMgjR9jYajNLSt
+LSyHR959eaFPAE4tFKmsNrTuH9xs+H3ldsBShpTURd5QY/hDopcodMnEAJBUtxB0Ua4v0UVBfg6x
+Ydg5tlPQne6mdJebnUOQp9hS+hbWIa9BKYBGLi4oICASXgttAHXjootzpEhzQP9vocnRLZCEOPVR
+C4cTWcA+SzIko2XBaGwtZodKNbdERSQUdbzHYahN0Goykq8hkYX9PV/jaxijYaammZXU5qPOnTF1
+uZF5/uSBCkxGqh2hpL2rP2+zxtrkD3iTx924tqZ/zUkX0O4TlcBfnSX9H57Ss9fizra39ElVXA3a
+YpHZaaYHOT3XcV9RXa0pOZ1mJ0hJaRjYvkGrjsb0dnQDsffD05fFvcEdkXTO+6UPoXB4Wde7zlFq
+RxT5iynYVopq465HiT+8NTqDNzBqb66uf6hgHVsnx3kJdXdn9Lubli0mZeoGLoInV/l5+nYIt9s8
+tJ3dL6PF6eSUcwSnTOs9pQrMqmNb3Q8YAjog2W6JA1gfg1mHnWUiWchLvC0e62aU5f3xdu1pWCvU
+XsTPNXhcMJ/MUfY8Yo+hkTv1mt7XiX1W7RWY83BYbfSAEapgdjTQ/X5aQseF/deI2tB/ECsrYBpS
+2oLP6tTnMPLgUWL/vHOXfzbd6lbOD0giwiL2uYTzJDPEybrVmBSPeF5MCl//6mvdv55N4HcBtC+D
+xTYsfVkjv8Tq0vPYE70bcvEsETxND+uUXqUwr1lpdxnK40WtJtvzyudqLd+C9LUte8PeeYx5lNG7
+VoL6QCVrLGqBOMr58+vXTgQ1XZ4WwIhDELdMGHVIhKrNVc3JZC/zenfMswc/1ZbjmiU14742/a58
+OlhdNwIt+5yU1mlaWbM0p51+fmUCCKMe2lqUePJkQbRezfSPQzLTW+84GYMZEpjB18eyw0e/GRoD
+5t9SvhHjApZkORDxPoyN/Z2mdJ0NAVUq420Gn1w1WHLkTIckWVjzUSa/cWOsj27IRMVKLNYHO4Mv
+FAA/Cb47YEjv9NoPkuVMe+hoC2bx0oKfu69qpTXqCy7vtl+RK2h4oIkrVrozYJ6Xs1Pf/2vTlcKS
+Unxj+2NLAP6QZKbYDYa1/ROUtxPbyNJdvo13HVR2T2UZzD9q7siworFEEjwWLCqADhNjaJAy+hh3
+KPnCv8gFiO2aLWMzUh34w73XxmA+h+eNHNifFJh3xniuRFekGuEHZexUEwUktX9YZSJBPA08q847
+dtrv1PS2up/p8vZEMrbR10LXs1VNIlv536LziGzgao09hUnvFhZ+054vVze2qqBPwIdgmqHw8hdI
+NnuO+5VvO027QDC+wb9LIqXXxqzIHGUGi1jCUPIPtzl9V3X7rHTJ5rAo/doMgNrtWTEr8ZjP+atm
+zCR2pcpftNjXUwsE3i7mu4fGpyb9UANX6rzV3uRHYFttREPOhNB6Bm6TXRXOBv0lbZIhDJUHdNjb
+U6PnOA544lRBngSKzVgEJbGP9e5fPVwjZMFz7JKVbKCtU2gVW8G2jcG0dRfTQImDPwWDb0SJOZ8y
+Cp9V8LUk/B1fAxyHy6AJjRChS3LrrEh52ukwcyWk7cTSEQ+KwcnhFA33qA5eUwYFjfVaRlPRSyi9
+1eDNSAnp2MKugPB4GXduThkzpA6kauEUbAZSZva82N+4OL5daVni0g/SzUVxIeVK0K28zvEQAw/v
+0Cd2x3haQbRGWnyJUaq/aZhvlZpDpCMyO4aXtDsfI8SC3PUw6Drb7PY7/ADS18lnBvUzdO++7zYB
+jAiuRusH/YEgX95RIoRJqZcoZUcz92dlx3jhxqlku0WaTADPMnc83wa76mGMZq91D+npdjFWLmRX
+PPRGyMORMUYnD9wHIiVfK5SQqVvAks3Wvp/4oUUyi4oh9yatOGIO2EFjWQzEbQ1iz9EZxTOMhJh2
+MobkCjhpJ4WEIpQP9jqM6jo1oYisBNAlL9FJ0BkAIVZ/fTYiV7TUdiIbd327/F2IxSb9HVOSvh8u
+2vI/MeQ+eac6mNhKDboaVuqWUBZ6MhdYHpgkUXfXVBn147As/sIB+mV6rN+Ivj2LOd3AGo/+iKYV
+HUfGELxGPKxw5Azdu7qoo3rkaMI9LzQ/OHxRLT1+KnlPLm0XWtqPskshvvtKnq0RB2f3TlQERxhD
+itLNyN9TTa+Joy3WcL2qWUNJNotsIOw845gLYAZi9bVxxmUmoBpflaV5OgMGH+dOKiS6gg4uVz2O
+yf9L0i2fD5Df4U/n7sTHVMa3HuZuLXIG7uQEQYfUKeare0bk5WxGID4vUOqc+F4ONcFTJY+NcBkv
+ARlzBuS9mf82gbyUPjSnYcFmslxRQe3jSNTthu5Blv4Ohd37ZxMhKHraZyGrnhOk2atlOkCAzqTL
+0gkqKlLZ1mJWbSH6MfmH1CgY6T6RgFRExLLR+IPIQoiGsqBV5AnOB3fm4EWK1ld507FPcVSR2KvI
+2/GbhaNmAX47pjQTKh4Q04kOX3axubt91U5+J0oGt8lWNFg+VX6P3++Zu0rTtdIM6xCc+DKMZGpJ
++TmYylD628ZpBmsIIYkQ1JMcxcJaZvGzB7whG1FRaoUOiJ6ADkl6orQM/yebheOpaodRWcQCzZYK
+u0VPc7t4SZmVEuvoAys3nHiFukb93KMyz7Yr70T/XIgyFPIZ7HUHbiS26F8EX2Ab6/TQ3+nEZLxu
++OJrDhR+sVGNZqi+TTZevl+TIdR0OiqxfvvzQV+1wVSMpR8cdsY7T8Q+duXnHYb+ahKK5G6ZV3mP
+ZM+uQIglF/mHiymb9Rl4l8fRc61GqOtc8T6edsvmCIWDOO+vqNKgLlVGyGzGxGNZ2ABO4mKRbFIm
+WT1Sdq0LJyv/+nyqRMECHMOKUmB5t/ZVzpv05OI7y37DI4iOr6/idGTq68UG4IEzi3pdeFuMNGWV
+J93aNSl55kuzWT8Ja93yZ7KME3n+MzdK2ufx6qWAMVB33iFn5pJfLYOqJ1/JedC3JvbpwDVMQINi
+YR5vA6AQYt1smp/GhwcXMzBJVOFy96rfxSfvFtfSV3HkxKeFbDL9x/L3A3owow3F1TRZRzEIhEXd
+JyDjMX1rLnBjIyTwxrGEWvGiGUzvappr/eCGkTnHwccwWzB/Q3Mr8wxVye5KDhUwisGmJpUkxmuQ
+auJRW95Pi+0mlb4WezCAV4ecEPWOl3lilswZ2dQ50ReUTnUmu8kRezBJgY/J1uv9C2kAFydB/qW7
+fNnvZDQmm81FOOUHKhnY6U5YpVukXsMo+Wrw85zZA6k7+i7Jpzk6I553kKYKR4Z3IYYrBCRWmZZV
+TJAmiB3EuxOYeFRodeZXtIxegD+WbRI7B3J0IiQ+7YnSy5VRvZtrv3/yB6w1jJtyBEhhQnYjb/jU
+E0ch4TqCabwBZ1kcXOfISGOM5I60iJPuK4kX1jAJQuwZx8BueuJwxT2Rhsnp71J8YimzBliskIfs
+rYRAErnmeDZ+fKti9D62AgB+afdDPwg9whomCHuQuInwV2JLOJ/TyKiWCKHz41Jp2z6FC8olUG6O
+NBkIUvZFn9u3DyynhZc9wHCd2vQe+e4n1K/4aGs6rkhjk9sQgyT8GH7E12s/22bOVlp0Sn77NvZA
+jOCDQuODqtjYgJgjPfZKRTlCqgMi/TMvCW7A+QPnJqzEsf9FfJjhmDsLc7H9IufzS1zVFiSUVU4U
+adUDnbZAhP8m77PAVmF9rk65N/Baw6ypGKrs4QD/2tOPC009yaJN4IwsjcxwsnKZPpwDOY0ysgst
+l53p0uXJdu6jXve/ntjoZZ1VxAT/MCgdf0t6DRNmJKbzcBgme3XPivk9i4n3Sq4ylKelVQNyyHWX
+Cmod0fBogSrrfihCcjexbWYzLuLsqIjAmJLI5SKg1/aB4mMIo8dUcUnQH3sC9SAYBJINoatM9Udc
+EKunxTt9q/j6Lf3RkwZ7lCM3SGQ5KeFUJiyaQzj+DTiuFo+govUDIbJVgKjSz4Dcz06l2D3QrjK8
+ETXdHi+Z5pcX7R6KjT97qqDTKnG3Q+fR6him/zwLxAwlfyVU7b32KEFPlPsRUQEXT1ro+/kZBlrv
+37vD0fxQnl2bQUWmTh5BPkhwue+K6mogXkDmsI+9u66AR2uQfEhkdnLM76XHpPZdndW9W327p9bP
+un4JTVu9SDyzJsuRaAPOj57VXyvYper09DU5Z/L5yTbyQtYVI9wX4MbYK12p14tjnAY0jp/EEnrc
+A/wPJ/hlgk9VWnoqUu2D7prZQaaNKr+zdG/peTnS6M2PGtKn3nvNsnlNoFMWMSOE5cMX/vU+TRga
+mb2KuQY0hZsrW3epWu7eWlTy5DdiVSyln38ChicoKr/Xz3DNIM9YtelqpjwTkt6+eDrKk6q19yCK
+y70FeFkQ7l8Z3SW86xTPDN3+cDFcPOroNPUk6nQcUeL1K5PhofMFh+7BALZu66SBSf8IY1yWezTd
+mFTeiivSrlGSAHZFk8/LSbhGpCE3xbeiDKiaYXouiglFpLO7Uck5R43uxKj13rzKqLwjaxAC2qLX
+W5wl/Fu2mMU0pRSaTuvr8hbw10fVJsxHlSF159aCkPjtpYWaBzJlSQDSk3exdawZVJk+JirnStYO
+rqPb3uB+tQ4U2/+MdoBQg3u6Q3ZQ+UkFE+UmVOUf7n1zBIX5JIC1dXe0fqovDSMpngkdPT0w8xs3
+6Fo8+QgJg+x/OtT2o1XNEAoxevSmLmM9Jy5g1DvT4RmhyPtzeIWhNhHTYo7VlcKtccxF3k8wU2dU
+fK60zpY+Bcmjs2AuyeqleoJWjnX1OZ5u84FInTwF6vtz5KJP5kEheiQ76QDgzHTrg1i6fRzUmG4b
+zk/JT61+l2a4l3k0+JYQM8ynacSFSNUOwUqCw5BeKs2wldLHDXA6BwJXi8vAmescAYXBOXzou0qh
+OaXTYBQM10cfVc9XFGpMVJATSMVFXcWIFey0Hy8YDqFV/XQ7KwLGb5ncqDmhtcZLrYGjfW3LeydL
+DUqICyRzPYG/EqCF5fBABx6OVSHk76vpQEgaWseyNSR8lIazCEADNllfi6FAuwVNeAilfZX2RWXd
+yI4Wx/poy2Sx2Fxk7nH34e2ufDuVOCNlqFdqwYLEAkA8irTJWpGEU4ib91uNgQSwEa1Zjqcjn4QN
+YvvW3WqNPRNk37j73+DNJXJWzBD0b5s+d27w4RoFa7NQ/7M8z+JIhtXE4fSxLUlsCIqImVP8dvEK
+EvMkv8vazpgjZqTt8ADkBdj80l5hNa3QF6yIpTQzmduTfK3IvzX/GuczZm5diu/v8henorJUrNd3
+j88oiAK3X1JVeLDvKqj5TbSDNWHGXv5QrPlR+gePx3+NCtMMAFfqueKUyhqrF7P9XJlQj83BnvpL
+5RVhQx2SaDAWrhbGSvrgzF9JjN/eBfjrdPPB+laZ9IyyB5fPfrQmupic8H5/QavP4BjiGsYQf82L
+lsP8a2yGWZwm7LEZDc0S2qbl+aOiP6bmLRP+J7CmRh6swu7ueqWsyXDp3DH7RSUPTW54TTZxWkOy
+EccPuecnNO9hmH85FquOHyY4WiJW1poHUig4FYhTLmpuoSRYgv4pNSP7HN9tFOauOuSQH+yubpe0
+5acjWg06kXuab7FeKoHpSs5ur+qjoVC3XhtL6HTbGtyLrmr8WapgKZ0r3cpXIZZrPxaiHcS3YaFB
+ClPawt9cmkb2upRisjzIaZCC/mXeePQtSMiKdgDTc/+feEogr+tjHOP1TW9EpMYzYzY8/WAw89U3
+tuCdcxASmEp5XJPd1KLnbl3v5iYZ//Y0o3r0T/xRBf5dKMhtFDvyzkXIkN5UtT3suEEtFiQvF7a8
+Gm1YCnUFiJXDYWFoxnk+ae2MzdD4WSaogkpLDuQCYJ1R1Q1CaVZofZq78b0PeV6V3k2bz5R/q3Bh
+RP8ANG+JkIfMMZCVmecwrQkM6MCT64v05dfSSOPgpeCC0K7NWCEMMZ2rvYKZaNtYMgVxMzMWGYea
+H/jOsy/8C7a4EpVG5+Q04mTYiGllvnAHkQqbMpbSgxi2pa33NG3Sxs+c+Uq1K8qXUusAWVEDWeUE
+uaO2cRIqmPUfSWavamf0sKbFlvQmunmctSjOu+LfUY0G+CnyQTMgpSf9m1tPDo3nt7eZ+rW7i2Ep
+KULXUHBssVtLMZ8+or0t8ei3cn8Ss6gLnH98hmK6lVgHli+SUSSA8tusSQ27Op3fG6Bpi/YGRFMn
+OJ7SJwP9bjujeq+dBItfVW2fC+xrsOAVS+dfg217+QNGo+ajk6wpW8XmSsXcjkZuNDKGAnBmlgcB
+lIk2fvIGeTaVRoqw6OUv2XQWJP2zccaWVidSQlRPGDwrNrv2IYY857w8vRl5qPOdtxv/eX8p6CkF
+NPAuDuo8Y88ac2zowkoK4wXhlXf6XBYqssYxNcYagt3LBj29T9dnOO2xHU6lTq0D69iqzWPmA7qf
+r3e5ggSTajLlNW25NkRqdM2P1JeUF5T6TZ6WwZnktkvDsyTpAIZzCq3z0iwqaXqG7RyoOoj9RT5t
+lZ2Kt95hv6j7T5EcmqUCGRrEVXAUMgrIn2+yK37EP9XVrK6MEnDB2HGNq62GG1e1dsOE/meXptuY
+RRsWRiJpCy4p/Kmd8mxU+SPxBIVPAnpPAiddIWfxjZpngJBmCRy5mDU4wP7oS6/JjI7FzGr3PBqx
+hUt6MR5yWjQhJB4jplphdkhx8CwsWLwTgRyEZd5L2Gipe3CGI8nZ7cuhBoAXOQ0LZ0Mqeu6AwL/o
+vxOSvS6pgU/LK6x0JR9O6nxEA9H0dK9cucR5etMYMkEynBlXXyjs4lKpfl+zogDq3MVk9c4Th5D8
+o7/kW089uOgahk8z93QKowYVMwFBWUeLg4ba+54hdLyKjjuZ+UrHgJNriEit4+DyNN93EIVUvY6S
+PPD7Rdx/NgZn0bnWhxNEdWYAemeT3pz3Kz+jpI7ZRHgL3sp84TY2GSvYPAFl4P2bqMhM7yECbO/8
+wV6nGWi/cvLioWtW1ghXA0qRX72NwAJmJcShBe60lj0jYsTXHShW9LrUiDIwdgThaFuGKFzg1mAu
+uSel4qhtrMATSrwpmm8Ahjy+SVnsi5tYf1pJHRQT+aAM4FbwHCv0JruVPNxEPjyYhUKoZzH+zqIy
+IGvrf2A4KaKPeBwRXrqhcvw+4dQxMMsGeaysQafUVXJjP+OQGJ3gzR3Y2icsvWMlPHB6ecF8PnEy
+YY070kSPM5uvHa2Cbwxx9wmVV2xELSnnnsRxwjjx5Nspl8pg6eGoyzpF9y8Acn7IeCeig6XTmQT8
+k5FF/Oj1dkRQqMXaG9IjfObbOc624mn+Uf6FbgZNncahxS7QGWy6G/MdGWXNlU0EoTQ5Tpww0Qv9
+g9yR7cgEno/XC++02M4PZWuh5/I9mkCAlMVBrqWJGbYuJSqINiv6dgpi2zKZkVGgLgzVcPoiqWDF
+y524BXbexZp0n+rEzHnaH3ntdRilkjyNY0A1xY8ZXYPuYAqA0WrbWG/myU8KHUq3CJsqomh++a/+
+kRaORXAHDnYZEeTP6t9uAyQ1Kc5jW086Fokz/CpLoHTqofIgVZ7nqYFmwABWX6RhUcF+eTutH4zb
+hAawqGHCheYwlUZnBzWBTMPDaAvJj3DjEI3jIL8/UTxCWmVTBfdqBkmvxtP+sCOpr9qqjutNe7Hb
+CMtrG8vqE5dyE12Oc6qvT9Wd5TWQeVIiU/G66/mI/rHlIwv1ZGRm8jRT/G9+1MVCdd8CKWj1Hqi5
+woEVW6c52V9UtHeVokkGBX0ETlgjK7VDbB1NhwFGjKX8W52isZi3YV0BbXhtyWWMEhDdlYYcmgIx
+wlFWBsGHvYwuSiX79+8t8BSsyI/uuVq5QzK8QvBMFiS4NNEJdi5JcX+duncQi9TQXIz1eVFXjtXQ
+aDrUj5ghRRZ/LXTYrWPK8KgXNNPw5943S+du0Rku9dhS6eokpH0itctubjEBmAGFcr+5x/nQYFs3
+NZrzarfDszPLQ8VkztylN04ohpK6H8Kep1UtP9cKlrCnB2oqZ9tErGRwFJoWZ5SP3iBjEHWwUJ79
+QgTmBfZzKyNmdelS0QwRlffa8ThSC1Q90sRYC89g9RVJZwNNjjELQWwkgNevTZoTHbjK2c90W8Dh
+GLyfT/xz4DB8AVBmICr7ENmAYSVXgX+xynC112EtewTvJR3ROkth6BQWIC8/sluepGuh6qN7y6oo
+5T1Ta8XjxY+GN/MtTtlw4iD7Hl4C9JwWWWf00F8i/i1JZ5lO6fAMMZ84G6eXnC2CwrFkGEBtZfQO
+S3+tUlhxVRLPJFeBeQOHXW8WtxuACRepE57hZ1OeWT1Y7ey887bY+mEdR1UHDvFPzMbTPzsbVwxX
++JcKEJzfUMyT4u7ce9buO6hdldjV86ItXc4y9pvPqdHuFimlMG93RW+ho1ZeSy93K8SM88wgQ4FG
+lQqkFtioY2I9zk6SQL4B9WxoW2c2RuKoUJFtCK5nsftbvzTcFhtQCMeaCksGzIq3k7TqPZ/+QX9A
+N3mryFNuD69fkpQ8860UAsLcIoZtRhL+fZwfYe12EVgy/YJOuCjch7RYeiZxNhVKY6iwdEndcZzl
+CLacnSsepUkKl01De8F1iUP5y0kyERdfab81dEOqDVR2DuANu6lgKuxBYaEnr5odx2UQzeTVu0IG
+noktaA1tDNWqslcrisxOg99OO2vMYMYBRG9P3uvAsj/DEauypmt04ykTaNb0S4IR5Ee957PBeLKJ
+lkFgz/mnPGmN2Y+tibO212WJimOvAPd76YQYI8Pe8knqaEV+Z1sYvEwCSQKRpbtWtlQytdvOjgm0
+/1T286fulah9hQSkRuyXuS2KiTfnq1eFI03/evAjROLC68jK5FkUDGaqh00r7J9KlITsoICk8m0x
+gCDo6e/5DBQ2QyAWs38YSm3OIwFPQB043ULu6RVEjowiW+bBZSdanoUMxlkma5TCofTpxWsgUlKd
+ttwkKL8Tb0i606ULbDdENeTOi+pugrZQtojSq+OgHAywbQi3viBsxb8tJK/46jUVUpBeJyNubr3B
+BgNX3PVoTV+wuEM4U7sjSw2CkAPGAHoS2KOooooubLdlEWslF53ihc2MBWbnzskBXhPRjKizgng8
+YfYr5rsiXHJPOpquiW8C2LNoPq9znqazR5l/F8pXojFnN2Y5LffhcXjpp4Sdw9BoZ8QQDBxHbTHU
+eJ1b0wU5On3p2tu8PolzgDerbGMudqYtgiB0CspYJh7Ds4sHWama+JEJC8fZsz4RhMoJsfSNoauK
+z51aL2b9E5VljyQ7GFcn8euXiIoyaYvexcarf6qMV6P4dKlPwnOn1l0eGifg/pkAT48acozUvbxB
+2AiqsoqbPWGOlAIKsbXPgOBX0k9+AyHVV+6+6O0ptNKqK6MSYddzcQIyVPJRgtCe/3vxhmwEnZiP
+sHuQULwhkZi6H6kxN0r7ZiR9Hng8kJOwFxEdl3f/Ngx0aLJGB+0i3fukXYGrvE3UUCQpruSGHusN
++ITi/gbBLorPMk9FgUlY4NXdwV/NO5Cx/u7fA+nqeiKIUe0f/pV10A3b2NLFk43dzexTXN2udLrL
+9dJyZKNhV+Vvb/wpXW0yE7DrA2Mf4uIgISwJ2VKp94tU5x0BDwKf1YP6wdcubmA/ve0WgA5YZhG5
+g2SxT1ACameGG443bwm+x4PssY7ANl4iw00ic0juS9JSPXcPZWOUJ5qjqA1XlH1rVpAvPVEYE0vr
+A6P/8g4QY5FbHmbJTH2ZrFMl8z+qBTMI5IpDi9E28cwbL1ht7B2xNNb3+wnnnRUgPL04bemnGgah
+KydgEYTU1vb7KEgIs77IVUszhuUZEyj/u6BS+BlWdCgpAcJ8O2e/8ldJeuQ/f8dZc/EjEKj9sPgQ
+0wN0L4SIZUFx3a/QIv9eIzjI4P4ulgY2Z7EbhAvaFvR1G0we88D8f4dIAXaasWwVg1fbDA0gW79q
++1YlpjVadPLhPZjHJiW1xi/pDcWzCUGXY+JF9HQKOpPiszX5imPphn2+PtJ3wCnCSM7WSPkUvwiB
+bSM/Jb5Ddn4URBv9yL9LksknakENXmagzLosidvnZGZx/wfelZzsA8AVPYJhYt4zqRAfx4HZ0VWc
+XREvez9sApQINg0FUyvcQSmu2yvQjxhAF/Im6iHaj2+Vf43bcFImj2rEnZ33oc+zsId1GVl0SesM
+Lj+39r2h1RcgO+N+yxPUh4K7ji9eqVWTIATAg2ePWpjnbbalnw1MF4ZH6qSJ3X2PsCk319XCShe2
+23YgXta5tckDVDB029EhKKZPh1a5m5/WK3o7yP8bzZpnfYRzTT+ygz4xhtltNVfBJunYcym545Jy
+AU7njpiT/9DanMPEPkkNc3SopSPkAAGDdYJsQ5j2gHQDEITROJC7DF+iXGa4yaYc1p6FU2G8k0Tj
+9o9do09Onlmu2ezOk0bMz/aF7Zr03UANFpymavbboFt702pN8GzV2Am65EH+mSJdgc8E4bcFJjFh
+GVfiMozxr6HZK7qIVUQA58kwTjhXUMYEuhZsntpHPd0LVrzo7HXrf77Xj60puUX2jyefPmBmTGdS
+6/GwpHrzprCZ/E4EDoNAHR4VTmP1jc5iSa3AKW0vNFUEIoibLnCK60gzETOqXGgNDTzBkkj3AOev
+bz6s+UvsbKj3b+VYQj1J9OiUSQB7d50xYGTcjg9LcvlFQVnWcFaZmGM16avAWluBErc0nLAoEcZa
+DpGZV94+ZPRvuG+cINmk2ecio+Gob7aaop9kTi5hB9Va0MX75LAhdobhmGiGPDKf8m76SGuxzcVO
+IYFifNLhkmI5bQhJbu6Vz1EeMkMoYZ/76JTrjqtmTrnD+QUpFns6k4I4MP3R5y+ffIeA3j1JAMiY
+0iKv1hrRXUzLL8euXooa8LP/hAeov2nF8h7SAjBeSxPMdYX15a1/GiHTVwGmlYVt486LtM/FAgYC
+AKSO6sV3IF+d7AAwsdLzFxE0A5nzHfKLdJhLO+GwAeXsb6JmTXPWWM6sW5mV0VA6T2LoTY/XVIrW
+R7UjA4yAmIpD89hTeo7206IxjK/4PJZk34fWUMyp9LehITOdt5gIhg63IZpCCBqQOBfqIgoM8oR3
+zgiNqvy/9iwCksV9fy89eASvdM8V39Pd3ym/w+245Xsjjoycok0PamcDf3+qjPg3tmrqyYf9NqY7
++CRvsCiXomdeN37WKO6+xAn1MVI2cnC2Jpbn93PoHdqWwfOzjb3nQ3tBB+PukzlRxE0y6ym33L3A
+Xk6OlF4/iWiR9KqaYJerriUKGGDmFcfy0Qj0LfhkM+8Lq8zdo8T66JCW7v5Yi05UfVE2BNk7iA3e
+LjBYxB94wsp8RBIkMh9yB3trbBz50Q9p5+REh3cv6D5vH09v7az1G0tqZR8v9Gxmdi6S1aJF+F9I
+aiQsEx8T6spPgmRY2fP8wrLYZrfd2zpQOZuXd6grRsMs9vnw5gjUyYc56qCX6VhKI0NcRuglQUDQ
+QbEKo69KjWdRp+CQhcBe0asITlI8ZtFRlPVQ5faTcyOc+ePa3W7PmHAIl0SBuXBR6av77ohcaJjC
+1fthikO/DbWEFXIA9obb4bFuVspSCTw4JyUl4497YnWGrtqFQOC5BAF/iUaCC5MRVcL7Dzma1lRc
+gg7u/GUsFwK2TkykrmfD7El+gpDrGV9aVeOXBcK7XxCRiXFdGE83OgHk8aRLUIBoOTN+drGVftCZ
+pMr30g0Ym2eyoIhe/373NF4br4pdswXZA9MT6SxbxLEXzQW7ljo50++YVks/Huc0HeCrYPZz75lf
+DNFxKJwhIouJ700OGyRhmSedpKKkMi0hpgA/XXjJazUB+wdIi5bSdwgN6Los7xSYSkvQLkgKQNiG
+rsReckE60i29PpYv4BIUwk/DX4KuEko1bdrNVR0tdZwb9xeHt7OLZqzRLzrjXXakojxTiFx53oVN
+8hjKMQicNfPJLr3RoLkZVm7vz5glBf25LaPPx9BSmwYdXvHZ0l9TewEUhxPD7V9SAf0Z2xq/Co8X
+ZwbW6dxfQHt4PkNGaVRd7tIcyw9BKZE6PmTlCeqDuSZAZLEaO9EyONsYqjsT2beJhQqpngainRRl
+xuB2a8O6SxUGP49BqOc39hIJ85ixzouE84aAbV3bNvalRr6aEbMOBlYNnxuiQjtf3pLuZdiJQl0P
+ocAB+BxXyJswUpaOLAHoZDwWmMEpR7+RVjzfA3ssxtzJ8XxrrSkYPG5nIKVKQmkUZJ7LUUfCM+MY
+Fx42RxxybhcPcSUUXkSM8m1GU9+Pt4M2470Lt17I+xDIL/y7RUVpPvoZ92q335VHpJYYhWa+pfsv
+i5PKVBYvfDMEndw+GmHAwVF8XcizTCE3grBNhVGpBjZjWF/joNIRvRA7viRjAR/EeWO8j2TvKzJ7
+uwHLxIRqdT6oMProC5YaRiibFWyKFJ9qRMYUPvSCc0PlMI09mnYMzMe0DOcSBDyRPr0v07fYXUsB
+9jyIAssul5bHJgPJpWrdo1ORNc5FlnhB+FdCwxeKD81IwUIxIMY6LZyBSWzZD0+kXBmvys9fOuBZ
+7zG/PzvdF8jSJ3UWhi1yp3erBQVc0ryEfsIy59HIEy5xrklh+JdSqVpWxeLGpRV6Y4H6A1r7dvbW
+DqXakdcWP690STNoy9+0KSsTDP5+TlqJ6pY23vjW6NUXLMJdzZb6j8QOoQDuvhOoZWocu8G7vbiL
+/WnFQRV2Imzro845lvgvHcXEb8fLVEjlLW6sVAEsg5xjyZ/GltKrwa0gOtjkokqjRb12lmh49W5z
+8kaOdeY1D/BC6eQFjERv4SSw0Mt7OfnKuz9Jka9zlsvEEATnB2pseJDeT07ZYqqr93asFwYaNsgY
+cPaKt02/b0z3wWhsLj7Zk6odQITpvMsrfdIi4iG08FE18/MfR7TCogRbbKiGCdqQ8PF7Sqa9LQUX
+ldEH3WcZV4cWHgNatSaVelN3YAMBxpb733CEraHRuV7avkS1ilcHYPBtUf4MfO2r5DmG4OhHHDvv
+TM0vSSUVQb8A3V6VYrKqiLh8cmTOmYTdoX6cxiTDgWvMCfFBEDTyvZD0lv3g29HufHWlOzythdBF
+ybVdQDj+LaFozRoLUYf8LK9/EgC0tlIinkkoG6FkCvWDnEtqXXKjaF7fF+2p7bUFdUK16+D0o4XN
+LLYDp6P8ahtec0mpYHvQ75FnQFyrvv+L9Wx6Md4EFdzosDhRnbVrueSSBrJq/fHQAY5RYoN6rxvs
+hHzx7pFeMBIfFEQ7QI8ylFI5fO35UAIM/SL3sYOYdwi3SDLbUuen0o1xGUQlaA0V83LMaEuyoScG
+KNagAfvhwNrkjoTZadflTbrzt4EWVn1XVtlp2EP7V63Kr3GZBKMwk+jeYlAOeoroUSyU7jtwmRwX
+DeulDS9jGygc4rdoHVRDAPiJA0lCzbkyF2E/P7ijohmi5LZEhmJIGzaT9RpSkTi0WCx7mH4nXhp0
+PD54pvRlM2C89JimDN/FvnJnE5A2LWorpSTXQMdihAjCLNH5f67X/Tv7kpFSL0CrN0bjBR8oHr56
+/DOl2NZXIEaFuzAwEh6AkkqO4vPE2SMKrEWrHLgnxtU7+qKg0nXvmbwPKC6dkbudjNSXBr6KA/td
+IUdkShj9b8W6Wh0OjHQQJf+T7SW9o39UXKbZ9uzTKx/jhtS1QfDphNEZejVV0hGbDo0KtOrBREDQ
+kGF4UuVtkI5Ad1rVEZXZFuHaRkOYtGNBRc//HnIrm6dCZCZUUSK4Hyy+j8fnWzoJCkMx7DcHFtQj
+EDbGJJ2wxh119LmJgLCeHPcZBFHqE1mjPpvstSaSsC/g6eOHLRX6SJLUJbNRn0RrhYakIi41uart
+2hiUFcK30447MZ8RhKiXh19iLOThk1amDl0euPaJ1xurLrZQyrcxqlNXYYXWYkcmN6lT8Y050gLa
+5oTmvdJSRTEZgcloWFzFz2pKj70RrR5XmsCM0TtnpPPDffFQufod8wEDFq1SURinEjOtXAZPpFBY
+9Wc4sIbXzUdHJVYVaumdY/ppL7HW00J/YJNf6lD8Q1wq+9PhHr19qzJdgKsg+mra8xMqtsta5V1z
+anjWqb4UxAeU64M4nqmqXsnAWQMbQufMfJG/SYFI7BW/wMMtu4v3J8bYzew6lGM/BiFHzHuIiSaT
+nqKaYPytXw+RH1kXYKh61Q6554UAVglPDHprwmX8j2lEvqc9REsUHcghkhZZMQ0ZZt1eGH7avM09
+cJMoixZ6qmNPUVMhj6oZRQqmYBjbgGuyJEgCluL1dj2oPwss+slCVQGE+oQqaRnkDWZXOgb6hMhl
+rc+gMyFpTMAAjaWTe8EAupxXdFmT4K+G/CEacywP+Xh3/BN4+cfgI9V31suW1ETFNIvCKVzqpGH7
+WBkTHsx8dbYfli5LgvAOjRhslxg3IHTMMgOVNDm6STK8/Q90O+RSHtLe2LEDN5lhDkYHfKegkt7V
+Iyq7Eg8W1TZ2z64pzE1FMis2rYfHNWJyoPadwJsdpNPET+v7Yl46rd8xbUQqBIgoKzVFDYJuq9xl
+TqHa9b/q49DAZwN3Q2RJrYn/aYqNZkFaV7IkeJ8hvixN6KW6ucTUqKxRfjv/ys81P76Do+Zmhq+m
+83C55vAbMx88olL8Xby1NoVeY9aUXDJuTNwR8pr3Uf1evnWZIy/VoY6Qr0a5qFf+0K2O9SzbBHJg
+azjivXkQ4Hf/tIqOE/tiqrc6MaDNaXVkyvEzo+rXnXCJTGNKegseddzvCM8GESIfUwekArF1n7DD
+7llr4lRIFqtfnDRsRyMgPeEDb/aqSfTQmqwfb2J374FoNMIsrQuJ8R1oZe5UKcwjd/MljhLM8xsX
+2dB11uWfJ1KS4JEUwS7zluwVs2dbeTdQ+WuZ4dSRrLIqaWU+a9pNxlOIBXv889JUJ12zxrnuwyOj
+k/RChl6VjiXzGic28UAhkIxwkxns20gUCyFM1hTrN4E+FwciTHRHEGY0/wl4+EWtXpq7hQLTxuYK
+Btk4Ei1Vqc89/m74bdrvU8GB3eJbf1/+MRERlLq4FRMh+qnsRZEd2vyJevecjpElx9I2d/xBM5Op
+t68DKvbjhPrKqFho6Ze4kAfgVw1HoE+NQ/sTPkxhzg6BJbzhM+/lxmwiMZYD1WIXn99vghvfHJ/F
+h/VCCDPYUectTm6a/ZBWUbZvqOV/41E/Tjqf82Cy5e9IMe8bnH2ue89kXWSSB9b3vEBJybMYIcE8
+HMwuiVsVI44noTMvJTDdg6DdvgWvZ35WNOglZ1aix442rpUx3T+EDSnMJQYrGXHfBZR3qt1BZzT+
+eF7PPIwNsxVAqv6zbPtHnyDsdolyZ1F5DfAaDJ/pgj0xGhp8xrbykqvZLdwE+KDOe2JmpGvP7D24
+0IZ0h6SLybhyNLJvrS8LNJOoSy7V4a3L3ZwtOKfEtEPNLrnh4YaRsmH+9GjXwKmvBJDQy6eLvOm0
+CBI5Ck1QWDV/HZk2YHZUW9ciGaNjjyq2z547Lv6UVGgwB7CSFaO+/WI4fAeP/4Wi9wecOOceu1dW
+Ptd8c97ugI2SY+bnGfCEAkkjFXdrdreA2cpruayej2IwV424LYxxkWBbfu+msqS4LpuTAKy3PHqo
+cH9XvD5lHV3seL5WjImX/vQmpq4m2EteKHjwbqop+kzGaEDgefH5HdYefMl5mZgLkmYjLUb5G2lS
+BYhh9LSgDuq4fIIM0ePDJPXwCdf0ke6AdA5JqppKAR21r/Q/C/omgvnia5sODKety4/14k8MvA3S
+9k4Yi82zwohp+uaDWJd8zzRw95LOf1uXj9wzAhUrksarQWOrzmiNAXCUOohy6KkfV3mRwqm072LH
+D9trQQydfywmrdsfnC0/KlJk/PJsHOTWyZfd4kFIHhcwmv0jnV0Hv10XhMkuNlVt7/MsRu3wPjdS
+CZQTwnCQNeLnkdWYskny6I0dlOufYWAvgDrjdR2cFp3VRZgDOXGRHkRgEqvb9OEmaPRWGzayskSM
+SqdsJFlTAhr3yut65dnwMdbndAb4gRcQo5PwL0bxlk/VxHbLvXaP6VWkelgiuWsjmgckWdMH705t
+buvbSamloU4jimYahO/n0ro30F2yDk/4wu9vEXefgZegfuW5rCVlPHYputqP7OIiPzK/bb9c2ikJ
+Al8u3dq5hM/YuESgRJhHVVuhFZOIXOw21OFOhaaPq27ZLKzMwW2/QkIHnX7CKUchezsbSnMxb6z2
+HM5XVzYhB5qVSy5Dmv2UOAfRjjSPdmkswAo213aJZZHkVwYP7+ufw1n8CrRhphUahRXK5Uo/RxVa
+sAamAdM18ivVc0qNnN3VPk9WZwoOd6obHCE1ralQ+jej6iRyjeAuBsCG9QMZSD4/0DYiIaALKbvB
+C6cWTigN34MSVk6LXBu6mh79QuNOvRxF5gTjFqvJ4F3jLaPhD6EX51XCSG9amZhWgTsvSO7F6ooe
+mqzfjYXSiVqhi1gJWHalUA87fh+MlkYK5nJLhbXJcX8BY9AkGzmNKU4O9vyb+IvYp/hs7IedFsoE
+hBw+7FVcENDs5oJ+mgsBGL7vmkW1xeHMnt/lJlRpJChsWtkQiGiCuc1MU0fzIyLnly3B3BX5fxOB
+TpACuqwvL+m5k+wyY0B25AoE+iUCc8tiUPbjRt81/ouN+1JMdgzU2G7Z2EMD3qy0KCFFge5jrz4t
+m4uP4Fo3zQA2wmYX5jS6p1Bod0SwwUQZoNeHwPhJ/UMqg0mWZQIRMWvI5vo/TchxlB2uW9c/uJEh
+r6Dfg+H6TGvakC/Skv/zEuzVlyt93fZ1LKl7LkI7ERYtxASPTWcUe1/FeiuOWh5L7ZzwHKuEEiY2
+j0L0pNY2W5MCiBU7UX769fFHc4S2peIQEeRJW1jk22uzM7y08She7jEQA7ZQFpkX+0JdCw3MzDPZ
+5aPKTiGUTFcfIOlDQupduCrhinl3MoZ/a7//M6SLiMyOHHC5Mvwg9q2vHZzmlSsiOYH7nzKW4pfk
+HUcwdCekPJ/xeT0krYaXWo3QvcmtpZdl3Bxj2iYipFn4esZPe+2dG8q4gJgFPw1gYM9Gr7bYDHwd
+PKv9j/X3hDCoWWnGQ0s0kqFIkfRXVPtrlTxoVrGUpgq5Jen3cKgjw6mVDLd0p6b0UxgDhq8tcfSG
+0u4Wl5DPShlsXY1JMZ5FHfazz2FyC6sYI8oa9SxINwrK1Jw36kb/XAtAuH/n9y2hrdFNYRSI/6Ks
+g9YMbIPgK16t69OSCYHK+eTAkw8jN/FYFHCkecv4xsRB+JjOMR34n2j/M2ce9zKZ6ltduiOpIh8l
+7YD+dX3/hzaEF047grMT4B+TzRueEVYTRhMVOR8T1lKvN3gdIjUsVJ+H11yjj3h98Usmnd9eCCS9
+LhaxEyQT32pVvlLiue17tx0r8Zcd+9VJRLu6oVnMnwU0df73kP9VBsZIhkkgs/TU6LRFLWG6mNc9
+fFkEuoGYGPQGY5VDZ+TbTPIIWQFShj8iQ7rYyX7JghMv53f1PPquZwfB9vRFd0yFF8OxIPyfSorI
+GP9CuDXTq/49r/yc04nD3tQv9vh6ce9qII01C8kbEjlOuz1a2HEVaqARN6C3VO6+1z6VJTCgQfTx
+9mPNRWBX+3NULGzB5tXwD9y6Xztf5C0A5K1yZYaKgTBod3fOlMrnJ14YyvgUE1uQ6Zuz7hxYb+IK
+RtRDGlvFLMSg2tOfTOxGZDXvFNzPi7yDLeFF6PaMHryyZbjjvpmUlzMKCWx+AJmnxMBdBO6OD8hu
+VfPtqxcYzXkkhpiTenvdruKTv3yuQ1uq8ldbZDjoAEfDbwyyA8rp8BoH2NfCyzkFAv26nsdhHBwb
+vwx88BUaEgOTuVbArKX8jBrOhFeUGxwGjevRPuHs1TidvwevqN9nBOUNwQQnZeq4woq+4W2vo7L3
+j2x5RliNlrc1+7AJbBCGJRu3wX1YSASYLfCG9aONuEuGf4i6acYaHJ50luSxfGz+YD7RTEC/maBL
+gCGYtKxOMMgv0r+dkn0jBVSc65x07X78ZHDHvRrw4gPN/lmhq+ss+lBDiZ9wmhtWUH+SHW2gvxRR
+sxyCUHJhI9DCRJ16ybBuJqhF3CeQWBRmeTzWnXQySpFDW+TlZxTnLctagQFLti6FLMHcNxshOYXS
+AVdSEwjEfKSdMkt3Oj7GCTouZ0NJaTrpno7hFk+i+ZPw6fcYsO89RaUVSFiL7E/QbIDLrrIU11Dw
+2uANZWi2+p5bfjXeu8KJH8wkI6Fe2tkwi7b3WuflLZl3h1afAOq+Nu1aZAnMp8w1V8mq+YX5F+IO
+n+6IuzGJwBZVVyGbzEYDYCd7VnXUuoOcTpPvc0t+jpXHeOBsSzq7ph23r/xf6YPcx3MCshPJXrzN
+DIcsmHjc04Ayo1BbnNyKH9zTSJ7oW2Vub9ZcZd5ksdlzwTSrP9unuCYD42gkfnToDeZkFaB6NzFx
+o1aUwHkOJi5FYNOgY3URskmv1/5U+TykuA0tO1uEgiXt9ZnUMJvGz53/rQ9+A/bjNFqJGNJHjETG
+VS8QWw2WFbQuVZmXRMNQOn9m+8RyV2Wkzz1d886sfZkIzQS2rwENoh7oVo51nVGfc17WaT1sMpbe
+vVNll2aEjWOjcKO4eQB8qigyPoIMvOUyqcjAlYIzybMyGYfggKCEESpvjFV/8l/zD7Donct/jsGb
++4S7ulGkGOPW5ISwntvllTXp28twpxR9NMvvDGSxTObBKEC6+h1nu5PFwxO9OgqnGipkS03pUBQB
+9WapgcH4DV777s2ah+PbMMjv1UuPKOcE0LApbDg+INF6LKIUVczt9ycWlj54kJsBc/6R8w729b1t
+23cvsA/Ajn0UhApBQ/gB3ssrixQTyZf+OIhw/FTQON7Ktsqs2Z9GKnAncowzGm6cMQt8SwjkEovr
+Y0Yedh8Milt80LYCo8Wp7YPe/ETlwnJoy9BL1OJYm5JFi1o/FNR6uwiV6iF44Ii51fpuOLa6jJ9/
+VTAX4CodEZYc7idFnZR184Y9TaaH4OGmr36eZxuuzTmnrGs38m+1RdPVRCmlEMKlzvpsIcr84HZh
+VhDm4RURoLX7b5b1INivbq0NiXDA23+sewxY8D91ChoG0lT1rELCe1ESgSjDJHFf71RMC8DZyCbm
+j5iBlIv0ebXeq3SzXNZNamgP2+O1DHiegsU2KazKJY9NUFznq/xGmDuQqMyAVlNgNVZFugLGBa8f
+siQy5zQas3JSZO78pxh1rQd2mUG4Ki977IQNNWaZEL6EEvWQ5RmOhFypMxhs5ea4nxjW21M8UnkE
+c+k3gpCTBSMfMQXt2xEBuqWIjc2qs3x2C7dEhb7FEMwi0AS0wkK3+I5p8t6vs3NoWVh35iA9HN3s
+WAbC0xAcMgAgonjOfCkpVGOtv+JjQY9JDOo69Ag7ERyxlsUCRabDVsizK/6QdmOr2TNtD9VXol1V
+8moRuaDRX+3+0wxZICC3/6FcOPWOzimGFD8RXT6pY0e1B01w/OElOMfKpwXb/q9dVvPKmTAjjoEE
+O+tZZyIFdZ8RGZmxTmN46TpVXcLH2eWwFE+mTXW4xVeHKwHg5nqX8cjizjKTmAjiPhk2Q4oETEfE
+yMWETzuw08V23VYWdArswsU3p7KpRrQyb2rX7yaP9Ctsmi8HrNkoM6v8O3xlj3+UsAXHM3davfcn
+5dgV5i6w1kySVofDsTS7zP0yxRmMwzsQUM7UqP04XHzWO8xbpBzw3AonyZ8O/1ha8jcIyO1H3oh7
+c+aB5RWmY1m133XXLfNh6tB/0zV79AqaH6h+3MHaAeW2wcU4XCWlqI8zXO5jIn0WpALTKQdDHnSD
+Nt23lyoK0TQ5sFNCJWqiL7WFXl3OfvoNzJ+7ZwL63/2N5XzDIn8wJw38znElC1xSs0TIXedW1iqw
+2DPyNCCTsrHDmFTA14UmonDdz46A8QotkMNl6sXEHXxP2hKkBWjSPBwDDjXNbVxpcD6fxaqMRIU9
+xELPib3QCiQFFo5qnNfjqw0eWhXLah0SpmLtvraTkfJUhP9RiqxtV3gHZYngk98FdBqFVHQIoL8S
+glAS0m5xwuF8V8B0nEL2zvTdKqHurgzuVxkp6sZ184cCTA2MCp+yzIaPLwVI/I0TntuSg175fcLN
+tmhZVjFmk5FAMZ7UCfIssRk397WH49HK/53V4J7cSMk1dXEl8Q3uJz6SWGa8H9b9oXi8GCbplV/m
++fsF7zx8rdpIUhAKPGlwNZb+VSG3ENqehv4Jl3HWlPPGJ45JW77LdYPoB50TOEwozfMFnj7McT9T
+2pItiOSv4gAdW/GIRBY2xhJr1puXW58hI5X9VKPzyIovSQA/DaHwuO7AeHTjHvNDhTghIspbTSi0
+mhb8YLgbFQWCqEgZflpZbFku1ZjVf493zc/Hfy6qBOyJ48H+5hP8o9/RkasE8nyPNozKl3eFiJWr
+S40DnD34+uE6bnvitgQWd0j0juE1Ygx4wRRRuYBnbDlw2KsyewW99bFp2LjUknabRgHbhRQLDdnW
+mONQ2JExIImyy5B0hE3cUJZ7kmM4mPjMiOeo93NvwspEfOqKfVwFcLmi+npI4XhHQSUkIEcEtdOM
+WJ78/DX1+TjAfgHM7MOJAmoYD6XGEhar1iBhIer6yv86mdbyJx6CexadUIZhUOslysXQQ+kkM+2r
+tTTw63CSGfYCtqD89vdmmvMR9Zy1NZNNzagRszoVn27Wp6bqZgR5vmdVItStzUqMaHLqORdFdsEA
+0T8U/UXtwaNhnm69Ve44Fh6tirYmw+O3X6XTfyRPxe2Nf+lZ8anbTF/TK2pO9IGFTRvJzhDHPODp
+ky7IZE0gb/YXGzPIKjyrLYG3cVukAKeBKPAEHC1SEjUp/hwgF7EuRTDDN69nZxFVfi5gVE8wi/g2
+l59g4Rn2KjMaFEDCbTFqpnqd0f3cbhFWjSmWD+UfMuuPF7pnsDewTsdLXYUiFBN7gA/SFCguyWJC
+k80qXduGUHi7xCiV4H1IP1IWE17TSprAJE9S4MAYJ3d3kM8AEF3tOO2qNuHVNM+FWpYoUwf55e3b
+bCbc3Pk8yzKH8S2vuUnE6F/dBMqHCpJY6LoGgMimnQKC377WppqST1lHFUUDf+dUvLPLXbOQVVv6
+LEWsyLMx4z6VF5rgWSX4lQI2Ot40RuCYrvaN7f2kUwYaJ+DDzNkz97RAnwTwyunUeZh0YXhLakjU
+MuLX+2vatBEssabANOTMIekH3ccdExkLSozWdLqMFqmGpelesQkPZMzgo5Vt5aCEQXlHWNjwhUYC
+QLx5Z54hKMOEegT7qsXpjvjT11ITSLgUgVC6Y2alSS5ySbbLDHiIiNITvDhVlC2/i2ADCIi1z+eq
+DFQtH6FXnC4N/89KF/i37J5eq7ibYEMKW7SrfTJZymqzSROC1S9IbC9pZgKU4adsTzL67/Fm5o7x
+SsnlV8ju624NZx+NPNGi0eW0r7iqm/HMZhouUfzDR3ngr/qrvTE+K2qJP+cFHlOIS5BQ+lbODH/1
+2jwCeai+kcO4hcTNrLJO9o3TjDsC79ZW1xKNtSff+NC5xNWvnuPOXweM5smNke0gAf4KDJ53YwYI
+WMPX1mS9cBFX+w4iRyegkwK538DfmVm83Wpt37rnNk+f9Lq7muNTygKuLWbtF7ywnIHMeDi5B8Qc
+wApmroYWvYLBRqoU7ziRKuCagjFGK/R48e+SpZYrQ2O0w/bsi443Evx4nIEWttW1SmIq5/FRy8EO
+bP6EyjjDX6YUKAl9uh0NOt72fmprB56Vdo5yZebiBucZKhpDbahtVI4jW9TPfEycddO9g9/v+Rxb
+8BvpNT6w6iJy9l3Yvr9fnR4DWklOpUItojWGRelqWFG79OTA0xF10mzGNBVo4t74flflwVlp5TXC
+WtzfK4h+sHToCDq4xtyNLfC+TTBg9U2nsDGvt+tspPeloUtGalmWK38OHUk66dIdO860tyNqeAGa
+jxLG6InobpPwbhxWiMCcgzg90bft4sfc6ivZAoybWK6NU/RJX4T3kw+2FiEWeNPcVQBQ3IpBfde2
+eynsikHXgsX6D4xWRBcVHnDK2D8ELtkesx0+DijQb6qYeaWSXXCOkTKtaQrTcuF3wu43B7ZiLbrc
+zkE0Shzj+umKUrYeVk59i6VzJC6uoAyqysJ5HHpPM1GTmc8g2hMatM7Fj4GDa30o581JvW6yMMzW
+1CDNsL0z2G7RUuy7oP6mN2pE44/Xxcyhhj5iZ/FatmqBq4MPhFBtJKFGtdAql1rZX1BzQgZRhdkN
+uNAFEH/9WWNbF6IYpwN/EXsQsBpegziOSOcuo77rRFSDqLR85oTw2RUZCeLrrthPs5jQuF5Iz+6Z
+OjXjGGlig+c8qWJ2GU5FbjmlkDLuW+8bapKdx6nslbPiFf5zIoJJREAmX7Fmqq3D1Uf4/Too7wRG
+YqkXTF5RbVr+cwnfUgZzFF6xdszHGWz+mAVGSBKGN9UB2ifln6JIhY8i8rBGzlx+g7x7G4cTj7Zr
+KDqT0v7Qsga3IVBxzbYmuAVUb1r6zYVL4PS0hWU08a7cb8e317b8m4Vi9vmhjQw+8+bjU9iGNnGU
+utIm+4NN3D11SlmUMmW4LG1IkLCAqYK6LId/dRp77EyDLmzwoAH9iNG8JmKkCOGZjBR236BFulyh
+SN1Ip/8FOz82JKTGLyFEs45ha8EQ4Iq5JGFQwDGVO3zQ2/VE3vX3RV1iIQEgxrta2SoRj7XIkXFJ
+GBKQqYWyDFQg2g+XsbSFxVCfafHmCMHT5aygEhGAjK6xFXWMEoEncqIzjnBJQWgKDRYjNUk4gwji
+ZVAsKp+BgdbxSBGTyRAo5L+Lby5LvOC1BVRLBu6Asbn/i9F0Sx/3ZtyxHRxgdgYP0wYg8KjYAhMk
+4vF3pewa19Rr9ZBDw9Lf5h/Md963QrdJgWJQy4ffygUv4Eic6NORcOyoZtEdFtHJmSPhHMTYdxI4
++j20ROKZRPFJ5tqvLqCsATldLrut9CRFCAa6y6YkEOZMK0fHr4ffqNMB44zfPuzR0x6SO2eLZMm0
+t+zWqvOOq5+AjRggRx5h6k5COoxaDooYGsKaVZtGx6+Qksza3lKphwTZYFTKh90hd9H5KvqN4AgZ
+oTga/qsuOxmqHfPfVCRZJY23/1zGXQmfygCRS+TLunyqJC2ar+sOGvd94434QhaZrqOwIwr6pXCE
+GG+H0nmuT0hUNRKdCzX5+sLgRrr+7vwrQrFQ2HoTJZFFGe6AOllbmYQ1PtgeFNdhUTR5sX88zVc+
+jW+l1S+cDFMiUhf2am6JmFpJdwRPO+c6qhfRdN5SEAx4jHxZeTGG7AyrGpJxxQHpX/UzlTvUz6Fi
+tg1R5U+vx9k5VhdoDCe1zy3BQaWqYK8jK3O+nPY/061AdX4zG+ZKSAFUh+Ha6JBx4HBnIxvhSznP
+ivcGoRpSMVoiQyZdbGPRTKJTGAkVydOWzApE2CJkBl1gyXXa0uhttRRu4RzZ9rhPFsecGEN3SqO9
+OCje0zX5eWyTnk+0OdYzVIhAvwyltDp7n8oqP1xpLqdJ2tVsVoVRBrqNhKhF+1OGGxYlrUDSpP+Z
+7yV1pjrzzNWaf0CHlj8GtWfXotUkGwim9rKBG3Vm6Zh130yFRLxZJThGeVIuYQxFPeiC+qHYQpcu
+5ykuGVdIxYfXYwDiojGlBU9uznWoLgaRa47F8P2a0zyKnrDV3VQVhiDWBh6qpJ75qT93Mpw/Ct8a
+W5jHQyQWJYd5nhQdSVZGlXhy+lTXF/589dZw1O5zyX5ZQ2UWyg+F6ODTke4sKge7mJUjaCRIlTmF
+Ds7aOZIPnyIjAgJLB4+eFJ8NJh36cofnxsmpMbe3tgAAqt+Jhilx7DH+uBUVbm/ZLUkL3v3efDQa
+SA10X7B5YsWyOiEAXQIK4ZgmMxTM8trRvQRDLJIiaZGT+dQd7pbqfRetqXmdyFjk0SvJkAacHdzM
+ZRxcFOsBcQvGrSIQRnH17MMjY8zs2yOTGxIYYafIunf2oYAga3sC4ohqVTS4XVueuuMqAW4ue9Jy
+F0Pd/fBhbZ7DRaxafGA14LE3S/L7lEenYUdy7okk1PexMZkrpVTb9zYqQh2MqRUjHnGt5JGQjt7P
+zv6t7lyXxEquBuuKOn8/cL52eblmhOVNKms5MVQy1yAto6sWgssV6yS3ZhlB0FdbZpbAzIaTc7r3
+zPDODY3UsUOsH43jnO3GmWIaKcE24s54bdVN3OBVwfWjmThxcEEKpF25JWtQd+xbaKmyGTfky1xl
+HPMMYfJ2Kqq1KbjSS+dtNbJ/eFztARifDgmb5U+YAPC7Q9+lGsKjpuGsFIT5tVR9FcjGEuCLL4R2
+TjDIRXtKDxa2CUnIZelRLIAhCMWg0RE242C5w47MLoJCPzmniwaLpBgerNewwr9yOrN/1GpwSvV1
+hH09+fANckqOml3X6ZeyFpjxfntalojd1KvYnkIs6/Zb7AjT2NOn+/ZI/7NLNgVxXhJaBk+wf9dx
+rLxUFxQaK+Q1gQGIwlEsUObgFzb+jIpqeg4awKZL9a2T6feAvGWL7jOiAihJdHva3j8YHHuypdYr
+z5y08K3me2kL+oq1piorFE+rzNwZetQqT/vRrayDmY4uWt6COaXmsVdJuf7wkZEf6H3zHwvR9vWT
+s+cHNTq4/ikZnaVjNj6P9xz6M/MCkqPi47gJh5oBVPj9GrUldaV/J8Bfp59thMugfHuUo+O2FfMo
+Y2MqdHW73IMwqICO+RRv+AtDJk/qhmSmS6zSkHSEOksqzETTz4ZfqGzNCYlxPTUCpNaCAYtbTCIN
+5xHQ9sFkkZfEvpbIYy3O4bIHZ2uNhfyY1Is3spR2DFcEFH+OXrcCeqtZwTbTqkpu9VEwScmPn8YQ
+o0pLksTDgEVOyVES61RsGzH9Dfjuc06aVQ5UheVssRjyP+0cWi6xIyh7ZPxOy13kALi4neeRAJON
+2/8JIOlhkmJNIYHCuY6rfXPzVC2iPKvMnLvz52W/RcBXwganieA0NTg6yYP9Rgwamxz5Y6570ETM
+R/ECAvjfcHbglgsb6d96kPKYXdiOgZplxK+SFyyQPqPUzUpOuuPV2GoFewXScWIKnkE4pR8HTHxA
+QGA5yVHrURcf5wNRvYrkn36qkbkNzRXHq32f5kRyL51KLcTCJXj43NZg3IysVybvpFiXXy8kNl6j
+r8NpsBFusqr89Mzycced3tZghLM/w2ygBoCHj/16WrS9+BrDwaLWEjMOIf13XCtX5IYcwC3HQ1e/
+ElNq3AIzQIN/sAt6GChsk50hlpAfs0EJMUr5WWh2Kee9QB+UlqoxOK3AI0OtJHptfAKGGBQWlg3a
+mt6zJBF9C8VxlPA75ughtK5Ckj3EW+b4f6vpQbDZfqpOeeWG3WdQ4agFU7tT5LQAuRMEo0TxPlNK
+Bge2qBvaN4pC0cGfxbMrsw+V5Jdy2i3lvr1naHn5BPqVrUhWCHjxpdg3Jf/NgdmoQMMCKLkTEw5I
+nE0kyroVzN2IQQk2GwSJnXni+tOJKQ8DjwPUxU9wm2CWvtU03yuS7mzCbkvIfXjihg3B7kzPoaEt
+a6doJZsjI9a8HykbNkWcQThRQslldpmOKBjmvWP45ZlPSZA0QHU5XosDjWJpC1/QE0yy4ZAA6LbW
+ZFSD4c6PnqeAYjw/MlCg49eO0WTc9m+msJ+M53kUzutUGtP7gzvuSdX5mLuCx00hBFhmCMkD2Fj/
+FV1rL4NoGvUgWT+hVDr2u4EfbeQ1jEXqu18kUVqTnaXB8m+3XNb8t8p4QjgKcq6JaMykhYm8DP7p
+zOLuDRoOA0i1NhBJi1Bi9NeVm5dCAVQ8U0XXXTH1rqcgY5QFypBkD6khfPwELrWcJxV5gOLNe3e5
+uuIp/11+pSShIo7yGKlxaLrKSv9Q1XaIb4QKo/OEk5He5OoI9Nw5igqvIGwu83zbfv97fQprIZG8
+ZZlsMDiP3EHrFZfAFHZI8h168FDe2Ir2mMWDo6npsDloX89d98uS5bZSpwuVs2bEo883TFINz4iQ
+F+QV18Ghpn/u5Vn74EVkKK+nR0H5jUg0xBi+VP8dFHe65/D4sg7+YM6jNZpTduHc0T21llVZVhb0
+Az65yhKYpzgQjlFJrfewhZMBiN4QoL5kiRmG7YYvCkz+1GCG8M6Eb2U8zuW1D8V/PumgtTtRg6yQ
+nsEP+0f9zPzd2Aa3QG8+Qzk+dM6iHjIw1uQkLWK1pBsat8ClJyne8zmyBO4csyPVy0hEtsNYGJJJ
+Oou2Uw6KSSB62QzcSlf08qcuuSQ62nCGH904jGJRhT10BjC+CD7DdXtnix/9RbHj2KY1iIxjffED
+afENoo5FriJhqEGXXTv22ZYo6cGw2dqigSWFIKyL2hhxkp3s6Hr/3TcAa/Z97UehoPgzPHW+xMSi
+gKIjZK4psLKhwNZ/FFCozqr7hSYFg2vbW9Ydf4fk3GxkgwT2a9OnFLDQCS/tdIjg2NftH/UZqJ8w
+RXvBJXw3h8g6thR79Fo2IPXm7WoUbSW2yPlmTgpC870h4QZNuPO6u6isREq6wYUxipC2UPs+7pSq
+azSUNJtNnEfuuVETdLHWgzXFPamEAhbZuyrAfDtFVtOJsEpPFeBara+zhnUFh2lpm9F9IZPOcFoo
+FSu2A13MUaSjnMUwiZ565a1zQN5uo9xQJunWHP7HTqEiFjDFDzrYYRKBila2/Lf3lhhOyZuLviKP
+YMhcbdxpgfdW4pp4UtdqgjYKK9fsGsqIGDH8LAK/xr999VOXAcAF0BAdONNO5i/r8pMUUZ83Gtnb
+Q+SrtTIDb2dMtezZ8AqwaoerhZMgLo+BkCkHBezbU/uHak/VQss1V0Ic7FeGbMgm020jVz5oy/tk
+c0R1jv6oOFqSJM9xqVzu9Anz+s2yrCC1WE7zs+pw1ob+MfPSODsv89wPcgfYbMPCEei9oaTE3jnG
+SHbM3sjZDLyXP5ZFNw3nDilgPjGDOiPYz8KR5etMfSPogUHNrBRTHwz3kUDRgOjcBUb2qlk61RMk
+hisYAXeSDMLgmDGq81AO4iTfqP33IXCh/uL46BzZrL6DD4Q4857J5QMsEY8EaHlkdRAtcWaJsg0X
+CAnDmb/t4+IGn2ScMGO57+7nswyGBjoQEiefwagHxzhV+0iDi1UsAVujzRF6CCWJXi4SzjZCbEoH
+L3xV2AiijVpDY7xrAElJ75z8XRMMxn8/O8QDAKURE8bQVcAOSgXOuUIGH93wnKIkWZLtxTioJRwV
+OkLacofnDGn8zcJOLAJ9s/kHEZiqRW/av9xpeIuiMtLLyPwreSqeRaXKt3w/zv9cuYgPwj+kjDXi
+0NGOoqsdOvYeVXzlz0CjtUOHVrCn1Eknho+4fpY4DjqKRV3jtq/cvkdKVIyfCUuAyJqgPcIjOpfM
+YjjIjFZm1IGVA6brfX+qMLmh7oIEG89i0HZfV8LhEaQYngyP/dXskMjVQpfAivL1iMHi/y3K/Oat
+qWPuRO0+ZESgXhTRNEAxES+Woc4iy9nRR3NCJY9iJPHklS0ZO/PNy1qZ4/mCJfIv0T5HjkWCRC/L
+4ovKdUajXg719pPNtuTzTpKr3MoLQdUnhm+DCMUrapUBmr/XDaXacSt0e9UMufJ0QpIpzwmdGwnn
+bDBNn1dAY0qrgvTcaGTbyxQFGsHbKMaJt1PPtQrXFUSGo/7sCOHj6EX5JUiB7xjUKHdRpTUeFBk4
+yTKE8l0mj2I/+S4K8VHHgpvFyleOMcNkuPOfVuTEm8CuFWOSuKjy185thUnKP841aVw8g9MZYvWQ
+eHBcqmqNI9oQfqZZhOZGJmfzSntofm3aQNWkumU1wpjVOgMpOOK313ZjCEme5W5Ou57/6iNiXNY3
+WSeuz13QjqY75dxlfi1f8rK5vfUQLpfKUsSJqex1wk11ZFOF6LyTWd1gU0R63du0+/n+YzOJ87QE
+tAvHQRumRkx9zW1MEG9z5TIXbMSSNNs7wPaq3HhHpm/BU9QS9qsjJ2JLU0ZX1QwspcHDnFEZE5+b
+0lV/ucEs1yakNpl5FMzXYD9BUSbIM89hYPqyhBudGm4Dh0P7xMGce9HxaZMZQy2nISYUfI6foAbV
+YSnycAY/wPy+CvIkwr7cIbJUcnTrpTHU8pL8gJ2JeHiJ7q9uN8gUZ6uMD+k32I0JxJsWo2eU6CpZ
+HJuQQHO4uvl7S6P7xo+vZ07ak2qCSxpZx0ldnVK5ygkTIdZl4gryGz5Jb9K49ua+exmWpk0sNSkR
+3gc5bRY2xRp6diQ/Eli/8z/b9xCU2rCf3yw8ugs9+UNQV2aFO0LaVKByWQdvPu6tkaRd0OAws7ML
+LHBk2nZCLhlF7Z396iHwFs5T6H2H9z07UVYWBrFes6Lagp9SFEjBAAa7UfkR2Gg5u12H9GyWp6gK
+1+1sf+997sDiczGMHdLiXSaseTCFevLBljuY5BiPAkBTtSXU6b1HTH9fEL6rGd8JmWlcDQjLam3E
+nFPQbh+3MJyC8hGTpUgOYqqJuXo5vghAqJ+/VyXjQMxuG5K1GJCCLfUDt7+5io1UM2vZM2vFhMZj
+e/a3ZVc3l/AezDQ73IYYDMe1iZKs9HiKvNtTOWeHoy5QC549oYB4BL5sB3s+G9zJUVVSzJcqqbIT
+5vrYSwvoADXFn1Ij1SU0yv9GB+DUpN0K2J18BcOsP36SSR6N1/x/2ATaNraB8goA4/anPe+pfY7Y
+ZIgAGSPNcCSeM32ErmLSIxondRxaXiSv9YLuNaaoqrE6e4I0+zB+8UOV8fgYofcPksdhdu7gmbJK
+/M0xUeeVcvFpWVulzrh0FGJupUEH4nrPGC3OP+mMoQrQBCWX8aBsXmZjKGWqPI4Nr1isZI5M5cMX
+A/tJCPX3uaFf2BpjzB1fIUNVVjqvfbrPkRBzF653n3XuunM5YV6u3rcbjtZ3Jbruq+qnk5o8nHL6
+LzK10Uher0Z4fZeQi56tu4fvbWHKjkSSn6NU13dEF84BEHnLOcl4Dhvd+8+6AuZ/G/ffrKugSY3x
+eYUMFqbyBAKnwZ43nwDIanLxgIrIsC8BIQh4VkBeWmClgHnCKzDaENRmJoSD3E62aKCNYwUnxrl4
+C5neJBBawNrJAa8fxuUOXkzQcD1HfJR9I+uQvERESIw29+8OpJhDoalMEaLBxkvXwublAZtm8nlx
+p95FkVg1NrA49fzhjg4Pcfv/wZHyHSi6dbMhu/nNSvgtL2nVblraaYRSsi41sfuKZ0DJLMs2cGiN
+JOQ5adj9loQ/UsoElxnBoU0IQnfw+DdM6vqb1zHYCEnwUERpWlSHrShqHrW+nxafDptzu0mjc2h2
+lHfQja4SzYVANRSrkWUogydLeQWojcGVSgooZcHjRfP/lviI5zFyP87mTQ7+iUfupLLC38S9W5V3
+kG4qxYCHMRCVCiznJvj662lJSlhjJN7JG51BPjx7SFJtfNgZYTubeO2MWpSM1NnanFlsFS6bmcn+
+eno535vWWmgkAC9iPssBH11OPHqfws0hj/UsJZl19cpZ+eCPIIOTAc6irBnlfKcvfXuTgmmDjf23
+EoE8T6RT0eArssE+WGYk9CL9jbHxErPptcCKbzd78a6x3Wj156Yv31SoI6l7CO9ni1s1HBeyDgqs
+MCh0C3q4xp2C8BFJRDydjOmuE5BkYylZgURIey9ap/yFnn3eKrFN2lTYjZ7w4n9mwt78zkWBDXnX
+sMVOWOTU5vuo3PqgUTE3/FEqwW3PgnBqYKrGbu/V3JgBQ07o7L6rO/8HMoCnT8vI2gIZDXJRU49o
+tgtpSwPUMK2xtdtIxxs1CDQbmfklGXr54DMhmvqxpkXU1Jf/gT+K5DK94jvkJbzREwZu2cAh+gXI
+ZsQhdRV8hY1zlJHnRomvTETFjVrSAa+8EIuufAczkL0QPdvs18J4bB7e0mU60OYg+1g5QP2V5gkT
+kYSf3RTtKRLrtErc6JfZR11OSPfrKznh+E2kI92KSqdTvRK+ktOhdMVm8gKgTcKWVBHjiNF0wH7b
+d3qihLqroLYdg+sopJlYcCzl7FDRTP9bbG3sq2pVU752awlh0HREHwNgl9FBukdDib/myjl4x7ff
+Oleu864GBydCmaJ51PN2H003ZTKgTA0b1KPSdi8sxOZAswS2NEg1NkvChEjosf5MIyGlHvbOaW3x
+A7O95t9Djv7KvsUIUxIFLxdjAhbB9iM3wuQNIOavOYfrWOukFSnD8tOoUjmJi5i4myv4+s9AkBEq
+nPqhg4+RwH5EZ1o7Fs/nkVItoC7oQBMUkvNLkHeuG+Mi3aqW3zmjM9mj4JogSeKpRN9ksLMyYnpN
+2L9bn+KmCG3XK3ZvRI4BPqF/PExLhu/yGA/yNOScPpVVCZQH1a6Cbbco+DJVgbSkaI58UFicfHIx
+eogtKigkMFVUm0Y8TuF33tlQSHVjFlzyZTGJ7QiLpP9my7YdXnvSeKOl/j2OlyI1Tb07yocRJIE4
+wYtWPm5f1HWteK+VzJfl/j9zOhJrm4ZWNH5tk+fSmgff+v5MDWf4K4xpLEBke6yxc4c+BKr1KpOU
++O7n5D28/XCs6BwU5i0K8nck8BHYtxAflPGqnnogKuqbdvBRxAqi/mel4WXdlxSwHOzGpPYOFsm8
+vB1WN2AJQJWHMAIErm4rzpiUxp7gW4a4mdz9Og4PFzafJKVCCSbvF2Pv0wko7YLgvRLIFLbWzFzw
+yinB7IQ06FuHh1wk0MKELCcyOipHH4SGIf60cN+GWn9bvnsf+mrqLBUTJpHonCDQpLH459jprLpo
+UH1ZmmKVU3dq2gawGDNdGtkVmM2iAop5IdlIGKZ9PRi4NzTdXwMcVkMzZyGNscPwUUQQZeWkf1mW
+OdeW5tWitGGvkOYbc0mZNqH8FDMGKx+rqIDoAJk+xpDAzKC2KdyAuMoRMb6EuO7QRQx2qAprkcTK
+VZUiB+9CjZVpb47w099qFTheffy/EQSD5hwX1X2WyU97Ju8x2LHggnIxGhohDjgdUguq7QJ1utnk
+F3GH6rYuYTkxZh6h651tBhRWQyi88JWoP+LFiFaUudR606X5o5QKJcDUGWzhJ/gwHRwv5hXwzjvr
+xsMK04D1FHNUVno/w9FLMMSQQ5dpZf79YTS/PJIEd0f5iUzWs0VtMU2gmI+Km9cVQmvM4jRHJu0X
+dc119e0onwS3itU+a5j41TI9tiDfh2MXHcsEQ/DltaJfTZcpO0RaCR9tpFbN9U2mDPQbgNL8191o
+vwp5liyRqzPdWlyWiArAaXC9PHme3aJfam181mFCLYblWRYjQFuVvZc3k2O08Uyo6eiZhEU6+yid
+o6/7dIJNgqre29dWW96z35sCFi/is3l3jUm3aqr8VkFM2N7hMMWnN8YicPIt698GjPDUEX/y8zES
+qvMLimrXRpdwNwJlv20Pw4v/gcfPpk8D9PbWgMp9gAK73SmjDDWwPwaFWE4e8QUf5J5gw4Usboxk
+2XWtEWtTDbFlvGfm62Bc09t8/EFUyDGQnMxSgFn1JjZxIhks5X5AdqAZa1zCMpAWcpI2D5Lj0i5x
+oWcAoqIjhBhkYhsL9Ym0Td/Si9AsHFlROfQgiiBpJVAaGR7I5HCorW70i3rgDcfaIYe3im4X9RQf
+DO0FHCo29Aqng2Ly38ewM/eoHUc/wO4uHRTuEV744Fp5T3PFbmxvhBVcOvDA2aZ5x89cWQoQp1y4
+TggneyPu1OKBiFi8IGu7aw5c+bWxqR0oOHl6k0R+oQXWMogNq71FJuMKB6j8fTewhpiQo4WXOqd6
+KGTdmCcR1BsammgPpN/K3xsqYNezIHPKRNbPKNdvYwNLHzNPFjiNTjoyVZf94ungskyN9GmKSdzx
+SyN1TNCCizJz446scs9pfirfrHXa491uwVyIzhah753N1JisxyFsEfMfzuDhvxePJ+UfXtBM84FI
+mBpgn7l/yFx/S3lF7n1jYQPTOXKHvoLd+rCzQy0B/2jvsPTyOm/MXrKeEN7/uH04cM8nNvgoTkFE
+RjMcXZGvqeFSn/gYYuzMdaPzKTODWeikeXeW/KVRdzKLhtHV0WB+k/dnmpo/JKP0RwYkPcJis8/T
+oJqQBwyZh0EpDulr65JW6wMUwiykEDeQChwJtVrqMqicEMQs8MFERz8wcZcNleKp4MfKM7Vd97qu
+2wP4kWVpxv0gwJPOBrykKbkz+ICgwqQACueEzVdnXBjG9wmGTSiUjzfPxxJcufAFJwJWFNBokK7m
+JUfjeZayxKaDw4I7oMm6MJg4qyvEkuf16EdtorBQ49InnkHuTByXEHfs7Sv6bjJwwzAgWGt2yxzV
+N1P44QMz3OsuR2NV0eu3Xgim1TOCGXvtzClwsGnyEoVbvdZ686RiRG7F98lR7ifaFf43L07qFfZJ
+Rr2xCRn5B2DdUehdccleRhv9VqIscNVQ2flwRu6/DqE0T4/otjOr+XgfUbSdUmr/7SJfkG/4Vogm
+qjH0ad0/7lNuMfB7A8ziBTB9ahikNt4Qnya5BjhisZpl31Bv0m2UVM83h1ZyDZjZy6icA0mmCRLY
+zvPBj5J/56hym79t7iJ010dmqXwkgzXOjfIOUXwfjvKgl7aIG324h8aJgSgjR/zEhc8jjtnYSvpP
+rZwG0ZkJm/3SLHVMTfdKTIuUhBHoJU8ucDOCxvVHnIxO+YFT4aXcwjLIHQsimdY7e4YdNTl9jE6j
+bTjdRFzZ7TNy0CgIzullx3lyrKUdWo6hpOezrHXu9uL/G8dEPX/u/zLc7/HAYBxSknxfOf0QYpqV
+SnDOCXiK1itZuFMJVP6YNSMdWOqb/K5gHl/39aXenBIf1f/uVOgYrHqPv8CEnvOPJBhVPeGrw/0Q
+AssLe2/bYvsHXORh/izOO+QHnUAIGufwiXGsTny9Ch7PnPGZ2OvwTg11vuCDJAAOsLZKO7P9lNtM
+9tjR/HHrMGA/CdwQ3nfiUntr2NnF/045GlnzgUiFgkPtbNE3mZYAZ6sJNnc+nfE4bHJC1775/lay
+Xyi4EiwGYAr+9W76Wq9mE7qTzZ32XAoUEeHrCHVNQ7RODLu189s8UqPcFz5j/Pkfuh8CtsDohhOw
+ZRAxw8PEypZcUrQg7n1OtNInIHBmVH2KCTCaJC+/Mz7QfZ6lwwzZwo2gqMqRHXVG04zWwTqjatNd
+bqJI2qTN4ipqI8Whc9MbP+COvr7DZ0mvtQK27guh7qfgvmmSHo/zrxAIQQV/SGRBib5anCrpzEJN
+7rUlCRlt6Y2m5f8V557Brp8k/YV7etVyuWhNLvOKcIs9l7XPIQwUi2JUC/gP8/oX/AaJ8YvZpogr
+dQ0ZLE3l8yUvLWEmXRqBGsUWgOH9v8dtFSqavkwlmAjfejbq3NJFeL1AKdsTdp3aP0hX2B8zDIOU
+UkWDItxLDEcQL+EjW5a4wDpJQyFAQEiYUhvjGMGFtCa0itmgf7V0IeY8ebnyWAPhy13ZEJbe2T6C
+AZffBwlyeYAr+eOLTRGWyYyRgw0cFPELVXJhT/5UsttuAHFxIorXVHDg8ErqONOPGAFIcEXi9ORX
+LKsF1lR3cPDwQPWXaIkYyN/xBIxm9Ci56RfjIREOYagIaoSud07vUsKDRC7LMIS/EdWENUSiUEt+
+SR4iecdnJCyxYYgT2sYdvLBXudjjr0ekGEu6+aGalOl7aYs4wrWsz8/3zrB8VnMf/29/tJ1qKodv
+mxK5W3Cpi8ElN4AzJF5tydiTQBzyl4M8so9KMdGYcWk4WpSYY+6YcjW7CgV1fIJeU/zp3Lsnonxp
+bLCid9lLDm0r0w6M1kRVooiXb8wWGXhrR+42jVIOsl61z9U6JcCzwyFAILZ8t1LWD4RmXDlW6YYu
+0zqi4+mlFpw9XyqjlIU5NtJDufnfUHpo4VnXUqH2jmpq3fgrcEWrg8yMarCDkagoSlAnicsDwym1
+UJ4N/ydZ4wd+rNeDrTtSFYUbkUllJjDyfLMB7M1TkMx/2ylSbxVvWgZsWFlAS8T6ac1XM2d9KUfh
+sCMJoNdYiZeOdzCjhMUB7108yqYreZEIyJP2Amwc1uKdepRJ6JwVQ1ZY7uYGXfRz4VG8VBRKCFzK
+r4ZUAKGCbTSxQsA9Dvb8ChXMGTCv5Bccp5LfBxKFAutBNk27Q3SJ9Gc0QB2W1Rq9VKVw11Y0hb+B
+Q1m9dbz6+IgOJ4dbQ+r8lP56Kfb5RlhwdNDMKh2B9+UeXij7xbaqEK5JYKO43rRCZQU9VHIkIq6S
+d1XU3u8tgX5/qyeblDLLs7RA3UQ5bxeFIMgVrUTbVBOBXBAkhfZLYfArZhnp6frf3xvHeSHf2ZFE
+HxPdSpq2WN5iiTGhlCq0HfPXGPvDqeCShJe1Yr/KfT55Q7PeGAS5Iq0G8WVkp/QJ+9ME0f43Pzk9
+OQ8ymDZCWNhAd8FQMk8Zal9bVbZEzG8KcblN8Wwt6isEYvlG7ZEkL1etegEYJ2fYlJd7AI7MKYwi
+1tSVQMpb+gLu/tssBixca+05DGfB+GlTTBy2ugllx1kI9T8V2pW/PCT4ASUEJ2eGZAa03SdGNqDB
+ysbHiyxSOcfl2ElM5yyDFs/ri1N9jZe6hU3DyEqwhm45hGUlvOv32LgN1wrbwmjen2/Oehzek6J1
+tepzDJmPvWIaY3ZxIpCIUQLHnXKAolwjaU3bDG0o0OmAI1olDX1U+xn2w3EjUd5bjJtm+c3JL2bm
+OA45+Ez2vrq93zJ1ZmKgmDvYgFx+UbzcOMTX77XdfLQZfRblxTr2zQC9GO5vPYTxEBy7SYZm0sNg
+AcDNMC3YTHWdrvC2iQ+3/ryOpRpqIHrUq4ygbUCe0n+TAg6McAFT6jQjZCtHP0P7nD1xmNPb6GlN
+/mn4FWrunFcTx4OWdOvqZPhxzf3F7zvK9VePsI62PU6pn4/tO7TvnsZJVn0m8mVuWUyC1eOyFxJV
+Srb9glJkc5/Ud4iuYpFhiPQB0Tn10A5uAfk5/6Rpebg4HS69DUmmdrIQtLvs4TViMkMsKCkTQPh5
+QqQMuS/O/1wXWNQ57kl6X77Y8xtcPqEUNkxmqDoDTtCkrDdlZznak8zr1fQFh/OK/dhBSuVXvt0D
+pBCdp6eB2bCB+gX9AUDVzn3CacvEuykrlEX7keWIS6uSa8q5H6gzmMqKKNqH2cavZN4Pua5ETrUQ
+mdK+Z072d+Kt7ZwBaXNi9hlR7vKvnjHlp2nfg/XdiOlg3z99lxZBgMK/9o38d2oEjjBGyhyxE+Sj
+rAtiQp/j6qDtW6JQO6HX5UdC/0fTjTTBdaNzvdedMPiaTYMNqRzUmRKIcV+0n2l402kCGqTyfUjy
+M73yTfFc+j/c9fZv0CmWnYF8ATnVpT9TmCJbcdMrtQF76/NOzuOeWz5gruqeaU3LL4vljbeoQAxk
+QvfFR7iGyzfWlzUZBjcUD3fa2/u5sz7qfpxYq1/9mtpHP4X7Z3xUDBjUY+EVMzm9pP8FSFVUGzFT
+3Ctm/mpH8zli2KBFyZphsg4fwj4zeuW1uJ7EHk8v/lhUExoy5jqE8TG4J+nfKJb66DhcMGQFRmnP
+K/GTjL8IFMwbJeO/mx9NQBZHBFwFLXEF1PvOCKpLjm7FHDqvE3GKu/aBdILxJNT3m99CWM+u6wdY
+/uQRAqKTRs4nkS5z5la250S6CjMPb4JBhBhxolG2Bll+7FgEEDCoQfe7EAankBoTNSNMD4UJkmpd
+yEnrWKe/Fy7ky6On5NQxdfntRVQHIisYzTOWM0gNQKo9yCj/9C/0rFYalcoMZdLMzwniJTpgbrZr
+BIoYyizVloYC4bqGoPao/qzTe4AYzh98s/xWGukGWfRHqcOrBD0N+Bbqc1letKtwYCYRrns2vn4S
+NMKU95Xoaw0e+Atbl0K1f8YM+H+60nQKx26z8pWjc5ur2LXZIeZXKhEE1cVIcZHPMkWnhIzsBmBw
+1VdD9TJj49aBRTtUIhREQfs7Z954LDz3uXgghw4xb1SBtp8PDTpgSSh9MmvW1BCu8E19yIdoitc8
+0tlxL8O9Ju3c3dlDLyav9byn9x+vXGQHFmRgz7NgWTefrccDe2eqy9AjvOrU8U9Jtg77VIwq34bb
+B91DvqqkZzE5eEVQJJgUU7VYVwHcxOH/syEhTG+3cdR7lwFSQVYDIWTBuPgzbFqhWVmBFj89zmBR
+OX+yNxw1YVQydHdo7ZaAZHvMsXemIH5PvvMuSLMgeGILayu5OEjrDzyJ2Da1pzrzrCa6xYSbVU9w
+Flgtw26Kxk6AO4cMtFKxHuanOMJ9dRkvr7bC03QCKXKR0hOHzy/aIB1OOjQ0fXkyCVI1AMK5ty1z
+67ficY2DmzFZ/TPWbsN3bYC8R27mm0Mmsbt7jR6aYspWFPL7rfOwMG/fu8wR/Q2M9AGzmSsnS0X0
+Kvo9kwOeu/K4dvisB4SlNYBVDrb9usoFT7UPj6Wa/DgCt94C2e0sDsQho2+qG1OBA+/flgdYTpJZ
+k8a3F23rkCw01fnKMMwJPDjsPpzbPJ4CJvxZFogJnl9Fgko3OblrebK4YqniTeqGILtHQOdqIC2M
+pNzJSBtIf4bKsWAncDAlr8IpwQx+ALz0KRkvH5oJOi7PGAtegxMrsQz+Lo8Y3tpw6nbt6cisuzxl
+Lv1OX+UzH72Zlrx6URKi5yb6Zj1DaSB9zLM9c1S+LoB1gCs7gR/YoW48NE4bPCZdjGWdFyVGjOvB
+koOmy7z2oiQbLRwozy/jeB6xcA2EqmlEJRfcc6zcAn1ofGzzvSo2ZtfoiIgYnLqI7kwS4SnTXySF
+ORE7KRclvI9fSGWmOAyugB+f47TMXpjqk2tbd+g7dBuks5QwY1D5Hyr925x98P+/6CC5Uv6XTVVA
+mKlGY9P0iXbGhwr6MSy9BgXg6dpQkDgQ60R4QIJJbhQmKU6k5GlA3BECtTWOJGiBDYU5Mas6vCGC
+Q6EcjeKKTtsyHuZpTv/HkxsjdthR8wzq12c3Js3r5GsNFjz973ImQGUy3b3vaisUpma+ooZUv5vL
+fdPJCcf0h5z9tHHHOSY/2uqtO2SnpexSXX4Uol474/Gu3Lq1LWXqCHz0JUeElkyYTRWV3YVjgLhl
+Rl8Ta/vjGjjiT7VBdt1gKylR/htb40xmlNv4YCKr8ACSdSEgQTrWmFAoYeDxUjf0oDoKA3K4r7Gm
+fds0zkoD+HvMpk2NaxVpJaLGa87mOxiNCzIUmrXUc5AJaGi0Xjplu/Hs7x1J4pR4sxOS4IGNLFQ3
+CwePjIxhNM6HwV7PqBRuQBMQ72T8GkulL6XJZiMYJkLOisbj6OG7Qwpo8GexRfZmRID7SaEllteW
+lHVtdvotx2WOrFqtLi/SEWUtBRkCaaLPYTmvFJuPqXlgTlt62M8jiVI8iiMCjEIRwNnxPkdoq2cR
+KqqzIlN8bKrkEcLtz3iGVXzIMgM+hVGdjDib2V5id3ljBSFP5Mk5IRFECcTbsIFSPb58ito1q2dD
+Uq3aD6oRcEwm+pbpiiBsNWzVlYJWZASmxW+0Rl/4vVWAqbP+qjZ7rZiDBBbVhP9edYHN8q7h6K/7
+dredb/CKPUth+BlgBcb5QaRHcpUXVteoyjiVhldhuU52XXepRHXcBiVCeCTYF0sljZuRg7UPiDe0
+4AZ9FK/p3ib4zoOv61OCctP+eswfbkaChyRSE0PYHBDHGJiYoBiT0yk8UTuX9nETEApZBHb2EQHg
+JBajV62AoT37M9Q+z7qLOhXuvbvyIIbKlrvg/gYEYM9cOQJowIPcE5o8mTFHsWfl0D8GNxH3DafV
+wBMJ7zk8zbLEV0f+RVZPMrDofNVVae/pHsPRBPg19wnBVIaCDP9o+QdJOcKaTXdViECzKm0MlCPr
+4qBmt4tS3RRCrBaOl7RQ+ft0eRtoyQn2zTTf8UnjD8BCw0C6ca/p4THs84WMulr+hGc+vqqRNjBM
+4y8mDoo0hQu/wHyynDptIS7eDrr+pjq/z+tG6GV6S8qtDwRGgbFinrGZPOpGRI1/7e+usUlonuon
+maisoWg4WAvicBUPKRr1mTIse2eDa9vB/FBkT2JYiHIvbgKZWko3XpvTkQxUSVoKwDn1F1cZj1C2
+DY+9WWvnEwkGUR6Qi9aB9yER+9Gz8sYQVGnPnEO5aXgp6ecTwCv5jBzWpyPzfNdzDSkYgnIUiW6e
+S9u4WQLc3xeluJMYwfXcaTgyW5XpC3rSiCVHCWAcut/0v7ApaDuNTCRKuTYhEmrZyA9FNFOkKrj9
+VMOZZu/OVBBRVK4I7GemvckozFifksxiFzWv43sxZ0yQq4EjzWbk+tCheqN4ZoCmWxKfNtpT99/N
++RZq5X+5h7GRKEPuqCwTqSVQ3QHPnFltqqbfqqw/JQBmrVffTgHgCdQ64ad0hm/mt21clFTfmUob
+rVrPf0om198sznV+eE38MX70ayXZ5brS4BWarh9+NkDKUBptIOYkVWQyTjrNzVSd16VTFA588oHF
+T+B5ZkZPYlfWk3Jl0IIWRSV4I0yWwWERO/tG4Yl0yt4jRmNMUy4+Vt1BSnkssx73bDsNzx0rKeNp
+1Nf3OTotH6qUzlpTaRRojfN/mUrW6edTa/MbozfaxofBLPKWkdO0OG/aKDkz1g2NzoxU9M9018Cw
+e4ANuhT0hAPMYv13uKxUv6l1I56jFwrcik4n9hLlmeGTa/cIm6OpHf4/Ok8M9JBIl7AcpqFzmrfW
+Xu7n3NPUtSNmRouIWYQ4NxXI+dkdmgGEiw2lr7l3N1TC95oWzcuUnjV1H578AJcSZ25ReyI9GvO1
+HPp6mM/Kh7SHh2JvVz/0N8xiLOXCQK/ezDcC84GP2A+l6eQ7FuL1MXLrs3YbhCNLyxfKx2o7GHnk
+Yr7lFiwMDfcpLAC2BG+weeMXWnW8cYR2VwSSzjHHKQxgIbMSNF3rNfw0Ebnd/DTslrCtW1n4Fmcv
+3fMiWTa4cfa7oYxqMHiuydGDWtjDOpeLtdY0EozYqAEmP+r1Dth70BCYDJRMRfYldRBYJXLCIvs/
+nUlxMV5qtWWNxXcKSWjE04RcW26f04AOaOwWHIss8/onSWx/wcByFC+t+IvMFnBEAS5BaLfmWyYp
+N2xbPuBJ95h2qTM6w/VSArx9j4yo05A2mqk4wghnmlkGNScOa2PhTEaMgu6kpN135hQ0UPCjwrco
+N38PNrCRBGVtNlbeLrAHlcE0pXx6nKWu8nAJK7y1Z3Aw5Carvfmif0e1QEtrCQXSxze3QjQqbr0c
+EYjhHbm/wdxgxmMeIMlXntQgasJm0P4VqosAKmDRI1tVNlNAzJv4ITLo0QJ3OtoM2y3wmu6neFUz
+n1lonFIL4j4UfJLoTDJ0zFCDJ8kXbUFk2iEh4yfmA7cMacHK5eJk8gsI/ua96pB1EubcACvu5cHr
+DA8g1hKqg5HyU+/Y6+NdcqVzQjYh7vamDQ1SwK/uY40gTHMxSmT7qzmwlSj4xiAMiU/HncwMWyRc
+iUDXo6b6jIs6B4ys7efpSr05wbnVMEsRludwRoJAo6uco7QWQwfA4iu6wzpKBEeL+CBXZo8Oo3Ot
+efrdWnvPlaDE8KWgKd0G6CImfU/sVYB3JKFabgoGN/JOeEpiwW8vIHce/+l72pukVT+Squg6errn
+UyZ5BAXE8LDc8FN++RrJtFfc3PRj3hrY+thd3TKZV2LbPSY6OEeLFAdm1ivwVEyv8rer6WHW9YBL
+WyyT9GBxc2arnRp4U/z4VCtjllgI+wMqD7iRUYh3nzvu42hvnIRocnLhEadvoyRh9TTyAOThiSwg
+XSt4k+eI8lhrWVnKkcyAVFEe6krM5pYqTBHVcE6WIHY+6N+d2mRScpbjt8P84cyu8RE933UNsKHX
+lz7M3AeGW4bMPM7zXzQHYoYUOvrtdGErfKyNqu5I5g5kO2qpdKG0fTxggeC8xZzjhtSNnTrjAcy8
+Y9iNRJretnN4nwfHLu0Xam88UL+YjS5wqicWglWGce4Nvh3f+yqp0eDZx4uO3l6gPpJTIZjZ8f4B
+iiQZGSLToEX7ztFcJTzui//Y6Wx1mqDSkYYjf2t5CkC4cTUHLr65i8o1ocFMKq8FZT57pc/6yY6x
+LAlyFAdc+1E2b3DEx4eaeHdxU+XM1uq7W32SFqVdEeBWhvS4b1QWBcEAYnRXn94akEOflh+7+UAy
+03/HXO7dpAwajKhzgc0K1d0mr7pPo6FL3x4Jnk8RdVhkEb4RGq37AOReUc7Gb3Zncok1XXE4wNA7
+U0xUZIN8qDSNzGKpmrvcszPx1YcyJI4AmOfxkBtwtwFUMD6MiFYqve6fpCfWpg7oULD4DjPklcug
+IF4Lrjmn1tQFqsO8l77aCXyhw0xuk7wfQYH2ub/p3T24s9kRnBac25ufzM7HiBA7Pu3blCYxsqtG
+q4CxOPnxhWXK9oUTVh56CFTuHiEZ/5g8ZOZtwg6AYfwjJVzLFRS+G+tGzKLPkZsX3R+P0WFfMXGB
+FpN9DZFugsS/6AsjCMazdOTy8Qv2pxWx39KEf9Dvk9zo2aP9zVdTgOGbqqf1DXZHwUHt9JbXtPJc
+zk5af5+b1N8b2dDSjkULplp2fjusyzVX8lmYIZsgV0gvrCtCUi+APig2YEHq52vnt9h5TKYS54w7
+yRu8/wCRk1cvvpba/vqZ3N0xqgCzJAswOE0FkSRnBK2BgV8Gv9exmAgSYu/cL+ZWczRnwdl/ltzg
+TutU6wfD3wiolap0AnDn6UWOxo1dDq19qK8vNP0aFiJDZ1BmK3Jw1Eb5eGaWXxoDbBSuVpBIKlmn
++GcBF48eRcZxZ/z9jNZS3TadirJCwXWljdPmzNCKrEQ82Ig/CgYzvu54fW/U7rLubKeaUZQ1E26t
+tJSjLwBeFgfD1bEzrSHJPtCRlHp2hk9D8n4hgrDRDtPM01fQkreIQ5tawDXAxjX8PXv3LxgGb8k/
+Nn6g18XhfgIm+L37n/9IB9Yx3WpZMhVSJaaRaRqplfGR6apIHjhBs+fUNC6dh8f0j+LJoaxbLjHP
+4uwkUv6L9Rdjqr75GYy1OfDuxmcPKDGo04qDRjh0ZegM+tCQIClasLyUQqwSjA2S/M5T4pDY+RcA
+Dwrz4A8DvLS/H+iIkI4loz2pH1Oa0wu4yUthVlqrNTnldyS2bSXHtC7pY8RkB97z4fkduQpJbXSq
+8wZyNCmt+fjj4Gii9w2H+dN+UgqkPvLr89jFWytOIaKosKzFurIIrXztZqJeAFaBXhOiui6abSph
+/TyVIMI6K8Sv/TwuK5bEAP1CfwyiHXJKFVBmp59FOB2MEdHsp7tr93Qs8VNsiXIjwZMkD66LSbZi
+fuPWBYJkZ/m/skCK1Fq7d0DNDCDLw9Ai2Pm84CggWWjEPcAYSIzlfj2PurpDw6mldQdr9mlkEgWa
+JxppTYwTVYjFejkC4xaDqh8YhgQ0rLUE+tb60T5tgvI04UIhmjVs0hbKb2wnErkxcJnwa0Q0X3r9
+xW87hTEOCCEgJC5tv9TJiNXu1aVs0F+NMjJfc//kNsc3WDQ29wXHzyGFIBXZmyaiXyWon+D7hD65
+UpFt3qqVin05sG2qJ2kaasw2euIjAzOIC/HQqnRSaXM7U98B/YuNNkmm2uAzNHaN2/7pLx6b+hf6
+LPLOlDHplRRHsmZrpRVFZy8UaaVtfBAQCmxsVUENoYuSGyhNxtJC6YJdP6Czeiq45v2rKHzREpHP
+QIDU163y2su52J+FmWs+T+aWIkTcQp1wscIPG31FxomFGKNwoGJ7cLMpQheb+lRZDoLRivtbMPxu
+pKLAlS/TcNj1HXtP1p578i4FrwKIJcqBghGCf5qc7fIiXOvwNBZDsQKQ/3NfMUA4j3kS8LwG9b3K
+Mg9VOHU89ennfvvhP9Z7tSeEJpPhTd1XA5eYv6hPrAIICKRlrznsCmFGetw9L4/2t8X8LMeoqYug
+5JS8J0hlCRdK3OuFr2C/gsIF2iFjiZoRopVigIM4PR/9q2CCXxiqA/gj1Qr+6FFICqHIxQngOYv2
+FbNJ7wF0V524hjSIdVzg32mggpSbzuV6AmzCQhnhR9fqtBhCqzhcmCkAh7rbKj0SzogVnHlhu4Nk
+S2fkaihHz9lm9LGXBNI9gARlzwceYJVPhBFVOwQLZucjtkOf0S8fjjytIZns6auNYvXzVRESQ+8x
+lH8htMmzS7V/tMJlzYyzqxzd90lllM9xIJsox7dKntQo1vHHKFILxroFVKeUxsGRr5mFGaqvGtoS
+Ef6uifCJaecY+AOotdnonzzvhfxzh8msEqTGVM0Ps0b7PzGoFH9nYQzEByDqgl9NO8lC+TrJo2X/
+foYYDpWjgdstlsf/QW/hyDL0WUD+pOe7BN/wr5KP1J6V5suqNTzP89tSVcmK7aywob9n99Oug4hV
+Rpv6mDTCnG7LxGboUSFqdAq/VXgQ70J82+3p046EK19h5I/aGMxq7HFFKGaUdX+kXDoA9Dl9J7B6
+zrvoP/koQEFdLvilw5SXkNXge35DZ1JvFeLyA7kVui5zQNljYaBf2RFol6todCc62LPT5/vln32Y
+mqNXsL7M0h25J8bZPWASUTRUq9LZpl3A9E7mVK3DKbcQJf+aFI5Qs52Ne/sJl8PoLTVRl0poe6/J
+BQuu0ytCuRnxvH+7BCgMaJEQSCzEY4igBC9q9vmgXo1WngxA1WWqz0Yn0OoCRWtq+oM6wUZM4GdD
+K1px1R8YABEaRNTgyF3WHvbAejhZft1cIFLbfjqE/tKlUwlfJelfHiZ5bIixDDenrdumahaI/sJe
+HxNhJ535oNGHtwstVNB6qIo4TqvXJSJ3i5qH7fa6bfvpauI3znGvJ/E3OI8GOYfneWSNq9SiubFY
+8sRi3CdX644p79YBfsa2uy1+apoYN8Dqe+3tw312/So09qNBUaRte/8y+R6jjsnYLlBcpXLOWTdS
+2uUEKnFSQUP892fJswdsGaG0IXAGeKmUIquXx8wmTjfklQCSDgUnZfi9TRcrQjNtllTXVYDqzjNZ
+7bA9j9cJfKgeFERjWDHmezDgPvJlhgPHnq4rGeE/PB9BP5XXu4am1N7/b0ng1PHqt41EXtHDHHtL
+wf6/LibLI2brjTZ7XhfB9/TV8s0LlXQXb2iHyeUDn57snG6cK59yvuAwEfJUEysOJjy1frtaIdp3
+8Y44nw3blMIx2zbZshsgcBACucYFzpiSuw2XwcBDmiJGRtazzUlBw2zZX6lDhkcLHytTW50M3yPE
+rYzNMUQ1hu62N6hCHcxf/mgmn1SptEeytWFZoq+mnZI8d4Jv3E2ESFkkoVRAvDNQTjkxEzQsJotV
+WMg8cY8844z/rvL5VDFTiMXjZUiJw83GURkY4iam5btSgm/v1Te71z9pxLxcFYr3/Jla+vcUiZMp
+UJsvsieKxjHVqdvi2x++EXC058YzuMTLQ00frZ7YcSO7DQJy9gUFNGpktpiK1+7UdLZolY/hUeuZ
+h98l2+bcPiaQe6Cj/nX6j1leFYD602+ETd9ypASy1S8pan2Qd2m6t2xl1rDS9FxQFjgifJmi6FKw
+ZRNs/lQeUphAyNy8/48NqpLxIxtR4c1axo5+2dA6zvpm3r333gyCe3k5fL7BtT/W5h/df+T1pFHu
+3NE39If5ZJm8KHOU9BvUyW0WtrWR9af0a76jAYuCixDssecj7CnwK8JJQ1ji1zjCndgouKnXBA4y
+2rOMyjee6opCE7bwV6N/xhc4K4oyY5FLKlhr+6LNa8QEP3YRNcrOjl6ypiyFuSLKyWmJ9j8hUt4+
+hOAfyj3ZNeaZGCyKxJLbD69NTwCmeTI9+ZcjEgn3vLKaTFXmVSrvDEtpQaQLAWrvUZcfX7eU9NSW
+smdKKOUJl+qwe0JNEj+31xEkWVT65P+gf8NGdn8ZWNbMoc+Mp4G7+L0c6GzoyLUcQjB5jouwDKgA
+LwhPxMn698LUQwcmd0YnvrEhvfZfe9gZJkpEjgZQOL0InUfxlQwpyx62ZY3I07r+oJ8ggPFddmG8
+3gHzvz9zPsLBWofmtSyG2MMDIH83kkDwL/2iEAyvD9Ei0xQuAhHWoks+KLMVY1WtgumxTumeqji+
+zLxrEIvGHh4Wk+Oy8vb8jm+UDPbWdfOtHKxFIwLZQZ+CkoIN4Ne7F6f8JXHrWts34pNhZpX0v5Zq
+io93MSx89g2yFh7LhjhdhfwkDpgaKN47NkIAs6Sgw0ArIjJdUqxj5tsbEkfWhzsY+lR5sjxlnUlL
+wvXY/034cRnBE3Jo8Vt+jjF52WNwcwABnOzAHTSNwIcY7ReaoWk+29GOwZFOPtVEWrHt4pOeoMFH
+zACQyUGYD2SX7gz+C/zaZFLXbYqmd9FjrW+wMEnaBTNJ8yiscGYARDc0AZlFzz067nLkPY6Nb4c0
+cUH8p1q5gwE8gr8qcAuzUjLkG3BKntCbxXHU+WUfg3GSY8hMaI0wZ2KE0EXTFypz23JtgZn+FTIt
+Xq/IkktIHYVnFfLgVS13NhzBQa6EBb5i9S29VGyATNMmFcv+G35mPEHsMtn3LhOIVS4pPpzl+2e7
+8wgMUZyxMdYQeNAWZB6hcUDGKFcmYq0zlGYZb0Vvs8QvKCYpTz04mAfUWvfVHWLODHIZDMWdS6cy
+n68DN1WN01DSdbvm03khBwPf0Hl+DsRo634XDn0bvDKB3I1gpIzJAu0iKKnZV0zrgfP2YnYutU3P
+G5XEp6vESig2royn45nwqcrYwhMN/PGGaW1zkNEkVknR85gLdRcfIT5fEID+FbuQRjGzIAMe6OSS
+MysvxpZ4BG2VvxeWjQkquRuSfmVm0WvwL5aNbpvrPXUphG+SvCKR8JYcwtSXrZW9I+nb7cuUuDyK
+GmpH6rnJiAIWZeIRjR27yfQ+NQYAS9Od/x+Yd+bi0r0Hlr0SGY7qzi6ntpjJQ/zBpemQ/sH5zJt+
+LBbZBhXOoOjAQfYHiKcid5BSSlslPfzfR1Ag50+YPu6NohXIizz04IVsQhcA7cedBugqkmR4Tx7K
+7YpZrSx6XkbsA8qOw4nbqbsJXGwZNsb37VIMvN1ydB4XH93HG7RelkKezBafoRNo9caAYr47R/p7
+8wsx//B5C3v421QoqOV8Upg0ByojSoujbSGVDKCYBRebQ/vS4thEVjvfPH85q1iaOv3rj0Mn7mdI
+wRK5Ee1m5u+qKBbDZl90ITDRR2GDDOdz4ZYYs3twzPuw+WdlOOY8mwZwZ1jqxO4/y9sizNS2htUV
+/b+SlZ+xczF4m0xYLb7nn6kBkoHgy6BTArLFmIxEKMr6tGcOKJ82ZQU2pMDmY+Wybnm34dN+gqY/
+Z0ME6fWi53KsRLa8ZpqO7O7GcbW+Z3o3lVtxAO7PCYnJb4W3ekKSosyIO0W2iCCrCHqKbFFcErsQ
+BFKGVrm8CBIBv2KNLbujergF4dc9vhgoA8pEhs5YPFuUXLDtUql6hYWiF3aB+y5QmSrNgdrDh0VC
+LsNOcUaN5D+xCSd+j32xy7AOevTUoufX+9vFfYIm9fSDf/oqaFh8ggy7IkdNDKH1jwOarVkeFI0S
+A/WWM1hAs/uz9enfcHjZXESOWOsLNs7lmPxgfR4RtLvMcR8PVY0UQBhDDjaqMVGSkkC7QEBmezqZ
+BJvU5e/g79bqisIADM6LdBPY67hp78U5NLs50FhIo2TJdpO5WFrFJd0Ow86A4KacFg45qDK2pNzi
+8n4t2refUEV4fXuHezv1psoOMUn1On5OouTESU1Uw6CDGT5L3skNBNtv1uNQQLMir6QZ8aUopyDC
+OS+q/8ymzx1iMf/2+VvWGr4HOFovYKjRv9juZc6ZFi1KvQxWw9sPjmJK4VrrYutcTCEoL8cXRq57
+rl1ag+aeIorxYhmjSOr3aVxV3zN7tLsa/qBZtM+EVIG9+JX673qTkVY7vzHiZWiJz3GGqgG7JPwe
+hcYqVdXojYl5LJx4ZkMZfuG3XEJx2m8y9CKiRsELPo0kYEGFqox39mlykRcPHuXszVxZv/oNTRDD
+xDBCccEwPCxXNn7E0iFJtCQ41J/mr21vd6KrV4qkhzQ2+U06hpvTwqMBzJl39W+poGOiZy3PVky+
+QI6DsYRjO3HdCLrgVENdZWhd0k3RpOoEYKWiYMOrRYRoJn9Dzd0WvwNEO8fRCs2if8Cho7lXfWmT
+Y7SzzCghHVHk3O68QI0DSTDnfgdqpccjrXKFC98o6oorpH0wDkNAoJyleMbChSIbAc0swP3o4ZCe
+mA0xjvdFCCDMkLE6y7LXJJkX9wIdbBYHoCVAIlLNNotoCDBWcnjXAyME7s+CU1mN2nhSvA1Dm/8a
+iWOaJl8OiEQ0UrNydMosv3n23PXWJbzB+k9gnk+5V6YOd0M52XmJiBFRiq1GokgMPhU0hQdkadyq
+dXxy6pnZBpjH3cELAPK9vvmHd+Bxb7lxKK6d4h9POexB3CCXXUlKIU6TvMexGc9tojX+YKp1dAc9
+YnVgJfBzg5+dG2deuSOVWc33JixLUOR8PcW+O46KIhNn4ZVUAZX6WXoJbRZZlWpm7PfG2wfNm65Q
+tXtIZs/dRhb44oxNWRP2WY40tqm738dVTiAMS0/klQzme0BxW/YAjyrhYreowNPjO57iQMCRPlWx
+XhV7txoDKetNKT4dUGIJWzJK33i95RMxbjLuxAA9Jm8qHcndTyuKF6F6WR4dA2UQ8piv+N3MLpDa
+y06SjXBAK88plfJTGqR9l1kU4qSquar+BZ6DiYYwotxP10VbdmqCW1c7wM+dZclBD3ikACID8oJ3
+Y7VnlKXYWdf+xDzLz/EyttRTb4xn5zj7st2xk21+xIyl6dnOz192xICjlMxNSOdPoHro4ghdXx7K
+dlIjV8v+CZnbVkiF71Q97ssovSnGfiws+GdKNAxmTM8V7EVi26Any3YOyMvEtgdwKCxX6w0Xu/gW
+6wWz1FNDiIDgrC4DLRR3HPDmNBol1vhBc36C4GLpTi5+qPUH4byseIYaw1l8+xZsV8zy10t3vLfL
+duIX8omEX+zQlqtIPqF8D69PtXS7SRRCVDYvomk2qjzJPmfli0FoNQ2GkgooOIZE00Y9SF1J9hA/
+4pMYxsPr5K6xGzR+yg6s6xeg0FXfuyF+0nxt0eXpdV2hA0Wz9mcU5danoqwPqvvPuLYH4//w7gOa
+oV9lqdLDEEGnczkehXJSCfpDyFNkKM9jx8TIZa59v1MPg2ol8aRdWc7PaWZLy9n8RlllBS+v9GL5
+ZGtkc6vkglXbLughm6dX4nTwupJAZ/ZBgcBAgEfyWeXhRiraADC5RNdtGZz7w7iZeijr6N/99V/o
+b94d+wV1rwrNWHQDDQddLb/E7Pm0U7IConIAIahHzB21u2Lxzo0zNCwfUtkNrFzMNQdtScBkQoHT
+MN4Uop6bqY9f/+7bO2+0xI7WBl7pvnRpR0CT00cDgD24r0poIarf9Np8dGDMcpDNhJb8Kr6qHWli
+XpiR1xNUioOIz9gu3unE3cDt1UjS1Hr0pB4B63xZmJAquoq7TVmbCJYX6jUXsM4v37OHuSPSbK1V
+OtY3am+pseSBCb12nvxGa4Ybdo71+glAWofoUMDfHulNDsmtPLCQrgw16LKLXNBwBFZS7GqqEmeJ
+3/DKYLksLMOcK3YLvarV91V02J0YzEOyVFYRL4IbY2bzVKfcBXZaTRMTWM8Jk6lvcO4m1icrhs0T
+VGbupOf1mDNVG3GYrsnXm0C3ythT1aOtW2dke4PSodndHJDkJPvAMhQR56Ty/wwRlm6aDFugEk1/
+3wyKFrwAMNuOhocSWh11MU7wygKOSXWKuiVhnNSnTeWUyLIE5k4tEGK2J/Vg2cHKR5Lla0ufSTBt
+Z2uq8JP0Kb5odoApcCVS62W+G2fRMn7RuPGz/TWAtGZZgsoQl5pkg10izdRNrsOuyG0blOslOt06
+XYXgmrkWaJEjtohG2rMsKOdK+0DdNPB0F1TRXg2ba2qma7EASD39KFWGyX8wlhkoSIsVglWRmlej
+ujA9btInavWYYdCVdFQioKCKnLuaXXdMvbRHB63ET4+CtnkHHZMqqFwcoqi5YyaNZdWwH51itXGT
+6JL0AkU7y1GIubAWgRnoS9/2loW/QWvKV3JK44Lo+Gxy/PgFM12mnVvJPVZ9RSXFgNijka/MU6Hc
+b1si0KxySmsgdloUh+lxo4gWvL1lrm28mNsae7mVb5Xx+Zs5db/P+nMR1GKdhalmVt0bBU3uoAji
+nL959zUmKDZicUaBeSFq7NRxHTSFB/h6Ve+T3hFQGy0qW/qKWOUGIP/G0Ndx4Fez+xnIIBgamLGr
+Ho9XyEJixHUUSE0BgJKRAb/ZHqCUfzXAOieHKUFwl4UXIhQhQAIda3Hu1MxXvLyW7Xs+QbG4kJAV
+xg/KnNS+/0Eyrv6R5ihIIlK9uSLuyj6ZhMGtWSLmLiXSTLmUu+TnYARrOcdxUBtshBgQVVRNglB0
+EmH2FY6TAe6sjlQrDGRRnzKQrqxjbkKmWtAJtajuMpu9gMHORdtMGBYAo+RE4vZW06b6SsLabVpJ
++ifL4LIMkszr/ZYCUgg+brlyVRUEtMXtuVf+6gFJehOLd9d2HPHJd3X349DtHilfJZZpLbfZJcaU
+6bjJCKsOBGoJu0t8wyZHSRYcEnMnF7hkjTaNi1pKFZTrv70/rZBHQVTLFCrOMgTu3GFkeGSWED5K
+uDri6ZM19GwSXpsU5tfU25TDPjdxznGiTA6yAxZ8mghPD4KicHZq7MtHDQe2Yi20A/zkLqz+tO9N
++2mqyddh1/QVJH5kUbo+nKJwADzRNoXK2E1uDXOYpFSUjCnQfVdAIHvnXzuiUMsiq9AfZewvhFBU
+0vs2laGdtldkeXyfCPNJPbVOwtaBUongbvvDBuiyAAe5Wuh7aw0q5hqQnIgaSJYiZ6foL5O0X58f
+8MjggMTP2wrelr7BwT+gQpIWCTDHamPzhRjRIX5DWHUj1soccPH8FtVHilqA40ekIfccZRlJ1lin
+rRTzcBX6TpqzNDn4+K/h4b0MrwekSawWXyzpD+LgVVNpQcBEmZa0MImi5KBNOHfjTp1z8dHvnfxM
+L0aF8yszEz3f4ZFMMcVrkl8YvsRLHWYPZ87IAFJdQy6WVZpuLR+V6zBuYadR0Rcu5DeJydXHMu6B
+D6f6l6mKh2bwGO1AgiP4KD4+Sb9NCMRP2ti9X+HnDZJAU64Fre/xEl4j3Fv+scnfhj8rS/QA8JCS
+v9xbzqoVIEuwggnZM1CH9usEEbBVgc3KUeRAVkcNCvs4y1vqvxr4Sr1UBSpdQ4FWPiMACKcVGvrC
+gjv9byL/7PMgMTHyXtq+G8Y1Q/AZsHUhryd106WnRWPkVGqomsygftaMnYxyAbwTBgXbNuWWU3FD
+zbor+2KChWVz8pgxT6H+j3yuSaFQxuNbeXMNAKHyUJ4D3A2p0XiWN/725TYsEsN5tSdC4OuXzJDA
+1gaMsIjrsLEJXHukKZ1sc/vj7HYSuoM1KnraFk2I+Ds/c+mleG/fQOWWIdsdciHSH1vhZcc2QVjR
+VayYDbrWCBOmOUh1smPZtBNmT4zDaVxGWoHpvklPO9xNnxciirXTn9dfHa4/ObJLRv0uO/30Be4h
+IouxK2SMX2fQRwohUFsLTk4opzcY6hwqUuu7ZnWIG4AUwLDk143VkYmSfK9B9IVdp0w9rbvD2Ape
+/tDkuHsq++Lf9TQi5xH9ZHC2jdzvQZMCAlUly55H7W5JL+z05dZa7GOeNzkA1Ekd2YLvIZoXSIsB
+fA76oAxSTcsPUR+8BtqeAK7CF+MLxgQ7/govOscTSjp/Gh4eLzk7p/uTlF0mPtpx6SxkFeCQ0ZgI
+FjjH9kB9w7SHOBeVSvVWo5udeRALqSMSEVlgLoA9LkY8nk0bcVvFJPYBlQ/niIG9AeNYNPYtbV2B
+feHGx/wi83w4SIh7uasxtHqB3O410yyGdanI9wsj7hivSFG02wNhpIjfD5yBlnaVzdfx5coFkvCi
+gMi+LZcj67SJYB/maMPiQsEoAF8x9ApSu0LevjpxyBlmZoXDGD7DFQqnPNSW6kW8fbxmMPAoEicp
+8DNuI9y7Lmxr8iIRitGSjlO7IpppSPYHnnUaP3PpOsOOUX5FzYIURe7X5bqJfzZio5QRERVwGwt5
+qckk1V7AaaYtq7jfk3kqKY0vIVpZ1xgrysR6AwDP6kaunzmlKZsp1+xK9kMPo2XHd8NhTFKTDE7A
+ORwavGMiRcj0bb9GmDygdUGQiWw+dsG0lO7m+p7jY+BwbK95d4uGQlVr2XbFQVO4HLPbK9BiLjkt
+sOATqE7SzVd1gfCXVhdgYlY3S+eig2LHO+JU9Wn1eclRLYRL1j2dLsriQfPbt7ZXGJPmH4Cu6dQL
+R7Hix9ePpEs7AfppDi8HwTRu1VfQG0IHEh6t9xUsKKrHP8Q4FXyxD7Sy7drvrkwedZXK/+uiozRs
+4DKtncruhBB2Wf9xhQBGOeQZOKS7OmwXEpau1/Ot5xZY1/NvFCDSNih9o1Ovp5QMYwN+4qkEtsZU
+FHAK46GCcQkCFcXpRpOZ4QRAWK8m9Q5MRc7fkgV5BbZOZGv6G+85NLiGaiC/b5tfGSzHX/fTxhcL
+jd3mbuL9WrQT4Pq++xPUIXhsnJ6WhaOLN/WH1zJPhxOK3kLyirTcQoKxU5iDaWNCw76blqQVU5s8
+/0aAmzFjR4KYCFQArtYcIan6fd6hxEaBxmADUM/Y1Pzgz89vYxTx63hQhr2SwH0INz56bGNKsZHR
+u+uXkMAQua38dIYbA3yqFWXmZTOkuQ77W/xKc3mtJMTc28PELFetq+4uKNyXgbms9HIPTkqObNXX
+0QKfDWFBM9jsgWgr/otHYrIfdL2bzAypJCiaWKbYehF+axEPJhGUndP5eTX4y9q07nYG/nePfXEd
+/lREdjzfNrbqCwK0gdqFIwhobz8KqIoOJpHGAaqt+EIJV0f5Qf4vi0u6P5MA7wOGJ7/hwj6ehaXc
+6SbJv7dr0V7Efvq0sFFha0naZd1GJnTclBFOjj1mwxpj+uMc/y4Kj/0TNQaQx2HjpFQy0LXEGGOJ
+HegHmHfeigHEEjPIh8PeRAHT0CJRKlXVKf5XhLfrH76VnKzPQlJJG4Dat5OoCJ5/QaBjDKwG48lQ
+pJd5pHTTL1wXUq/dxqTw+I+04Gli
 `protect end_protected
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -14806,16 +12948,16 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_tx_v1_0 i
   signal vde_dly : STD_LOGIC;
   signal vde_reg : STD_LOGIC;
   signal vsync_dly : STD_LOGIC;
-  attribute BOX_TYPE : string;
-  attribute BOX_TYPE of OBUFDS_B : label is "PRIMITIVE";
   attribute CAPACITANCE : string;
   attribute CAPACITANCE of OBUFDS_B : label is "DONT_CARE";
-  attribute BOX_TYPE of OBUFDS_CLK : label is "PRIMITIVE";
+  attribute box_type : string;
+  attribute box_type of OBUFDS_B : label is "PRIMITIVE";
   attribute CAPACITANCE of OBUFDS_CLK : label is "DONT_CARE";
-  attribute BOX_TYPE of OBUFDS_G : label is "PRIMITIVE";
+  attribute box_type of OBUFDS_CLK : label is "PRIMITIVE";
   attribute CAPACITANCE of OBUFDS_G : label is "DONT_CARE";
-  attribute BOX_TYPE of OBUFDS_R : label is "PRIMITIVE";
+  attribute box_type of OBUFDS_G : label is "PRIMITIVE";
   attribute CAPACITANCE of OBUFDS_R : label is "DONT_CARE";
+  attribute box_type of OBUFDS_R : label is "PRIMITIVE";
 begin
 OBUFDS_B: unisim.vcomponents.OBUFDS
      port map (
@@ -15056,50 +13198,50 @@ v04ESDEN31cSUzqUYcayvMFOnI/WNsWbFIa5+Q==
 `protect data_method = "AES128-CBC"
 `protect encoding = (enctype = "BASE64", line_length = 76, bytes = 2480)
 `protect data_block
-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
-iLXWaZx9jf1t0PpMXkHquQVg6Wx1+Fu5Zn1nm1U=
+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
 `protect end_protected
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -15274,394 +13416,394 @@ v04ESDEN31cSUzqUYcayvMFOnI/WNsWbFIa5+Q==
 `protect data_method = "AES128-CBC"
 `protect encoding = (enctype = "BASE64", line_length = 76, bytes = 22080)
 `protect data_block
-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
-imppBB3U3T5iXuS3/1xsCJdGycBL
+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
+sRE+QHlxQf+nMUOQLtaFWdVhdAb2
 `protect end_protected
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -15865,7 +14007,7 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_blk_mem_gen_0 
   attribute C_WRITE_WIDTH_B of U0 : label is 32;
   attribute C_XDEVICEFAMILY : string;
   attribute C_XDEVICEFAMILY of U0 : label is "spartan7";
-  attribute DowngradeIPIdentifiedWarnings of U0 : label is "yes";
+  attribute downgradeipidentifiedwarnings of U0 : label is "yes";
   attribute is_du_within_envelope : string;
   attribute is_du_within_envelope of U0 : label is "true";
   attribute X_INTERFACE_INFO : string;
@@ -15978,162 +14120,216 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity Lab7MicroBlaze_hdmi_text_controller_1_0_mem_block is
+entity Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0_AXI is
   port (
-    Q : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    doutb : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    axi_wready_reg_0 : out STD_LOGIC;
+    p_0_in : out STD_LOGIC;
+    axi_awready_reg_0 : out STD_LOGIC;
+    axi_arready_reg_0 : out STD_LOGIC;
+    axi_bvalid : out STD_LOGIC;
+    axi_rvalid : out STD_LOGIC;
     \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram\ : out STD_LOGIC;
     blue : out STD_LOGIC_VECTOR ( 3 downto 0 );
     green : out STD_LOGIC_VECTOR ( 3 downto 0 );
     red : out STD_LOGIC_VECTOR ( 3 downto 0 );
-    \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\ : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     axi_aclk : in STD_LOGIC;
-    \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1\ : in STD_LOGIC;
-    \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_2\ : in STD_LOGIC;
-    vga_to_hdmi_i_102_0 : in STD_LOGIC;
-    vga_to_hdmi_i_220_0 : in STD_LOGIC;
-    vga_to_hdmi_i_220_1 : in STD_LOGIC;
-    vga_to_hdmi_i_220_2 : in STD_LOGIC;
-    vga_to_hdmi_i_45 : in STD_LOGIC;
-    vga_to_hdmi_i_45_0 : in STD_LOGIC;
-    vga_to_hdmi_i_102_1 : in STD_LOGIC;
+    addrb : in STD_LOGIC_VECTOR ( 10 downto 0 );
+    vga_to_hdmi_i_118_0 : in STD_LOGIC;
+    axi_wvalid : in STD_LOGIC;
+    axi_awvalid : in STD_LOGIC;
+    axi_aresetn : in STD_LOGIC;
+    vga_to_hdmi_i_272_0 : in STD_LOGIC;
+    vga_to_hdmi_i_272_1 : in STD_LOGIC;
+    vga_to_hdmi_i_272_2 : in STD_LOGIC;
+    vga_to_hdmi_i_49 : in STD_LOGIC;
+    vga_to_hdmi_i_49_0 : in STD_LOGIC;
+    vga_to_hdmi_i_118_1 : in STD_LOGIC;
     \srl[36].srl16_i\ : in STD_LOGIC;
     \srl[36].srl16_i_0\ : in STD_LOGIC;
     \srl[36].srl16_i_1\ : in STD_LOGIC;
-    \axi_rdata_reg[31]\ : in STD_LOGIC;
-    \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\ : in STD_LOGIC;
-    addra : in STD_LOGIC_VECTOR ( 10 downto 0 );
-    D : in STD_LOGIC_VECTOR ( 10 downto 0 );
-    E : in STD_LOGIC_VECTOR ( 0 to 0 );
-    \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    \douta_reg[31]_i_5_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \douta_reg[31]_i_5_1\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \douta_reg[31]_i_5_2\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \douta_reg[31]_i_5_3\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \douta_reg[31]_i_4_0\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \douta_reg[31]_i_4_1\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \douta_reg[31]_i_4_2\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \douta_reg[31]_i_4_3\ : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\ : in STD_LOGIC_VECTOR ( 0 to 0 )
+    axi_wstrb : in STD_LOGIC_VECTOR ( 0 to 0 );
+    axi_arvalid : in STD_LOGIC;
+    axi_bready : in STD_LOGIC;
+    axi_rready : in STD_LOGIC;
+    axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    axi_awaddr : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    axi_araddr : in STD_LOGIC_VECTOR ( 11 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Lab7MicroBlaze_hdmi_text_controller_1_0_mem_block : entity is "mem_block";
-end Lab7MicroBlaze_hdmi_text_controller_1_0_mem_block;
+  attribute ORIG_REF_NAME of Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0_AXI : entity is "hdmi_text_controller_v1_0_AXI";
+end Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0_AXI;
 
-architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_mem_block is
-  signal \^q\ : STD_LOGIC_VECTOR ( 6 downto 0 );
-  signal addra_bram : STD_LOGIC_VECTOR ( 10 downto 0 );
-  signal addrb_bram : STD_LOGIC_VECTOR ( 10 downto 0 );
-  signal addrb_bram0 : STD_LOGIC;
-  signal dina_bram : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal douta_bram : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \douta_reg[0]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[0]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[0]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[10]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[10]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[10]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[11]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[11]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[11]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[12]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[12]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[12]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[13]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[13]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[13]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[14]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[14]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[14]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[15]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[15]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[15]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[16]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[16]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[16]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[17]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[17]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[17]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[18]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[18]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[18]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[19]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[19]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[19]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[1]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[1]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[1]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[20]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[20]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[20]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[21]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[21]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[21]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[22]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[22]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[22]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[23]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[23]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[23]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[24]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[24]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[24]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[25]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[25]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[25]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[26]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[26]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[26]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[27]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[27]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[27]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[28]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[28]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[28]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[29]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[29]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[29]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[2]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[2]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[2]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[30]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[30]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[30]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[31]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[31]_i_4_n_0\ : STD_LOGIC;
-  signal \douta_reg[31]_i_5_n_0\ : STD_LOGIC;
-  signal \douta_reg[3]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[3]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[3]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[4]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[4]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[4]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[5]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[5]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[5]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[6]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[6]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[6]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[7]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[7]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[7]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[8]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[8]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[8]_i_3_n_0\ : STD_LOGIC;
-  signal \douta_reg[9]_i_1_n_0\ : STD_LOGIC;
-  signal \douta_reg[9]_i_2_n_0\ : STD_LOGIC;
-  signal \douta_reg[9]_i_3_n_0\ : STD_LOGIC;
-  signal doutb : STD_LOGIC_VECTOR ( 15 downto 0 );
-  signal doutb_bram : STD_LOGIC_VECTOR ( 15 downto 0 );
-  signal \doutb_reg[15]_i_2_n_0\ : STD_LOGIC;
+architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0_AXI is
+  signal addra : STD_LOGIC_VECTOR ( 10 downto 0 );
+  signal \addra_reg[0]_i_1_n_0\ : STD_LOGIC;
+  signal \addra_reg[10]_i_1_n_0\ : STD_LOGIC;
+  signal \addra_reg[1]_i_1_n_0\ : STD_LOGIC;
+  signal \addra_reg[2]_i_1_n_0\ : STD_LOGIC;
+  signal \addra_reg[3]_i_1_n_0\ : STD_LOGIC;
+  signal \addra_reg[4]_i_1_n_0\ : STD_LOGIC;
+  signal \addra_reg[5]_i_1_n_0\ : STD_LOGIC;
+  signal \addra_reg[6]_i_1_n_0\ : STD_LOGIC;
+  signal \addra_reg[7]_i_1_n_0\ : STD_LOGIC;
+  signal \addra_reg[8]_i_1_n_0\ : STD_LOGIC;
+  signal \addra_reg[9]_i_1_n_0\ : STD_LOGIC;
+  signal aw_en_i_1_n_0 : STD_LOGIC;
+  signal aw_en_reg_n_0 : STD_LOGIC;
+  signal \axi_araddr_reg_n_0_[0]\ : STD_LOGIC;
+  signal \axi_araddr_reg_n_0_[10]\ : STD_LOGIC;
+  signal \axi_araddr_reg_n_0_[1]\ : STD_LOGIC;
+  signal \axi_araddr_reg_n_0_[2]\ : STD_LOGIC;
+  signal \axi_araddr_reg_n_0_[3]\ : STD_LOGIC;
+  signal \axi_araddr_reg_n_0_[4]\ : STD_LOGIC;
+  signal \axi_araddr_reg_n_0_[5]\ : STD_LOGIC;
+  signal \axi_araddr_reg_n_0_[6]\ : STD_LOGIC;
+  signal \axi_araddr_reg_n_0_[7]\ : STD_LOGIC;
+  signal \axi_araddr_reg_n_0_[8]\ : STD_LOGIC;
+  signal \axi_araddr_reg_n_0_[9]\ : STD_LOGIC;
+  signal axi_arready0 : STD_LOGIC;
+  signal \^axi_arready_reg_0\ : STD_LOGIC;
+  signal \axi_awaddr_reg_n_0_[0]\ : STD_LOGIC;
+  signal \axi_awaddr_reg_n_0_[10]\ : STD_LOGIC;
+  signal \axi_awaddr_reg_n_0_[1]\ : STD_LOGIC;
+  signal axi_awready0 : STD_LOGIC;
+  signal \^axi_awready_reg_0\ : STD_LOGIC;
+  signal \^axi_bvalid\ : STD_LOGIC;
+  signal axi_bvalid_i_1_n_0 : STD_LOGIC;
+  signal \^axi_rvalid\ : STD_LOGIC;
+  signal axi_rvalid_i_1_n_0 : STD_LOGIC;
+  signal axi_wready0 : STD_LOGIC;
+  signal \^axi_wready_reg_0\ : STD_LOGIC;
+  signal cm_data : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal \cm_palette[0]_0\ : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \cm_palette[1]_1\ : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \cm_palette[2]_2\ : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \cm_palette[3]_3\ : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \cm_palette[4]_4\ : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \cm_palette[5]_5\ : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \cm_palette[6]_6\ : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \cm_palette[7]_7\ : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal dina : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \dina__0\ : STD_LOGIC;
+  signal douta : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \^doutb\ : STD_LOGIC_VECTOR ( 6 downto 0 );
   signal g2_b0_n_0 : STD_LOGIC;
-  signal \palette[0]_0\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \palette[1]_1\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \palette[2]_2\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \palette[3]_3\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \palette[4]_4\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \palette[5]_5\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \palette[6]_6\ : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal \palette[7]_7\ : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \^p_0_in\ : STD_LOGIC;
+  signal p_0_in10_in : STD_LOGIC;
+  signal p_0_in4_in : STD_LOGIC;
+  signal \palette_reg[0][31]_i_1_n_0\ : STD_LOGIC;
+  signal \palette_reg[0][31]_i_2_n_0\ : STD_LOGIC;
+  signal \palette_reg[0][31]_i_3_n_0\ : STD_LOGIC;
+  signal \palette_reg[1][31]_i_1_n_0\ : STD_LOGIC;
+  signal \palette_reg[1][31]_i_2_n_0\ : STD_LOGIC;
+  signal \palette_reg[2][31]_i_1_n_0\ : STD_LOGIC;
+  signal \palette_reg[3][31]_i_1_n_0\ : STD_LOGIC;
+  signal \palette_reg[4][31]_i_1_n_0\ : STD_LOGIC;
+  signal \palette_reg[4][31]_i_2_n_0\ : STD_LOGIC;
+  signal \palette_reg[4][31]_i_3_n_0\ : STD_LOGIC;
+  signal \palette_reg[5][31]_i_1_n_0\ : STD_LOGIC;
+  signal \palette_reg[6][31]_i_1_n_0\ : STD_LOGIC;
+  signal \palette_reg[7][31]_i_1_n_0\ : STD_LOGIC;
+  signal r_data : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal \r_data__0\ : STD_LOGIC;
+  signal \r_data_reg[0]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[0]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[0]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[10]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[10]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[10]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[11]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[11]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[11]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[12]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[12]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[12]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[13]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[13]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[13]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[14]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[14]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[14]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[15]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[15]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[15]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[16]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[16]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[16]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[17]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[17]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[17]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[18]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[18]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[18]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[19]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[19]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[19]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[1]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[1]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[1]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[20]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[20]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[20]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[21]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[21]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[21]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[22]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[22]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[22]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[23]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[23]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[23]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[24]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[24]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[24]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[25]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[25]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[25]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[26]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[26]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[26]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[27]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[27]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[27]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[28]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[28]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[28]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[29]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[29]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[29]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[2]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[2]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[2]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[30]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[30]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[30]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[31]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[31]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[31]_i_4_n_0\ : STD_LOGIC;
+  signal \r_data_reg[3]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[3]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[3]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[4]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[4]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[4]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[5]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[5]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[5]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[6]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[6]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[6]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[7]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[7]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[7]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[8]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[8]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[8]_i_3_n_0\ : STD_LOGIC;
+  signal \r_data_reg[9]_i_1_n_0\ : STD_LOGIC;
+  signal \r_data_reg[9]_i_2_n_0\ : STD_LOGIC;
+  signal \r_data_reg[9]_i_3_n_0\ : STD_LOGIC;
+  signal sel0 : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal slv_reg_rden : STD_LOGIC;
   signal vga_to_hdmi_i_100_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_121_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_122_n_0 : STD_LOGIC;
@@ -16230,14 +14426,14 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_mem_block is
   signal vga_to_hdmi_i_210_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_211_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_212_n_0 : STD_LOGIC;
-  signal vga_to_hdmi_i_219_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_21_n_0 : STD_LOGIC;
-  signal vga_to_hdmi_i_220_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_22_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_23_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_24_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_25_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_26_n_0 : STD_LOGIC;
+  signal vga_to_hdmi_i_271_n_0 : STD_LOGIC;
+  signal vga_to_hdmi_i_272_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_27_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_28_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_29_n_0 : STD_LOGIC;
@@ -16304,5972 +14500,6515 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_mem_block is
   signal vga_to_hdmi_i_97_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_98_n_0 : STD_LOGIC;
   signal vga_to_hdmi_i_99_n_0 : STD_LOGIC;
-  signal wea_bram : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal \w_data[31]_i_1_n_0\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[0]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[10]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[11]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[12]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[13]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[14]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[15]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[16]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[17]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[18]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[19]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[1]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[20]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[21]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[22]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[23]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[24]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[25]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[26]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[27]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[28]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[29]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[2]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[30]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[31]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[3]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[4]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[5]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[6]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[7]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[8]\ : STD_LOGIC;
+  signal \w_data_reg_n_0_[9]\ : STD_LOGIC;
+  signal wea : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal \wea__0\ : STD_LOGIC;
+  signal \wea_reg[0]_i_1_n_0\ : STD_LOGIC;
   signal NLW_bram_doutb_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 16 );
   attribute XILINX_LEGACY_PRIM : string;
-  attribute XILINX_LEGACY_PRIM of \addra_bram_reg[0]\ : label is "LD";
+  attribute XILINX_LEGACY_PRIM of \addra_reg[0]\ : label is "LD";
   attribute XILINX_TRANSFORM_PINMAP : string;
-  attribute XILINX_TRANSFORM_PINMAP of \addra_bram_reg[0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addra_bram_reg[10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addra_bram_reg[10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addra_bram_reg[1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addra_bram_reg[1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addra_bram_reg[2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addra_bram_reg[2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addra_bram_reg[3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addra_bram_reg[3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addra_bram_reg[4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addra_bram_reg[4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addra_bram_reg[5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addra_bram_reg[5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addra_bram_reg[6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addra_bram_reg[6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addra_bram_reg[7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addra_bram_reg[7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addra_bram_reg[8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addra_bram_reg[8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addra_bram_reg[9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addra_bram_reg[9]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addrb_bram_reg[0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addrb_bram_reg[0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addrb_bram_reg[10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addrb_bram_reg[10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addrb_bram_reg[1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addrb_bram_reg[1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addrb_bram_reg[2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addrb_bram_reg[2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addrb_bram_reg[3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addrb_bram_reg[3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addrb_bram_reg[4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addrb_bram_reg[4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addrb_bram_reg[5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addrb_bram_reg[5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addrb_bram_reg[6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addrb_bram_reg[6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addrb_bram_reg[7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addrb_bram_reg[7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addrb_bram_reg[8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addrb_bram_reg[8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \addrb_bram_reg[9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \addrb_bram_reg[9]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_TRANSFORM_PINMAP of \addra_reg[0]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM : string;
+  attribute SOFT_HLUTNM of \addra_reg[0]_i_1\ : label is "soft_lutpair54";
+  attribute XILINX_LEGACY_PRIM of \addra_reg[10]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \addra_reg[10]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM of \addra_reg[10]_i_1\ : label is "soft_lutpair49";
+  attribute XILINX_LEGACY_PRIM of \addra_reg[1]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \addra_reg[1]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM of \addra_reg[1]_i_1\ : label is "soft_lutpair54";
+  attribute XILINX_LEGACY_PRIM of \addra_reg[2]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \addra_reg[2]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM of \addra_reg[2]_i_1\ : label is "soft_lutpair53";
+  attribute XILINX_LEGACY_PRIM of \addra_reg[3]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \addra_reg[3]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM of \addra_reg[3]_i_1\ : label is "soft_lutpair53";
+  attribute XILINX_LEGACY_PRIM of \addra_reg[4]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \addra_reg[4]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM of \addra_reg[4]_i_1\ : label is "soft_lutpair52";
+  attribute XILINX_LEGACY_PRIM of \addra_reg[5]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \addra_reg[5]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM of \addra_reg[5]_i_1\ : label is "soft_lutpair52";
+  attribute XILINX_LEGACY_PRIM of \addra_reg[6]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \addra_reg[6]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM of \addra_reg[6]_i_1\ : label is "soft_lutpair51";
+  attribute XILINX_LEGACY_PRIM of \addra_reg[7]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \addra_reg[7]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM of \addra_reg[7]_i_1\ : label is "soft_lutpair51";
+  attribute XILINX_LEGACY_PRIM of \addra_reg[8]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \addra_reg[8]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM of \addra_reg[8]_i_1\ : label is "soft_lutpair50";
+  attribute XILINX_LEGACY_PRIM of \addra_reg[9]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \addra_reg[9]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM of \addra_reg[9]_i_1\ : label is "soft_lutpair50";
+  attribute SOFT_HLUTNM of axi_wready_i_1 : label is "soft_lutpair48";
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of bram : label is "blk_mem_gen_0,blk_mem_gen_v8_4_5,{}";
-  attribute DowngradeIPIdentifiedWarnings : string;
-  attribute DowngradeIPIdentifiedWarnings of bram : label is "yes";
-  attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of bram : label is "blk_mem_gen_v8_4_5,Vivado 2022.2";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[11]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[11]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[12]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[12]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[13]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[13]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[14]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[14]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[15]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[15]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[16]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[16]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[17]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[17]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[18]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[18]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[19]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[19]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[20]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[20]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[21]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[21]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[22]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[22]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[23]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[23]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[24]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[24]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[25]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[25]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[26]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[26]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[27]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[27]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[28]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[28]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[29]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[29]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[30]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[30]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[31]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[31]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \dina_bram_reg[9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \dina_bram_reg[9]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[11]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[11]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[12]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[12]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[13]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[13]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[14]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[14]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[15]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[15]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[16]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[16]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[17]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[17]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[18]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[18]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[19]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[19]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[20]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[20]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[21]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[21]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[22]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[22]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[23]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[23]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[24]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[24]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[25]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[25]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[26]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[26]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[27]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[27]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[28]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[28]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[29]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[29]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[30]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[30]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[31]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[31]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \douta_reg[9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \douta_reg[9]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[11]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[11]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[12]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[12]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[13]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[13]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[14]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[14]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[15]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[15]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \doutb_reg[9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \doutb_reg[9]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][11]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][11]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][12]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][12]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][13]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][13]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][14]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][14]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][15]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][15]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][16]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][16]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][17]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][17]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][18]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][18]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][19]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][19]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][20]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][20]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][21]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][21]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][22]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][22]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][23]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][23]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][24]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][24]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][25]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][25]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][26]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][26]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][27]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][27]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][28]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][28]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][29]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][29]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][30]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][30]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][31]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][31]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[0][9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[0][9]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][11]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][11]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][12]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][12]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][13]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][13]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][14]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][14]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][15]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][15]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][16]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][16]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][17]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][17]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][18]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][18]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][19]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][19]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][20]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][20]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][21]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][21]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][22]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][22]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][23]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][23]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][24]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][24]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][25]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][25]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][26]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][26]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][27]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][27]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][28]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][28]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][29]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][29]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][30]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][30]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][31]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][31]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[1][9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[1][9]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][11]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][11]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][12]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][12]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][13]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][13]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][14]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][14]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][15]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][15]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][16]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][16]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][17]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][17]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][18]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][18]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][19]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][19]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][20]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][20]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][21]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][21]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][22]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][22]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][23]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][23]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][24]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][24]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][25]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][25]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][26]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][26]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][27]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][27]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][28]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][28]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][29]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][29]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][30]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][30]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][31]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][31]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[2][9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[2][9]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][11]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][11]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][12]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][12]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][13]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][13]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][14]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][14]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][15]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][15]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][16]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][16]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][17]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][17]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][18]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][18]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][19]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][19]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][20]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][20]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][21]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][21]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][22]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][22]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][23]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][23]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][24]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][24]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][25]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][25]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][26]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][26]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][27]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][27]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][28]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][28]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][29]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][29]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][30]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][30]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][31]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][31]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[3][9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[3][9]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][11]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][11]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][12]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][12]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][13]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][13]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][14]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][14]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][15]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][15]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][16]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][16]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][17]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][17]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][18]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][18]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][19]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][19]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][20]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][20]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][21]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][21]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][22]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][22]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][23]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][23]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][24]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][24]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][25]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][25]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][26]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][26]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][27]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][27]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][28]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][28]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][29]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][29]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][30]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][30]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][31]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][31]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[4][9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[4][9]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][11]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][11]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][12]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][12]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][13]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][13]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][14]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][14]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][15]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][15]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][16]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][16]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][17]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][17]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][18]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][18]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][19]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][19]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][20]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][20]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][21]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][21]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][22]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][22]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][23]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][23]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][24]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][24]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][25]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][25]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][26]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][26]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][27]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][27]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][28]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][28]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][29]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][29]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][30]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][30]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][31]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][31]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[5][9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[5][9]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][11]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][11]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][12]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][12]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][13]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][13]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][14]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][14]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][15]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][15]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][16]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][16]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][17]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][17]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][18]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][18]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][19]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][19]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][20]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][20]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][21]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][21]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][22]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][22]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][23]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][23]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][24]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][24]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][25]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][25]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][26]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][26]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][27]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][27]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][28]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][28]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][29]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][29]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][30]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][30]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][31]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][31]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[6][9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[6][9]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][0]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][10]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][10]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][11]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][11]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][12]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][12]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][13]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][13]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][14]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][14]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][15]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][15]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][16]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][16]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][17]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][17]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][18]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][18]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][19]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][19]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][1]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][1]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][20]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][20]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][21]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][21]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][22]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][22]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][23]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][23]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][24]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][24]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][25]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][25]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][26]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][26]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][27]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][27]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][28]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][28]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][29]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][29]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][2]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][2]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][30]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][30]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][31]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][31]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][3]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][3]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][4]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][4]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][5]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][5]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][6]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][6]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][7]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][7]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][8]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][8]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \palette_new_reg[7][9]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \palette_new_reg[7][9]\ : label is "VCC:GE GND:CLR";
-  attribute XILINX_LEGACY_PRIM of \wea_bram_reg[0]\ : label is "LD";
-  attribute XILINX_TRANSFORM_PINMAP of \wea_bram_reg[0]\ : label is "VCC:GE GND:CLR";
+  attribute downgradeipidentifiedwarnings : string;
+  attribute downgradeipidentifiedwarnings of bram : label is "yes";
+  attribute x_core_info : string;
+  attribute x_core_info of bram : label is "blk_mem_gen_v8_4_5,Vivado 2022.2";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[0]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[0]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[10]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[10]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[11]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[11]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[12]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[12]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[13]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[13]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[14]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[14]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[15]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[15]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[16]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[16]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[17]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[17]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[18]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[18]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[19]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[19]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[1]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[1]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[20]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[20]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[21]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[21]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[22]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[22]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[23]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[23]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[24]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[24]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[25]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[25]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[26]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[26]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[27]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[27]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[28]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[28]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[29]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[29]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[2]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[2]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[30]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[30]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[31]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[31]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[3]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[3]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[4]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[4]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[5]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[5]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[6]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[6]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[7]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[7]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[8]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[8]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \dina_reg[9]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \dina_reg[9]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][0]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][0]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][10]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][10]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][11]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][11]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][12]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][12]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][13]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][13]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][14]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][14]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][15]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][15]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][16]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][16]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][17]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][17]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][18]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][18]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][19]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][19]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][1]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][1]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][20]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][20]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][21]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][21]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][22]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][22]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][23]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][23]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][24]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][24]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][25]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][25]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][26]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][26]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][27]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][27]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][28]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][28]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][29]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][29]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][2]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][2]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][30]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][30]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][31]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][31]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM of \palette_reg[0][31]_i_2\ : label is "soft_lutpair48";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][3]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][3]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][4]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][4]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][5]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][5]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][6]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][6]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][7]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][7]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][8]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][8]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[0][9]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[0][9]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][0]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][0]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][10]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][10]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][11]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][11]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][12]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][12]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][13]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][13]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][14]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][14]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][15]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][15]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][16]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][16]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][17]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][17]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][18]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][18]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][19]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][19]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][1]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][1]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][20]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][20]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][21]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][21]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][22]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][22]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][23]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][23]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][24]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][24]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][25]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][25]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][26]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][26]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][27]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][27]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][28]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][28]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][29]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][29]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][2]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][2]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][30]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][30]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][31]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][31]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][3]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][3]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][4]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][4]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][5]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][5]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][6]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][6]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][7]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][7]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][8]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][8]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[1][9]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[1][9]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][0]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][0]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][10]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][10]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][11]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][11]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][12]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][12]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][13]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][13]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][14]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][14]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][15]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][15]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][16]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][16]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][17]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][17]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][18]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][18]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][19]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][19]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][1]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][1]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][20]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][20]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][21]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][21]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][22]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][22]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][23]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][23]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][24]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][24]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][25]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][25]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][26]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][26]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][27]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][27]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][28]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][28]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][29]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][29]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][2]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][2]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][30]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][30]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][31]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][31]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][3]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][3]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][4]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][4]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][5]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][5]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][6]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][6]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][7]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][7]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][8]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][8]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[2][9]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[2][9]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][0]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][0]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][10]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][10]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][11]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][11]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][12]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][12]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][13]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][13]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][14]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][14]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][15]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][15]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][16]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][16]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][17]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][17]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][18]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][18]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][19]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][19]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][1]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][1]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][20]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][20]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][21]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][21]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][22]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][22]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][23]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][23]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][24]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][24]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][25]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][25]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][26]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][26]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][27]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][27]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][28]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][28]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][29]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][29]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][2]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][2]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][30]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][30]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][31]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][31]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][3]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][3]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][4]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][4]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][5]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][5]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][6]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][6]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][7]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][7]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][8]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][8]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[3][9]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[3][9]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][0]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][0]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][10]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][10]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][11]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][11]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][12]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][12]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][13]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][13]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][14]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][14]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][15]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][15]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][16]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][16]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][17]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][17]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][18]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][18]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][19]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][19]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][1]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][1]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][20]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][20]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][21]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][21]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][22]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][22]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][23]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][23]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][24]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][24]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][25]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][25]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][26]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][26]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][27]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][27]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][28]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][28]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][29]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][29]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][2]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][2]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][30]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][30]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][31]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][31]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][3]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][3]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][4]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][4]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][5]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][5]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][6]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][6]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][7]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][7]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][8]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][8]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[4][9]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[4][9]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][0]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][0]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][10]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][10]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][11]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][11]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][12]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][12]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][13]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][13]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][14]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][14]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][15]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][15]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][16]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][16]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][17]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][17]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][18]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][18]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][19]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][19]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][1]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][1]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][20]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][20]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][21]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][21]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][22]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][22]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][23]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][23]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][24]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][24]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][25]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][25]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][26]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][26]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][27]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][27]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][28]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][28]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][29]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][29]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][2]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][2]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][30]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][30]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][31]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][31]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][3]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][3]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][4]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][4]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][5]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][5]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][6]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][6]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][7]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][7]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][8]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][8]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[5][9]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[5][9]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][0]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][0]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][10]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][10]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][11]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][11]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][12]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][12]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][13]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][13]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][14]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][14]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][15]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][15]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][16]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][16]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][17]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][17]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][18]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][18]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][19]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][19]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][1]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][1]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][20]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][20]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][21]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][21]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][22]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][22]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][23]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][23]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][24]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][24]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][25]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][25]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][26]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][26]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][27]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][27]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][28]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][28]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][29]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][29]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][2]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][2]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][30]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][30]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][31]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][31]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][3]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][3]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][4]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][4]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][5]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][5]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][6]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][6]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][7]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][7]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][8]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][8]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[6][9]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[6][9]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][0]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][0]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][10]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][10]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][11]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][11]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][12]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][12]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][13]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][13]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][14]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][14]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][15]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][15]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][16]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][16]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][17]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][17]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][18]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][18]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][19]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][19]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][1]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][1]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][20]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][20]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][21]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][21]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][22]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][22]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][23]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][23]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][24]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][24]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][25]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][25]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][26]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][26]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][27]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][27]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][28]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][28]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][29]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][29]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][2]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][2]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][30]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][30]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][31]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][31]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][3]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][3]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][4]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][4]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][5]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][5]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][6]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][6]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][7]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][7]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][8]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][8]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \palette_reg[7][9]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \palette_reg[7][9]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[0]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[0]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[10]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[10]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[11]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[11]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[12]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[12]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[13]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[13]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[14]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[14]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[15]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[15]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[16]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[16]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[17]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[17]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[18]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[18]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[19]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[19]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[1]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[1]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[20]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[20]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[21]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[21]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[22]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[22]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[23]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[23]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[24]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[24]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[25]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[25]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[26]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[26]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[27]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[27]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[28]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[28]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[29]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[29]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[2]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[2]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[30]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[30]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[31]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[31]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[3]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[3]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[4]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[4]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[5]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[5]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[6]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[6]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[7]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[7]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[8]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[8]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \r_data_reg[9]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \r_data_reg[9]\ : label is "VCC:GE GND:CLR";
+  attribute XILINX_LEGACY_PRIM of \wea_reg[0]\ : label is "LD";
+  attribute XILINX_TRANSFORM_PINMAP of \wea_reg[0]\ : label is "VCC:GE GND:CLR";
+  attribute SOFT_HLUTNM of \wea_reg[0]_i_2\ : label is "soft_lutpair49";
 begin
-  Q(6 downto 0) <= \^q\(6 downto 0);
-\addra_bram_reg[0]\: unisim.vcomponents.LDCE
+  axi_arready_reg_0 <= \^axi_arready_reg_0\;
+  axi_awready_reg_0 <= \^axi_awready_reg_0\;
+  axi_bvalid <= \^axi_bvalid\;
+  axi_rvalid <= \^axi_rvalid\;
+  axi_wready_reg_0 <= \^axi_wready_reg_0\;
+  doutb(6 downto 0) <= \^doutb\(6 downto 0);
+  p_0_in <= \^p_0_in\;
+\addra_reg[0]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => addra(0),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
+      D => \addra_reg[0]_i_1_n_0\,
+      G => \wea__0\,
       GE => '1',
-      Q => addra_bram(0)
+      Q => addra(0)
     );
-\addra_bram_reg[10]\: unisim.vcomponents.LDCE
+\addra_reg[0]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => '0'
+      INIT => X"B8"
     )
         port map (
-      CLR => '0',
-      D => addra(10),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      GE => '1',
-      Q => addra_bram(10)
+      I0 => \axi_awaddr_reg_n_0_[0]\,
+      I1 => \dina__0\,
+      I2 => \axi_araddr_reg_n_0_[0]\,
+      O => \addra_reg[0]_i_1_n_0\
     );
-\addra_bram_reg[1]\: unisim.vcomponents.LDCE
+\addra_reg[10]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => addra(1),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
+      D => \addra_reg[10]_i_1_n_0\,
+      G => \wea__0\,
       GE => '1',
-      Q => addra_bram(1)
+      Q => addra(10)
     );
-\addra_bram_reg[2]\: unisim.vcomponents.LDCE
+\addra_reg[10]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => '0'
+      INIT => X"B8"
     )
         port map (
-      CLR => '0',
-      D => addra(2),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      GE => '1',
-      Q => addra_bram(2)
+      I0 => \axi_awaddr_reg_n_0_[10]\,
+      I1 => \dina__0\,
+      I2 => \axi_araddr_reg_n_0_[10]\,
+      O => \addra_reg[10]_i_1_n_0\
     );
-\addra_bram_reg[3]\: unisim.vcomponents.LDCE
+\addra_reg[1]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => addra(3),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
+      D => \addra_reg[1]_i_1_n_0\,
+      G => \wea__0\,
       GE => '1',
-      Q => addra_bram(3)
+      Q => addra(1)
     );
-\addra_bram_reg[4]\: unisim.vcomponents.LDCE
+\addra_reg[1]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => '0'
+      INIT => X"B8"
     )
         port map (
-      CLR => '0',
-      D => addra(4),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      GE => '1',
-      Q => addra_bram(4)
+      I0 => \axi_awaddr_reg_n_0_[1]\,
+      I1 => \dina__0\,
+      I2 => \axi_araddr_reg_n_0_[1]\,
+      O => \addra_reg[1]_i_1_n_0\
     );
-\addra_bram_reg[5]\: unisim.vcomponents.LDCE
+\addra_reg[2]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => addra(5),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
+      D => \addra_reg[2]_i_1_n_0\,
+      G => \wea__0\,
       GE => '1',
-      Q => addra_bram(5)
+      Q => addra(2)
     );
-\addra_bram_reg[6]\: unisim.vcomponents.LDCE
+\addra_reg[2]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => '0'
+      INIT => X"B8"
     )
         port map (
-      CLR => '0',
-      D => addra(6),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      GE => '1',
-      Q => addra_bram(6)
+      I0 => sel0(0),
+      I1 => \dina__0\,
+      I2 => \axi_araddr_reg_n_0_[2]\,
+      O => \addra_reg[2]_i_1_n_0\
     );
-\addra_bram_reg[7]\: unisim.vcomponents.LDCE
+\addra_reg[3]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => addra(7),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
+      D => \addra_reg[3]_i_1_n_0\,
+      G => \wea__0\,
       GE => '1',
-      Q => addra_bram(7)
+      Q => addra(3)
     );
-\addra_bram_reg[8]\: unisim.vcomponents.LDCE
+\addra_reg[3]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => '0'
+      INIT => X"B8"
     )
         port map (
-      CLR => '0',
-      D => addra(8),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      GE => '1',
-      Q => addra_bram(8)
+      I0 => sel0(1),
+      I1 => \dina__0\,
+      I2 => \axi_araddr_reg_n_0_[3]\,
+      O => \addra_reg[3]_i_1_n_0\
     );
-\addra_bram_reg[9]\: unisim.vcomponents.LDCE
+\addra_reg[4]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => addra(9),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
+      D => \addra_reg[4]_i_1_n_0\,
+      G => \wea__0\,
       GE => '1',
-      Q => addra_bram(9)
+      Q => addra(4)
     );
-\addrb_bram_reg[0]\: unisim.vcomponents.LDCE
+\addra_reg[4]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => '0'
+      INIT => X"B8"
     )
         port map (
-      CLR => '0',
-      D => D(0),
-      G => addrb_bram0,
-      GE => '1',
-      Q => addrb_bram(0)
+      I0 => sel0(2),
+      I1 => \dina__0\,
+      I2 => \axi_araddr_reg_n_0_[4]\,
+      O => \addra_reg[4]_i_1_n_0\
     );
-\addrb_bram_reg[10]\: unisim.vcomponents.LDCE
+\addra_reg[5]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => D(10),
-      G => addrb_bram0,
+      D => \addra_reg[5]_i_1_n_0\,
+      G => \wea__0\,
       GE => '1',
-      Q => addrb_bram(10)
+      Q => addra(5)
     );
-\addrb_bram_reg[1]\: unisim.vcomponents.LDCE
+\addra_reg[5]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => '0'
+      INIT => X"B8"
     )
         port map (
-      CLR => '0',
-      D => D(1),
-      G => addrb_bram0,
-      GE => '1',
-      Q => addrb_bram(1)
+      I0 => sel0(3),
+      I1 => \dina__0\,
+      I2 => \axi_araddr_reg_n_0_[5]\,
+      O => \addra_reg[5]_i_1_n_0\
     );
-\addrb_bram_reg[2]\: unisim.vcomponents.LDCE
+\addra_reg[6]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => D(2),
-      G => addrb_bram0,
+      D => \addra_reg[6]_i_1_n_0\,
+      G => \wea__0\,
       GE => '1',
-      Q => addrb_bram(2)
+      Q => addra(6)
     );
-\addrb_bram_reg[3]\: unisim.vcomponents.LDCE
+\addra_reg[6]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => '0'
+      INIT => X"B8"
     )
         port map (
-      CLR => '0',
-      D => D(3),
-      G => addrb_bram0,
-      GE => '1',
-      Q => addrb_bram(3)
+      I0 => sel0(4),
+      I1 => \dina__0\,
+      I2 => \axi_araddr_reg_n_0_[6]\,
+      O => \addra_reg[6]_i_1_n_0\
     );
-\addrb_bram_reg[4]\: unisim.vcomponents.LDCE
+\addra_reg[7]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => D(4),
-      G => addrb_bram0,
+      D => \addra_reg[7]_i_1_n_0\,
+      G => \wea__0\,
       GE => '1',
-      Q => addrb_bram(4)
+      Q => addra(7)
     );
-\addrb_bram_reg[5]\: unisim.vcomponents.LDCE
+\addra_reg[7]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => '0'
+      INIT => X"B8"
     )
         port map (
-      CLR => '0',
-      D => D(5),
-      G => addrb_bram0,
-      GE => '1',
-      Q => addrb_bram(5)
+      I0 => sel0(5),
+      I1 => \dina__0\,
+      I2 => \axi_araddr_reg_n_0_[7]\,
+      O => \addra_reg[7]_i_1_n_0\
     );
-\addrb_bram_reg[6]\: unisim.vcomponents.LDCE
+\addra_reg[8]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => D(6),
-      G => addrb_bram0,
+      D => \addra_reg[8]_i_1_n_0\,
+      G => \wea__0\,
       GE => '1',
-      Q => addrb_bram(6)
+      Q => addra(8)
     );
-\addrb_bram_reg[7]\: unisim.vcomponents.LDCE
+\addra_reg[8]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => '0'
+      INIT => X"B8"
     )
         port map (
-      CLR => '0',
-      D => D(7),
-      G => addrb_bram0,
-      GE => '1',
-      Q => addrb_bram(7)
+      I0 => sel0(6),
+      I1 => \dina__0\,
+      I2 => \axi_araddr_reg_n_0_[8]\,
+      O => \addra_reg[8]_i_1_n_0\
     );
-\addrb_bram_reg[8]\: unisim.vcomponents.LDCE
+\addra_reg[9]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => D(8),
-      G => addrb_bram0,
+      D => \addra_reg[9]_i_1_n_0\,
+      G => \wea__0\,
       GE => '1',
-      Q => addrb_bram(8)
+      Q => addra(9)
     );
-\addrb_bram_reg[9]\: unisim.vcomponents.LDCE
+\addra_reg[9]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => '0'
+      INIT => X"B8"
     )
         port map (
-      CLR => '0',
-      D => D(9),
-      G => addrb_bram0,
-      GE => '1',
-      Q => addrb_bram(9)
+      I0 => sel0(7),
+      I1 => \dina__0\,
+      I2 => \axi_araddr_reg_n_0_[9]\,
+      O => \addra_reg[9]_i_1_n_0\
+    );
+aw_en_i_1: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFF88880FFF8888"
+    )
+        port map (
+      I0 => axi_bready,
+      I1 => \^axi_bvalid\,
+      I2 => axi_awvalid,
+      I3 => axi_wvalid,
+      I4 => aw_en_reg_n_0,
+      I5 => \^axi_awready_reg_0\,
+      O => aw_en_i_1_n_0
+    );
+aw_en_reg: unisim.vcomponents.FDSE
+     port map (
+      C => axi_aclk,
+      CE => '1',
+      D => aw_en_i_1_n_0,
+      Q => aw_en_reg_n_0,
+      S => \^p_0_in\
+    );
+\axi_araddr_reg[0]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_arready0,
+      D => axi_araddr(0),
+      Q => \axi_araddr_reg_n_0_[0]\,
+      R => \^p_0_in\
+    );
+\axi_araddr_reg[10]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_arready0,
+      D => axi_araddr(10),
+      Q => \axi_araddr_reg_n_0_[10]\,
+      R => \^p_0_in\
+    );
+\axi_araddr_reg[13]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_arready0,
+      D => axi_araddr(11),
+      Q => p_0_in4_in,
+      R => \^p_0_in\
+    );
+\axi_araddr_reg[1]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_arready0,
+      D => axi_araddr(1),
+      Q => \axi_araddr_reg_n_0_[1]\,
+      R => \^p_0_in\
+    );
+\axi_araddr_reg[2]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_arready0,
+      D => axi_araddr(2),
+      Q => \axi_araddr_reg_n_0_[2]\,
+      R => \^p_0_in\
+    );
+\axi_araddr_reg[3]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_arready0,
+      D => axi_araddr(3),
+      Q => \axi_araddr_reg_n_0_[3]\,
+      R => \^p_0_in\
+    );
+\axi_araddr_reg[4]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_arready0,
+      D => axi_araddr(4),
+      Q => \axi_araddr_reg_n_0_[4]\,
+      R => \^p_0_in\
+    );
+\axi_araddr_reg[5]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_arready0,
+      D => axi_araddr(5),
+      Q => \axi_araddr_reg_n_0_[5]\,
+      R => \^p_0_in\
+    );
+\axi_araddr_reg[6]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_arready0,
+      D => axi_araddr(6),
+      Q => \axi_araddr_reg_n_0_[6]\,
+      R => \^p_0_in\
+    );
+\axi_araddr_reg[7]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_arready0,
+      D => axi_araddr(7),
+      Q => \axi_araddr_reg_n_0_[7]\,
+      R => \^p_0_in\
+    );
+\axi_araddr_reg[8]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_arready0,
+      D => axi_araddr(8),
+      Q => \axi_araddr_reg_n_0_[8]\,
+      R => \^p_0_in\
+    );
+\axi_araddr_reg[9]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_arready0,
+      D => axi_araddr(9),
+      Q => \axi_araddr_reg_n_0_[9]\,
+      R => \^p_0_in\
+    );
+axi_arready_i_1: unisim.vcomponents.LUT2
+    generic map(
+      INIT => X"2"
+    )
+        port map (
+      I0 => axi_arvalid,
+      I1 => \^axi_arready_reg_0\,
+      O => axi_arready0
+    );
+axi_arready_reg: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => '1',
+      D => axi_arready0,
+      Q => \^axi_arready_reg_0\,
+      R => \^p_0_in\
+    );
+\axi_awaddr_reg[0]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_awready0,
+      D => axi_awaddr(0),
+      Q => \axi_awaddr_reg_n_0_[0]\,
+      R => \^p_0_in\
+    );
+\axi_awaddr_reg[10]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_awready0,
+      D => axi_awaddr(10),
+      Q => \axi_awaddr_reg_n_0_[10]\,
+      R => \^p_0_in\
+    );
+\axi_awaddr_reg[13]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_awready0,
+      D => axi_awaddr(11),
+      Q => p_0_in10_in,
+      R => \^p_0_in\
+    );
+\axi_awaddr_reg[1]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_awready0,
+      D => axi_awaddr(1),
+      Q => \axi_awaddr_reg_n_0_[1]\,
+      R => \^p_0_in\
+    );
+\axi_awaddr_reg[2]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_awready0,
+      D => axi_awaddr(2),
+      Q => sel0(0),
+      R => \^p_0_in\
+    );
+\axi_awaddr_reg[3]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_awready0,
+      D => axi_awaddr(3),
+      Q => sel0(1),
+      R => \^p_0_in\
+    );
+\axi_awaddr_reg[4]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_awready0,
+      D => axi_awaddr(4),
+      Q => sel0(2),
+      R => \^p_0_in\
+    );
+\axi_awaddr_reg[5]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_awready0,
+      D => axi_awaddr(5),
+      Q => sel0(3),
+      R => \^p_0_in\
+    );
+\axi_awaddr_reg[6]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_awready0,
+      D => axi_awaddr(6),
+      Q => sel0(4),
+      R => \^p_0_in\
+    );
+\axi_awaddr_reg[7]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_awready0,
+      D => axi_awaddr(7),
+      Q => sel0(5),
+      R => \^p_0_in\
+    );
+\axi_awaddr_reg[8]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_awready0,
+      D => axi_awaddr(8),
+      Q => sel0(6),
+      R => \^p_0_in\
+    );
+\axi_awaddr_reg[9]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => axi_awready0,
+      D => axi_awaddr(9),
+      Q => sel0(7),
+      R => \^p_0_in\
+    );
+axi_awready_i_1: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"4000"
+    )
+        port map (
+      I0 => \^axi_awready_reg_0\,
+      I1 => aw_en_reg_n_0,
+      I2 => axi_wvalid,
+      I3 => axi_awvalid,
+      O => axi_awready0
+    );
+axi_awready_reg: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => '1',
+      D => axi_awready0,
+      Q => \^axi_awready_reg_0\,
+      R => \^p_0_in\
+    );
+axi_bvalid_i_1: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000FFFF80008000"
+    )
+        port map (
+      I0 => axi_awvalid,
+      I1 => axi_wvalid,
+      I2 => \^axi_awready_reg_0\,
+      I3 => \^axi_wready_reg_0\,
+      I4 => axi_bready,
+      I5 => \^axi_bvalid\,
+      O => axi_bvalid_i_1_n_0
+    );
+axi_bvalid_reg: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => '1',
+      D => axi_bvalid_i_1_n_0,
+      Q => \^axi_bvalid\,
+      R => \^p_0_in\
+    );
+\axi_rdata[31]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"08"
+    )
+        port map (
+      I0 => axi_arvalid,
+      I1 => \^axi_arready_reg_0\,
+      I2 => \^axi_rvalid\,
+      O => slv_reg_rden
+    );
+\axi_rdata_reg[0]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(0),
+      Q => axi_rdata(0),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[10]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(10),
+      Q => axi_rdata(10),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[11]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(11),
+      Q => axi_rdata(11),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[12]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(12),
+      Q => axi_rdata(12),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[13]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(13),
+      Q => axi_rdata(13),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[14]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(14),
+      Q => axi_rdata(14),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[15]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(15),
+      Q => axi_rdata(15),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[16]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(16),
+      Q => axi_rdata(16),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[17]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(17),
+      Q => axi_rdata(17),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[18]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(18),
+      Q => axi_rdata(18),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[19]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(19),
+      Q => axi_rdata(19),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[1]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(1),
+      Q => axi_rdata(1),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[20]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(20),
+      Q => axi_rdata(20),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[21]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(21),
+      Q => axi_rdata(21),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[22]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(22),
+      Q => axi_rdata(22),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[23]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(23),
+      Q => axi_rdata(23),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[24]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(24),
+      Q => axi_rdata(24),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[25]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(25),
+      Q => axi_rdata(25),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[26]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(26),
+      Q => axi_rdata(26),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[27]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(27),
+      Q => axi_rdata(27),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[28]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(28),
+      Q => axi_rdata(28),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[29]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(29),
+      Q => axi_rdata(29),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[2]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(2),
+      Q => axi_rdata(2),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[30]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(30),
+      Q => axi_rdata(30),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[31]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(31),
+      Q => axi_rdata(31),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[3]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(3),
+      Q => axi_rdata(3),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[4]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(4),
+      Q => axi_rdata(4),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[5]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(5),
+      Q => axi_rdata(5),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[6]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(6),
+      Q => axi_rdata(6),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[7]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(7),
+      Q => axi_rdata(7),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[8]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(8),
+      Q => axi_rdata(8),
+      R => \^p_0_in\
+    );
+\axi_rdata_reg[9]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => slv_reg_rden,
+      D => r_data(9),
+      Q => axi_rdata(9),
+      R => \^p_0_in\
+    );
+axi_rvalid_i_1: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"7444"
+    )
+        port map (
+      I0 => axi_rready,
+      I1 => \^axi_rvalid\,
+      I2 => \^axi_arready_reg_0\,
+      I3 => axi_arvalid,
+      O => axi_rvalid_i_1_n_0
+    );
+axi_rvalid_reg: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => '1',
+      D => axi_rvalid_i_1_n_0,
+      Q => \^axi_rvalid\,
+      R => \^p_0_in\
+    );
+axi_wready_i_1: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"4000"
+    )
+        port map (
+      I0 => \^axi_wready_reg_0\,
+      I1 => aw_en_reg_n_0,
+      I2 => axi_wvalid,
+      I3 => axi_awvalid,
+      O => axi_wready0
+    );
+axi_wready_reg: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => '1',
+      D => axi_wready0,
+      Q => \^axi_wready_reg_0\,
+      R => \^p_0_in\
     );
 bram: entity work.Lab7MicroBlaze_hdmi_text_controller_1_0_blk_mem_gen_0
      port map (
-      addra(10 downto 0) => addra_bram(10 downto 0),
-      addrb(10 downto 0) => addrb_bram(10 downto 0),
+      addra(10 downto 0) => addra(10 downto 0),
+      addrb(10 downto 0) => addrb(10 downto 0),
       clka => axi_aclk,
       clkb => '0',
-      dina(31 downto 0) => dina_bram(31 downto 0),
+      dina(31 downto 0) => dina(31 downto 0),
       dinb(31 downto 0) => B"00000000000000000000000000000000",
-      douta(31 downto 0) => douta_bram(31 downto 0),
+      douta(31 downto 0) => douta(31 downto 0),
       doutb(31 downto 16) => NLW_bram_doutb_UNCONNECTED(31 downto 16),
-      doutb(15 downto 0) => doutb_bram(15 downto 0),
+      doutb(15) => cm_data(15),
+      doutb(14 downto 8) => \^doutb\(6 downto 0),
+      doutb(7 downto 0) => cm_data(7 downto 0),
       ena => '1',
       enb => '1',
-      wea(0) => wea_bram(0),
+      wea(0) => wea(0),
       web(0) => '0'
     );
-\dina_bram_reg[0]\: unisim.vcomponents.LDCE
+\dina_reg[0]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(0),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[0]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(0)
+      Q => dina(0)
     );
-\dina_bram_reg[10]\: unisim.vcomponents.LDCE
+\dina_reg[10]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(10),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[10]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(10)
+      Q => dina(10)
     );
-\dina_bram_reg[11]\: unisim.vcomponents.LDCE
+\dina_reg[11]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(11),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[11]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(11)
+      Q => dina(11)
     );
-\dina_bram_reg[12]\: unisim.vcomponents.LDCE
+\dina_reg[12]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(12),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[12]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(12)
+      Q => dina(12)
     );
-\dina_bram_reg[13]\: unisim.vcomponents.LDCE
+\dina_reg[13]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(13),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[13]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(13)
+      Q => dina(13)
     );
-\dina_bram_reg[14]\: unisim.vcomponents.LDCE
+\dina_reg[14]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(14),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[14]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(14)
+      Q => dina(14)
     );
-\dina_bram_reg[15]\: unisim.vcomponents.LDCE
+\dina_reg[15]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(15),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[15]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(15)
+      Q => dina(15)
     );
-\dina_bram_reg[16]\: unisim.vcomponents.LDCE
+\dina_reg[16]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(16),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[16]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(16)
+      Q => dina(16)
     );
-\dina_bram_reg[17]\: unisim.vcomponents.LDCE
+\dina_reg[17]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(17),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[17]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(17)
+      Q => dina(17)
     );
-\dina_bram_reg[18]\: unisim.vcomponents.LDCE
+\dina_reg[18]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(18),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[18]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(18)
+      Q => dina(18)
     );
-\dina_bram_reg[19]\: unisim.vcomponents.LDCE
+\dina_reg[19]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(19),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[19]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(19)
+      Q => dina(19)
     );
-\dina_bram_reg[1]\: unisim.vcomponents.LDCE
+\dina_reg[1]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(1),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[1]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(1)
+      Q => dina(1)
     );
-\dina_bram_reg[20]\: unisim.vcomponents.LDCE
+\dina_reg[20]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(20),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[20]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(20)
+      Q => dina(20)
     );
-\dina_bram_reg[21]\: unisim.vcomponents.LDCE
+\dina_reg[21]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(21),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[21]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(21)
+      Q => dina(21)
     );
-\dina_bram_reg[22]\: unisim.vcomponents.LDCE
+\dina_reg[22]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(22),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[22]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(22)
+      Q => dina(22)
     );
-\dina_bram_reg[23]\: unisim.vcomponents.LDCE
+\dina_reg[23]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(23),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[23]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(23)
+      Q => dina(23)
     );
-\dina_bram_reg[24]\: unisim.vcomponents.LDCE
+\dina_reg[24]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(24),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[24]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(24)
+      Q => dina(24)
     );
-\dina_bram_reg[25]\: unisim.vcomponents.LDCE
+\dina_reg[25]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(25),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[25]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(25)
+      Q => dina(25)
     );
-\dina_bram_reg[26]\: unisim.vcomponents.LDCE
+\dina_reg[26]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(26),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[26]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(26)
+      Q => dina(26)
     );
-\dina_bram_reg[27]\: unisim.vcomponents.LDCE
+\dina_reg[27]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(27),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[27]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(27)
+      Q => dina(27)
     );
-\dina_bram_reg[28]\: unisim.vcomponents.LDCE
+\dina_reg[28]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(28),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[28]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(28)
+      Q => dina(28)
     );
-\dina_bram_reg[29]\: unisim.vcomponents.LDCE
+\dina_reg[29]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(29),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[29]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(29)
+      Q => dina(29)
     );
-\dina_bram_reg[2]\: unisim.vcomponents.LDCE
+\dina_reg[2]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(2),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[2]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(2)
+      Q => dina(2)
     );
-\dina_bram_reg[30]\: unisim.vcomponents.LDCE
+\dina_reg[30]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(30),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[30]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(30)
+      Q => dina(30)
     );
-\dina_bram_reg[31]\: unisim.vcomponents.LDCE
+\dina_reg[31]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(31),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
+      D => \w_data_reg_n_0_[31]\,
+      G => \dina__0\,
       GE => '1',
-      Q => dina_bram(31)
+      Q => dina(31)
     );
-\dina_bram_reg[3]\: unisim.vcomponents.LDCE
+\dina_reg[31]_i_1\: unisim.vcomponents.LUT5
     generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(3),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
-      GE => '1',
-      Q => dina_bram(3)
-    );
-\dina_bram_reg[4]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(4),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
-      GE => '1',
-      Q => dina_bram(4)
-    );
-\dina_bram_reg[5]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(5),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
-      GE => '1',
-      Q => dina_bram(5)
-    );
-\dina_bram_reg[6]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(6),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
-      GE => '1',
-      Q => dina_bram(6)
-    );
-\dina_bram_reg[7]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(7),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
-      GE => '1',
-      Q => dina_bram(7)
-    );
-\dina_bram_reg[8]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(8),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
-      GE => '1',
-      Q => dina_bram(8)
-    );
-\dina_bram_reg[9]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(9),
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0),
-      GE => '1',
-      Q => dina_bram(9)
-    );
-\douta_reg[0]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[0]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(0)
-    );
-\douta_reg[0]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(0),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[0]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[0]_i_3_n_0\,
-      O => \douta_reg[0]_i_1_n_0\
-    );
-\douta_reg[0]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(0),
-      I1 => \palette[6]_6\(0),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(0),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(0),
-      O => \douta_reg[0]_i_2_n_0\
-    );
-\douta_reg[0]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(0),
-      I1 => \palette[2]_2\(0),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(0),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(0),
-      O => \douta_reg[0]_i_3_n_0\
-    );
-\douta_reg[10]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[10]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(10)
-    );
-\douta_reg[10]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(10),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[10]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[10]_i_3_n_0\,
-      O => \douta_reg[10]_i_1_n_0\
-    );
-\douta_reg[10]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(10),
-      I1 => \palette[6]_6\(10),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(10),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(10),
-      O => \douta_reg[10]_i_2_n_0\
-    );
-\douta_reg[10]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(10),
-      I1 => \palette[2]_2\(10),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(10),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(10),
-      O => \douta_reg[10]_i_3_n_0\
-    );
-\douta_reg[11]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[11]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(11)
-    );
-\douta_reg[11]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(11),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[11]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[11]_i_3_n_0\,
-      O => \douta_reg[11]_i_1_n_0\
-    );
-\douta_reg[11]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(11),
-      I1 => \palette[6]_6\(11),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(11),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(11),
-      O => \douta_reg[11]_i_2_n_0\
-    );
-\douta_reg[11]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(11),
-      I1 => \palette[2]_2\(11),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(11),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(11),
-      O => \douta_reg[11]_i_3_n_0\
-    );
-\douta_reg[12]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[12]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(12)
-    );
-\douta_reg[12]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(12),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[12]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[12]_i_3_n_0\,
-      O => \douta_reg[12]_i_1_n_0\
-    );
-\douta_reg[12]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(12),
-      I1 => \palette[6]_6\(12),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(12),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(12),
-      O => \douta_reg[12]_i_2_n_0\
-    );
-\douta_reg[12]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(12),
-      I1 => \palette[2]_2\(12),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(12),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(12),
-      O => \douta_reg[12]_i_3_n_0\
-    );
-\douta_reg[13]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[13]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(13)
-    );
-\douta_reg[13]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(13),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[13]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[13]_i_3_n_0\,
-      O => \douta_reg[13]_i_1_n_0\
-    );
-\douta_reg[13]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(13),
-      I1 => \palette[6]_6\(13),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(13),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(13),
-      O => \douta_reg[13]_i_2_n_0\
-    );
-\douta_reg[13]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(13),
-      I1 => \palette[2]_2\(13),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(13),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(13),
-      O => \douta_reg[13]_i_3_n_0\
-    );
-\douta_reg[14]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[14]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(14)
-    );
-\douta_reg[14]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(14),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[14]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[14]_i_3_n_0\,
-      O => \douta_reg[14]_i_1_n_0\
-    );
-\douta_reg[14]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(14),
-      I1 => \palette[6]_6\(14),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(14),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(14),
-      O => \douta_reg[14]_i_2_n_0\
-    );
-\douta_reg[14]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(14),
-      I1 => \palette[2]_2\(14),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(14),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(14),
-      O => \douta_reg[14]_i_3_n_0\
-    );
-\douta_reg[15]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[15]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(15)
-    );
-\douta_reg[15]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(15),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[15]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[15]_i_3_n_0\,
-      O => \douta_reg[15]_i_1_n_0\
-    );
-\douta_reg[15]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(15),
-      I1 => \palette[6]_6\(15),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(15),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(15),
-      O => \douta_reg[15]_i_2_n_0\
-    );
-\douta_reg[15]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(15),
-      I1 => \palette[2]_2\(15),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(15),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(15),
-      O => \douta_reg[15]_i_3_n_0\
-    );
-\douta_reg[16]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[16]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(16)
-    );
-\douta_reg[16]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(16),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[16]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[16]_i_3_n_0\,
-      O => \douta_reg[16]_i_1_n_0\
-    );
-\douta_reg[16]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(16),
-      I1 => \palette[6]_6\(16),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(16),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(16),
-      O => \douta_reg[16]_i_2_n_0\
-    );
-\douta_reg[16]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(16),
-      I1 => \palette[2]_2\(16),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(16),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(16),
-      O => \douta_reg[16]_i_3_n_0\
-    );
-\douta_reg[17]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[17]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(17)
-    );
-\douta_reg[17]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(17),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[17]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[17]_i_3_n_0\,
-      O => \douta_reg[17]_i_1_n_0\
-    );
-\douta_reg[17]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(17),
-      I1 => \palette[6]_6\(17),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(17),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(17),
-      O => \douta_reg[17]_i_2_n_0\
-    );
-\douta_reg[17]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(17),
-      I1 => \palette[2]_2\(17),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(17),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(17),
-      O => \douta_reg[17]_i_3_n_0\
-    );
-\douta_reg[18]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[18]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(18)
-    );
-\douta_reg[18]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(18),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[18]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[18]_i_3_n_0\,
-      O => \douta_reg[18]_i_1_n_0\
-    );
-\douta_reg[18]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(18),
-      I1 => \palette[6]_6\(18),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(18),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(18),
-      O => \douta_reg[18]_i_2_n_0\
-    );
-\douta_reg[18]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(18),
-      I1 => \palette[2]_2\(18),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(18),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(18),
-      O => \douta_reg[18]_i_3_n_0\
-    );
-\douta_reg[19]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[19]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(19)
-    );
-\douta_reg[19]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(19),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[19]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[19]_i_3_n_0\,
-      O => \douta_reg[19]_i_1_n_0\
-    );
-\douta_reg[19]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(19),
-      I1 => \palette[6]_6\(19),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(19),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(19),
-      O => \douta_reg[19]_i_2_n_0\
-    );
-\douta_reg[19]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(19),
-      I1 => \palette[2]_2\(19),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(19),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(19),
-      O => \douta_reg[19]_i_3_n_0\
-    );
-\douta_reg[1]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[1]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(1)
-    );
-\douta_reg[1]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(1),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[1]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[1]_i_3_n_0\,
-      O => \douta_reg[1]_i_1_n_0\
-    );
-\douta_reg[1]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(1),
-      I1 => \palette[6]_6\(1),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(1),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(1),
-      O => \douta_reg[1]_i_2_n_0\
-    );
-\douta_reg[1]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(1),
-      I1 => \palette[2]_2\(1),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(1),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(1),
-      O => \douta_reg[1]_i_3_n_0\
-    );
-\douta_reg[20]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[20]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(20)
-    );
-\douta_reg[20]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(20),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[20]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[20]_i_3_n_0\,
-      O => \douta_reg[20]_i_1_n_0\
-    );
-\douta_reg[20]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(20),
-      I1 => \palette[6]_6\(20),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(20),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(20),
-      O => \douta_reg[20]_i_2_n_0\
-    );
-\douta_reg[20]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(20),
-      I1 => \palette[2]_2\(20),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(20),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(20),
-      O => \douta_reg[20]_i_3_n_0\
-    );
-\douta_reg[21]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[21]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(21)
-    );
-\douta_reg[21]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(21),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[21]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[21]_i_3_n_0\,
-      O => \douta_reg[21]_i_1_n_0\
-    );
-\douta_reg[21]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(21),
-      I1 => \palette[6]_6\(21),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(21),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(21),
-      O => \douta_reg[21]_i_2_n_0\
-    );
-\douta_reg[21]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(21),
-      I1 => \palette[2]_2\(21),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(21),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(21),
-      O => \douta_reg[21]_i_3_n_0\
-    );
-\douta_reg[22]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[22]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(22)
-    );
-\douta_reg[22]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(22),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[22]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[22]_i_3_n_0\,
-      O => \douta_reg[22]_i_1_n_0\
-    );
-\douta_reg[22]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(22),
-      I1 => \palette[6]_6\(22),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(22),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(22),
-      O => \douta_reg[22]_i_2_n_0\
-    );
-\douta_reg[22]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(22),
-      I1 => \palette[2]_2\(22),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(22),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(22),
-      O => \douta_reg[22]_i_3_n_0\
-    );
-\douta_reg[23]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[23]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(23)
-    );
-\douta_reg[23]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(23),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[23]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[23]_i_3_n_0\,
-      O => \douta_reg[23]_i_1_n_0\
-    );
-\douta_reg[23]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(23),
-      I1 => \palette[6]_6\(23),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(23),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(23),
-      O => \douta_reg[23]_i_2_n_0\
-    );
-\douta_reg[23]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(23),
-      I1 => \palette[2]_2\(23),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(23),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(23),
-      O => \douta_reg[23]_i_3_n_0\
-    );
-\douta_reg[24]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[24]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(24)
-    );
-\douta_reg[24]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(24),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[24]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[24]_i_3_n_0\,
-      O => \douta_reg[24]_i_1_n_0\
-    );
-\douta_reg[24]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(24),
-      I1 => \palette[6]_6\(24),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(24),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(24),
-      O => \douta_reg[24]_i_2_n_0\
-    );
-\douta_reg[24]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(24),
-      I1 => \palette[2]_2\(24),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(24),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(24),
-      O => \douta_reg[24]_i_3_n_0\
-    );
-\douta_reg[25]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[25]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(25)
-    );
-\douta_reg[25]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(25),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[25]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[25]_i_3_n_0\,
-      O => \douta_reg[25]_i_1_n_0\
-    );
-\douta_reg[25]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(25),
-      I1 => \palette[6]_6\(25),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(25),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(25),
-      O => \douta_reg[25]_i_2_n_0\
-    );
-\douta_reg[25]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(25),
-      I1 => \palette[2]_2\(25),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(25),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(25),
-      O => \douta_reg[25]_i_3_n_0\
-    );
-\douta_reg[26]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[26]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(26)
-    );
-\douta_reg[26]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(26),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[26]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[26]_i_3_n_0\,
-      O => \douta_reg[26]_i_1_n_0\
-    );
-\douta_reg[26]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(26),
-      I1 => \palette[6]_6\(26),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(26),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(26),
-      O => \douta_reg[26]_i_2_n_0\
-    );
-\douta_reg[26]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(26),
-      I1 => \palette[2]_2\(26),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(26),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(26),
-      O => \douta_reg[26]_i_3_n_0\
-    );
-\douta_reg[27]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[27]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(27)
-    );
-\douta_reg[27]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(27),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[27]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[27]_i_3_n_0\,
-      O => \douta_reg[27]_i_1_n_0\
-    );
-\douta_reg[27]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(27),
-      I1 => \palette[6]_6\(27),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(27),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(27),
-      O => \douta_reg[27]_i_2_n_0\
-    );
-\douta_reg[27]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(27),
-      I1 => \palette[2]_2\(27),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(27),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(27),
-      O => \douta_reg[27]_i_3_n_0\
-    );
-\douta_reg[28]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[28]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(28)
-    );
-\douta_reg[28]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(28),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[28]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[28]_i_3_n_0\,
-      O => \douta_reg[28]_i_1_n_0\
-    );
-\douta_reg[28]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(28),
-      I1 => \palette[6]_6\(28),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(28),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(28),
-      O => \douta_reg[28]_i_2_n_0\
-    );
-\douta_reg[28]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(28),
-      I1 => \palette[2]_2\(28),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(28),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(28),
-      O => \douta_reg[28]_i_3_n_0\
-    );
-\douta_reg[29]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[29]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(29)
-    );
-\douta_reg[29]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(29),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[29]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[29]_i_3_n_0\,
-      O => \douta_reg[29]_i_1_n_0\
-    );
-\douta_reg[29]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(29),
-      I1 => \palette[6]_6\(29),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(29),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(29),
-      O => \douta_reg[29]_i_2_n_0\
-    );
-\douta_reg[29]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(29),
-      I1 => \palette[2]_2\(29),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(29),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(29),
-      O => \douta_reg[29]_i_3_n_0\
-    );
-\douta_reg[2]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[2]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(2)
-    );
-\douta_reg[2]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(2),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[2]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[2]_i_3_n_0\,
-      O => \douta_reg[2]_i_1_n_0\
-    );
-\douta_reg[2]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(2),
-      I1 => \palette[6]_6\(2),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(2),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(2),
-      O => \douta_reg[2]_i_2_n_0\
-    );
-\douta_reg[2]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(2),
-      I1 => \palette[2]_2\(2),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(2),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(2),
-      O => \douta_reg[2]_i_3_n_0\
-    );
-\douta_reg[30]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[30]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(30)
-    );
-\douta_reg[30]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(30),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[30]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[30]_i_3_n_0\,
-      O => \douta_reg[30]_i_1_n_0\
-    );
-\douta_reg[30]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(30),
-      I1 => \palette[6]_6\(30),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(30),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(30),
-      O => \douta_reg[30]_i_2_n_0\
-    );
-\douta_reg[30]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(30),
-      I1 => \palette[2]_2\(30),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(30),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(30),
-      O => \douta_reg[30]_i_3_n_0\
-    );
-\douta_reg[31]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[31]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(31)
-    );
-\douta_reg[31]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(31),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[31]_i_4_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[31]_i_5_n_0\,
-      O => \douta_reg[31]_i_1_n_0\
-    );
-\douta_reg[31]_i_4\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(31),
-      I1 => \palette[6]_6\(31),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(31),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(31),
-      O => \douta_reg[31]_i_4_n_0\
-    );
-\douta_reg[31]_i_5\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(31),
-      I1 => \palette[2]_2\(31),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(31),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(31),
-      O => \douta_reg[31]_i_5_n_0\
-    );
-\douta_reg[3]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[3]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(3)
-    );
-\douta_reg[3]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(3),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[3]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[3]_i_3_n_0\,
-      O => \douta_reg[3]_i_1_n_0\
-    );
-\douta_reg[3]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(3),
-      I1 => \palette[6]_6\(3),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(3),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(3),
-      O => \douta_reg[3]_i_2_n_0\
-    );
-\douta_reg[3]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(3),
-      I1 => \palette[2]_2\(3),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(3),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(3),
-      O => \douta_reg[3]_i_3_n_0\
-    );
-\douta_reg[4]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[4]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(4)
-    );
-\douta_reg[4]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(4),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[4]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[4]_i_3_n_0\,
-      O => \douta_reg[4]_i_1_n_0\
-    );
-\douta_reg[4]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(4),
-      I1 => \palette[6]_6\(4),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(4),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(4),
-      O => \douta_reg[4]_i_2_n_0\
-    );
-\douta_reg[4]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(4),
-      I1 => \palette[2]_2\(4),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(4),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(4),
-      O => \douta_reg[4]_i_3_n_0\
-    );
-\douta_reg[5]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[5]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(5)
-    );
-\douta_reg[5]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(5),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[5]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[5]_i_3_n_0\,
-      O => \douta_reg[5]_i_1_n_0\
-    );
-\douta_reg[5]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(5),
-      I1 => \palette[6]_6\(5),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(5),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(5),
-      O => \douta_reg[5]_i_2_n_0\
-    );
-\douta_reg[5]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(5),
-      I1 => \palette[2]_2\(5),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(5),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(5),
-      O => \douta_reg[5]_i_3_n_0\
-    );
-\douta_reg[6]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[6]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(6)
-    );
-\douta_reg[6]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(6),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[6]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[6]_i_3_n_0\,
-      O => \douta_reg[6]_i_1_n_0\
-    );
-\douta_reg[6]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(6),
-      I1 => \palette[6]_6\(6),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(6),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(6),
-      O => \douta_reg[6]_i_2_n_0\
-    );
-\douta_reg[6]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(6),
-      I1 => \palette[2]_2\(6),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(6),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(6),
-      O => \douta_reg[6]_i_3_n_0\
-    );
-\douta_reg[7]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[7]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(7)
-    );
-\douta_reg[7]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(7),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[7]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[7]_i_3_n_0\,
-      O => \douta_reg[7]_i_1_n_0\
-    );
-\douta_reg[7]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(7),
-      I1 => \palette[6]_6\(7),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(7),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(7),
-      O => \douta_reg[7]_i_2_n_0\
-    );
-\douta_reg[7]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(7),
-      I1 => \palette[2]_2\(7),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(7),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(7),
-      O => \douta_reg[7]_i_3_n_0\
-    );
-\douta_reg[8]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[8]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(8)
-    );
-\douta_reg[8]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(8),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[8]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[8]_i_3_n_0\,
-      O => \douta_reg[8]_i_1_n_0\
-    );
-\douta_reg[8]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(8),
-      I1 => \palette[6]_6\(8),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(8),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(8),
-      O => \douta_reg[8]_i_2_n_0\
-    );
-\douta_reg[8]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(8),
-      I1 => \palette[2]_2\(8),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(8),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(8),
-      O => \douta_reg[8]_i_3_n_0\
-    );
-\douta_reg[9]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => \douta_reg[9]_i_1_n_0\,
-      G => E(0),
-      GE => '1',
-      Q => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(9)
-    );
-\douta_reg[9]_i_1\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"BF80BFBFBF808080"
-    )
-        port map (
-      I0 => douta_bram(9),
-      I1 => \axi_rdata_reg[31]\,
-      I2 => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\,
-      I3 => \douta_reg[9]_i_2_n_0\,
-      I4 => addra(2),
-      I5 => \douta_reg[9]_i_3_n_0\,
-      O => \douta_reg[9]_i_1_n_0\
-    );
-\douta_reg[9]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[7]_7\(9),
-      I1 => \palette[6]_6\(9),
-      I2 => addra(1),
-      I3 => \palette[5]_5\(9),
-      I4 => addra(0),
-      I5 => \palette[4]_4\(9),
-      O => \douta_reg[9]_i_2_n_0\
-    );
-\douta_reg[9]_i_3\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => \palette[3]_3\(9),
-      I1 => \palette[2]_2\(9),
-      I2 => addra(1),
-      I3 => \palette[1]_1\(9),
-      I4 => addra(0),
-      I5 => \palette[0]_0\(9),
-      O => \douta_reg[9]_i_3_n_0\
-    );
-\doutb_reg[0]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => doutb_bram(0),
-      G => addrb_bram0,
-      GE => '1',
-      Q => doutb(0)
-    );
-\doutb_reg[10]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => doutb_bram(10),
-      G => addrb_bram0,
-      GE => '1',
-      Q => \^q\(2)
-    );
-\doutb_reg[11]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => doutb_bram(11),
-      G => addrb_bram0,
-      GE => '1',
-      Q => \^q\(3)
-    );
-\doutb_reg[12]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => doutb_bram(12),
-      G => addrb_bram0,
-      GE => '1',
-      Q => \^q\(4)
-    );
-\doutb_reg[13]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => doutb_bram(13),
-      G => addrb_bram0,
-      GE => '1',
-      Q => \^q\(5)
-    );
-\doutb_reg[14]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => doutb_bram(14),
-      G => addrb_bram0,
-      GE => '1',
-      Q => \^q\(6)
-    );
-\doutb_reg[15]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => doutb_bram(15),
-      G => addrb_bram0,
-      GE => '1',
-      Q => doutb(15)
-    );
-\doutb_reg[15]_i_1\: unisim.vcomponents.LUT2
-    generic map(
-      INIT => X"7"
-    )
-        port map (
-      I0 => D(10),
-      I1 => \doutb_reg[15]_i_2_n_0\,
-      O => addrb_bram0
-    );
-\doutb_reg[15]_i_2\: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"FFFEFEFEEEEEEEEE"
-    )
-        port map (
-      I0 => D(8),
-      I1 => D(9),
-      I2 => D(6),
-      I3 => D(5),
-      I4 => D(4),
-      I5 => D(7),
-      O => \doutb_reg[15]_i_2_n_0\
-    );
-\doutb_reg[1]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
+      INIT => X"00008000"
     )
         port map (
-      CLR => '0',
-      D => doutb_bram(1),
-      G => addrb_bram0,
-      GE => '1',
-      Q => doutb(1)
-    );
-\doutb_reg[2]\: unisim.vcomponents.LDCE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      CLR => '0',
-      D => doutb_bram(2),
-      G => addrb_bram0,
-      GE => '1',
-      Q => doutb(2)
+      I0 => \^axi_wready_reg_0\,
+      I1 => \^axi_awready_reg_0\,
+      I2 => axi_wvalid,
+      I3 => axi_awvalid,
+      I4 => p_0_in10_in,
+      O => \dina__0\
     );
-\doutb_reg[3]\: unisim.vcomponents.LDCE
+\dina_reg[3]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => doutb_bram(3),
-      G => addrb_bram0,
+      D => \w_data_reg_n_0_[3]\,
+      G => \dina__0\,
       GE => '1',
-      Q => doutb(3)
+      Q => dina(3)
     );
-\doutb_reg[4]\: unisim.vcomponents.LDCE
+\dina_reg[4]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => doutb_bram(4),
-      G => addrb_bram0,
+      D => \w_data_reg_n_0_[4]\,
+      G => \dina__0\,
       GE => '1',
-      Q => doutb(4)
+      Q => dina(4)
     );
-\doutb_reg[5]\: unisim.vcomponents.LDCE
+\dina_reg[5]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => doutb_bram(5),
-      G => addrb_bram0,
+      D => \w_data_reg_n_0_[5]\,
+      G => \dina__0\,
       GE => '1',
-      Q => doutb(5)
+      Q => dina(5)
     );
-\doutb_reg[6]\: unisim.vcomponents.LDCE
+\dina_reg[6]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => doutb_bram(6),
-      G => addrb_bram0,
+      D => \w_data_reg_n_0_[6]\,
+      G => \dina__0\,
       GE => '1',
-      Q => doutb(6)
+      Q => dina(6)
     );
-\doutb_reg[7]\: unisim.vcomponents.LDCE
+\dina_reg[7]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => doutb_bram(7),
-      G => addrb_bram0,
+      D => \w_data_reg_n_0_[7]\,
+      G => \dina__0\,
       GE => '1',
-      Q => doutb(7)
+      Q => dina(7)
     );
-\doutb_reg[8]\: unisim.vcomponents.LDCE
+\dina_reg[8]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => doutb_bram(8),
-      G => addrb_bram0,
+      D => \w_data_reg_n_0_[8]\,
+      G => \dina__0\,
       GE => '1',
-      Q => \^q\(0)
+      Q => dina(8)
     );
-\doutb_reg[9]\: unisim.vcomponents.LDCE
+\dina_reg[9]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => doutb_bram(9),
-      G => addrb_bram0,
+      D => \w_data_reg_n_0_[9]\,
+      G => \dina__0\,
       GE => '1',
-      Q => \^q\(1)
+      Q => dina(9)
     );
 g2_b0: unisim.vcomponents.LUT6
     generic map(
       INIT => X"CFC05F5FCFC05050"
     )
         port map (
-      I0 => \^q\(0),
-      I1 => vga_to_hdmi_i_220_0,
-      I2 => \^q\(3),
-      I3 => vga_to_hdmi_i_220_1,
-      I4 => \^q\(2),
-      I5 => vga_to_hdmi_i_220_2,
+      I0 => \^doutb\(0),
+      I1 => vga_to_hdmi_i_272_0,
+      I2 => \^doutb\(3),
+      I3 => vga_to_hdmi_i_272_1,
+      I4 => \^doutb\(2),
+      I5 => vga_to_hdmi_i_272_2,
       O => g2_b0_n_0
     );
-\palette_new_reg[0][0]\: unisim.vcomponents.LDCE
+\palette_reg[0][0]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(0),
-      G => \douta_reg[31]_i_5_0\(0),
+      D => \w_data_reg_n_0_[0]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(0)
+      Q => \cm_palette[0]_0\(0)
     );
-\palette_new_reg[0][10]\: unisim.vcomponents.LDCE
+\palette_reg[0][10]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(10),
-      G => \douta_reg[31]_i_5_0\(1),
+      D => \w_data_reg_n_0_[10]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(10)
+      Q => \cm_palette[0]_0\(10)
     );
-\palette_new_reg[0][11]\: unisim.vcomponents.LDCE
+\palette_reg[0][11]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(11),
-      G => \douta_reg[31]_i_5_0\(1),
+      D => \w_data_reg_n_0_[11]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(11)
+      Q => \cm_palette[0]_0\(11)
     );
-\palette_new_reg[0][12]\: unisim.vcomponents.LDCE
+\palette_reg[0][12]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(12),
-      G => \douta_reg[31]_i_5_0\(1),
+      D => \w_data_reg_n_0_[12]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(12)
+      Q => \cm_palette[0]_0\(12)
     );
-\palette_new_reg[0][13]\: unisim.vcomponents.LDCE
+\palette_reg[0][13]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(13),
-      G => \douta_reg[31]_i_5_0\(1),
+      D => \w_data_reg_n_0_[13]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(13)
+      Q => \cm_palette[0]_0\(13)
     );
-\palette_new_reg[0][14]\: unisim.vcomponents.LDCE
+\palette_reg[0][14]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(14),
-      G => \douta_reg[31]_i_5_0\(1),
+      D => \w_data_reg_n_0_[14]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(14)
+      Q => \cm_palette[0]_0\(14)
     );
-\palette_new_reg[0][15]\: unisim.vcomponents.LDCE
+\palette_reg[0][15]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(15),
-      G => \douta_reg[31]_i_5_0\(1),
+      D => \w_data_reg_n_0_[15]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(15)
+      Q => \cm_palette[0]_0\(15)
     );
-\palette_new_reg[0][16]\: unisim.vcomponents.LDCE
+\palette_reg[0][16]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(16),
-      G => \douta_reg[31]_i_5_0\(2),
+      D => \w_data_reg_n_0_[16]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(16)
+      Q => \cm_palette[0]_0\(16)
     );
-\palette_new_reg[0][17]\: unisim.vcomponents.LDCE
+\palette_reg[0][17]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(17),
-      G => \douta_reg[31]_i_5_0\(2),
+      D => \w_data_reg_n_0_[17]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(17)
+      Q => \cm_palette[0]_0\(17)
     );
-\palette_new_reg[0][18]\: unisim.vcomponents.LDCE
+\palette_reg[0][18]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(18),
-      G => \douta_reg[31]_i_5_0\(2),
+      D => \w_data_reg_n_0_[18]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(18)
+      Q => \cm_palette[0]_0\(18)
     );
-\palette_new_reg[0][19]\: unisim.vcomponents.LDCE
+\palette_reg[0][19]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(19),
-      G => \douta_reg[31]_i_5_0\(2),
+      D => \w_data_reg_n_0_[19]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(19)
+      Q => \cm_palette[0]_0\(19)
     );
-\palette_new_reg[0][1]\: unisim.vcomponents.LDCE
+\palette_reg[0][1]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(1),
-      G => \douta_reg[31]_i_5_0\(0),
+      D => \w_data_reg_n_0_[1]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(1)
+      Q => \cm_palette[0]_0\(1)
     );
-\palette_new_reg[0][20]\: unisim.vcomponents.LDCE
+\palette_reg[0][20]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(20),
-      G => \douta_reg[31]_i_5_0\(2),
+      D => \w_data_reg_n_0_[20]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(20)
+      Q => \cm_palette[0]_0\(20)
     );
-\palette_new_reg[0][21]\: unisim.vcomponents.LDCE
+\palette_reg[0][21]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(21),
-      G => \douta_reg[31]_i_5_0\(2),
+      D => \w_data_reg_n_0_[21]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(21)
+      Q => \cm_palette[0]_0\(21)
     );
-\palette_new_reg[0][22]\: unisim.vcomponents.LDCE
+\palette_reg[0][22]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(22),
-      G => \douta_reg[31]_i_5_0\(2),
+      D => \w_data_reg_n_0_[22]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(22)
+      Q => \cm_palette[0]_0\(22)
     );
-\palette_new_reg[0][23]\: unisim.vcomponents.LDCE
+\palette_reg[0][23]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(23),
-      G => \douta_reg[31]_i_5_0\(2),
+      D => \w_data_reg_n_0_[23]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(23)
+      Q => \cm_palette[0]_0\(23)
     );
-\palette_new_reg[0][24]\: unisim.vcomponents.LDCE
+\palette_reg[0][24]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(24),
-      G => \douta_reg[31]_i_5_0\(3),
+      D => \w_data_reg_n_0_[24]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(24)
+      Q => \cm_palette[0]_0\(24)
     );
-\palette_new_reg[0][25]\: unisim.vcomponents.LDCE
+\palette_reg[0][25]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(25),
-      G => \douta_reg[31]_i_5_0\(3),
+      D => \w_data_reg_n_0_[25]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(25)
+      Q => \cm_palette[0]_0\(25)
     );
-\palette_new_reg[0][26]\: unisim.vcomponents.LDCE
+\palette_reg[0][26]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(26),
-      G => \douta_reg[31]_i_5_0\(3),
+      D => \w_data_reg_n_0_[26]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(26)
+      Q => \cm_palette[0]_0\(26)
     );
-\palette_new_reg[0][27]\: unisim.vcomponents.LDCE
+\palette_reg[0][27]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(27),
-      G => \douta_reg[31]_i_5_0\(3),
+      D => \w_data_reg_n_0_[27]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(27)
+      Q => \cm_palette[0]_0\(27)
     );
-\palette_new_reg[0][28]\: unisim.vcomponents.LDCE
+\palette_reg[0][28]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(28),
-      G => \douta_reg[31]_i_5_0\(3),
+      D => \w_data_reg_n_0_[28]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(28)
+      Q => \cm_palette[0]_0\(28)
     );
-\palette_new_reg[0][29]\: unisim.vcomponents.LDCE
+\palette_reg[0][29]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(29),
-      G => \douta_reg[31]_i_5_0\(3),
+      D => \w_data_reg_n_0_[29]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(29)
+      Q => \cm_palette[0]_0\(29)
     );
-\palette_new_reg[0][2]\: unisim.vcomponents.LDCE
+\palette_reg[0][2]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(2),
-      G => \douta_reg[31]_i_5_0\(0),
+      D => \w_data_reg_n_0_[2]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(2)
+      Q => \cm_palette[0]_0\(2)
     );
-\palette_new_reg[0][30]\: unisim.vcomponents.LDCE
+\palette_reg[0][30]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(30),
-      G => \douta_reg[31]_i_5_0\(3),
+      D => \w_data_reg_n_0_[30]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(30)
+      Q => \cm_palette[0]_0\(30)
     );
-\palette_new_reg[0][31]\: unisim.vcomponents.LDCE
+\palette_reg[0][31]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(31),
-      G => \douta_reg[31]_i_5_0\(3),
+      D => \w_data_reg_n_0_[31]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(31)
+      Q => \cm_palette[0]_0\(31)
     );
-\palette_new_reg[0][3]\: unisim.vcomponents.LDCE
+\palette_reg[0][31]_i_1\: unisim.vcomponents.LUT5
     generic map(
+      INIT => X"00000008"
+    )
+        port map (
+      I0 => \palette_reg[0][31]_i_2_n_0\,
+      I1 => p_0_in10_in,
+      I2 => sel0(0),
+      I3 => sel0(1),
+      I4 => \palette_reg[0][31]_i_3_n_0\,
+      O => \palette_reg[0][31]_i_1_n_0\
+    );
+\palette_reg[0][31]_i_2\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8000"
+    )
+        port map (
+      I0 => axi_awvalid,
+      I1 => axi_wvalid,
+      I2 => \^axi_awready_reg_0\,
+      I3 => \^axi_wready_reg_0\,
+      O => \palette_reg[0][31]_i_2_n_0\
+    );
+\palette_reg[0][31]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"FFFFFFFFFFFFFFFE"
+    )
+        port map (
+      I0 => sel0(5),
+      I1 => sel0(7),
+      I2 => sel0(4),
+      I3 => sel0(6),
+      I4 => sel0(3),
+      I5 => sel0(2),
+      O => \palette_reg[0][31]_i_3_n_0\
+    );
+\palette_reg[0][3]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \w_data_reg_n_0_[3]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
+      GE => '1',
+      Q => \cm_palette[0]_0\(3)
+    );
+\palette_reg[0][4]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \w_data_reg_n_0_[4]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
+      GE => '1',
+      Q => \cm_palette[0]_0\(4)
+    );
+\palette_reg[0][5]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \w_data_reg_n_0_[5]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
+      GE => '1',
+      Q => \cm_palette[0]_0\(5)
+    );
+\palette_reg[0][6]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \w_data_reg_n_0_[6]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
+      GE => '1',
+      Q => \cm_palette[0]_0\(6)
+    );
+\palette_reg[0][7]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \w_data_reg_n_0_[7]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
+      GE => '1',
+      Q => \cm_palette[0]_0\(7)
+    );
+\palette_reg[0][8]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \w_data_reg_n_0_[8]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
+      GE => '1',
+      Q => \cm_palette[0]_0\(8)
+    );
+\palette_reg[0][9]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \w_data_reg_n_0_[9]\,
+      G => \palette_reg[0][31]_i_1_n_0\,
+      GE => '1',
+      Q => \cm_palette[0]_0\(9)
+    );
+\palette_reg[1][0]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \w_data_reg_n_0_[0]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
+      GE => '1',
+      Q => \cm_palette[1]_1\(0)
+    );
+\palette_reg[1][10]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \w_data_reg_n_0_[10]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
+      GE => '1',
+      Q => \cm_palette[1]_1\(10)
+    );
+\palette_reg[1][11]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \w_data_reg_n_0_[11]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
+      GE => '1',
+      Q => \cm_palette[1]_1\(11)
+    );
+\palette_reg[1][12]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \w_data_reg_n_0_[12]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
+      GE => '1',
+      Q => \cm_palette[1]_1\(12)
+    );
+\palette_reg[1][13]\: unisim.vcomponents.LDCE
+    generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(3),
-      G => \douta_reg[31]_i_5_0\(0),
+      D => \w_data_reg_n_0_[13]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(3)
+      Q => \cm_palette[1]_1\(13)
     );
-\palette_new_reg[0][4]\: unisim.vcomponents.LDCE
+\palette_reg[1][14]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(4),
-      G => \douta_reg[31]_i_5_0\(0),
+      D => \w_data_reg_n_0_[14]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(4)
+      Q => \cm_palette[1]_1\(14)
     );
-\palette_new_reg[0][5]\: unisim.vcomponents.LDCE
+\palette_reg[1][15]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(5),
-      G => \douta_reg[31]_i_5_0\(0),
+      D => \w_data_reg_n_0_[15]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(5)
+      Q => \cm_palette[1]_1\(15)
     );
-\palette_new_reg[0][6]\: unisim.vcomponents.LDCE
+\palette_reg[1][16]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(6),
-      G => \douta_reg[31]_i_5_0\(0),
+      D => \w_data_reg_n_0_[16]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(6)
+      Q => \cm_palette[1]_1\(16)
     );
-\palette_new_reg[0][7]\: unisim.vcomponents.LDCE
+\palette_reg[1][17]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(7),
-      G => \douta_reg[31]_i_5_0\(0),
+      D => \w_data_reg_n_0_[17]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(7)
+      Q => \cm_palette[1]_1\(17)
     );
-\palette_new_reg[0][8]\: unisim.vcomponents.LDCE
+\palette_reg[1][18]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(8),
-      G => \douta_reg[31]_i_5_0\(1),
+      D => \w_data_reg_n_0_[18]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(8)
+      Q => \cm_palette[1]_1\(18)
     );
-\palette_new_reg[0][9]\: unisim.vcomponents.LDCE
+\palette_reg[1][19]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(9),
-      G => \douta_reg[31]_i_5_0\(1),
+      D => \w_data_reg_n_0_[19]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[0]_0\(9)
+      Q => \cm_palette[1]_1\(19)
     );
-\palette_new_reg[1][0]\: unisim.vcomponents.LDCE
+\palette_reg[1][1]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(0),
-      G => \douta_reg[31]_i_5_1\(0),
+      D => \w_data_reg_n_0_[1]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(0)
+      Q => \cm_palette[1]_1\(1)
     );
-\palette_new_reg[1][10]\: unisim.vcomponents.LDCE
+\palette_reg[1][20]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(10),
-      G => \douta_reg[31]_i_5_1\(1),
+      D => \w_data_reg_n_0_[20]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(10)
+      Q => \cm_palette[1]_1\(20)
     );
-\palette_new_reg[1][11]\: unisim.vcomponents.LDCE
+\palette_reg[1][21]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(11),
-      G => \douta_reg[31]_i_5_1\(1),
+      D => \w_data_reg_n_0_[21]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(11)
+      Q => \cm_palette[1]_1\(21)
     );
-\palette_new_reg[1][12]\: unisim.vcomponents.LDCE
+\palette_reg[1][22]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(12),
-      G => \douta_reg[31]_i_5_1\(1),
+      D => \w_data_reg_n_0_[22]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(12)
+      Q => \cm_palette[1]_1\(22)
     );
-\palette_new_reg[1][13]\: unisim.vcomponents.LDCE
+\palette_reg[1][23]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(13),
-      G => \douta_reg[31]_i_5_1\(1),
+      D => \w_data_reg_n_0_[23]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(13)
+      Q => \cm_palette[1]_1\(23)
     );
-\palette_new_reg[1][14]\: unisim.vcomponents.LDCE
+\palette_reg[1][24]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(14),
-      G => \douta_reg[31]_i_5_1\(1),
+      D => \w_data_reg_n_0_[24]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(14)
+      Q => \cm_palette[1]_1\(24)
     );
-\palette_new_reg[1][15]\: unisim.vcomponents.LDCE
+\palette_reg[1][25]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(15),
-      G => \douta_reg[31]_i_5_1\(1),
+      D => \w_data_reg_n_0_[25]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(15)
+      Q => \cm_palette[1]_1\(25)
     );
-\palette_new_reg[1][16]\: unisim.vcomponents.LDCE
+\palette_reg[1][26]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(16),
-      G => \douta_reg[31]_i_5_1\(2),
+      D => \w_data_reg_n_0_[26]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(16)
+      Q => \cm_palette[1]_1\(26)
     );
-\palette_new_reg[1][17]\: unisim.vcomponents.LDCE
+\palette_reg[1][27]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(17),
-      G => \douta_reg[31]_i_5_1\(2),
+      D => \w_data_reg_n_0_[27]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(17)
+      Q => \cm_palette[1]_1\(27)
     );
-\palette_new_reg[1][18]\: unisim.vcomponents.LDCE
+\palette_reg[1][28]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(18),
-      G => \douta_reg[31]_i_5_1\(2),
+      D => \w_data_reg_n_0_[28]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(18)
+      Q => \cm_palette[1]_1\(28)
     );
-\palette_new_reg[1][19]\: unisim.vcomponents.LDCE
+\palette_reg[1][29]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(19),
-      G => \douta_reg[31]_i_5_1\(2),
+      D => \w_data_reg_n_0_[29]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(19)
+      Q => \cm_palette[1]_1\(29)
     );
-\palette_new_reg[1][1]\: unisim.vcomponents.LDCE
+\palette_reg[1][2]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(1),
-      G => \douta_reg[31]_i_5_1\(0),
+      D => \w_data_reg_n_0_[2]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(1)
+      Q => \cm_palette[1]_1\(2)
     );
-\palette_new_reg[1][20]\: unisim.vcomponents.LDCE
+\palette_reg[1][30]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(20),
-      G => \douta_reg[31]_i_5_1\(2),
+      D => \w_data_reg_n_0_[30]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(20)
+      Q => \cm_palette[1]_1\(30)
     );
-\palette_new_reg[1][21]\: unisim.vcomponents.LDCE
+\palette_reg[1][31]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(21),
-      G => \douta_reg[31]_i_5_1\(2),
+      D => \w_data_reg_n_0_[31]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(21)
+      Q => \cm_palette[1]_1\(31)
+    );
+\palette_reg[1][31]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"20"
+    )
+        port map (
+      I0 => \palette_reg[1][31]_i_2_n_0\,
+      I1 => sel0(1),
+      I2 => sel0(0),
+      O => \palette_reg[1][31]_i_1_n_0\
+    );
+\palette_reg[1][31]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"0000000080000000"
+    )
+        port map (
+      I0 => axi_awvalid,
+      I1 => axi_wvalid,
+      I2 => \^axi_awready_reg_0\,
+      I3 => \^axi_wready_reg_0\,
+      I4 => p_0_in10_in,
+      I5 => \palette_reg[0][31]_i_3_n_0\,
+      O => \palette_reg[1][31]_i_2_n_0\
     );
-\palette_new_reg[1][22]\: unisim.vcomponents.LDCE
+\palette_reg[1][3]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(22),
-      G => \douta_reg[31]_i_5_1\(2),
+      D => \w_data_reg_n_0_[3]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(22)
+      Q => \cm_palette[1]_1\(3)
     );
-\palette_new_reg[1][23]\: unisim.vcomponents.LDCE
+\palette_reg[1][4]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(23),
-      G => \douta_reg[31]_i_5_1\(2),
+      D => \w_data_reg_n_0_[4]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(23)
+      Q => \cm_palette[1]_1\(4)
     );
-\palette_new_reg[1][24]\: unisim.vcomponents.LDCE
+\palette_reg[1][5]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(24),
-      G => \douta_reg[31]_i_5_1\(3),
+      D => \w_data_reg_n_0_[5]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(24)
+      Q => \cm_palette[1]_1\(5)
     );
-\palette_new_reg[1][25]\: unisim.vcomponents.LDCE
+\palette_reg[1][6]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(25),
-      G => \douta_reg[31]_i_5_1\(3),
+      D => \w_data_reg_n_0_[6]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(25)
+      Q => \cm_palette[1]_1\(6)
     );
-\palette_new_reg[1][26]\: unisim.vcomponents.LDCE
+\palette_reg[1][7]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(26),
-      G => \douta_reg[31]_i_5_1\(3),
+      D => \w_data_reg_n_0_[7]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(26)
+      Q => \cm_palette[1]_1\(7)
     );
-\palette_new_reg[1][27]\: unisim.vcomponents.LDCE
+\palette_reg[1][8]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(27),
-      G => \douta_reg[31]_i_5_1\(3),
+      D => \w_data_reg_n_0_[8]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(27)
+      Q => \cm_palette[1]_1\(8)
     );
-\palette_new_reg[1][28]\: unisim.vcomponents.LDCE
+\palette_reg[1][9]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(28),
-      G => \douta_reg[31]_i_5_1\(3),
+      D => \w_data_reg_n_0_[9]\,
+      G => \palette_reg[1][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(28)
+      Q => \cm_palette[1]_1\(9)
     );
-\palette_new_reg[1][29]\: unisim.vcomponents.LDCE
+\palette_reg[2][0]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(29),
-      G => \douta_reg[31]_i_5_1\(3),
+      D => \w_data_reg_n_0_[0]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(29)
+      Q => \cm_palette[2]_2\(0)
     );
-\palette_new_reg[1][2]\: unisim.vcomponents.LDCE
+\palette_reg[2][10]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(2),
-      G => \douta_reg[31]_i_5_1\(0),
+      D => \w_data_reg_n_0_[10]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(2)
+      Q => \cm_palette[2]_2\(10)
     );
-\palette_new_reg[1][30]\: unisim.vcomponents.LDCE
+\palette_reg[2][11]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(30),
-      G => \douta_reg[31]_i_5_1\(3),
+      D => \w_data_reg_n_0_[11]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(30)
+      Q => \cm_palette[2]_2\(11)
     );
-\palette_new_reg[1][31]\: unisim.vcomponents.LDCE
+\palette_reg[2][12]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(31),
-      G => \douta_reg[31]_i_5_1\(3),
+      D => \w_data_reg_n_0_[12]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(31)
+      Q => \cm_palette[2]_2\(12)
     );
-\palette_new_reg[1][3]\: unisim.vcomponents.LDCE
+\palette_reg[2][13]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(3),
-      G => \douta_reg[31]_i_5_1\(0),
+      D => \w_data_reg_n_0_[13]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(3)
+      Q => \cm_palette[2]_2\(13)
     );
-\palette_new_reg[1][4]\: unisim.vcomponents.LDCE
+\palette_reg[2][14]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(4),
-      G => \douta_reg[31]_i_5_1\(0),
+      D => \w_data_reg_n_0_[14]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(4)
+      Q => \cm_palette[2]_2\(14)
     );
-\palette_new_reg[1][5]\: unisim.vcomponents.LDCE
+\palette_reg[2][15]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(5),
-      G => \douta_reg[31]_i_5_1\(0),
+      D => \w_data_reg_n_0_[15]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(5)
+      Q => \cm_palette[2]_2\(15)
     );
-\palette_new_reg[1][6]\: unisim.vcomponents.LDCE
+\palette_reg[2][16]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(6),
-      G => \douta_reg[31]_i_5_1\(0),
+      D => \w_data_reg_n_0_[16]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(6)
+      Q => \cm_palette[2]_2\(16)
     );
-\palette_new_reg[1][7]\: unisim.vcomponents.LDCE
+\palette_reg[2][17]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(7),
-      G => \douta_reg[31]_i_5_1\(0),
+      D => \w_data_reg_n_0_[17]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(7)
+      Q => \cm_palette[2]_2\(17)
     );
-\palette_new_reg[1][8]\: unisim.vcomponents.LDCE
+\palette_reg[2][18]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(8),
-      G => \douta_reg[31]_i_5_1\(1),
+      D => \w_data_reg_n_0_[18]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(8)
+      Q => \cm_palette[2]_2\(18)
     );
-\palette_new_reg[1][9]\: unisim.vcomponents.LDCE
+\palette_reg[2][19]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(9),
-      G => \douta_reg[31]_i_5_1\(1),
+      D => \w_data_reg_n_0_[19]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[1]_1\(9)
+      Q => \cm_palette[2]_2\(19)
     );
-\palette_new_reg[2][0]\: unisim.vcomponents.LDCE
+\palette_reg[2][1]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(0),
-      G => \douta_reg[31]_i_5_2\(0),
+      D => \w_data_reg_n_0_[1]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(0)
+      Q => \cm_palette[2]_2\(1)
     );
-\palette_new_reg[2][10]\: unisim.vcomponents.LDCE
+\palette_reg[2][20]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(10),
-      G => \douta_reg[31]_i_5_2\(1),
+      D => \w_data_reg_n_0_[20]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(10)
+      Q => \cm_palette[2]_2\(20)
     );
-\palette_new_reg[2][11]\: unisim.vcomponents.LDCE
+\palette_reg[2][21]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(11),
-      G => \douta_reg[31]_i_5_2\(1),
+      D => \w_data_reg_n_0_[21]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(11)
+      Q => \cm_palette[2]_2\(21)
     );
-\palette_new_reg[2][12]\: unisim.vcomponents.LDCE
+\palette_reg[2][22]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(12),
-      G => \douta_reg[31]_i_5_2\(1),
+      D => \w_data_reg_n_0_[22]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(12)
+      Q => \cm_palette[2]_2\(22)
     );
-\palette_new_reg[2][13]\: unisim.vcomponents.LDCE
+\palette_reg[2][23]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(13),
-      G => \douta_reg[31]_i_5_2\(1),
+      D => \w_data_reg_n_0_[23]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(13)
+      Q => \cm_palette[2]_2\(23)
     );
-\palette_new_reg[2][14]\: unisim.vcomponents.LDCE
+\palette_reg[2][24]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(14),
-      G => \douta_reg[31]_i_5_2\(1),
+      D => \w_data_reg_n_0_[24]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(14)
+      Q => \cm_palette[2]_2\(24)
     );
-\palette_new_reg[2][15]\: unisim.vcomponents.LDCE
+\palette_reg[2][25]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(15),
-      G => \douta_reg[31]_i_5_2\(1),
+      D => \w_data_reg_n_0_[25]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(15)
+      Q => \cm_palette[2]_2\(25)
     );
-\palette_new_reg[2][16]\: unisim.vcomponents.LDCE
+\palette_reg[2][26]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(16),
-      G => \douta_reg[31]_i_5_2\(2),
+      D => \w_data_reg_n_0_[26]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(16)
+      Q => \cm_palette[2]_2\(26)
     );
-\palette_new_reg[2][17]\: unisim.vcomponents.LDCE
+\palette_reg[2][27]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(17),
-      G => \douta_reg[31]_i_5_2\(2),
+      D => \w_data_reg_n_0_[27]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(17)
+      Q => \cm_palette[2]_2\(27)
     );
-\palette_new_reg[2][18]\: unisim.vcomponents.LDCE
+\palette_reg[2][28]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(18),
-      G => \douta_reg[31]_i_5_2\(2),
+      D => \w_data_reg_n_0_[28]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(18)
+      Q => \cm_palette[2]_2\(28)
     );
-\palette_new_reg[2][19]\: unisim.vcomponents.LDCE
+\palette_reg[2][29]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(19),
-      G => \douta_reg[31]_i_5_2\(2),
+      D => \w_data_reg_n_0_[29]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(19)
+      Q => \cm_palette[2]_2\(29)
     );
-\palette_new_reg[2][1]\: unisim.vcomponents.LDCE
+\palette_reg[2][2]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(1),
-      G => \douta_reg[31]_i_5_2\(0),
+      D => \w_data_reg_n_0_[2]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(1)
+      Q => \cm_palette[2]_2\(2)
     );
-\palette_new_reg[2][20]\: unisim.vcomponents.LDCE
+\palette_reg[2][30]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(20),
-      G => \douta_reg[31]_i_5_2\(2),
+      D => \w_data_reg_n_0_[30]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(20)
+      Q => \cm_palette[2]_2\(30)
     );
-\palette_new_reg[2][21]\: unisim.vcomponents.LDCE
+\palette_reg[2][31]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(21),
-      G => \douta_reg[31]_i_5_2\(2),
+      D => \w_data_reg_n_0_[31]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(21)
+      Q => \cm_palette[2]_2\(31)
+    );
+\palette_reg[2][31]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"20"
+    )
+        port map (
+      I0 => \palette_reg[1][31]_i_2_n_0\,
+      I1 => sel0(0),
+      I2 => sel0(1),
+      O => \palette_reg[2][31]_i_1_n_0\
     );
-\palette_new_reg[2][22]\: unisim.vcomponents.LDCE
+\palette_reg[2][3]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(22),
-      G => \douta_reg[31]_i_5_2\(2),
+      D => \w_data_reg_n_0_[3]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(22)
+      Q => \cm_palette[2]_2\(3)
     );
-\palette_new_reg[2][23]\: unisim.vcomponents.LDCE
+\palette_reg[2][4]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(23),
-      G => \douta_reg[31]_i_5_2\(2),
+      D => \w_data_reg_n_0_[4]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(23)
+      Q => \cm_palette[2]_2\(4)
     );
-\palette_new_reg[2][24]\: unisim.vcomponents.LDCE
+\palette_reg[2][5]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(24),
-      G => \douta_reg[31]_i_5_2\(3),
+      D => \w_data_reg_n_0_[5]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(24)
+      Q => \cm_palette[2]_2\(5)
     );
-\palette_new_reg[2][25]\: unisim.vcomponents.LDCE
+\palette_reg[2][6]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(25),
-      G => \douta_reg[31]_i_5_2\(3),
+      D => \w_data_reg_n_0_[6]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(25)
+      Q => \cm_palette[2]_2\(6)
     );
-\palette_new_reg[2][26]\: unisim.vcomponents.LDCE
+\palette_reg[2][7]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(26),
-      G => \douta_reg[31]_i_5_2\(3),
+      D => \w_data_reg_n_0_[7]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(26)
+      Q => \cm_palette[2]_2\(7)
     );
-\palette_new_reg[2][27]\: unisim.vcomponents.LDCE
+\palette_reg[2][8]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(27),
-      G => \douta_reg[31]_i_5_2\(3),
+      D => \w_data_reg_n_0_[8]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(27)
+      Q => \cm_palette[2]_2\(8)
     );
-\palette_new_reg[2][28]\: unisim.vcomponents.LDCE
+\palette_reg[2][9]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(28),
-      G => \douta_reg[31]_i_5_2\(3),
+      D => \w_data_reg_n_0_[9]\,
+      G => \palette_reg[2][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(28)
+      Q => \cm_palette[2]_2\(9)
     );
-\palette_new_reg[2][29]\: unisim.vcomponents.LDCE
+\palette_reg[3][0]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(29),
-      G => \douta_reg[31]_i_5_2\(3),
+      D => \w_data_reg_n_0_[0]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(29)
+      Q => \cm_palette[3]_3\(0)
     );
-\palette_new_reg[2][2]\: unisim.vcomponents.LDCE
+\palette_reg[3][10]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(2),
-      G => \douta_reg[31]_i_5_2\(0),
+      D => \w_data_reg_n_0_[10]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(2)
+      Q => \cm_palette[3]_3\(10)
     );
-\palette_new_reg[2][30]\: unisim.vcomponents.LDCE
+\palette_reg[3][11]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(30),
-      G => \douta_reg[31]_i_5_2\(3),
+      D => \w_data_reg_n_0_[11]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(30)
+      Q => \cm_palette[3]_3\(11)
     );
-\palette_new_reg[2][31]\: unisim.vcomponents.LDCE
+\palette_reg[3][12]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(31),
-      G => \douta_reg[31]_i_5_2\(3),
+      D => \w_data_reg_n_0_[12]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(31)
+      Q => \cm_palette[3]_3\(12)
     );
-\palette_new_reg[2][3]\: unisim.vcomponents.LDCE
+\palette_reg[3][13]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(3),
-      G => \douta_reg[31]_i_5_2\(0),
+      D => \w_data_reg_n_0_[13]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(3)
+      Q => \cm_palette[3]_3\(13)
     );
-\palette_new_reg[2][4]\: unisim.vcomponents.LDCE
+\palette_reg[3][14]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(4),
-      G => \douta_reg[31]_i_5_2\(0),
+      D => \w_data_reg_n_0_[14]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(4)
+      Q => \cm_palette[3]_3\(14)
     );
-\palette_new_reg[2][5]\: unisim.vcomponents.LDCE
+\palette_reg[3][15]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(5),
-      G => \douta_reg[31]_i_5_2\(0),
+      D => \w_data_reg_n_0_[15]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(5)
+      Q => \cm_palette[3]_3\(15)
     );
-\palette_new_reg[2][6]\: unisim.vcomponents.LDCE
+\palette_reg[3][16]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(6),
-      G => \douta_reg[31]_i_5_2\(0),
+      D => \w_data_reg_n_0_[16]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(6)
+      Q => \cm_palette[3]_3\(16)
     );
-\palette_new_reg[2][7]\: unisim.vcomponents.LDCE
+\palette_reg[3][17]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(7),
-      G => \douta_reg[31]_i_5_2\(0),
+      D => \w_data_reg_n_0_[17]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(7)
+      Q => \cm_palette[3]_3\(17)
     );
-\palette_new_reg[2][8]\: unisim.vcomponents.LDCE
+\palette_reg[3][18]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(8),
-      G => \douta_reg[31]_i_5_2\(1),
+      D => \w_data_reg_n_0_[18]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(8)
+      Q => \cm_palette[3]_3\(18)
     );
-\palette_new_reg[2][9]\: unisim.vcomponents.LDCE
+\palette_reg[3][19]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(9),
-      G => \douta_reg[31]_i_5_2\(1),
+      D => \w_data_reg_n_0_[19]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[2]_2\(9)
+      Q => \cm_palette[3]_3\(19)
     );
-\palette_new_reg[3][0]\: unisim.vcomponents.LDCE
+\palette_reg[3][1]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(0),
-      G => \douta_reg[31]_i_5_3\(0),
+      D => \w_data_reg_n_0_[1]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(0)
+      Q => \cm_palette[3]_3\(1)
     );
-\palette_new_reg[3][10]\: unisim.vcomponents.LDCE
+\palette_reg[3][20]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(10),
-      G => \douta_reg[31]_i_5_3\(1),
+      D => \w_data_reg_n_0_[20]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(10)
+      Q => \cm_palette[3]_3\(20)
     );
-\palette_new_reg[3][11]\: unisim.vcomponents.LDCE
+\palette_reg[3][21]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(11),
-      G => \douta_reg[31]_i_5_3\(1),
+      D => \w_data_reg_n_0_[21]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(11)
+      Q => \cm_palette[3]_3\(21)
     );
-\palette_new_reg[3][12]\: unisim.vcomponents.LDCE
+\palette_reg[3][22]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(12),
-      G => \douta_reg[31]_i_5_3\(1),
+      D => \w_data_reg_n_0_[22]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(12)
+      Q => \cm_palette[3]_3\(22)
     );
-\palette_new_reg[3][13]\: unisim.vcomponents.LDCE
+\palette_reg[3][23]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(13),
-      G => \douta_reg[31]_i_5_3\(1),
+      D => \w_data_reg_n_0_[23]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(13)
+      Q => \cm_palette[3]_3\(23)
     );
-\palette_new_reg[3][14]\: unisim.vcomponents.LDCE
+\palette_reg[3][24]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(14),
-      G => \douta_reg[31]_i_5_3\(1),
+      D => \w_data_reg_n_0_[24]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(14)
+      Q => \cm_palette[3]_3\(24)
     );
-\palette_new_reg[3][15]\: unisim.vcomponents.LDCE
+\palette_reg[3][25]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(15),
-      G => \douta_reg[31]_i_5_3\(1),
+      D => \w_data_reg_n_0_[25]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(15)
+      Q => \cm_palette[3]_3\(25)
     );
-\palette_new_reg[3][16]\: unisim.vcomponents.LDCE
+\palette_reg[3][26]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(16),
-      G => \douta_reg[31]_i_5_3\(2),
+      D => \w_data_reg_n_0_[26]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(16)
+      Q => \cm_palette[3]_3\(26)
     );
-\palette_new_reg[3][17]\: unisim.vcomponents.LDCE
+\palette_reg[3][27]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(17),
-      G => \douta_reg[31]_i_5_3\(2),
+      D => \w_data_reg_n_0_[27]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(17)
+      Q => \cm_palette[3]_3\(27)
     );
-\palette_new_reg[3][18]\: unisim.vcomponents.LDCE
+\palette_reg[3][28]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(18),
-      G => \douta_reg[31]_i_5_3\(2),
+      D => \w_data_reg_n_0_[28]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(18)
+      Q => \cm_palette[3]_3\(28)
     );
-\palette_new_reg[3][19]\: unisim.vcomponents.LDCE
+\palette_reg[3][29]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(19),
-      G => \douta_reg[31]_i_5_3\(2),
+      D => \w_data_reg_n_0_[29]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(19)
+      Q => \cm_palette[3]_3\(29)
     );
-\palette_new_reg[3][1]\: unisim.vcomponents.LDCE
+\palette_reg[3][2]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(1),
-      G => \douta_reg[31]_i_5_3\(0),
+      D => \w_data_reg_n_0_[2]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(1)
+      Q => \cm_palette[3]_3\(2)
     );
-\palette_new_reg[3][20]\: unisim.vcomponents.LDCE
+\palette_reg[3][30]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(20),
-      G => \douta_reg[31]_i_5_3\(2),
+      D => \w_data_reg_n_0_[30]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(20)
+      Q => \cm_palette[3]_3\(30)
     );
-\palette_new_reg[3][21]\: unisim.vcomponents.LDCE
+\palette_reg[3][31]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(21),
-      G => \douta_reg[31]_i_5_3\(2),
+      D => \w_data_reg_n_0_[31]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(21)
+      Q => \cm_palette[3]_3\(31)
+    );
+\palette_reg[3][31]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"80"
+    )
+        port map (
+      I0 => \palette_reg[1][31]_i_2_n_0\,
+      I1 => sel0(1),
+      I2 => sel0(0),
+      O => \palette_reg[3][31]_i_1_n_0\
     );
-\palette_new_reg[3][22]\: unisim.vcomponents.LDCE
+\palette_reg[3][3]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(22),
-      G => \douta_reg[31]_i_5_3\(2),
+      D => \w_data_reg_n_0_[3]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(22)
+      Q => \cm_palette[3]_3\(3)
     );
-\palette_new_reg[3][23]\: unisim.vcomponents.LDCE
+\palette_reg[3][4]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(23),
-      G => \douta_reg[31]_i_5_3\(2),
+      D => \w_data_reg_n_0_[4]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(23)
+      Q => \cm_palette[3]_3\(4)
     );
-\palette_new_reg[3][24]\: unisim.vcomponents.LDCE
+\palette_reg[3][5]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(24),
-      G => \douta_reg[31]_i_5_3\(3),
+      D => \w_data_reg_n_0_[5]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(24)
+      Q => \cm_palette[3]_3\(5)
     );
-\palette_new_reg[3][25]\: unisim.vcomponents.LDCE
+\palette_reg[3][6]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(25),
-      G => \douta_reg[31]_i_5_3\(3),
+      D => \w_data_reg_n_0_[6]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(25)
+      Q => \cm_palette[3]_3\(6)
     );
-\palette_new_reg[3][26]\: unisim.vcomponents.LDCE
+\palette_reg[3][7]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(26),
-      G => \douta_reg[31]_i_5_3\(3),
+      D => \w_data_reg_n_0_[7]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(26)
+      Q => \cm_palette[3]_3\(7)
     );
-\palette_new_reg[3][27]\: unisim.vcomponents.LDCE
+\palette_reg[3][8]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(27),
-      G => \douta_reg[31]_i_5_3\(3),
+      D => \w_data_reg_n_0_[8]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(27)
+      Q => \cm_palette[3]_3\(8)
     );
-\palette_new_reg[3][28]\: unisim.vcomponents.LDCE
+\palette_reg[3][9]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(28),
-      G => \douta_reg[31]_i_5_3\(3),
+      D => \w_data_reg_n_0_[9]\,
+      G => \palette_reg[3][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(28)
+      Q => \cm_palette[3]_3\(9)
     );
-\palette_new_reg[3][29]\: unisim.vcomponents.LDCE
+\palette_reg[4][0]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(29),
-      G => \douta_reg[31]_i_5_3\(3),
+      D => \w_data_reg_n_0_[0]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(29)
+      Q => \cm_palette[4]_4\(0)
     );
-\palette_new_reg[3][2]\: unisim.vcomponents.LDCE
+\palette_reg[4][10]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(2),
-      G => \douta_reg[31]_i_5_3\(0),
+      D => \w_data_reg_n_0_[10]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(2)
+      Q => \cm_palette[4]_4\(10)
     );
-\palette_new_reg[3][30]\: unisim.vcomponents.LDCE
+\palette_reg[4][11]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(30),
-      G => \douta_reg[31]_i_5_3\(3),
+      D => \w_data_reg_n_0_[11]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(30)
+      Q => \cm_palette[4]_4\(11)
     );
-\palette_new_reg[3][31]\: unisim.vcomponents.LDCE
+\palette_reg[4][12]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(31),
-      G => \douta_reg[31]_i_5_3\(3),
+      D => \w_data_reg_n_0_[12]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(31)
+      Q => \cm_palette[4]_4\(12)
     );
-\palette_new_reg[3][3]\: unisim.vcomponents.LDCE
+\palette_reg[4][13]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(3),
-      G => \douta_reg[31]_i_5_3\(0),
+      D => \w_data_reg_n_0_[13]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(3)
+      Q => \cm_palette[4]_4\(13)
     );
-\palette_new_reg[3][4]\: unisim.vcomponents.LDCE
+\palette_reg[4][14]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(4),
-      G => \douta_reg[31]_i_5_3\(0),
+      D => \w_data_reg_n_0_[14]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(4)
+      Q => \cm_palette[4]_4\(14)
     );
-\palette_new_reg[3][5]\: unisim.vcomponents.LDCE
+\palette_reg[4][15]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(5),
-      G => \douta_reg[31]_i_5_3\(0),
+      D => \w_data_reg_n_0_[15]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(5)
+      Q => \cm_palette[4]_4\(15)
     );
-\palette_new_reg[3][6]\: unisim.vcomponents.LDCE
+\palette_reg[4][16]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(6),
-      G => \douta_reg[31]_i_5_3\(0),
+      D => \w_data_reg_n_0_[16]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(6)
+      Q => \cm_palette[4]_4\(16)
     );
-\palette_new_reg[3][7]\: unisim.vcomponents.LDCE
+\palette_reg[4][17]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(7),
-      G => \douta_reg[31]_i_5_3\(0),
+      D => \w_data_reg_n_0_[17]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(7)
+      Q => \cm_palette[4]_4\(17)
     );
-\palette_new_reg[3][8]\: unisim.vcomponents.LDCE
+\palette_reg[4][18]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(8),
-      G => \douta_reg[31]_i_5_3\(1),
+      D => \w_data_reg_n_0_[18]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(8)
+      Q => \cm_palette[4]_4\(18)
     );
-\palette_new_reg[3][9]\: unisim.vcomponents.LDCE
+\palette_reg[4][19]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(9),
-      G => \douta_reg[31]_i_5_3\(1),
+      D => \w_data_reg_n_0_[19]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[3]_3\(9)
+      Q => \cm_palette[4]_4\(19)
     );
-\palette_new_reg[4][0]\: unisim.vcomponents.LDCE
+\palette_reg[4][1]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(0),
-      G => \douta_reg[31]_i_4_0\(0),
+      D => \w_data_reg_n_0_[1]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(0)
+      Q => \cm_palette[4]_4\(1)
     );
-\palette_new_reg[4][10]\: unisim.vcomponents.LDCE
+\palette_reg[4][20]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(10),
-      G => \douta_reg[31]_i_4_0\(1),
+      D => \w_data_reg_n_0_[20]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(10)
+      Q => \cm_palette[4]_4\(20)
     );
-\palette_new_reg[4][11]\: unisim.vcomponents.LDCE
+\palette_reg[4][21]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(11),
-      G => \douta_reg[31]_i_4_0\(1),
+      D => \w_data_reg_n_0_[21]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(11)
+      Q => \cm_palette[4]_4\(21)
     );
-\palette_new_reg[4][12]\: unisim.vcomponents.LDCE
+\palette_reg[4][22]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(12),
-      G => \douta_reg[31]_i_4_0\(1),
+      D => \w_data_reg_n_0_[22]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(12)
+      Q => \cm_palette[4]_4\(22)
     );
-\palette_new_reg[4][13]\: unisim.vcomponents.LDCE
+\palette_reg[4][23]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(13),
-      G => \douta_reg[31]_i_4_0\(1),
+      D => \w_data_reg_n_0_[23]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(13)
+      Q => \cm_palette[4]_4\(23)
     );
-\palette_new_reg[4][14]\: unisim.vcomponents.LDCE
+\palette_reg[4][24]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(14),
-      G => \douta_reg[31]_i_4_0\(1),
+      D => \w_data_reg_n_0_[24]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(14)
+      Q => \cm_palette[4]_4\(24)
     );
-\palette_new_reg[4][15]\: unisim.vcomponents.LDCE
+\palette_reg[4][25]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(15),
-      G => \douta_reg[31]_i_4_0\(1),
+      D => \w_data_reg_n_0_[25]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(15)
+      Q => \cm_palette[4]_4\(25)
     );
-\palette_new_reg[4][16]\: unisim.vcomponents.LDCE
+\palette_reg[4][26]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(16),
-      G => \douta_reg[31]_i_4_0\(2),
+      D => \w_data_reg_n_0_[26]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(16)
+      Q => \cm_palette[4]_4\(26)
     );
-\palette_new_reg[4][17]\: unisim.vcomponents.LDCE
+\palette_reg[4][27]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(17),
-      G => \douta_reg[31]_i_4_0\(2),
+      D => \w_data_reg_n_0_[27]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(17)
+      Q => \cm_palette[4]_4\(27)
     );
-\palette_new_reg[4][18]\: unisim.vcomponents.LDCE
+\palette_reg[4][28]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(18),
-      G => \douta_reg[31]_i_4_0\(2),
+      D => \w_data_reg_n_0_[28]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(18)
+      Q => \cm_palette[4]_4\(28)
     );
-\palette_new_reg[4][19]\: unisim.vcomponents.LDCE
+\palette_reg[4][29]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(19),
-      G => \douta_reg[31]_i_4_0\(2),
+      D => \w_data_reg_n_0_[29]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(19)
+      Q => \cm_palette[4]_4\(29)
     );
-\palette_new_reg[4][1]\: unisim.vcomponents.LDCE
+\palette_reg[4][2]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(1),
-      G => \douta_reg[31]_i_4_0\(0),
+      D => \w_data_reg_n_0_[2]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(1)
+      Q => \cm_palette[4]_4\(2)
     );
-\palette_new_reg[4][20]\: unisim.vcomponents.LDCE
+\palette_reg[4][30]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(20),
-      G => \douta_reg[31]_i_4_0\(2),
+      D => \w_data_reg_n_0_[30]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(20)
+      Q => \cm_palette[4]_4\(30)
     );
-\palette_new_reg[4][21]\: unisim.vcomponents.LDCE
+\palette_reg[4][31]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(21),
-      G => \douta_reg[31]_i_4_0\(2),
+      D => \w_data_reg_n_0_[31]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(21)
+      Q => \cm_palette[4]_4\(31)
+    );
+\palette_reg[4][31]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"01"
+    )
+        port map (
+      I0 => sel0(1),
+      I1 => sel0(0),
+      I2 => \palette_reg[4][31]_i_2_n_0\,
+      O => \palette_reg[4][31]_i_1_n_0\
+    );
+\palette_reg[4][31]_i_2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"FFFFF7FF"
+    )
+        port map (
+      I0 => \palette_reg[0][31]_i_2_n_0\,
+      I1 => p_0_in10_in,
+      I2 => sel0(3),
+      I3 => sel0(2),
+      I4 => \palette_reg[4][31]_i_3_n_0\,
+      O => \palette_reg[4][31]_i_2_n_0\
+    );
+\palette_reg[4][31]_i_3\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"FFFE"
+    )
+        port map (
+      I0 => sel0(6),
+      I1 => sel0(4),
+      I2 => sel0(7),
+      I3 => sel0(5),
+      O => \palette_reg[4][31]_i_3_n_0\
     );
-\palette_new_reg[4][22]\: unisim.vcomponents.LDCE
+\palette_reg[4][3]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(22),
-      G => \douta_reg[31]_i_4_0\(2),
+      D => \w_data_reg_n_0_[3]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(22)
+      Q => \cm_palette[4]_4\(3)
     );
-\palette_new_reg[4][23]\: unisim.vcomponents.LDCE
+\palette_reg[4][4]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(23),
-      G => \douta_reg[31]_i_4_0\(2),
+      D => \w_data_reg_n_0_[4]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(23)
+      Q => \cm_palette[4]_4\(4)
     );
-\palette_new_reg[4][24]\: unisim.vcomponents.LDCE
+\palette_reg[4][5]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(24),
-      G => \douta_reg[31]_i_4_0\(3),
+      D => \w_data_reg_n_0_[5]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(24)
+      Q => \cm_palette[4]_4\(5)
     );
-\palette_new_reg[4][25]\: unisim.vcomponents.LDCE
+\palette_reg[4][6]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(25),
-      G => \douta_reg[31]_i_4_0\(3),
+      D => \w_data_reg_n_0_[6]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(25)
+      Q => \cm_palette[4]_4\(6)
     );
-\palette_new_reg[4][26]\: unisim.vcomponents.LDCE
+\palette_reg[4][7]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(26),
-      G => \douta_reg[31]_i_4_0\(3),
+      D => \w_data_reg_n_0_[7]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(26)
+      Q => \cm_palette[4]_4\(7)
     );
-\palette_new_reg[4][27]\: unisim.vcomponents.LDCE
+\palette_reg[4][8]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(27),
-      G => \douta_reg[31]_i_4_0\(3),
+      D => \w_data_reg_n_0_[8]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(27)
+      Q => \cm_palette[4]_4\(8)
     );
-\palette_new_reg[4][28]\: unisim.vcomponents.LDCE
+\palette_reg[4][9]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(28),
-      G => \douta_reg[31]_i_4_0\(3),
+      D => \w_data_reg_n_0_[9]\,
+      G => \palette_reg[4][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(28)
+      Q => \cm_palette[4]_4\(9)
     );
-\palette_new_reg[4][29]\: unisim.vcomponents.LDCE
+\palette_reg[5][0]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(29),
-      G => \douta_reg[31]_i_4_0\(3),
+      D => \w_data_reg_n_0_[0]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(29)
+      Q => \cm_palette[5]_5\(0)
     );
-\palette_new_reg[4][2]\: unisim.vcomponents.LDCE
+\palette_reg[5][10]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(2),
-      G => \douta_reg[31]_i_4_0\(0),
+      D => \w_data_reg_n_0_[10]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(2)
+      Q => \cm_palette[5]_5\(10)
     );
-\palette_new_reg[4][30]\: unisim.vcomponents.LDCE
+\palette_reg[5][11]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(30),
-      G => \douta_reg[31]_i_4_0\(3),
+      D => \w_data_reg_n_0_[11]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(30)
+      Q => \cm_palette[5]_5\(11)
     );
-\palette_new_reg[4][31]\: unisim.vcomponents.LDCE
+\palette_reg[5][12]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(31),
-      G => \douta_reg[31]_i_4_0\(3),
+      D => \w_data_reg_n_0_[12]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(31)
+      Q => \cm_palette[5]_5\(12)
     );
-\palette_new_reg[4][3]\: unisim.vcomponents.LDCE
+\palette_reg[5][13]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(3),
-      G => \douta_reg[31]_i_4_0\(0),
+      D => \w_data_reg_n_0_[13]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(3)
+      Q => \cm_palette[5]_5\(13)
     );
-\palette_new_reg[4][4]\: unisim.vcomponents.LDCE
+\palette_reg[5][14]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(4),
-      G => \douta_reg[31]_i_4_0\(0),
+      D => \w_data_reg_n_0_[14]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(4)
+      Q => \cm_palette[5]_5\(14)
     );
-\palette_new_reg[4][5]\: unisim.vcomponents.LDCE
+\palette_reg[5][15]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(5),
-      G => \douta_reg[31]_i_4_0\(0),
+      D => \w_data_reg_n_0_[15]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(5)
+      Q => \cm_palette[5]_5\(15)
     );
-\palette_new_reg[4][6]\: unisim.vcomponents.LDCE
+\palette_reg[5][16]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(6),
-      G => \douta_reg[31]_i_4_0\(0),
+      D => \w_data_reg_n_0_[16]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(6)
+      Q => \cm_palette[5]_5\(16)
     );
-\palette_new_reg[4][7]\: unisim.vcomponents.LDCE
+\palette_reg[5][17]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(7),
-      G => \douta_reg[31]_i_4_0\(0),
+      D => \w_data_reg_n_0_[17]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(7)
+      Q => \cm_palette[5]_5\(17)
     );
-\palette_new_reg[4][8]\: unisim.vcomponents.LDCE
+\palette_reg[5][18]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(8),
-      G => \douta_reg[31]_i_4_0\(1),
+      D => \w_data_reg_n_0_[18]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(8)
+      Q => \cm_palette[5]_5\(18)
     );
-\palette_new_reg[4][9]\: unisim.vcomponents.LDCE
+\palette_reg[5][19]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(9),
-      G => \douta_reg[31]_i_4_0\(1),
+      D => \w_data_reg_n_0_[19]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[4]_4\(9)
+      Q => \cm_palette[5]_5\(19)
     );
-\palette_new_reg[5][0]\: unisim.vcomponents.LDCE
+\palette_reg[5][1]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(0),
-      G => \douta_reg[31]_i_4_1\(0),
+      D => \w_data_reg_n_0_[1]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(0)
+      Q => \cm_palette[5]_5\(1)
     );
-\palette_new_reg[5][10]\: unisim.vcomponents.LDCE
+\palette_reg[5][20]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(10),
-      G => \douta_reg[31]_i_4_1\(1),
+      D => \w_data_reg_n_0_[20]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(10)
+      Q => \cm_palette[5]_5\(20)
     );
-\palette_new_reg[5][11]\: unisim.vcomponents.LDCE
+\palette_reg[5][21]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(11),
-      G => \douta_reg[31]_i_4_1\(1),
+      D => \w_data_reg_n_0_[21]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(11)
+      Q => \cm_palette[5]_5\(21)
     );
-\palette_new_reg[5][12]\: unisim.vcomponents.LDCE
+\palette_reg[5][22]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(12),
-      G => \douta_reg[31]_i_4_1\(1),
+      D => \w_data_reg_n_0_[22]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(12)
+      Q => \cm_palette[5]_5\(22)
     );
-\palette_new_reg[5][13]\: unisim.vcomponents.LDCE
+\palette_reg[5][23]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(13),
-      G => \douta_reg[31]_i_4_1\(1),
+      D => \w_data_reg_n_0_[23]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(13)
+      Q => \cm_palette[5]_5\(23)
     );
-\palette_new_reg[5][14]\: unisim.vcomponents.LDCE
+\palette_reg[5][24]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(14),
-      G => \douta_reg[31]_i_4_1\(1),
+      D => \w_data_reg_n_0_[24]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(14)
+      Q => \cm_palette[5]_5\(24)
     );
-\palette_new_reg[5][15]\: unisim.vcomponents.LDCE
+\palette_reg[5][25]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(15),
-      G => \douta_reg[31]_i_4_1\(1),
+      D => \w_data_reg_n_0_[25]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(15)
+      Q => \cm_palette[5]_5\(25)
     );
-\palette_new_reg[5][16]\: unisim.vcomponents.LDCE
+\palette_reg[5][26]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(16),
-      G => \douta_reg[31]_i_4_1\(2),
+      D => \w_data_reg_n_0_[26]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(16)
+      Q => \cm_palette[5]_5\(26)
     );
-\palette_new_reg[5][17]\: unisim.vcomponents.LDCE
+\palette_reg[5][27]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(17),
-      G => \douta_reg[31]_i_4_1\(2),
+      D => \w_data_reg_n_0_[27]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(17)
+      Q => \cm_palette[5]_5\(27)
     );
-\palette_new_reg[5][18]\: unisim.vcomponents.LDCE
+\palette_reg[5][28]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(18),
-      G => \douta_reg[31]_i_4_1\(2),
+      D => \w_data_reg_n_0_[28]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(18)
+      Q => \cm_palette[5]_5\(28)
     );
-\palette_new_reg[5][19]\: unisim.vcomponents.LDCE
+\palette_reg[5][29]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(19),
-      G => \douta_reg[31]_i_4_1\(2),
+      D => \w_data_reg_n_0_[29]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(19)
+      Q => \cm_palette[5]_5\(29)
     );
-\palette_new_reg[5][1]\: unisim.vcomponents.LDCE
+\palette_reg[5][2]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(1),
-      G => \douta_reg[31]_i_4_1\(0),
+      D => \w_data_reg_n_0_[2]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(1)
+      Q => \cm_palette[5]_5\(2)
     );
-\palette_new_reg[5][20]\: unisim.vcomponents.LDCE
+\palette_reg[5][30]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(20),
-      G => \douta_reg[31]_i_4_1\(2),
+      D => \w_data_reg_n_0_[30]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(20)
+      Q => \cm_palette[5]_5\(30)
     );
-\palette_new_reg[5][21]\: unisim.vcomponents.LDCE
+\palette_reg[5][31]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(21),
-      G => \douta_reg[31]_i_4_1\(2),
+      D => \w_data_reg_n_0_[31]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(21)
+      Q => \cm_palette[5]_5\(31)
+    );
+\palette_reg[5][31]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"04"
+    )
+        port map (
+      I0 => sel0(1),
+      I1 => sel0(0),
+      I2 => \palette_reg[4][31]_i_2_n_0\,
+      O => \palette_reg[5][31]_i_1_n_0\
     );
-\palette_new_reg[5][22]\: unisim.vcomponents.LDCE
+\palette_reg[5][3]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(22),
-      G => \douta_reg[31]_i_4_1\(2),
+      D => \w_data_reg_n_0_[3]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(22)
+      Q => \cm_palette[5]_5\(3)
     );
-\palette_new_reg[5][23]\: unisim.vcomponents.LDCE
+\palette_reg[5][4]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(23),
-      G => \douta_reg[31]_i_4_1\(2),
+      D => \w_data_reg_n_0_[4]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(23)
+      Q => \cm_palette[5]_5\(4)
     );
-\palette_new_reg[5][24]\: unisim.vcomponents.LDCE
+\palette_reg[5][5]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(24),
-      G => \douta_reg[31]_i_4_1\(3),
+      D => \w_data_reg_n_0_[5]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(24)
+      Q => \cm_palette[5]_5\(5)
     );
-\palette_new_reg[5][25]\: unisim.vcomponents.LDCE
+\palette_reg[5][6]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(25),
-      G => \douta_reg[31]_i_4_1\(3),
+      D => \w_data_reg_n_0_[6]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(25)
+      Q => \cm_palette[5]_5\(6)
     );
-\palette_new_reg[5][26]\: unisim.vcomponents.LDCE
+\palette_reg[5][7]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(26),
-      G => \douta_reg[31]_i_4_1\(3),
+      D => \w_data_reg_n_0_[7]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(26)
+      Q => \cm_palette[5]_5\(7)
     );
-\palette_new_reg[5][27]\: unisim.vcomponents.LDCE
+\palette_reg[5][8]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(27),
-      G => \douta_reg[31]_i_4_1\(3),
+      D => \w_data_reg_n_0_[8]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(27)
+      Q => \cm_palette[5]_5\(8)
     );
-\palette_new_reg[5][28]\: unisim.vcomponents.LDCE
+\palette_reg[5][9]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(28),
-      G => \douta_reg[31]_i_4_1\(3),
+      D => \w_data_reg_n_0_[9]\,
+      G => \palette_reg[5][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(28)
+      Q => \cm_palette[5]_5\(9)
     );
-\palette_new_reg[5][29]\: unisim.vcomponents.LDCE
+\palette_reg[6][0]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(29),
-      G => \douta_reg[31]_i_4_1\(3),
+      D => \w_data_reg_n_0_[0]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(29)
+      Q => \cm_palette[6]_6\(0)
     );
-\palette_new_reg[5][2]\: unisim.vcomponents.LDCE
+\palette_reg[6][10]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(2),
-      G => \douta_reg[31]_i_4_1\(0),
+      D => \w_data_reg_n_0_[10]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(2)
+      Q => \cm_palette[6]_6\(10)
     );
-\palette_new_reg[5][30]\: unisim.vcomponents.LDCE
+\palette_reg[6][11]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(30),
-      G => \douta_reg[31]_i_4_1\(3),
+      D => \w_data_reg_n_0_[11]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(30)
+      Q => \cm_palette[6]_6\(11)
     );
-\palette_new_reg[5][31]\: unisim.vcomponents.LDCE
+\palette_reg[6][12]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(31),
-      G => \douta_reg[31]_i_4_1\(3),
+      D => \w_data_reg_n_0_[12]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(31)
+      Q => \cm_palette[6]_6\(12)
     );
-\palette_new_reg[5][3]\: unisim.vcomponents.LDCE
+\palette_reg[6][13]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(3),
-      G => \douta_reg[31]_i_4_1\(0),
+      D => \w_data_reg_n_0_[13]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(3)
+      Q => \cm_palette[6]_6\(13)
     );
-\palette_new_reg[5][4]\: unisim.vcomponents.LDCE
+\palette_reg[6][14]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(4),
-      G => \douta_reg[31]_i_4_1\(0),
+      D => \w_data_reg_n_0_[14]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(4)
+      Q => \cm_palette[6]_6\(14)
     );
-\palette_new_reg[5][5]\: unisim.vcomponents.LDCE
+\palette_reg[6][15]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(5),
-      G => \douta_reg[31]_i_4_1\(0),
+      D => \w_data_reg_n_0_[15]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(5)
+      Q => \cm_palette[6]_6\(15)
     );
-\palette_new_reg[5][6]\: unisim.vcomponents.LDCE
+\palette_reg[6][16]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(6),
-      G => \douta_reg[31]_i_4_1\(0),
+      D => \w_data_reg_n_0_[16]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(6)
+      Q => \cm_palette[6]_6\(16)
     );
-\palette_new_reg[5][7]\: unisim.vcomponents.LDCE
+\palette_reg[6][17]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(7),
-      G => \douta_reg[31]_i_4_1\(0),
+      D => \w_data_reg_n_0_[17]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(7)
+      Q => \cm_palette[6]_6\(17)
     );
-\palette_new_reg[5][8]\: unisim.vcomponents.LDCE
+\palette_reg[6][18]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(8),
-      G => \douta_reg[31]_i_4_1\(1),
+      D => \w_data_reg_n_0_[18]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(8)
+      Q => \cm_palette[6]_6\(18)
     );
-\palette_new_reg[5][9]\: unisim.vcomponents.LDCE
+\palette_reg[6][19]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(9),
-      G => \douta_reg[31]_i_4_1\(1),
+      D => \w_data_reg_n_0_[19]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[5]_5\(9)
+      Q => \cm_palette[6]_6\(19)
     );
-\palette_new_reg[6][0]\: unisim.vcomponents.LDCE
+\palette_reg[6][1]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(0),
-      G => \douta_reg[31]_i_4_2\(0),
+      D => \w_data_reg_n_0_[1]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(0)
+      Q => \cm_palette[6]_6\(1)
     );
-\palette_new_reg[6][10]\: unisim.vcomponents.LDCE
+\palette_reg[6][20]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(10),
-      G => \douta_reg[31]_i_4_2\(1),
+      D => \w_data_reg_n_0_[20]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(10)
+      Q => \cm_palette[6]_6\(20)
     );
-\palette_new_reg[6][11]\: unisim.vcomponents.LDCE
+\palette_reg[6][21]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(11),
-      G => \douta_reg[31]_i_4_2\(1),
+      D => \w_data_reg_n_0_[21]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(11)
+      Q => \cm_palette[6]_6\(21)
     );
-\palette_new_reg[6][12]\: unisim.vcomponents.LDCE
+\palette_reg[6][22]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(12),
-      G => \douta_reg[31]_i_4_2\(1),
+      D => \w_data_reg_n_0_[22]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(12)
+      Q => \cm_palette[6]_6\(22)
     );
-\palette_new_reg[6][13]\: unisim.vcomponents.LDCE
+\palette_reg[6][23]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(13),
-      G => \douta_reg[31]_i_4_2\(1),
+      D => \w_data_reg_n_0_[23]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(13)
+      Q => \cm_palette[6]_6\(23)
     );
-\palette_new_reg[6][14]\: unisim.vcomponents.LDCE
+\palette_reg[6][24]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(14),
-      G => \douta_reg[31]_i_4_2\(1),
+      D => \w_data_reg_n_0_[24]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(14)
+      Q => \cm_palette[6]_6\(24)
     );
-\palette_new_reg[6][15]\: unisim.vcomponents.LDCE
+\palette_reg[6][25]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(15),
-      G => \douta_reg[31]_i_4_2\(1),
+      D => \w_data_reg_n_0_[25]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(15)
+      Q => \cm_palette[6]_6\(25)
     );
-\palette_new_reg[6][16]\: unisim.vcomponents.LDCE
+\palette_reg[6][26]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(16),
-      G => \douta_reg[31]_i_4_2\(2),
+      D => \w_data_reg_n_0_[26]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(16)
+      Q => \cm_palette[6]_6\(26)
     );
-\palette_new_reg[6][17]\: unisim.vcomponents.LDCE
+\palette_reg[6][27]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(17),
-      G => \douta_reg[31]_i_4_2\(2),
+      D => \w_data_reg_n_0_[27]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(17)
+      Q => \cm_palette[6]_6\(27)
     );
-\palette_new_reg[6][18]\: unisim.vcomponents.LDCE
+\palette_reg[6][28]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(18),
-      G => \douta_reg[31]_i_4_2\(2),
+      D => \w_data_reg_n_0_[28]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(18)
+      Q => \cm_palette[6]_6\(28)
     );
-\palette_new_reg[6][19]\: unisim.vcomponents.LDCE
+\palette_reg[6][29]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(19),
-      G => \douta_reg[31]_i_4_2\(2),
+      D => \w_data_reg_n_0_[29]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(19)
+      Q => \cm_palette[6]_6\(29)
     );
-\palette_new_reg[6][1]\: unisim.vcomponents.LDCE
+\palette_reg[6][2]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(1),
-      G => \douta_reg[31]_i_4_2\(0),
+      D => \w_data_reg_n_0_[2]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(1)
+      Q => \cm_palette[6]_6\(2)
     );
-\palette_new_reg[6][20]\: unisim.vcomponents.LDCE
+\palette_reg[6][30]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(20),
-      G => \douta_reg[31]_i_4_2\(2),
+      D => \w_data_reg_n_0_[30]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(20)
+      Q => \cm_palette[6]_6\(30)
     );
-\palette_new_reg[6][21]\: unisim.vcomponents.LDCE
+\palette_reg[6][31]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(21),
-      G => \douta_reg[31]_i_4_2\(2),
+      D => \w_data_reg_n_0_[31]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(21)
+      Q => \cm_palette[6]_6\(31)
+    );
+\palette_reg[6][31]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"04"
+    )
+        port map (
+      I0 => sel0(0),
+      I1 => sel0(1),
+      I2 => \palette_reg[4][31]_i_2_n_0\,
+      O => \palette_reg[6][31]_i_1_n_0\
     );
-\palette_new_reg[6][22]\: unisim.vcomponents.LDCE
+\palette_reg[6][3]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(22),
-      G => \douta_reg[31]_i_4_2\(2),
+      D => \w_data_reg_n_0_[3]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(22)
+      Q => \cm_palette[6]_6\(3)
     );
-\palette_new_reg[6][23]\: unisim.vcomponents.LDCE
+\palette_reg[6][4]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(23),
-      G => \douta_reg[31]_i_4_2\(2),
+      D => \w_data_reg_n_0_[4]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(23)
+      Q => \cm_palette[6]_6\(4)
     );
-\palette_new_reg[6][24]\: unisim.vcomponents.LDCE
+\palette_reg[6][5]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(24),
-      G => \douta_reg[31]_i_4_2\(3),
+      D => \w_data_reg_n_0_[5]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(24)
+      Q => \cm_palette[6]_6\(5)
     );
-\palette_new_reg[6][25]\: unisim.vcomponents.LDCE
+\palette_reg[6][6]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(25),
-      G => \douta_reg[31]_i_4_2\(3),
+      D => \w_data_reg_n_0_[6]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(25)
+      Q => \cm_palette[6]_6\(6)
     );
-\palette_new_reg[6][26]\: unisim.vcomponents.LDCE
+\palette_reg[6][7]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(26),
-      G => \douta_reg[31]_i_4_2\(3),
+      D => \w_data_reg_n_0_[7]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(26)
+      Q => \cm_palette[6]_6\(7)
     );
-\palette_new_reg[6][27]\: unisim.vcomponents.LDCE
+\palette_reg[6][8]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(27),
-      G => \douta_reg[31]_i_4_2\(3),
+      D => \w_data_reg_n_0_[8]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(27)
+      Q => \cm_palette[6]_6\(8)
     );
-\palette_new_reg[6][28]\: unisim.vcomponents.LDCE
+\palette_reg[6][9]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(28),
-      G => \douta_reg[31]_i_4_2\(3),
+      D => \w_data_reg_n_0_[9]\,
+      G => \palette_reg[6][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(28)
+      Q => \cm_palette[6]_6\(9)
     );
-\palette_new_reg[6][29]\: unisim.vcomponents.LDCE
+\palette_reg[7][0]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(29),
-      G => \douta_reg[31]_i_4_2\(3),
+      D => \w_data_reg_n_0_[0]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(29)
+      Q => \cm_palette[7]_7\(0)
     );
-\palette_new_reg[6][2]\: unisim.vcomponents.LDCE
+\palette_reg[7][10]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(2),
-      G => \douta_reg[31]_i_4_2\(0),
+      D => \w_data_reg_n_0_[10]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(2)
+      Q => \cm_palette[7]_7\(10)
     );
-\palette_new_reg[6][30]\: unisim.vcomponents.LDCE
+\palette_reg[7][11]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(30),
-      G => \douta_reg[31]_i_4_2\(3),
+      D => \w_data_reg_n_0_[11]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(30)
+      Q => \cm_palette[7]_7\(11)
     );
-\palette_new_reg[6][31]\: unisim.vcomponents.LDCE
+\palette_reg[7][12]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(31),
-      G => \douta_reg[31]_i_4_2\(3),
+      D => \w_data_reg_n_0_[12]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(31)
+      Q => \cm_palette[7]_7\(12)
     );
-\palette_new_reg[6][3]\: unisim.vcomponents.LDCE
+\palette_reg[7][13]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(3),
-      G => \douta_reg[31]_i_4_2\(0),
+      D => \w_data_reg_n_0_[13]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(3)
+      Q => \cm_palette[7]_7\(13)
     );
-\palette_new_reg[6][4]\: unisim.vcomponents.LDCE
+\palette_reg[7][14]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(4),
-      G => \douta_reg[31]_i_4_2\(0),
+      D => \w_data_reg_n_0_[14]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(4)
+      Q => \cm_palette[7]_7\(14)
     );
-\palette_new_reg[6][5]\: unisim.vcomponents.LDCE
+\palette_reg[7][15]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(5),
-      G => \douta_reg[31]_i_4_2\(0),
+      D => \w_data_reg_n_0_[15]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(5)
+      Q => \cm_palette[7]_7\(15)
     );
-\palette_new_reg[6][6]\: unisim.vcomponents.LDCE
+\palette_reg[7][16]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(6),
-      G => \douta_reg[31]_i_4_2\(0),
+      D => \w_data_reg_n_0_[16]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(6)
+      Q => \cm_palette[7]_7\(16)
     );
-\palette_new_reg[6][7]\: unisim.vcomponents.LDCE
+\palette_reg[7][17]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(7),
-      G => \douta_reg[31]_i_4_2\(0),
+      D => \w_data_reg_n_0_[17]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(7)
+      Q => \cm_palette[7]_7\(17)
     );
-\palette_new_reg[6][8]\: unisim.vcomponents.LDCE
+\palette_reg[7][18]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(8),
-      G => \douta_reg[31]_i_4_2\(1),
+      D => \w_data_reg_n_0_[18]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(8)
+      Q => \cm_palette[7]_7\(18)
     );
-\palette_new_reg[6][9]\: unisim.vcomponents.LDCE
+\palette_reg[7][19]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(9),
-      G => \douta_reg[31]_i_4_2\(1),
+      D => \w_data_reg_n_0_[19]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[6]_6\(9)
+      Q => \cm_palette[7]_7\(19)
     );
-\palette_new_reg[7][0]\: unisim.vcomponents.LDCE
+\palette_reg[7][1]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(0),
-      G => \douta_reg[31]_i_4_3\(0),
+      D => \w_data_reg_n_0_[1]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(0)
+      Q => \cm_palette[7]_7\(1)
     );
-\palette_new_reg[7][10]\: unisim.vcomponents.LDCE
+\palette_reg[7][20]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(10),
-      G => \douta_reg[31]_i_4_3\(1),
+      D => \w_data_reg_n_0_[20]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(10)
+      Q => \cm_palette[7]_7\(20)
     );
-\palette_new_reg[7][11]\: unisim.vcomponents.LDCE
+\palette_reg[7][21]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(11),
-      G => \douta_reg[31]_i_4_3\(1),
+      D => \w_data_reg_n_0_[21]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(11)
+      Q => \cm_palette[7]_7\(21)
     );
-\palette_new_reg[7][12]\: unisim.vcomponents.LDCE
+\palette_reg[7][22]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(12),
-      G => \douta_reg[31]_i_4_3\(1),
+      D => \w_data_reg_n_0_[22]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(12)
+      Q => \cm_palette[7]_7\(22)
     );
-\palette_new_reg[7][13]\: unisim.vcomponents.LDCE
+\palette_reg[7][23]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(13),
-      G => \douta_reg[31]_i_4_3\(1),
+      D => \w_data_reg_n_0_[23]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(13)
+      Q => \cm_palette[7]_7\(23)
     );
-\palette_new_reg[7][14]\: unisim.vcomponents.LDCE
+\palette_reg[7][24]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(14),
-      G => \douta_reg[31]_i_4_3\(1),
+      D => \w_data_reg_n_0_[24]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(14)
+      Q => \cm_palette[7]_7\(24)
     );
-\palette_new_reg[7][15]\: unisim.vcomponents.LDCE
+\palette_reg[7][25]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(15),
-      G => \douta_reg[31]_i_4_3\(1),
+      D => \w_data_reg_n_0_[25]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(15)
+      Q => \cm_palette[7]_7\(25)
     );
-\palette_new_reg[7][16]\: unisim.vcomponents.LDCE
+\palette_reg[7][26]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(16),
-      G => \douta_reg[31]_i_4_3\(2),
+      D => \w_data_reg_n_0_[26]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(16)
+      Q => \cm_palette[7]_7\(26)
     );
-\palette_new_reg[7][17]\: unisim.vcomponents.LDCE
+\palette_reg[7][27]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(17),
-      G => \douta_reg[31]_i_4_3\(2),
+      D => \w_data_reg_n_0_[27]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(17)
+      Q => \cm_palette[7]_7\(27)
     );
-\palette_new_reg[7][18]\: unisim.vcomponents.LDCE
+\palette_reg[7][28]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(18),
-      G => \douta_reg[31]_i_4_3\(2),
+      D => \w_data_reg_n_0_[28]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(18)
+      Q => \cm_palette[7]_7\(28)
     );
-\palette_new_reg[7][19]\: unisim.vcomponents.LDCE
+\palette_reg[7][29]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(19),
-      G => \douta_reg[31]_i_4_3\(2),
+      D => \w_data_reg_n_0_[29]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(19)
+      Q => \cm_palette[7]_7\(29)
     );
-\palette_new_reg[7][1]\: unisim.vcomponents.LDCE
+\palette_reg[7][2]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(1),
-      G => \douta_reg[31]_i_4_3\(0),
+      D => \w_data_reg_n_0_[2]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(1)
+      Q => \cm_palette[7]_7\(2)
     );
-\palette_new_reg[7][20]\: unisim.vcomponents.LDCE
+\palette_reg[7][30]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(20),
-      G => \douta_reg[31]_i_4_3\(2),
+      D => \w_data_reg_n_0_[30]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(20)
+      Q => \cm_palette[7]_7\(30)
     );
-\palette_new_reg[7][21]\: unisim.vcomponents.LDCE
+\palette_reg[7][31]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(21),
-      G => \douta_reg[31]_i_4_3\(2),
+      D => \w_data_reg_n_0_[31]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(21)
+      Q => \cm_palette[7]_7\(31)
+    );
+\palette_reg[7][31]_i_1\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"08"
+    )
+        port map (
+      I0 => sel0(1),
+      I1 => sel0(0),
+      I2 => \palette_reg[4][31]_i_2_n_0\,
+      O => \palette_reg[7][31]_i_1_n_0\
     );
-\palette_new_reg[7][22]\: unisim.vcomponents.LDCE
+\palette_reg[7][3]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(22),
-      G => \douta_reg[31]_i_4_3\(2),
+      D => \w_data_reg_n_0_[3]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(22)
+      Q => \cm_palette[7]_7\(3)
     );
-\palette_new_reg[7][23]\: unisim.vcomponents.LDCE
+\palette_reg[7][4]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(23),
-      G => \douta_reg[31]_i_4_3\(2),
+      D => \w_data_reg_n_0_[4]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(23)
+      Q => \cm_palette[7]_7\(4)
     );
-\palette_new_reg[7][24]\: unisim.vcomponents.LDCE
+\palette_reg[7][5]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(24),
-      G => \douta_reg[31]_i_4_3\(3),
+      D => \w_data_reg_n_0_[5]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(24)
+      Q => \cm_palette[7]_7\(5)
     );
-\palette_new_reg[7][25]\: unisim.vcomponents.LDCE
+\palette_reg[7][6]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(25),
-      G => \douta_reg[31]_i_4_3\(3),
+      D => \w_data_reg_n_0_[6]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(25)
+      Q => \cm_palette[7]_7\(6)
     );
-\palette_new_reg[7][26]\: unisim.vcomponents.LDCE
+\palette_reg[7][7]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(26),
-      G => \douta_reg[31]_i_4_3\(3),
+      D => \w_data_reg_n_0_[7]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(26)
+      Q => \cm_palette[7]_7\(7)
     );
-\palette_new_reg[7][27]\: unisim.vcomponents.LDCE
+\palette_reg[7][8]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(27),
-      G => \douta_reg[31]_i_4_3\(3),
+      D => \w_data_reg_n_0_[8]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(27)
+      Q => \cm_palette[7]_7\(8)
     );
-\palette_new_reg[7][28]\: unisim.vcomponents.LDCE
+\palette_reg[7][9]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(28),
-      G => \douta_reg[31]_i_4_3\(3),
+      D => \w_data_reg_n_0_[9]\,
+      G => \palette_reg[7][31]_i_1_n_0\,
       GE => '1',
-      Q => \palette[7]_7\(28)
+      Q => \cm_palette[7]_7\(9)
     );
-\palette_new_reg[7][29]\: unisim.vcomponents.LDCE
+\r_data_reg[0]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(29),
-      G => \douta_reg[31]_i_4_3\(3),
+      D => \r_data_reg[0]_i_1_n_0\,
+      G => \r_data__0\,
       GE => '1',
-      Q => \palette[7]_7\(29)
+      Q => r_data(0)
+    );
+\r_data_reg[0]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(0),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[0]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[0]_i_3_n_0\,
+      O => \r_data_reg[0]_i_1_n_0\
+    );
+\r_data_reg[0]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(0),
+      I1 => \cm_palette[6]_6\(0),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(0),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(0),
+      O => \r_data_reg[0]_i_2_n_0\
+    );
+\r_data_reg[0]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(0),
+      I1 => \cm_palette[2]_2\(0),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(0),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(0),
+      O => \r_data_reg[0]_i_3_n_0\
     );
-\palette_new_reg[7][2]\: unisim.vcomponents.LDCE
+\r_data_reg[10]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(2),
-      G => \douta_reg[31]_i_4_3\(0),
+      D => \r_data_reg[10]_i_1_n_0\,
+      G => \r_data__0\,
       GE => '1',
-      Q => \palette[7]_7\(2)
+      Q => r_data(10)
+    );
+\r_data_reg[10]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(10),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[10]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[10]_i_3_n_0\,
+      O => \r_data_reg[10]_i_1_n_0\
+    );
+\r_data_reg[10]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(10),
+      I1 => \cm_palette[6]_6\(10),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(10),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(10),
+      O => \r_data_reg[10]_i_2_n_0\
+    );
+\r_data_reg[10]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(10),
+      I1 => \cm_palette[2]_2\(10),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(10),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(10),
+      O => \r_data_reg[10]_i_3_n_0\
     );
-\palette_new_reg[7][30]\: unisim.vcomponents.LDCE
+\r_data_reg[11]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(30),
-      G => \douta_reg[31]_i_4_3\(3),
+      D => \r_data_reg[11]_i_1_n_0\,
+      G => \r_data__0\,
       GE => '1',
-      Q => \palette[7]_7\(30)
+      Q => r_data(11)
+    );
+\r_data_reg[11]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(11),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[11]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[11]_i_3_n_0\,
+      O => \r_data_reg[11]_i_1_n_0\
+    );
+\r_data_reg[11]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(11),
+      I1 => \cm_palette[6]_6\(11),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(11),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(11),
+      O => \r_data_reg[11]_i_2_n_0\
+    );
+\r_data_reg[11]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(11),
+      I1 => \cm_palette[2]_2\(11),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(11),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(11),
+      O => \r_data_reg[11]_i_3_n_0\
     );
-\palette_new_reg[7][31]\: unisim.vcomponents.LDCE
+\r_data_reg[12]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(31),
-      G => \douta_reg[31]_i_4_3\(3),
+      D => \r_data_reg[12]_i_1_n_0\,
+      G => \r_data__0\,
       GE => '1',
-      Q => \palette[7]_7\(31)
+      Q => r_data(12)
+    );
+\r_data_reg[12]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(12),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[12]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[12]_i_3_n_0\,
+      O => \r_data_reg[12]_i_1_n_0\
+    );
+\r_data_reg[12]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(12),
+      I1 => \cm_palette[6]_6\(12),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(12),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(12),
+      O => \r_data_reg[12]_i_2_n_0\
+    );
+\r_data_reg[12]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(12),
+      I1 => \cm_palette[2]_2\(12),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(12),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(12),
+      O => \r_data_reg[12]_i_3_n_0\
     );
-\palette_new_reg[7][3]\: unisim.vcomponents.LDCE
+\r_data_reg[13]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(3),
-      G => \douta_reg[31]_i_4_3\(0),
+      D => \r_data_reg[13]_i_1_n_0\,
+      G => \r_data__0\,
       GE => '1',
-      Q => \palette[7]_7\(3)
+      Q => r_data(13)
+    );
+\r_data_reg[13]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(13),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[13]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[13]_i_3_n_0\,
+      O => \r_data_reg[13]_i_1_n_0\
+    );
+\r_data_reg[13]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(13),
+      I1 => \cm_palette[6]_6\(13),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(13),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(13),
+      O => \r_data_reg[13]_i_2_n_0\
+    );
+\r_data_reg[13]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(13),
+      I1 => \cm_palette[2]_2\(13),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(13),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(13),
+      O => \r_data_reg[13]_i_3_n_0\
     );
-\palette_new_reg[7][4]\: unisim.vcomponents.LDCE
+\r_data_reg[14]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(4),
-      G => \douta_reg[31]_i_4_3\(0),
+      D => \r_data_reg[14]_i_1_n_0\,
+      G => \r_data__0\,
       GE => '1',
-      Q => \palette[7]_7\(4)
+      Q => r_data(14)
+    );
+\r_data_reg[14]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(14),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[14]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[14]_i_3_n_0\,
+      O => \r_data_reg[14]_i_1_n_0\
+    );
+\r_data_reg[14]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(14),
+      I1 => \cm_palette[6]_6\(14),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(14),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(14),
+      O => \r_data_reg[14]_i_2_n_0\
+    );
+\r_data_reg[14]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(14),
+      I1 => \cm_palette[2]_2\(14),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(14),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(14),
+      O => \r_data_reg[14]_i_3_n_0\
     );
-\palette_new_reg[7][5]\: unisim.vcomponents.LDCE
+\r_data_reg[15]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(5),
-      G => \douta_reg[31]_i_4_3\(0),
+      D => \r_data_reg[15]_i_1_n_0\,
+      G => \r_data__0\,
       GE => '1',
-      Q => \palette[7]_7\(5)
+      Q => r_data(15)
+    );
+\r_data_reg[15]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(15),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[15]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[15]_i_3_n_0\,
+      O => \r_data_reg[15]_i_1_n_0\
+    );
+\r_data_reg[15]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(15),
+      I1 => \cm_palette[6]_6\(15),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(15),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(15),
+      O => \r_data_reg[15]_i_2_n_0\
+    );
+\r_data_reg[15]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(15),
+      I1 => \cm_palette[2]_2\(15),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(15),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(15),
+      O => \r_data_reg[15]_i_3_n_0\
     );
-\palette_new_reg[7][6]\: unisim.vcomponents.LDCE
+\r_data_reg[16]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(6),
-      G => \douta_reg[31]_i_4_3\(0),
+      D => \r_data_reg[16]_i_1_n_0\,
+      G => \r_data__0\,
       GE => '1',
-      Q => \palette[7]_7\(6)
+      Q => r_data(16)
+    );
+\r_data_reg[16]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(16),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[16]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[16]_i_3_n_0\,
+      O => \r_data_reg[16]_i_1_n_0\
+    );
+\r_data_reg[16]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(16),
+      I1 => \cm_palette[6]_6\(16),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(16),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(16),
+      O => \r_data_reg[16]_i_2_n_0\
+    );
+\r_data_reg[16]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(16),
+      I1 => \cm_palette[2]_2\(16),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(16),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(16),
+      O => \r_data_reg[16]_i_3_n_0\
     );
-\palette_new_reg[7][7]\: unisim.vcomponents.LDCE
+\r_data_reg[17]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(7),
-      G => \douta_reg[31]_i_4_3\(0),
+      D => \r_data_reg[17]_i_1_n_0\,
+      G => \r_data__0\,
       GE => '1',
-      Q => \palette[7]_7\(7)
+      Q => r_data(17)
+    );
+\r_data_reg[17]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(17),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[17]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[17]_i_3_n_0\,
+      O => \r_data_reg[17]_i_1_n_0\
+    );
+\r_data_reg[17]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(17),
+      I1 => \cm_palette[6]_6\(17),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(17),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(17),
+      O => \r_data_reg[17]_i_2_n_0\
+    );
+\r_data_reg[17]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(17),
+      I1 => \cm_palette[2]_2\(17),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(17),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(17),
+      O => \r_data_reg[17]_i_3_n_0\
     );
-\palette_new_reg[7][8]\: unisim.vcomponents.LDCE
+\r_data_reg[18]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(8),
-      G => \douta_reg[31]_i_4_3\(1),
+      D => \r_data_reg[18]_i_1_n_0\,
+      G => \r_data__0\,
       GE => '1',
-      Q => \palette[7]_7\(8)
+      Q => r_data(18)
+    );
+\r_data_reg[18]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(18),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[18]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[18]_i_3_n_0\,
+      O => \r_data_reg[18]_i_1_n_0\
+    );
+\r_data_reg[18]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(18),
+      I1 => \cm_palette[6]_6\(18),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(18),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(18),
+      O => \r_data_reg[18]_i_2_n_0\
+    );
+\r_data_reg[18]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(18),
+      I1 => \cm_palette[2]_2\(18),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(18),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(18),
+      O => \r_data_reg[18]_i_3_n_0\
     );
-\palette_new_reg[7][9]\: unisim.vcomponents.LDCE
+\r_data_reg[19]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(9),
-      G => \douta_reg[31]_i_4_3\(1),
+      D => \r_data_reg[19]_i_1_n_0\,
+      G => \r_data__0\,
       GE => '1',
-      Q => \palette[7]_7\(9)
+      Q => r_data(19)
+    );
+\r_data_reg[19]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(19),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[19]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[19]_i_3_n_0\,
+      O => \r_data_reg[19]_i_1_n_0\
+    );
+\r_data_reg[19]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(19),
+      I1 => \cm_palette[6]_6\(19),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(19),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(19),
+      O => \r_data_reg[19]_i_2_n_0\
+    );
+\r_data_reg[19]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(19),
+      I1 => \cm_palette[2]_2\(19),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(19),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(19),
+      O => \r_data_reg[19]_i_3_n_0\
+    );
+\r_data_reg[1]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[1]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(1)
+    );
+\r_data_reg[1]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(1),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[1]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[1]_i_3_n_0\,
+      O => \r_data_reg[1]_i_1_n_0\
+    );
+\r_data_reg[1]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(1),
+      I1 => \cm_palette[6]_6\(1),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(1),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(1),
+      O => \r_data_reg[1]_i_2_n_0\
+    );
+\r_data_reg[1]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(1),
+      I1 => \cm_palette[2]_2\(1),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(1),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(1),
+      O => \r_data_reg[1]_i_3_n_0\
+    );
+\r_data_reg[20]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[20]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(20)
+    );
+\r_data_reg[20]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(20),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[20]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[20]_i_3_n_0\,
+      O => \r_data_reg[20]_i_1_n_0\
+    );
+\r_data_reg[20]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(20),
+      I1 => \cm_palette[6]_6\(20),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(20),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(20),
+      O => \r_data_reg[20]_i_2_n_0\
+    );
+\r_data_reg[20]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(20),
+      I1 => \cm_palette[2]_2\(20),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(20),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(20),
+      O => \r_data_reg[20]_i_3_n_0\
+    );
+\r_data_reg[21]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[21]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(21)
+    );
+\r_data_reg[21]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(21),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[21]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[21]_i_3_n_0\,
+      O => \r_data_reg[21]_i_1_n_0\
+    );
+\r_data_reg[21]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(21),
+      I1 => \cm_palette[6]_6\(21),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(21),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(21),
+      O => \r_data_reg[21]_i_2_n_0\
+    );
+\r_data_reg[21]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(21),
+      I1 => \cm_palette[2]_2\(21),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(21),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(21),
+      O => \r_data_reg[21]_i_3_n_0\
+    );
+\r_data_reg[22]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[22]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(22)
+    );
+\r_data_reg[22]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(22),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[22]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[22]_i_3_n_0\,
+      O => \r_data_reg[22]_i_1_n_0\
+    );
+\r_data_reg[22]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(22),
+      I1 => \cm_palette[6]_6\(22),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(22),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(22),
+      O => \r_data_reg[22]_i_2_n_0\
+    );
+\r_data_reg[22]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(22),
+      I1 => \cm_palette[2]_2\(22),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(22),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(22),
+      O => \r_data_reg[22]_i_3_n_0\
+    );
+\r_data_reg[23]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[23]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(23)
+    );
+\r_data_reg[23]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(23),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[23]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[23]_i_3_n_0\,
+      O => \r_data_reg[23]_i_1_n_0\
+    );
+\r_data_reg[23]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(23),
+      I1 => \cm_palette[6]_6\(23),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(23),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(23),
+      O => \r_data_reg[23]_i_2_n_0\
+    );
+\r_data_reg[23]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(23),
+      I1 => \cm_palette[2]_2\(23),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(23),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(23),
+      O => \r_data_reg[23]_i_3_n_0\
+    );
+\r_data_reg[24]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[24]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(24)
+    );
+\r_data_reg[24]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(24),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[24]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[24]_i_3_n_0\,
+      O => \r_data_reg[24]_i_1_n_0\
+    );
+\r_data_reg[24]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(24),
+      I1 => \cm_palette[6]_6\(24),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(24),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(24),
+      O => \r_data_reg[24]_i_2_n_0\
+    );
+\r_data_reg[24]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(24),
+      I1 => \cm_palette[2]_2\(24),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(24),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(24),
+      O => \r_data_reg[24]_i_3_n_0\
+    );
+\r_data_reg[25]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[25]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(25)
+    );
+\r_data_reg[25]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(25),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[25]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[25]_i_3_n_0\,
+      O => \r_data_reg[25]_i_1_n_0\
+    );
+\r_data_reg[25]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(25),
+      I1 => \cm_palette[6]_6\(25),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(25),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(25),
+      O => \r_data_reg[25]_i_2_n_0\
+    );
+\r_data_reg[25]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(25),
+      I1 => \cm_palette[2]_2\(25),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(25),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(25),
+      O => \r_data_reg[25]_i_3_n_0\
+    );
+\r_data_reg[26]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[26]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(26)
+    );
+\r_data_reg[26]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(26),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[26]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[26]_i_3_n_0\,
+      O => \r_data_reg[26]_i_1_n_0\
+    );
+\r_data_reg[26]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(26),
+      I1 => \cm_palette[6]_6\(26),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(26),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(26),
+      O => \r_data_reg[26]_i_2_n_0\
+    );
+\r_data_reg[26]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(26),
+      I1 => \cm_palette[2]_2\(26),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(26),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(26),
+      O => \r_data_reg[26]_i_3_n_0\
+    );
+\r_data_reg[27]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[27]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(27)
+    );
+\r_data_reg[27]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(27),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[27]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[27]_i_3_n_0\,
+      O => \r_data_reg[27]_i_1_n_0\
+    );
+\r_data_reg[27]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(27),
+      I1 => \cm_palette[6]_6\(27),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(27),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(27),
+      O => \r_data_reg[27]_i_2_n_0\
+    );
+\r_data_reg[27]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(27),
+      I1 => \cm_palette[2]_2\(27),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(27),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(27),
+      O => \r_data_reg[27]_i_3_n_0\
+    );
+\r_data_reg[28]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[28]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(28)
+    );
+\r_data_reg[28]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(28),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[28]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[28]_i_3_n_0\,
+      O => \r_data_reg[28]_i_1_n_0\
+    );
+\r_data_reg[28]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(28),
+      I1 => \cm_palette[6]_6\(28),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(28),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(28),
+      O => \r_data_reg[28]_i_2_n_0\
+    );
+\r_data_reg[28]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(28),
+      I1 => \cm_palette[2]_2\(28),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(28),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(28),
+      O => \r_data_reg[28]_i_3_n_0\
+    );
+\r_data_reg[29]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[29]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(29)
+    );
+\r_data_reg[29]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(29),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[29]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[29]_i_3_n_0\,
+      O => \r_data_reg[29]_i_1_n_0\
+    );
+\r_data_reg[29]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(29),
+      I1 => \cm_palette[6]_6\(29),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(29),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(29),
+      O => \r_data_reg[29]_i_2_n_0\
+    );
+\r_data_reg[29]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(29),
+      I1 => \cm_palette[2]_2\(29),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(29),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(29),
+      O => \r_data_reg[29]_i_3_n_0\
+    );
+\r_data_reg[2]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[2]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(2)
+    );
+\r_data_reg[2]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(2),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[2]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[2]_i_3_n_0\,
+      O => \r_data_reg[2]_i_1_n_0\
+    );
+\r_data_reg[2]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(2),
+      I1 => \cm_palette[6]_6\(2),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(2),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(2),
+      O => \r_data_reg[2]_i_2_n_0\
+    );
+\r_data_reg[2]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(2),
+      I1 => \cm_palette[2]_2\(2),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(2),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(2),
+      O => \r_data_reg[2]_i_3_n_0\
+    );
+\r_data_reg[30]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[30]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(30)
+    );
+\r_data_reg[30]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(30),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[30]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[30]_i_3_n_0\,
+      O => \r_data_reg[30]_i_1_n_0\
+    );
+\r_data_reg[30]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(30),
+      I1 => \cm_palette[6]_6\(30),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(30),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(30),
+      O => \r_data_reg[30]_i_2_n_0\
+    );
+\r_data_reg[30]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(30),
+      I1 => \cm_palette[2]_2\(30),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(30),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(30),
+      O => \r_data_reg[30]_i_3_n_0\
+    );
+\r_data_reg[31]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[31]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(31)
+    );
+\r_data_reg[31]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(31),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[31]_i_3_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[31]_i_4_n_0\,
+      O => \r_data_reg[31]_i_1_n_0\
+    );
+\r_data_reg[31]_i_2\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"2AAAAAAA"
+    )
+        port map (
+      I0 => slv_reg_rden,
+      I1 => \^axi_wready_reg_0\,
+      I2 => \^axi_awready_reg_0\,
+      I3 => axi_wvalid,
+      I4 => axi_awvalid,
+      O => \r_data__0\
+    );
+\r_data_reg[31]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(31),
+      I1 => \cm_palette[6]_6\(31),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(31),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(31),
+      O => \r_data_reg[31]_i_3_n_0\
+    );
+\r_data_reg[31]_i_4\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(31),
+      I1 => \cm_palette[2]_2\(31),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(31),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(31),
+      O => \r_data_reg[31]_i_4_n_0\
+    );
+\r_data_reg[3]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[3]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(3)
+    );
+\r_data_reg[3]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(3),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[3]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[3]_i_3_n_0\,
+      O => \r_data_reg[3]_i_1_n_0\
+    );
+\r_data_reg[3]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(3),
+      I1 => \cm_palette[6]_6\(3),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(3),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(3),
+      O => \r_data_reg[3]_i_2_n_0\
+    );
+\r_data_reg[3]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(3),
+      I1 => \cm_palette[2]_2\(3),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(3),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(3),
+      O => \r_data_reg[3]_i_3_n_0\
+    );
+\r_data_reg[4]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[4]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(4)
+    );
+\r_data_reg[4]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(4),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[4]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[4]_i_3_n_0\,
+      O => \r_data_reg[4]_i_1_n_0\
+    );
+\r_data_reg[4]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(4),
+      I1 => \cm_palette[6]_6\(4),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(4),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(4),
+      O => \r_data_reg[4]_i_2_n_0\
+    );
+\r_data_reg[4]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(4),
+      I1 => \cm_palette[2]_2\(4),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(4),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(4),
+      O => \r_data_reg[4]_i_3_n_0\
+    );
+\r_data_reg[5]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[5]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(5)
+    );
+\r_data_reg[5]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(5),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[5]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[5]_i_3_n_0\,
+      O => \r_data_reg[5]_i_1_n_0\
+    );
+\r_data_reg[5]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(5),
+      I1 => \cm_palette[6]_6\(5),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(5),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(5),
+      O => \r_data_reg[5]_i_2_n_0\
+    );
+\r_data_reg[5]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(5),
+      I1 => \cm_palette[2]_2\(5),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(5),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(5),
+      O => \r_data_reg[5]_i_3_n_0\
+    );
+\r_data_reg[6]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[6]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(6)
+    );
+\r_data_reg[6]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(6),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[6]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[6]_i_3_n_0\,
+      O => \r_data_reg[6]_i_1_n_0\
+    );
+\r_data_reg[6]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(6),
+      I1 => \cm_palette[6]_6\(6),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(6),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(6),
+      O => \r_data_reg[6]_i_2_n_0\
+    );
+\r_data_reg[6]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(6),
+      I1 => \cm_palette[2]_2\(6),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(6),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(6),
+      O => \r_data_reg[6]_i_3_n_0\
+    );
+\r_data_reg[7]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[7]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(7)
+    );
+\r_data_reg[7]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(7),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[7]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[7]_i_3_n_0\,
+      O => \r_data_reg[7]_i_1_n_0\
+    );
+\r_data_reg[7]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(7),
+      I1 => \cm_palette[6]_6\(7),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(7),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(7),
+      O => \r_data_reg[7]_i_2_n_0\
+    );
+\r_data_reg[7]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(7),
+      I1 => \cm_palette[2]_2\(7),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(7),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(7),
+      O => \r_data_reg[7]_i_3_n_0\
+    );
+\r_data_reg[8]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[8]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(8)
+    );
+\r_data_reg[8]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(8),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[8]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[8]_i_3_n_0\,
+      O => \r_data_reg[8]_i_1_n_0\
+    );
+\r_data_reg[8]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(8),
+      I1 => \cm_palette[6]_6\(8),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(8),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(8),
+      O => \r_data_reg[8]_i_2_n_0\
+    );
+\r_data_reg[8]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(8),
+      I1 => \cm_palette[2]_2\(8),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(8),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(8),
+      O => \r_data_reg[8]_i_3_n_0\
+    );
+\r_data_reg[9]\: unisim.vcomponents.LDCE
+    generic map(
+      INIT => '0'
+    )
+        port map (
+      CLR => '0',
+      D => \r_data_reg[9]_i_1_n_0\,
+      G => \r_data__0\,
+      GE => '1',
+      Q => r_data(9)
+    );
+\r_data_reg[9]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"EA2AEAEAEA2A2A2A"
+    )
+        port map (
+      I0 => douta(9),
+      I1 => p_0_in4_in,
+      I2 => slv_reg_rden,
+      I3 => \r_data_reg[9]_i_2_n_0\,
+      I4 => sel0(2),
+      I5 => \r_data_reg[9]_i_3_n_0\,
+      O => \r_data_reg[9]_i_1_n_0\
+    );
+\r_data_reg[9]_i_2\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[7]_7\(9),
+      I1 => \cm_palette[6]_6\(9),
+      I2 => sel0(1),
+      I3 => \cm_palette[5]_5\(9),
+      I4 => sel0(0),
+      I5 => \cm_palette[4]_4\(9),
+      O => \r_data_reg[9]_i_2_n_0\
+    );
+\r_data_reg[9]_i_3\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => \cm_palette[3]_3\(9),
+      I1 => \cm_palette[2]_2\(9),
+      I2 => sel0(1),
+      I3 => \cm_palette[1]_1\(9),
+      I4 => sel0(0),
+      I5 => \cm_palette[0]_0\(9),
+      O => \r_data_reg[9]_i_3_n_0\
+    );
+vga_to_hdmi_i_1: unisim.vcomponents.LUT1
+    generic map(
+      INIT => X"1"
+    )
+        port map (
+      I0 => axi_aresetn,
+      O => \^p_0_in\
     );
 vga_to_hdmi_i_10: unisim.vcomponents.LUT6
     generic map(
@@ -22277,7 +21016,7 @@ vga_to_hdmi_i_10: unisim.vcomponents.LUT6
     )
         port map (
       I0 => vga_to_hdmi_i_34_n_0,
-      I1 => doutb(15),
+      I1 => cm_data(15),
       I2 => \srl[36].srl16_i\,
       I3 => \srl[36].srl16_i_0\,
       I4 => \srl[36].srl16_i_1\,
@@ -22289,26 +21028,13 @@ vga_to_hdmi_i_100: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(24),
-      I1 => \palette[6]_6\(24),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(24),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(24),
+      I0 => \cm_palette[7]_7\(24),
+      I1 => \cm_palette[6]_6\(24),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(24),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(24),
       O => vga_to_hdmi_i_100_n_0
-    );
-vga_to_hdmi_i_102: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"AFA0CFCFAFA0C0C0"
-    )
-        port map (
-      I0 => vga_to_hdmi_i_45,
-      I1 => vga_to_hdmi_i_45_0,
-      I2 => \^q\(6),
-      I3 => vga_to_hdmi_i_219_n_0,
-      I4 => \^q\(5),
-      I5 => vga_to_hdmi_i_220_n_0,
-      O => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram\
     );
 vga_to_hdmi_i_11: unisim.vcomponents.LUT6
     generic map(
@@ -22316,12 +21042,25 @@ vga_to_hdmi_i_11: unisim.vcomponents.LUT6
     )
         port map (
       I0 => vga_to_hdmi_i_36_n_0,
-      I1 => doutb(15),
+      I1 => cm_data(15),
       I2 => \srl[36].srl16_i\,
       I3 => \srl[36].srl16_i_0\,
       I4 => \srl[36].srl16_i_1\,
       I5 => vga_to_hdmi_i_37_n_0,
       O => blue(2)
+    );
+vga_to_hdmi_i_118: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"AFA0CFCFAFA0C0C0"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_49,
+      I1 => vga_to_hdmi_i_49_0,
+      I2 => \^doutb\(6),
+      I3 => vga_to_hdmi_i_271_n_0,
+      I4 => \^doutb\(5),
+      I5 => vga_to_hdmi_i_272_n_0,
+      O => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram\
     );
 vga_to_hdmi_i_12: unisim.vcomponents.LUT6
     generic map(
@@ -22329,7 +21068,7 @@ vga_to_hdmi_i_12: unisim.vcomponents.LUT6
     )
         port map (
       I0 => vga_to_hdmi_i_38_n_0,
-      I1 => doutb(15),
+      I1 => cm_data(15),
       I2 => \srl[36].srl16_i\,
       I3 => \srl[36].srl16_i_0\,
       I4 => \srl[36].srl16_i_1\,
@@ -22341,12 +21080,12 @@ vga_to_hdmi_i_121: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(12),
-      I1 => \palette[2]_2\(12),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(12),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(12),
+      I0 => \cm_palette[3]_3\(12),
+      I1 => \cm_palette[2]_2\(12),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(12),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(12),
       O => vga_to_hdmi_i_121_n_0
     );
 vga_to_hdmi_i_122: unisim.vcomponents.LUT6
@@ -22354,12 +21093,12 @@ vga_to_hdmi_i_122: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(12),
-      I1 => \palette[6]_6\(12),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(12),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(12),
+      I0 => \cm_palette[7]_7\(12),
+      I1 => \cm_palette[6]_6\(12),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(12),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(12),
       O => vga_to_hdmi_i_122_n_0
     );
 vga_to_hdmi_i_123: unisim.vcomponents.LUT6
@@ -22367,12 +21106,12 @@ vga_to_hdmi_i_123: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(24),
-      I1 => \palette[2]_2\(24),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(24),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(24),
+      I0 => \cm_palette[3]_3\(24),
+      I1 => \cm_palette[2]_2\(24),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(24),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(24),
       O => vga_to_hdmi_i_123_n_0
     );
 vga_to_hdmi_i_124: unisim.vcomponents.LUT6
@@ -22380,12 +21119,12 @@ vga_to_hdmi_i_124: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(24),
-      I1 => \palette[6]_6\(24),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(24),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(24),
+      I0 => \cm_palette[7]_7\(24),
+      I1 => \cm_palette[6]_6\(24),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(24),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(24),
       O => vga_to_hdmi_i_124_n_0
     );
 vga_to_hdmi_i_125: unisim.vcomponents.LUT6
@@ -22393,12 +21132,12 @@ vga_to_hdmi_i_125: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(11),
-      I1 => \palette[2]_2\(11),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(11),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(11),
+      I0 => \cm_palette[3]_3\(11),
+      I1 => \cm_palette[2]_2\(11),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(11),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(11),
       O => vga_to_hdmi_i_125_n_0
     );
 vga_to_hdmi_i_126: unisim.vcomponents.LUT6
@@ -22406,12 +21145,12 @@ vga_to_hdmi_i_126: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(11),
-      I1 => \palette[6]_6\(11),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(11),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(11),
+      I0 => \cm_palette[7]_7\(11),
+      I1 => \cm_palette[6]_6\(11),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(11),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(11),
       O => vga_to_hdmi_i_126_n_0
     );
 vga_to_hdmi_i_127: unisim.vcomponents.LUT6
@@ -22419,12 +21158,12 @@ vga_to_hdmi_i_127: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(23),
-      I1 => \palette[2]_2\(23),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(23),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(23),
+      I0 => \cm_palette[3]_3\(23),
+      I1 => \cm_palette[2]_2\(23),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(23),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(23),
       O => vga_to_hdmi_i_127_n_0
     );
 vga_to_hdmi_i_128: unisim.vcomponents.LUT6
@@ -22432,12 +21171,12 @@ vga_to_hdmi_i_128: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(23),
-      I1 => \palette[6]_6\(23),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(23),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(23),
+      I0 => \cm_palette[7]_7\(23),
+      I1 => \cm_palette[6]_6\(23),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(23),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(23),
       O => vga_to_hdmi_i_128_n_0
     );
 vga_to_hdmi_i_129: unisim.vcomponents.LUT6
@@ -22445,12 +21184,12 @@ vga_to_hdmi_i_129: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(11),
-      I1 => \palette[2]_2\(11),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(11),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(11),
+      I0 => \cm_palette[3]_3\(11),
+      I1 => \cm_palette[2]_2\(11),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(11),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(11),
       O => vga_to_hdmi_i_129_n_0
     );
 vga_to_hdmi_i_13: unisim.vcomponents.LUT6
@@ -22459,7 +21198,7 @@ vga_to_hdmi_i_13: unisim.vcomponents.LUT6
     )
         port map (
       I0 => vga_to_hdmi_i_40_n_0,
-      I1 => doutb(15),
+      I1 => cm_data(15),
       I2 => \srl[36].srl16_i\,
       I3 => \srl[36].srl16_i_0\,
       I4 => \srl[36].srl16_i_1\,
@@ -22471,12 +21210,12 @@ vga_to_hdmi_i_130: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(11),
-      I1 => \palette[6]_6\(11),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(11),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(11),
+      I0 => \cm_palette[7]_7\(11),
+      I1 => \cm_palette[6]_6\(11),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(11),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(11),
       O => vga_to_hdmi_i_130_n_0
     );
 vga_to_hdmi_i_131: unisim.vcomponents.LUT6
@@ -22484,12 +21223,12 @@ vga_to_hdmi_i_131: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(23),
-      I1 => \palette[2]_2\(23),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(23),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(23),
+      I0 => \cm_palette[3]_3\(23),
+      I1 => \cm_palette[2]_2\(23),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(23),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(23),
       O => vga_to_hdmi_i_131_n_0
     );
 vga_to_hdmi_i_132: unisim.vcomponents.LUT6
@@ -22497,12 +21236,12 @@ vga_to_hdmi_i_132: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(23),
-      I1 => \palette[6]_6\(23),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(23),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(23),
+      I0 => \cm_palette[7]_7\(23),
+      I1 => \cm_palette[6]_6\(23),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(23),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(23),
       O => vga_to_hdmi_i_132_n_0
     );
 vga_to_hdmi_i_133: unisim.vcomponents.LUT6
@@ -22510,12 +21249,12 @@ vga_to_hdmi_i_133: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(10),
-      I1 => \palette[2]_2\(10),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(10),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(10),
+      I0 => \cm_palette[3]_3\(10),
+      I1 => \cm_palette[2]_2\(10),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(10),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(10),
       O => vga_to_hdmi_i_133_n_0
     );
 vga_to_hdmi_i_134: unisim.vcomponents.LUT6
@@ -22523,12 +21262,12 @@ vga_to_hdmi_i_134: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(10),
-      I1 => \palette[6]_6\(10),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(10),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(10),
+      I0 => \cm_palette[7]_7\(10),
+      I1 => \cm_palette[6]_6\(10),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(10),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(10),
       O => vga_to_hdmi_i_134_n_0
     );
 vga_to_hdmi_i_135: unisim.vcomponents.LUT6
@@ -22536,12 +21275,12 @@ vga_to_hdmi_i_135: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(22),
-      I1 => \palette[2]_2\(22),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(22),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(22),
+      I0 => \cm_palette[3]_3\(22),
+      I1 => \cm_palette[2]_2\(22),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(22),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(22),
       O => vga_to_hdmi_i_135_n_0
     );
 vga_to_hdmi_i_136: unisim.vcomponents.LUT6
@@ -22549,12 +21288,12 @@ vga_to_hdmi_i_136: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(22),
-      I1 => \palette[6]_6\(22),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(22),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(22),
+      I0 => \cm_palette[7]_7\(22),
+      I1 => \cm_palette[6]_6\(22),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(22),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(22),
       O => vga_to_hdmi_i_136_n_0
     );
 vga_to_hdmi_i_137: unisim.vcomponents.LUT6
@@ -22562,12 +21301,12 @@ vga_to_hdmi_i_137: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(10),
-      I1 => \palette[2]_2\(10),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(10),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(10),
+      I0 => \cm_palette[3]_3\(10),
+      I1 => \cm_palette[2]_2\(10),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(10),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(10),
       O => vga_to_hdmi_i_137_n_0
     );
 vga_to_hdmi_i_138: unisim.vcomponents.LUT6
@@ -22575,12 +21314,12 @@ vga_to_hdmi_i_138: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(10),
-      I1 => \palette[6]_6\(10),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(10),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(10),
+      I0 => \cm_palette[7]_7\(10),
+      I1 => \cm_palette[6]_6\(10),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(10),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(10),
       O => vga_to_hdmi_i_138_n_0
     );
 vga_to_hdmi_i_139: unisim.vcomponents.LUT6
@@ -22588,12 +21327,12 @@ vga_to_hdmi_i_139: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(22),
-      I1 => \palette[2]_2\(22),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(22),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(22),
+      I0 => \cm_palette[3]_3\(22),
+      I1 => \cm_palette[2]_2\(22),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(22),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(22),
       O => vga_to_hdmi_i_139_n_0
     );
 vga_to_hdmi_i_140: unisim.vcomponents.LUT6
@@ -22601,12 +21340,12 @@ vga_to_hdmi_i_140: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(22),
-      I1 => \palette[6]_6\(22),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(22),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(22),
+      I0 => \cm_palette[7]_7\(22),
+      I1 => \cm_palette[6]_6\(22),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(22),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(22),
       O => vga_to_hdmi_i_140_n_0
     );
 vga_to_hdmi_i_141: unisim.vcomponents.LUT6
@@ -22614,12 +21353,12 @@ vga_to_hdmi_i_141: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(9),
-      I1 => \palette[2]_2\(9),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(9),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(9),
+      I0 => \cm_palette[3]_3\(9),
+      I1 => \cm_palette[2]_2\(9),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(9),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(9),
       O => vga_to_hdmi_i_141_n_0
     );
 vga_to_hdmi_i_142: unisim.vcomponents.LUT6
@@ -22627,12 +21366,12 @@ vga_to_hdmi_i_142: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(9),
-      I1 => \palette[6]_6\(9),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(9),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(9),
+      I0 => \cm_palette[7]_7\(9),
+      I1 => \cm_palette[6]_6\(9),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(9),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(9),
       O => vga_to_hdmi_i_142_n_0
     );
 vga_to_hdmi_i_143: unisim.vcomponents.LUT6
@@ -22640,12 +21379,12 @@ vga_to_hdmi_i_143: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(21),
-      I1 => \palette[2]_2\(21),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(21),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(21),
+      I0 => \cm_palette[3]_3\(21),
+      I1 => \cm_palette[2]_2\(21),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(21),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(21),
       O => vga_to_hdmi_i_143_n_0
     );
 vga_to_hdmi_i_144: unisim.vcomponents.LUT6
@@ -22653,12 +21392,12 @@ vga_to_hdmi_i_144: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(21),
-      I1 => \palette[6]_6\(21),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(21),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(21),
+      I0 => \cm_palette[7]_7\(21),
+      I1 => \cm_palette[6]_6\(21),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(21),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(21),
       O => vga_to_hdmi_i_144_n_0
     );
 vga_to_hdmi_i_145: unisim.vcomponents.LUT6
@@ -22666,12 +21405,12 @@ vga_to_hdmi_i_145: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(9),
-      I1 => \palette[2]_2\(9),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(9),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(9),
+      I0 => \cm_palette[3]_3\(9),
+      I1 => \cm_palette[2]_2\(9),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(9),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(9),
       O => vga_to_hdmi_i_145_n_0
     );
 vga_to_hdmi_i_146: unisim.vcomponents.LUT6
@@ -22679,12 +21418,12 @@ vga_to_hdmi_i_146: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(9),
-      I1 => \palette[6]_6\(9),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(9),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(9),
+      I0 => \cm_palette[7]_7\(9),
+      I1 => \cm_palette[6]_6\(9),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(9),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(9),
       O => vga_to_hdmi_i_146_n_0
     );
 vga_to_hdmi_i_147: unisim.vcomponents.LUT6
@@ -22692,12 +21431,12 @@ vga_to_hdmi_i_147: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(21),
-      I1 => \palette[2]_2\(21),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(21),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(21),
+      I0 => \cm_palette[3]_3\(21),
+      I1 => \cm_palette[2]_2\(21),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(21),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(21),
       O => vga_to_hdmi_i_147_n_0
     );
 vga_to_hdmi_i_148: unisim.vcomponents.LUT6
@@ -22705,12 +21444,12 @@ vga_to_hdmi_i_148: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(21),
-      I1 => \palette[6]_6\(21),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(21),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(21),
+      I0 => \cm_palette[7]_7\(21),
+      I1 => \cm_palette[6]_6\(21),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(21),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(21),
       O => vga_to_hdmi_i_148_n_0
     );
 vga_to_hdmi_i_149: unisim.vcomponents.LUT6
@@ -22718,12 +21457,12 @@ vga_to_hdmi_i_149: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(8),
-      I1 => \palette[2]_2\(8),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(8),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(8),
+      I0 => \cm_palette[3]_3\(8),
+      I1 => \cm_palette[2]_2\(8),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(8),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(8),
       O => vga_to_hdmi_i_149_n_0
     );
 vga_to_hdmi_i_15: unisim.vcomponents.MUXF8
@@ -22731,19 +21470,19 @@ vga_to_hdmi_i_15: unisim.vcomponents.MUXF8
       I0 => vga_to_hdmi_i_43_n_0,
       I1 => vga_to_hdmi_i_44_n_0,
       O => vga_to_hdmi_i_15_n_0,
-      S => doutb(0)
+      S => cm_data(0)
     );
 vga_to_hdmi_i_150: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(8),
-      I1 => \palette[6]_6\(8),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(8),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(8),
+      I0 => \cm_palette[7]_7\(8),
+      I1 => \cm_palette[6]_6\(8),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(8),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(8),
       O => vga_to_hdmi_i_150_n_0
     );
 vga_to_hdmi_i_151: unisim.vcomponents.LUT6
@@ -22751,12 +21490,12 @@ vga_to_hdmi_i_151: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(20),
-      I1 => \palette[2]_2\(20),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(20),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(20),
+      I0 => \cm_palette[3]_3\(20),
+      I1 => \cm_palette[2]_2\(20),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(20),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(20),
       O => vga_to_hdmi_i_151_n_0
     );
 vga_to_hdmi_i_152: unisim.vcomponents.LUT6
@@ -22764,12 +21503,12 @@ vga_to_hdmi_i_152: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(20),
-      I1 => \palette[6]_6\(20),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(20),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(20),
+      I0 => \cm_palette[7]_7\(20),
+      I1 => \cm_palette[6]_6\(20),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(20),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(20),
       O => vga_to_hdmi_i_152_n_0
     );
 vga_to_hdmi_i_153: unisim.vcomponents.LUT6
@@ -22777,12 +21516,12 @@ vga_to_hdmi_i_153: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(8),
-      I1 => \palette[2]_2\(8),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(8),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(8),
+      I0 => \cm_palette[3]_3\(8),
+      I1 => \cm_palette[2]_2\(8),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(8),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(8),
       O => vga_to_hdmi_i_153_n_0
     );
 vga_to_hdmi_i_154: unisim.vcomponents.LUT6
@@ -22790,12 +21529,12 @@ vga_to_hdmi_i_154: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(8),
-      I1 => \palette[6]_6\(8),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(8),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(8),
+      I0 => \cm_palette[7]_7\(8),
+      I1 => \cm_palette[6]_6\(8),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(8),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(8),
       O => vga_to_hdmi_i_154_n_0
     );
 vga_to_hdmi_i_155: unisim.vcomponents.LUT6
@@ -22803,12 +21542,12 @@ vga_to_hdmi_i_155: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(20),
-      I1 => \palette[2]_2\(20),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(20),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(20),
+      I0 => \cm_palette[3]_3\(20),
+      I1 => \cm_palette[2]_2\(20),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(20),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(20),
       O => vga_to_hdmi_i_155_n_0
     );
 vga_to_hdmi_i_156: unisim.vcomponents.LUT6
@@ -22816,12 +21555,12 @@ vga_to_hdmi_i_156: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(20),
-      I1 => \palette[6]_6\(20),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(20),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(20),
+      I0 => \cm_palette[7]_7\(20),
+      I1 => \cm_palette[6]_6\(20),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(20),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(20),
       O => vga_to_hdmi_i_156_n_0
     );
 vga_to_hdmi_i_157: unisim.vcomponents.LUT6
@@ -22829,12 +21568,12 @@ vga_to_hdmi_i_157: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(7),
-      I1 => \palette[2]_2\(7),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(7),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(7),
+      I0 => \cm_palette[3]_3\(7),
+      I1 => \cm_palette[2]_2\(7),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(7),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(7),
       O => vga_to_hdmi_i_157_n_0
     );
 vga_to_hdmi_i_158: unisim.vcomponents.LUT6
@@ -22842,12 +21581,12 @@ vga_to_hdmi_i_158: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(7),
-      I1 => \palette[6]_6\(7),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(7),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(7),
+      I0 => \cm_palette[7]_7\(7),
+      I1 => \cm_palette[6]_6\(7),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(7),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(7),
       O => vga_to_hdmi_i_158_n_0
     );
 vga_to_hdmi_i_159: unisim.vcomponents.LUT6
@@ -22855,12 +21594,12 @@ vga_to_hdmi_i_159: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(19),
-      I1 => \palette[2]_2\(19),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(19),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(19),
+      I0 => \cm_palette[3]_3\(19),
+      I1 => \cm_palette[2]_2\(19),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(19),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(19),
       O => vga_to_hdmi_i_159_n_0
     );
 vga_to_hdmi_i_160: unisim.vcomponents.LUT6
@@ -22868,12 +21607,12 @@ vga_to_hdmi_i_160: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(19),
-      I1 => \palette[6]_6\(19),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(19),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(19),
+      I0 => \cm_palette[7]_7\(19),
+      I1 => \cm_palette[6]_6\(19),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(19),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(19),
       O => vga_to_hdmi_i_160_n_0
     );
 vga_to_hdmi_i_161: unisim.vcomponents.LUT6
@@ -22881,12 +21620,12 @@ vga_to_hdmi_i_161: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(7),
-      I1 => \palette[2]_2\(7),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(7),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(7),
+      I0 => \cm_palette[3]_3\(7),
+      I1 => \cm_palette[2]_2\(7),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(7),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(7),
       O => vga_to_hdmi_i_161_n_0
     );
 vga_to_hdmi_i_162: unisim.vcomponents.LUT6
@@ -22894,12 +21633,12 @@ vga_to_hdmi_i_162: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(7),
-      I1 => \palette[6]_6\(7),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(7),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(7),
+      I0 => \cm_palette[7]_7\(7),
+      I1 => \cm_palette[6]_6\(7),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(7),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(7),
       O => vga_to_hdmi_i_162_n_0
     );
 vga_to_hdmi_i_163: unisim.vcomponents.LUT6
@@ -22907,12 +21646,12 @@ vga_to_hdmi_i_163: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(19),
-      I1 => \palette[2]_2\(19),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(19),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(19),
+      I0 => \cm_palette[3]_3\(19),
+      I1 => \cm_palette[2]_2\(19),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(19),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(19),
       O => vga_to_hdmi_i_163_n_0
     );
 vga_to_hdmi_i_164: unisim.vcomponents.LUT6
@@ -22920,12 +21659,12 @@ vga_to_hdmi_i_164: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(19),
-      I1 => \palette[6]_6\(19),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(19),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(19),
+      I0 => \cm_palette[7]_7\(19),
+      I1 => \cm_palette[6]_6\(19),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(19),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(19),
       O => vga_to_hdmi_i_164_n_0
     );
 vga_to_hdmi_i_165: unisim.vcomponents.LUT6
@@ -22933,12 +21672,12 @@ vga_to_hdmi_i_165: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(6),
-      I1 => \palette[2]_2\(6),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(6),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(6),
+      I0 => \cm_palette[3]_3\(6),
+      I1 => \cm_palette[2]_2\(6),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(6),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(6),
       O => vga_to_hdmi_i_165_n_0
     );
 vga_to_hdmi_i_166: unisim.vcomponents.LUT6
@@ -22946,12 +21685,12 @@ vga_to_hdmi_i_166: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(6),
-      I1 => \palette[6]_6\(6),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(6),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(6),
+      I0 => \cm_palette[7]_7\(6),
+      I1 => \cm_palette[6]_6\(6),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(6),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(6),
       O => vga_to_hdmi_i_166_n_0
     );
 vga_to_hdmi_i_167: unisim.vcomponents.LUT6
@@ -22959,12 +21698,12 @@ vga_to_hdmi_i_167: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(18),
-      I1 => \palette[2]_2\(18),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(18),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(18),
+      I0 => \cm_palette[3]_3\(18),
+      I1 => \cm_palette[2]_2\(18),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(18),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(18),
       O => vga_to_hdmi_i_167_n_0
     );
 vga_to_hdmi_i_168: unisim.vcomponents.LUT6
@@ -22972,12 +21711,12 @@ vga_to_hdmi_i_168: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(18),
-      I1 => \palette[6]_6\(18),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(18),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(18),
+      I0 => \cm_palette[7]_7\(18),
+      I1 => \cm_palette[6]_6\(18),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(18),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(18),
       O => vga_to_hdmi_i_168_n_0
     );
 vga_to_hdmi_i_169: unisim.vcomponents.LUT6
@@ -22985,12 +21724,12 @@ vga_to_hdmi_i_169: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(6),
-      I1 => \palette[2]_2\(6),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(6),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(6),
+      I0 => \cm_palette[3]_3\(6),
+      I1 => \cm_palette[2]_2\(6),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(6),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(6),
       O => vga_to_hdmi_i_169_n_0
     );
 vga_to_hdmi_i_170: unisim.vcomponents.LUT6
@@ -22998,12 +21737,12 @@ vga_to_hdmi_i_170: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(6),
-      I1 => \palette[6]_6\(6),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(6),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(6),
+      I0 => \cm_palette[7]_7\(6),
+      I1 => \cm_palette[6]_6\(6),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(6),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(6),
       O => vga_to_hdmi_i_170_n_0
     );
 vga_to_hdmi_i_171: unisim.vcomponents.LUT6
@@ -23011,12 +21750,12 @@ vga_to_hdmi_i_171: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(18),
-      I1 => \palette[2]_2\(18),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(18),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(18),
+      I0 => \cm_palette[3]_3\(18),
+      I1 => \cm_palette[2]_2\(18),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(18),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(18),
       O => vga_to_hdmi_i_171_n_0
     );
 vga_to_hdmi_i_172: unisim.vcomponents.LUT6
@@ -23024,12 +21763,12 @@ vga_to_hdmi_i_172: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(18),
-      I1 => \palette[6]_6\(18),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(18),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(18),
+      I0 => \cm_palette[7]_7\(18),
+      I1 => \cm_palette[6]_6\(18),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(18),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(18),
       O => vga_to_hdmi_i_172_n_0
     );
 vga_to_hdmi_i_173: unisim.vcomponents.LUT6
@@ -23037,12 +21776,12 @@ vga_to_hdmi_i_173: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(5),
-      I1 => \palette[2]_2\(5),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(5),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(5),
+      I0 => \cm_palette[3]_3\(5),
+      I1 => \cm_palette[2]_2\(5),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(5),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(5),
       O => vga_to_hdmi_i_173_n_0
     );
 vga_to_hdmi_i_174: unisim.vcomponents.LUT6
@@ -23050,12 +21789,12 @@ vga_to_hdmi_i_174: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(5),
-      I1 => \palette[6]_6\(5),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(5),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(5),
+      I0 => \cm_palette[7]_7\(5),
+      I1 => \cm_palette[6]_6\(5),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(5),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(5),
       O => vga_to_hdmi_i_174_n_0
     );
 vga_to_hdmi_i_175: unisim.vcomponents.LUT6
@@ -23063,12 +21802,12 @@ vga_to_hdmi_i_175: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(17),
-      I1 => \palette[2]_2\(17),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(17),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(17),
+      I0 => \cm_palette[3]_3\(17),
+      I1 => \cm_palette[2]_2\(17),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(17),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(17),
       O => vga_to_hdmi_i_175_n_0
     );
 vga_to_hdmi_i_176: unisim.vcomponents.LUT6
@@ -23076,12 +21815,12 @@ vga_to_hdmi_i_176: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(17),
-      I1 => \palette[6]_6\(17),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(17),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(17),
+      I0 => \cm_palette[7]_7\(17),
+      I1 => \cm_palette[6]_6\(17),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(17),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(17),
       O => vga_to_hdmi_i_176_n_0
     );
 vga_to_hdmi_i_177: unisim.vcomponents.LUT6
@@ -23089,12 +21828,12 @@ vga_to_hdmi_i_177: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(5),
-      I1 => \palette[2]_2\(5),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(5),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(5),
+      I0 => \cm_palette[3]_3\(5),
+      I1 => \cm_palette[2]_2\(5),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(5),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(5),
       O => vga_to_hdmi_i_177_n_0
     );
 vga_to_hdmi_i_178: unisim.vcomponents.LUT6
@@ -23102,12 +21841,12 @@ vga_to_hdmi_i_178: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(5),
-      I1 => \palette[6]_6\(5),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(5),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(5),
+      I0 => \cm_palette[7]_7\(5),
+      I1 => \cm_palette[6]_6\(5),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(5),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(5),
       O => vga_to_hdmi_i_178_n_0
     );
 vga_to_hdmi_i_179: unisim.vcomponents.LUT6
@@ -23115,12 +21854,12 @@ vga_to_hdmi_i_179: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(17),
-      I1 => \palette[2]_2\(17),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(17),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(17),
+      I0 => \cm_palette[3]_3\(17),
+      I1 => \cm_palette[2]_2\(17),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(17),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(17),
       O => vga_to_hdmi_i_179_n_0
     );
 vga_to_hdmi_i_180: unisim.vcomponents.LUT6
@@ -23128,12 +21867,12 @@ vga_to_hdmi_i_180: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(17),
-      I1 => \palette[6]_6\(17),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(17),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(17),
+      I0 => \cm_palette[7]_7\(17),
+      I1 => \cm_palette[6]_6\(17),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(17),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(17),
       O => vga_to_hdmi_i_180_n_0
     );
 vga_to_hdmi_i_181: unisim.vcomponents.LUT6
@@ -23141,12 +21880,12 @@ vga_to_hdmi_i_181: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(4),
-      I1 => \palette[2]_2\(4),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(4),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(4),
+      I0 => \cm_palette[3]_3\(4),
+      I1 => \cm_palette[2]_2\(4),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(4),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(4),
       O => vga_to_hdmi_i_181_n_0
     );
 vga_to_hdmi_i_182: unisim.vcomponents.LUT6
@@ -23154,12 +21893,12 @@ vga_to_hdmi_i_182: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(4),
-      I1 => \palette[6]_6\(4),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(4),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(4),
+      I0 => \cm_palette[7]_7\(4),
+      I1 => \cm_palette[6]_6\(4),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(4),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(4),
       O => vga_to_hdmi_i_182_n_0
     );
 vga_to_hdmi_i_183: unisim.vcomponents.LUT6
@@ -23167,12 +21906,12 @@ vga_to_hdmi_i_183: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(16),
-      I1 => \palette[2]_2\(16),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(16),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(16),
+      I0 => \cm_palette[3]_3\(16),
+      I1 => \cm_palette[2]_2\(16),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(16),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(16),
       O => vga_to_hdmi_i_183_n_0
     );
 vga_to_hdmi_i_184: unisim.vcomponents.LUT6
@@ -23180,12 +21919,12 @@ vga_to_hdmi_i_184: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(16),
-      I1 => \palette[6]_6\(16),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(16),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(16),
+      I0 => \cm_palette[7]_7\(16),
+      I1 => \cm_palette[6]_6\(16),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(16),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(16),
       O => vga_to_hdmi_i_184_n_0
     );
 vga_to_hdmi_i_185: unisim.vcomponents.LUT6
@@ -23193,12 +21932,12 @@ vga_to_hdmi_i_185: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(4),
-      I1 => \palette[2]_2\(4),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(4),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(4),
+      I0 => \cm_palette[3]_3\(4),
+      I1 => \cm_palette[2]_2\(4),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(4),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(4),
       O => vga_to_hdmi_i_185_n_0
     );
 vga_to_hdmi_i_186: unisim.vcomponents.LUT6
@@ -23206,12 +21945,12 @@ vga_to_hdmi_i_186: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(4),
-      I1 => \palette[6]_6\(4),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(4),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(4),
+      I0 => \cm_palette[7]_7\(4),
+      I1 => \cm_palette[6]_6\(4),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(4),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(4),
       O => vga_to_hdmi_i_186_n_0
     );
 vga_to_hdmi_i_187: unisim.vcomponents.LUT6
@@ -23219,12 +21958,12 @@ vga_to_hdmi_i_187: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(16),
-      I1 => \palette[2]_2\(16),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(16),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(16),
+      I0 => \cm_palette[3]_3\(16),
+      I1 => \cm_palette[2]_2\(16),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(16),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(16),
       O => vga_to_hdmi_i_187_n_0
     );
 vga_to_hdmi_i_188: unisim.vcomponents.LUT6
@@ -23232,12 +21971,12 @@ vga_to_hdmi_i_188: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(16),
-      I1 => \palette[6]_6\(16),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(16),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(16),
+      I0 => \cm_palette[7]_7\(16),
+      I1 => \cm_palette[6]_6\(16),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(16),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(16),
       O => vga_to_hdmi_i_188_n_0
     );
 vga_to_hdmi_i_189: unisim.vcomponents.LUT6
@@ -23245,12 +21984,12 @@ vga_to_hdmi_i_189: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(3),
-      I1 => \palette[2]_2\(3),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(3),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(3),
+      I0 => \cm_palette[3]_3\(3),
+      I1 => \cm_palette[2]_2\(3),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(3),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(3),
       O => vga_to_hdmi_i_189_n_0
     );
 vga_to_hdmi_i_19: unisim.vcomponents.MUXF8
@@ -23258,19 +21997,19 @@ vga_to_hdmi_i_19: unisim.vcomponents.MUXF8
       I0 => vga_to_hdmi_i_51_n_0,
       I1 => vga_to_hdmi_i_52_n_0,
       O => vga_to_hdmi_i_19_n_0,
-      S => doutb(4)
+      S => cm_data(4)
     );
 vga_to_hdmi_i_190: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(3),
-      I1 => \palette[6]_6\(3),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(3),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(3),
+      I0 => \cm_palette[7]_7\(3),
+      I1 => \cm_palette[6]_6\(3),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(3),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(3),
       O => vga_to_hdmi_i_190_n_0
     );
 vga_to_hdmi_i_191: unisim.vcomponents.LUT6
@@ -23278,12 +22017,12 @@ vga_to_hdmi_i_191: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(15),
-      I1 => \palette[2]_2\(15),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(15),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(15),
+      I0 => \cm_palette[3]_3\(15),
+      I1 => \cm_palette[2]_2\(15),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(15),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(15),
       O => vga_to_hdmi_i_191_n_0
     );
 vga_to_hdmi_i_192: unisim.vcomponents.LUT6
@@ -23291,12 +22030,12 @@ vga_to_hdmi_i_192: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(15),
-      I1 => \palette[6]_6\(15),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(15),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(15),
+      I0 => \cm_palette[7]_7\(15),
+      I1 => \cm_palette[6]_6\(15),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(15),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(15),
       O => vga_to_hdmi_i_192_n_0
     );
 vga_to_hdmi_i_193: unisim.vcomponents.LUT6
@@ -23304,12 +22043,12 @@ vga_to_hdmi_i_193: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(3),
-      I1 => \palette[2]_2\(3),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(3),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(3),
+      I0 => \cm_palette[3]_3\(3),
+      I1 => \cm_palette[2]_2\(3),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(3),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(3),
       O => vga_to_hdmi_i_193_n_0
     );
 vga_to_hdmi_i_194: unisim.vcomponents.LUT6
@@ -23317,12 +22056,12 @@ vga_to_hdmi_i_194: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(3),
-      I1 => \palette[6]_6\(3),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(3),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(3),
+      I0 => \cm_palette[7]_7\(3),
+      I1 => \cm_palette[6]_6\(3),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(3),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(3),
       O => vga_to_hdmi_i_194_n_0
     );
 vga_to_hdmi_i_195: unisim.vcomponents.LUT6
@@ -23330,12 +22069,12 @@ vga_to_hdmi_i_195: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(15),
-      I1 => \palette[2]_2\(15),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(15),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(15),
+      I0 => \cm_palette[3]_3\(15),
+      I1 => \cm_palette[2]_2\(15),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(15),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(15),
       O => vga_to_hdmi_i_195_n_0
     );
 vga_to_hdmi_i_196: unisim.vcomponents.LUT6
@@ -23343,12 +22082,12 @@ vga_to_hdmi_i_196: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(15),
-      I1 => \palette[6]_6\(15),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(15),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(15),
+      I0 => \cm_palette[7]_7\(15),
+      I1 => \cm_palette[6]_6\(15),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(15),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(15),
       O => vga_to_hdmi_i_196_n_0
     );
 vga_to_hdmi_i_197: unisim.vcomponents.LUT6
@@ -23356,12 +22095,12 @@ vga_to_hdmi_i_197: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(2),
-      I1 => \palette[2]_2\(2),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(2),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(2),
+      I0 => \cm_palette[3]_3\(2),
+      I1 => \cm_palette[2]_2\(2),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(2),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(2),
       O => vga_to_hdmi_i_197_n_0
     );
 vga_to_hdmi_i_198: unisim.vcomponents.LUT6
@@ -23369,12 +22108,12 @@ vga_to_hdmi_i_198: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(2),
-      I1 => \palette[6]_6\(2),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(2),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(2),
+      I0 => \cm_palette[7]_7\(2),
+      I1 => \cm_palette[6]_6\(2),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(2),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(2),
       O => vga_to_hdmi_i_198_n_0
     );
 vga_to_hdmi_i_199: unisim.vcomponents.LUT6
@@ -23382,12 +22121,12 @@ vga_to_hdmi_i_199: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(14),
-      I1 => \palette[2]_2\(14),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(14),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(14),
+      I0 => \cm_palette[3]_3\(14),
+      I1 => \cm_palette[2]_2\(14),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(14),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(14),
       O => vga_to_hdmi_i_199_n_0
     );
 vga_to_hdmi_i_2: unisim.vcomponents.LUT6
@@ -23396,7 +22135,7 @@ vga_to_hdmi_i_2: unisim.vcomponents.LUT6
     )
         port map (
       I0 => vga_to_hdmi_i_15_n_0,
-      I1 => doutb(15),
+      I1 => cm_data(15),
       I2 => \srl[36].srl16_i\,
       I3 => \srl[36].srl16_i_0\,
       I4 => \srl[36].srl16_i_1\,
@@ -23408,19 +22147,19 @@ vga_to_hdmi_i_20: unisim.vcomponents.MUXF8
       I0 => vga_to_hdmi_i_53_n_0,
       I1 => vga_to_hdmi_i_54_n_0,
       O => vga_to_hdmi_i_20_n_0,
-      S => doutb(0)
+      S => cm_data(0)
     );
 vga_to_hdmi_i_200: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(14),
-      I1 => \palette[6]_6\(14),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(14),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(14),
+      I0 => \cm_palette[7]_7\(14),
+      I1 => \cm_palette[6]_6\(14),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(14),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(14),
       O => vga_to_hdmi_i_200_n_0
     );
 vga_to_hdmi_i_201: unisim.vcomponents.LUT6
@@ -23428,12 +22167,12 @@ vga_to_hdmi_i_201: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(2),
-      I1 => \palette[2]_2\(2),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(2),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(2),
+      I0 => \cm_palette[3]_3\(2),
+      I1 => \cm_palette[2]_2\(2),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(2),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(2),
       O => vga_to_hdmi_i_201_n_0
     );
 vga_to_hdmi_i_202: unisim.vcomponents.LUT6
@@ -23441,12 +22180,12 @@ vga_to_hdmi_i_202: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(2),
-      I1 => \palette[6]_6\(2),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(2),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(2),
+      I0 => \cm_palette[7]_7\(2),
+      I1 => \cm_palette[6]_6\(2),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(2),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(2),
       O => vga_to_hdmi_i_202_n_0
     );
 vga_to_hdmi_i_203: unisim.vcomponents.LUT6
@@ -23454,12 +22193,12 @@ vga_to_hdmi_i_203: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(14),
-      I1 => \palette[2]_2\(14),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(14),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(14),
+      I0 => \cm_palette[3]_3\(14),
+      I1 => \cm_palette[2]_2\(14),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(14),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(14),
       O => vga_to_hdmi_i_203_n_0
     );
 vga_to_hdmi_i_204: unisim.vcomponents.LUT6
@@ -23467,12 +22206,12 @@ vga_to_hdmi_i_204: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(14),
-      I1 => \palette[6]_6\(14),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(14),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(14),
+      I0 => \cm_palette[7]_7\(14),
+      I1 => \cm_palette[6]_6\(14),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(14),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(14),
       O => vga_to_hdmi_i_204_n_0
     );
 vga_to_hdmi_i_205: unisim.vcomponents.LUT6
@@ -23480,12 +22219,12 @@ vga_to_hdmi_i_205: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(1),
-      I1 => \palette[2]_2\(1),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(1),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(1),
+      I0 => \cm_palette[3]_3\(1),
+      I1 => \cm_palette[2]_2\(1),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(1),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(1),
       O => vga_to_hdmi_i_205_n_0
     );
 vga_to_hdmi_i_206: unisim.vcomponents.LUT6
@@ -23493,12 +22232,12 @@ vga_to_hdmi_i_206: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(1),
-      I1 => \palette[6]_6\(1),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(1),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(1),
+      I0 => \cm_palette[7]_7\(1),
+      I1 => \cm_palette[6]_6\(1),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(1),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(1),
       O => vga_to_hdmi_i_206_n_0
     );
 vga_to_hdmi_i_207: unisim.vcomponents.LUT6
@@ -23506,12 +22245,12 @@ vga_to_hdmi_i_207: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(13),
-      I1 => \palette[2]_2\(13),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(13),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(13),
+      I0 => \cm_palette[3]_3\(13),
+      I1 => \cm_palette[2]_2\(13),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(13),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(13),
       O => vga_to_hdmi_i_207_n_0
     );
 vga_to_hdmi_i_208: unisim.vcomponents.LUT6
@@ -23519,12 +22258,12 @@ vga_to_hdmi_i_208: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(13),
-      I1 => \palette[6]_6\(13),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(13),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(13),
+      I0 => \cm_palette[7]_7\(13),
+      I1 => \cm_palette[6]_6\(13),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(13),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(13),
       O => vga_to_hdmi_i_208_n_0
     );
 vga_to_hdmi_i_209: unisim.vcomponents.LUT6
@@ -23532,12 +22271,12 @@ vga_to_hdmi_i_209: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(1),
-      I1 => \palette[2]_2\(1),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(1),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(1),
+      I0 => \cm_palette[3]_3\(1),
+      I1 => \cm_palette[2]_2\(1),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(1),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(1),
       O => vga_to_hdmi_i_209_n_0
     );
 vga_to_hdmi_i_21: unisim.vcomponents.MUXF8
@@ -23545,19 +22284,19 @@ vga_to_hdmi_i_21: unisim.vcomponents.MUXF8
       I0 => vga_to_hdmi_i_55_n_0,
       I1 => vga_to_hdmi_i_56_n_0,
       O => vga_to_hdmi_i_21_n_0,
-      S => doutb(4)
+      S => cm_data(4)
     );
 vga_to_hdmi_i_210: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(1),
-      I1 => \palette[6]_6\(1),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(1),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(1),
+      I0 => \cm_palette[7]_7\(1),
+      I1 => \cm_palette[6]_6\(1),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(1),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(1),
       O => vga_to_hdmi_i_210_n_0
     );
 vga_to_hdmi_i_211: unisim.vcomponents.LUT6
@@ -23565,12 +22304,12 @@ vga_to_hdmi_i_211: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(13),
-      I1 => \palette[2]_2\(13),
-      I2 => doutb(6),
-      I3 => \palette[1]_1\(13),
-      I4 => doutb(5),
-      I5 => \palette[0]_0\(13),
+      I0 => \cm_palette[3]_3\(13),
+      I1 => \cm_palette[2]_2\(13),
+      I2 => cm_data(6),
+      I3 => \cm_palette[1]_1\(13),
+      I4 => cm_data(5),
+      I5 => \cm_palette[0]_0\(13),
       O => vga_to_hdmi_i_211_n_0
     );
 vga_to_hdmi_i_212: unisim.vcomponents.LUT6
@@ -23578,87 +22317,87 @@ vga_to_hdmi_i_212: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(13),
-      I1 => \palette[6]_6\(13),
-      I2 => doutb(6),
-      I3 => \palette[5]_5\(13),
-      I4 => doutb(5),
-      I5 => \palette[4]_4\(13),
+      I0 => \cm_palette[7]_7\(13),
+      I1 => \cm_palette[6]_6\(13),
+      I2 => cm_data(6),
+      I3 => \cm_palette[5]_5\(13),
+      I4 => cm_data(5),
+      I5 => \cm_palette[4]_4\(13),
       O => vga_to_hdmi_i_212_n_0
-    );
-vga_to_hdmi_i_219: unisim.vcomponents.LUT4
-    generic map(
-      INIT => X"0020"
-    )
-        port map (
-      I0 => vga_to_hdmi_i_102_0,
-      I1 => \^q\(2),
-      I2 => \^q\(3),
-      I3 => \^q\(4),
-      O => vga_to_hdmi_i_219_n_0
     );
 vga_to_hdmi_i_22: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_57_n_0,
       I1 => vga_to_hdmi_i_58_n_0,
       O => vga_to_hdmi_i_22_n_0,
-      S => doutb(0)
-    );
-vga_to_hdmi_i_220: unisim.vcomponents.MUXF7
-     port map (
-      I0 => g2_b0_n_0,
-      I1 => vga_to_hdmi_i_102_1,
-      O => vga_to_hdmi_i_220_n_0,
-      S => \^q\(4)
+      S => cm_data(0)
     );
 vga_to_hdmi_i_23: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_59_n_0,
       I1 => vga_to_hdmi_i_60_n_0,
       O => vga_to_hdmi_i_23_n_0,
-      S => doutb(4)
+      S => cm_data(4)
     );
 vga_to_hdmi_i_24: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_61_n_0,
       I1 => vga_to_hdmi_i_62_n_0,
       O => vga_to_hdmi_i_24_n_0,
-      S => doutb(0)
+      S => cm_data(0)
     );
 vga_to_hdmi_i_25: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_63_n_0,
       I1 => vga_to_hdmi_i_64_n_0,
       O => vga_to_hdmi_i_25_n_0,
-      S => doutb(4)
+      S => cm_data(4)
     );
 vga_to_hdmi_i_26: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_65_n_0,
       I1 => vga_to_hdmi_i_66_n_0,
       O => vga_to_hdmi_i_26_n_0,
-      S => doutb(0)
+      S => cm_data(0)
     );
 vga_to_hdmi_i_27: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_67_n_0,
       I1 => vga_to_hdmi_i_68_n_0,
       O => vga_to_hdmi_i_27_n_0,
-      S => doutb(4)
+      S => cm_data(4)
+    );
+vga_to_hdmi_i_271: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"0020"
+    )
+        port map (
+      I0 => vga_to_hdmi_i_118_0,
+      I1 => \^doutb\(2),
+      I2 => \^doutb\(3),
+      I3 => \^doutb\(4),
+      O => vga_to_hdmi_i_271_n_0
+    );
+vga_to_hdmi_i_272: unisim.vcomponents.MUXF7
+     port map (
+      I0 => g2_b0_n_0,
+      I1 => vga_to_hdmi_i_118_1,
+      O => vga_to_hdmi_i_272_n_0,
+      S => \^doutb\(4)
     );
 vga_to_hdmi_i_28: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_69_n_0,
       I1 => vga_to_hdmi_i_70_n_0,
       O => vga_to_hdmi_i_28_n_0,
-      S => doutb(0)
+      S => cm_data(0)
     );
 vga_to_hdmi_i_29: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_71_n_0,
       I1 => vga_to_hdmi_i_72_n_0,
       O => vga_to_hdmi_i_29_n_0,
-      S => doutb(4)
+      S => cm_data(4)
     );
 vga_to_hdmi_i_3: unisim.vcomponents.LUT6
     generic map(
@@ -23666,7 +22405,7 @@ vga_to_hdmi_i_3: unisim.vcomponents.LUT6
     )
         port map (
       I0 => vga_to_hdmi_i_20_n_0,
-      I1 => doutb(15),
+      I1 => cm_data(15),
       I2 => \srl[36].srl16_i\,
       I3 => \srl[36].srl16_i_0\,
       I4 => \srl[36].srl16_i_1\,
@@ -23678,70 +22417,70 @@ vga_to_hdmi_i_30: unisim.vcomponents.MUXF8
       I0 => vga_to_hdmi_i_73_n_0,
       I1 => vga_to_hdmi_i_74_n_0,
       O => vga_to_hdmi_i_30_n_0,
-      S => doutb(0)
+      S => cm_data(0)
     );
 vga_to_hdmi_i_31: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_75_n_0,
       I1 => vga_to_hdmi_i_76_n_0,
       O => vga_to_hdmi_i_31_n_0,
-      S => doutb(4)
+      S => cm_data(4)
     );
 vga_to_hdmi_i_32: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_77_n_0,
       I1 => vga_to_hdmi_i_78_n_0,
       O => vga_to_hdmi_i_32_n_0,
-      S => doutb(0)
+      S => cm_data(0)
     );
 vga_to_hdmi_i_33: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_79_n_0,
       I1 => vga_to_hdmi_i_80_n_0,
       O => vga_to_hdmi_i_33_n_0,
-      S => doutb(4)
+      S => cm_data(4)
     );
 vga_to_hdmi_i_34: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_81_n_0,
       I1 => vga_to_hdmi_i_82_n_0,
       O => vga_to_hdmi_i_34_n_0,
-      S => doutb(0)
+      S => cm_data(0)
     );
 vga_to_hdmi_i_35: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_83_n_0,
       I1 => vga_to_hdmi_i_84_n_0,
       O => vga_to_hdmi_i_35_n_0,
-      S => doutb(4)
+      S => cm_data(4)
     );
 vga_to_hdmi_i_36: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_85_n_0,
       I1 => vga_to_hdmi_i_86_n_0,
       O => vga_to_hdmi_i_36_n_0,
-      S => doutb(0)
+      S => cm_data(0)
     );
 vga_to_hdmi_i_37: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_87_n_0,
       I1 => vga_to_hdmi_i_88_n_0,
       O => vga_to_hdmi_i_37_n_0,
-      S => doutb(4)
+      S => cm_data(4)
     );
 vga_to_hdmi_i_38: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_89_n_0,
       I1 => vga_to_hdmi_i_90_n_0,
       O => vga_to_hdmi_i_38_n_0,
-      S => doutb(0)
+      S => cm_data(0)
     );
 vga_to_hdmi_i_39: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_91_n_0,
       I1 => vga_to_hdmi_i_92_n_0,
       O => vga_to_hdmi_i_39_n_0,
-      S => doutb(4)
+      S => cm_data(4)
     );
 vga_to_hdmi_i_4: unisim.vcomponents.LUT6
     generic map(
@@ -23749,7 +22488,7 @@ vga_to_hdmi_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => vga_to_hdmi_i_22_n_0,
-      I1 => doutb(15),
+      I1 => cm_data(15),
       I2 => \srl[36].srl16_i\,
       I3 => \srl[36].srl16_i_0\,
       I4 => \srl[36].srl16_i_1\,
@@ -23761,28 +22500,28 @@ vga_to_hdmi_i_40: unisim.vcomponents.MUXF8
       I0 => vga_to_hdmi_i_93_n_0,
       I1 => vga_to_hdmi_i_94_n_0,
       O => vga_to_hdmi_i_40_n_0,
-      S => doutb(0)
+      S => cm_data(0)
     );
 vga_to_hdmi_i_41: unisim.vcomponents.MUXF8
      port map (
       I0 => vga_to_hdmi_i_95_n_0,
       I1 => vga_to_hdmi_i_96_n_0,
       O => vga_to_hdmi_i_41_n_0,
-      S => doutb(4)
+      S => cm_data(4)
     );
 vga_to_hdmi_i_43: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_97_n_0,
       I1 => vga_to_hdmi_i_98_n_0,
       O => vga_to_hdmi_i_43_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_44: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_99_n_0,
       I1 => vga_to_hdmi_i_100_n_0,
       O => vga_to_hdmi_i_44_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_5: unisim.vcomponents.LUT6
     generic map(
@@ -23790,7 +22529,7 @@ vga_to_hdmi_i_5: unisim.vcomponents.LUT6
     )
         port map (
       I0 => vga_to_hdmi_i_24_n_0,
-      I1 => doutb(15),
+      I1 => cm_data(15),
       I2 => \srl[36].srl16_i\,
       I3 => \srl[36].srl16_i_0\,
       I4 => \srl[36].srl16_i_1\,
@@ -23802,63 +22541,63 @@ vga_to_hdmi_i_51: unisim.vcomponents.MUXF7
       I0 => vga_to_hdmi_i_121_n_0,
       I1 => vga_to_hdmi_i_122_n_0,
       O => vga_to_hdmi_i_51_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_52: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_123_n_0,
       I1 => vga_to_hdmi_i_124_n_0,
       O => vga_to_hdmi_i_52_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_53: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_125_n_0,
       I1 => vga_to_hdmi_i_126_n_0,
       O => vga_to_hdmi_i_53_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_54: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_127_n_0,
       I1 => vga_to_hdmi_i_128_n_0,
       O => vga_to_hdmi_i_54_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_55: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_129_n_0,
       I1 => vga_to_hdmi_i_130_n_0,
       O => vga_to_hdmi_i_55_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_56: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_131_n_0,
       I1 => vga_to_hdmi_i_132_n_0,
       O => vga_to_hdmi_i_56_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_57: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_133_n_0,
       I1 => vga_to_hdmi_i_134_n_0,
       O => vga_to_hdmi_i_57_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_58: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_135_n_0,
       I1 => vga_to_hdmi_i_136_n_0,
       O => vga_to_hdmi_i_58_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_59: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_137_n_0,
       I1 => vga_to_hdmi_i_138_n_0,
       O => vga_to_hdmi_i_59_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_6: unisim.vcomponents.LUT6
     generic map(
@@ -23866,7 +22605,7 @@ vga_to_hdmi_i_6: unisim.vcomponents.LUT6
     )
         port map (
       I0 => vga_to_hdmi_i_26_n_0,
-      I1 => doutb(15),
+      I1 => cm_data(15),
       I2 => \srl[36].srl16_i\,
       I3 => \srl[36].srl16_i_0\,
       I4 => \srl[36].srl16_i_1\,
@@ -23878,70 +22617,70 @@ vga_to_hdmi_i_60: unisim.vcomponents.MUXF7
       I0 => vga_to_hdmi_i_139_n_0,
       I1 => vga_to_hdmi_i_140_n_0,
       O => vga_to_hdmi_i_60_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_61: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_141_n_0,
       I1 => vga_to_hdmi_i_142_n_0,
       O => vga_to_hdmi_i_61_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_62: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_143_n_0,
       I1 => vga_to_hdmi_i_144_n_0,
       O => vga_to_hdmi_i_62_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_63: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_145_n_0,
       I1 => vga_to_hdmi_i_146_n_0,
       O => vga_to_hdmi_i_63_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_64: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_147_n_0,
       I1 => vga_to_hdmi_i_148_n_0,
       O => vga_to_hdmi_i_64_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_65: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_149_n_0,
       I1 => vga_to_hdmi_i_150_n_0,
       O => vga_to_hdmi_i_65_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_66: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_151_n_0,
       I1 => vga_to_hdmi_i_152_n_0,
       O => vga_to_hdmi_i_66_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_67: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_153_n_0,
       I1 => vga_to_hdmi_i_154_n_0,
       O => vga_to_hdmi_i_67_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_68: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_155_n_0,
       I1 => vga_to_hdmi_i_156_n_0,
       O => vga_to_hdmi_i_68_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_69: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_157_n_0,
       I1 => vga_to_hdmi_i_158_n_0,
       O => vga_to_hdmi_i_69_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_7: unisim.vcomponents.LUT6
     generic map(
@@ -23949,7 +22688,7 @@ vga_to_hdmi_i_7: unisim.vcomponents.LUT6
     )
         port map (
       I0 => vga_to_hdmi_i_28_n_0,
-      I1 => doutb(15),
+      I1 => cm_data(15),
       I2 => \srl[36].srl16_i\,
       I3 => \srl[36].srl16_i_0\,
       I4 => \srl[36].srl16_i_1\,
@@ -23961,70 +22700,70 @@ vga_to_hdmi_i_70: unisim.vcomponents.MUXF7
       I0 => vga_to_hdmi_i_159_n_0,
       I1 => vga_to_hdmi_i_160_n_0,
       O => vga_to_hdmi_i_70_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_71: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_161_n_0,
       I1 => vga_to_hdmi_i_162_n_0,
       O => vga_to_hdmi_i_71_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_72: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_163_n_0,
       I1 => vga_to_hdmi_i_164_n_0,
       O => vga_to_hdmi_i_72_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_73: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_165_n_0,
       I1 => vga_to_hdmi_i_166_n_0,
       O => vga_to_hdmi_i_73_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_74: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_167_n_0,
       I1 => vga_to_hdmi_i_168_n_0,
       O => vga_to_hdmi_i_74_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_75: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_169_n_0,
       I1 => vga_to_hdmi_i_170_n_0,
       O => vga_to_hdmi_i_75_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_76: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_171_n_0,
       I1 => vga_to_hdmi_i_172_n_0,
       O => vga_to_hdmi_i_76_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_77: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_173_n_0,
       I1 => vga_to_hdmi_i_174_n_0,
       O => vga_to_hdmi_i_77_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_78: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_175_n_0,
       I1 => vga_to_hdmi_i_176_n_0,
       O => vga_to_hdmi_i_78_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_79: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_177_n_0,
       I1 => vga_to_hdmi_i_178_n_0,
       O => vga_to_hdmi_i_79_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_8: unisim.vcomponents.LUT6
     generic map(
@@ -24032,7 +22771,7 @@ vga_to_hdmi_i_8: unisim.vcomponents.LUT6
     )
         port map (
       I0 => vga_to_hdmi_i_30_n_0,
-      I1 => doutb(15),
+      I1 => cm_data(15),
       I2 => \srl[36].srl16_i\,
       I3 => \srl[36].srl16_i_0\,
       I4 => \srl[36].srl16_i_1\,
@@ -24044,70 +22783,70 @@ vga_to_hdmi_i_80: unisim.vcomponents.MUXF7
       I0 => vga_to_hdmi_i_179_n_0,
       I1 => vga_to_hdmi_i_180_n_0,
       O => vga_to_hdmi_i_80_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_81: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_181_n_0,
       I1 => vga_to_hdmi_i_182_n_0,
       O => vga_to_hdmi_i_81_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_82: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_183_n_0,
       I1 => vga_to_hdmi_i_184_n_0,
       O => vga_to_hdmi_i_82_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_83: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_185_n_0,
       I1 => vga_to_hdmi_i_186_n_0,
       O => vga_to_hdmi_i_83_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_84: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_187_n_0,
       I1 => vga_to_hdmi_i_188_n_0,
       O => vga_to_hdmi_i_84_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_85: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_189_n_0,
       I1 => vga_to_hdmi_i_190_n_0,
       O => vga_to_hdmi_i_85_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_86: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_191_n_0,
       I1 => vga_to_hdmi_i_192_n_0,
       O => vga_to_hdmi_i_86_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_87: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_193_n_0,
       I1 => vga_to_hdmi_i_194_n_0,
       O => vga_to_hdmi_i_87_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_88: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_195_n_0,
       I1 => vga_to_hdmi_i_196_n_0,
       O => vga_to_hdmi_i_88_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_89: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_197_n_0,
       I1 => vga_to_hdmi_i_198_n_0,
       O => vga_to_hdmi_i_89_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_9: unisim.vcomponents.LUT6
     generic map(
@@ -24115,7 +22854,7 @@ vga_to_hdmi_i_9: unisim.vcomponents.LUT6
     )
         port map (
       I0 => vga_to_hdmi_i_32_n_0,
-      I1 => doutb(15),
+      I1 => cm_data(15),
       I2 => \srl[36].srl16_i\,
       I3 => \srl[36].srl16_i_0\,
       I4 => \srl[36].srl16_i_1\,
@@ -24127,61 +22866,61 @@ vga_to_hdmi_i_90: unisim.vcomponents.MUXF7
       I0 => vga_to_hdmi_i_199_n_0,
       I1 => vga_to_hdmi_i_200_n_0,
       O => vga_to_hdmi_i_90_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_91: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_201_n_0,
       I1 => vga_to_hdmi_i_202_n_0,
       O => vga_to_hdmi_i_91_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_92: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_203_n_0,
       I1 => vga_to_hdmi_i_204_n_0,
       O => vga_to_hdmi_i_92_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_93: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_205_n_0,
       I1 => vga_to_hdmi_i_206_n_0,
       O => vga_to_hdmi_i_93_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_94: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_207_n_0,
       I1 => vga_to_hdmi_i_208_n_0,
       O => vga_to_hdmi_i_94_n_0,
-      S => doutb(3)
+      S => cm_data(3)
     );
 vga_to_hdmi_i_95: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_209_n_0,
       I1 => vga_to_hdmi_i_210_n_0,
       O => vga_to_hdmi_i_95_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_96: unisim.vcomponents.MUXF7
      port map (
       I0 => vga_to_hdmi_i_211_n_0,
       I1 => vga_to_hdmi_i_212_n_0,
       O => vga_to_hdmi_i_96_n_0,
-      S => doutb(7)
+      S => cm_data(7)
     );
 vga_to_hdmi_i_97: unisim.vcomponents.LUT6
     generic map(
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(12),
-      I1 => \palette[2]_2\(12),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(12),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(12),
+      I0 => \cm_palette[3]_3\(12),
+      I1 => \cm_palette[2]_2\(12),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(12),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(12),
       O => vga_to_hdmi_i_97_n_0
     );
 vga_to_hdmi_i_98: unisim.vcomponents.LUT6
@@ -24189,12 +22928,12 @@ vga_to_hdmi_i_98: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[7]_7\(12),
-      I1 => \palette[6]_6\(12),
-      I2 => doutb(2),
-      I3 => \palette[5]_5\(12),
-      I4 => doutb(1),
-      I5 => \palette[4]_4\(12),
+      I0 => \cm_palette[7]_7\(12),
+      I1 => \cm_palette[6]_6\(12),
+      I2 => cm_data(2),
+      I3 => \cm_palette[5]_5\(12),
+      I4 => cm_data(1),
+      I5 => \cm_palette[4]_4\(12),
       O => vga_to_hdmi_i_98_n_0
     );
 vga_to_hdmi_i_99: unisim.vcomponents.LUT6
@@ -24202,24 +22941,315 @@ vga_to_hdmi_i_99: unisim.vcomponents.LUT6
       INIT => X"AFA0CFCFAFA0C0C0"
     )
         port map (
-      I0 => \palette[3]_3\(24),
-      I1 => \palette[2]_2\(24),
-      I2 => doutb(2),
-      I3 => \palette[1]_1\(24),
-      I4 => doutb(1),
-      I5 => \palette[0]_0\(24),
+      I0 => \cm_palette[3]_3\(24),
+      I1 => \cm_palette[2]_2\(24),
+      I2 => cm_data(2),
+      I3 => \cm_palette[1]_1\(24),
+      I4 => cm_data(1),
+      I5 => \cm_palette[0]_0\(24),
       O => vga_to_hdmi_i_99_n_0
     );
-\wea_bram_reg[0]\: unisim.vcomponents.LDCE
+\w_data[31]_i_1\: unisim.vcomponents.LUT5
+    generic map(
+      INIT => X"80000000"
+    )
+        port map (
+      I0 => \^axi_wready_reg_0\,
+      I1 => \^axi_awready_reg_0\,
+      I2 => axi_wvalid,
+      I3 => axi_awvalid,
+      I4 => axi_aresetn,
+      O => \w_data[31]_i_1_n_0\
+    );
+\w_data_reg[0]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(0),
+      Q => \w_data_reg_n_0_[0]\,
+      R => '0'
+    );
+\w_data_reg[10]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(10),
+      Q => \w_data_reg_n_0_[10]\,
+      R => '0'
+    );
+\w_data_reg[11]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(11),
+      Q => \w_data_reg_n_0_[11]\,
+      R => '0'
+    );
+\w_data_reg[12]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(12),
+      Q => \w_data_reg_n_0_[12]\,
+      R => '0'
+    );
+\w_data_reg[13]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(13),
+      Q => \w_data_reg_n_0_[13]\,
+      R => '0'
+    );
+\w_data_reg[14]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(14),
+      Q => \w_data_reg_n_0_[14]\,
+      R => '0'
+    );
+\w_data_reg[15]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(15),
+      Q => \w_data_reg_n_0_[15]\,
+      R => '0'
+    );
+\w_data_reg[16]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(16),
+      Q => \w_data_reg_n_0_[16]\,
+      R => '0'
+    );
+\w_data_reg[17]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(17),
+      Q => \w_data_reg_n_0_[17]\,
+      R => '0'
+    );
+\w_data_reg[18]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(18),
+      Q => \w_data_reg_n_0_[18]\,
+      R => '0'
+    );
+\w_data_reg[19]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(19),
+      Q => \w_data_reg_n_0_[19]\,
+      R => '0'
+    );
+\w_data_reg[1]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(1),
+      Q => \w_data_reg_n_0_[1]\,
+      R => '0'
+    );
+\w_data_reg[20]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(20),
+      Q => \w_data_reg_n_0_[20]\,
+      R => '0'
+    );
+\w_data_reg[21]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(21),
+      Q => \w_data_reg_n_0_[21]\,
+      R => '0'
+    );
+\w_data_reg[22]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(22),
+      Q => \w_data_reg_n_0_[22]\,
+      R => '0'
+    );
+\w_data_reg[23]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(23),
+      Q => \w_data_reg_n_0_[23]\,
+      R => '0'
+    );
+\w_data_reg[24]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(24),
+      Q => \w_data_reg_n_0_[24]\,
+      R => '0'
+    );
+\w_data_reg[25]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(25),
+      Q => \w_data_reg_n_0_[25]\,
+      R => '0'
+    );
+\w_data_reg[26]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(26),
+      Q => \w_data_reg_n_0_[26]\,
+      R => '0'
+    );
+\w_data_reg[27]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(27),
+      Q => \w_data_reg_n_0_[27]\,
+      R => '0'
+    );
+\w_data_reg[28]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(28),
+      Q => \w_data_reg_n_0_[28]\,
+      R => '0'
+    );
+\w_data_reg[29]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(29),
+      Q => \w_data_reg_n_0_[29]\,
+      R => '0'
+    );
+\w_data_reg[2]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(2),
+      Q => \w_data_reg_n_0_[2]\,
+      R => '0'
+    );
+\w_data_reg[30]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(30),
+      Q => \w_data_reg_n_0_[30]\,
+      R => '0'
+    );
+\w_data_reg[31]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(31),
+      Q => \w_data_reg_n_0_[31]\,
+      R => '0'
+    );
+\w_data_reg[3]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(3),
+      Q => \w_data_reg_n_0_[3]\,
+      R => '0'
+    );
+\w_data_reg[4]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(4),
+      Q => \w_data_reg_n_0_[4]\,
+      R => '0'
+    );
+\w_data_reg[5]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(5),
+      Q => \w_data_reg_n_0_[5]\,
+      R => '0'
+    );
+\w_data_reg[6]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(6),
+      Q => \w_data_reg_n_0_[6]\,
+      R => '0'
+    );
+\w_data_reg[7]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(7),
+      Q => \w_data_reg_n_0_[7]\,
+      R => '0'
+    );
+\w_data_reg[8]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(8),
+      Q => \w_data_reg_n_0_[8]\,
+      R => '0'
+    );
+\w_data_reg[9]\: unisim.vcomponents.FDRE
+     port map (
+      C => axi_aclk,
+      CE => \w_data[31]_i_1_n_0\,
+      D => axi_wdata(9),
+      Q => \w_data_reg_n_0_[9]\,
+      R => '0'
+    );
+\wea_reg[0]\: unisim.vcomponents.LDCE
     generic map(
       INIT => '0'
     )
         port map (
       CLR => '0',
-      D => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1\,
-      G => \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_2\,
+      D => \wea_reg[0]_i_1_n_0\,
+      G => \wea__0\,
       GE => '1',
-      Q => wea_bram(0)
+      Q => wea(0)
+    );
+\wea_reg[0]_i_1\: unisim.vcomponents.LUT6
+    generic map(
+      INIT => X"2000000000000000"
+    )
+        port map (
+      I0 => axi_wstrb(0),
+      I1 => p_0_in10_in,
+      I2 => axi_awvalid,
+      I3 => axi_wvalid,
+      I4 => \^axi_awready_reg_0\,
+      I5 => \^axi_wready_reg_0\,
+      O => \wea_reg[0]_i_1_n_0\
+    );
+\wea_reg[0]_i_2\: unisim.vcomponents.LUT3
+    generic map(
+      INIT => X"BA"
+    )
+        port map (
+      I0 => \dina__0\,
+      I1 => p_0_in4_in,
+      I2 => \r_data__0\,
+      O => \wea__0\
     );
 end STRUCTURE;
 library IEEE;
@@ -24228,8 +23258,8 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0 is
   port (
-    axi_awready : out STD_LOGIC;
     axi_wready : out STD_LOGIC;
+    axi_awready : out STD_LOGIC;
     axi_arready : out STD_LOGIC;
     axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     hdmi_clk_p : out STD_LOGIC;
@@ -24238,15 +23268,15 @@ entity Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0 is
     hdmi_tx_n : out STD_LOGIC_VECTOR ( 2 downto 0 );
     axi_rvalid : out STD_LOGIC;
     axi_bvalid : out STD_LOGIC;
+    axi_wvalid : in STD_LOGIC;
+    axi_awvalid : in STD_LOGIC;
+    axi_aresetn : in STD_LOGIC;
     axi_aclk : in STD_LOGIC;
     axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    axi_araddr : in STD_LOGIC_VECTOR ( 11 downto 0 );
     axi_awaddr : in STD_LOGIC_VECTOR ( 11 downto 0 );
-    axi_awvalid : in STD_LOGIC;
-    axi_wvalid : in STD_LOGIC;
-    axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    axi_araddr : in STD_LOGIC_VECTOR ( 11 downto 0 );
+    axi_wstrb : in STD_LOGIC_VECTOR ( 0 to 0 );
     axi_arvalid : in STD_LOGIC;
-    axi_aresetn : in STD_LOGIC;
     axi_bready : in STD_LOGIC;
     axi_rready : in STD_LOGIC
   );
@@ -24255,59 +23285,19 @@ entity Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0 is
 end Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0;
 
 architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0 is
-  signal addra : STD_LOGIC_VECTOR ( 10 downto 0 );
-  signal addrb : STD_LOGIC_VECTOR ( 10 downto 2 );
   signal blue : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal clk_125MHz : STD_LOGIC;
   signal clk_25MHz : STD_LOGIC;
+  signal cm_addr : STD_LOGIC_VECTOR ( 10 downto 2 );
+  signal cm_data : STD_LOGIC_VECTOR ( 14 downto 8 );
   signal color_mapper_n_0 : STD_LOGIC;
   signal color_mapper_n_1 : STD_LOGIC;
-  signal dina : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal douta : STD_LOGIC_VECTOR ( 31 downto 0 );
-  signal doutb : STD_LOGIC_VECTOR ( 14 downto 8 );
   signal drawX : STD_LOGIC_VECTOR ( 8 downto 4 );
   signal drawY : STD_LOGIC_VECTOR ( 5 downto 4 );
   signal green : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal hdmi_text_controller_v1_0_AXI_inst_n_11 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_12 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_24 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_25 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_26 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_27 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_28 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_29 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_30 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_31 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_32 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_33 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_34 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_35 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_36 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_37 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_38 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_39 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_40 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_41 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_42 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_43 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_44 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_45 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_46 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_47 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_48 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_49 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_50 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_51 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_52 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_53 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_54 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_6 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_7 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_8 : STD_LOGIC;
-  signal hdmi_text_controller_v1_0_AXI_inst_n_9 : STD_LOGIC;
+  signal hdmi_text_controller_v1_0_AXI_inst_n_13 : STD_LOGIC;
   signal hsync : STD_LOGIC;
   signal locked : STD_LOGIC;
-  signal mem_n_7 : STD_LOGIC;
   signal p_0_in : STD_LOGIC;
   signal red : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal vde : STD_LOGIC;
@@ -24318,19 +23308,18 @@ architecture STRUCTURE of Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_cont
   signal vga_n_14 : STD_LOGIC;
   signal vga_n_15 : STD_LOGIC;
   signal vga_n_16 : STD_LOGIC;
-  signal vga_n_17 : STD_LOGIC;
+  signal vga_n_18 : STD_LOGIC;
   signal vga_n_8 : STD_LOGIC;
   signal vga_n_9 : STD_LOGIC;
   signal vsync : STD_LOGIC;
-  signal wea_bram18_out : STD_LOGIC;
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of vga_to_hdmi : label is "hdmi_tx_0,hdmi_tx_v1_0,{}";
-  attribute DowngradeIPIdentifiedWarnings : string;
-  attribute DowngradeIPIdentifiedWarnings of vga_to_hdmi : label is "yes";
   attribute IP_DEFINITION_SOURCE : string;
   attribute IP_DEFINITION_SOURCE of vga_to_hdmi : label is "package_project";
-  attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of vga_to_hdmi : label is "hdmi_tx_v1_0,Vivado 2022.2";
+  attribute downgradeipidentifiedwarnings : string;
+  attribute downgradeipidentifiedwarnings of vga_to_hdmi : label is "yes";
+  attribute x_core_info : string;
+  attribute x_core_info of vga_to_hdmi : label is "hdmi_tx_v1_0,Vivado 2022.2";
 begin
 clk_wiz: entity work.Lab7MicroBlaze_hdmi_text_controller_1_0_clk_wiz_0
      port map (
@@ -24342,159 +23331,73 @@ clk_wiz: entity work.Lab7MicroBlaze_hdmi_text_controller_1_0_clk_wiz_0
     );
 color_mapper: entity work.Lab7MicroBlaze_hdmi_text_controller_1_0_color_mapper
      port map (
+      \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram\(1 downto 0) => drawY(5 downto 4),
       Q(1 downto 0) => drawX(8 downto 7),
       S(1) => color_mapper_n_0,
-      S(0) => color_mapper_n_1,
-      \addrb_bram_reg[5]_i_1\(1 downto 0) => drawY(5 downto 4)
+      S(0) => color_mapper_n_1
     );
 hdmi_text_controller_v1_0_AXI_inst: entity work.Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0_AXI
      port map (
-      E(3) => hdmi_text_controller_v1_0_AXI_inst_n_6,
-      E(2) => hdmi_text_controller_v1_0_AXI_inst_n_7,
-      E(1) => hdmi_text_controller_v1_0_AXI_inst_n_8,
-      E(0) => hdmi_text_controller_v1_0_AXI_inst_n_9,
-      Q(31 downto 0) => dina(31 downto 0),
-      addra(10 downto 0) => addra(10 downto 0),
+      \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram\ => hdmi_text_controller_v1_0_AXI_inst_n_13,
+      addrb(10 downto 2) => cm_addr(10 downto 2),
+      addrb(1 downto 0) => drawX(5 downto 4),
       axi_aclk => axi_aclk,
       axi_araddr(11 downto 0) => axi_araddr(11 downto 0),
       axi_aresetn => axi_aresetn,
-      axi_arready => axi_arready,
+      axi_arready_reg_0 => axi_arready,
       axi_arvalid => axi_arvalid,
       axi_awaddr(11 downto 0) => axi_awaddr(11 downto 0),
-      \axi_awaddr_reg[13]_0\ => hdmi_text_controller_v1_0_AXI_inst_n_11,
-      \axi_awaddr_reg[13]_1\ => hdmi_text_controller_v1_0_AXI_inst_n_53,
-      axi_awready => axi_awready,
-      axi_awready_reg_0 => hdmi_text_controller_v1_0_AXI_inst_n_54,
+      axi_awready_reg_0 => axi_awready,
       axi_awvalid => axi_awvalid,
       axi_bready => axi_bready,
       axi_bvalid => axi_bvalid,
       axi_rdata(31 downto 0) => axi_rdata(31 downto 0),
-      \axi_rdata_reg[31]_0\(31 downto 0) => douta(31 downto 0),
       axi_rready => axi_rready,
       axi_rvalid => axi_rvalid,
       axi_wdata(31 downto 0) => axi_wdata(31 downto 0),
-      axi_wready => axi_wready,
-      axi_wstrb(3 downto 0) => axi_wstrb(3 downto 0),
-      \axi_wstrb[0]_0\(0) => hdmi_text_controller_v1_0_AXI_inst_n_52,
-      \axi_wstrb[3]\(3) => hdmi_text_controller_v1_0_AXI_inst_n_24,
-      \axi_wstrb[3]\(2) => hdmi_text_controller_v1_0_AXI_inst_n_25,
-      \axi_wstrb[3]\(1) => hdmi_text_controller_v1_0_AXI_inst_n_26,
-      \axi_wstrb[3]\(0) => hdmi_text_controller_v1_0_AXI_inst_n_27,
-      \axi_wstrb[3]_0\(3) => hdmi_text_controller_v1_0_AXI_inst_n_28,
-      \axi_wstrb[3]_0\(2) => hdmi_text_controller_v1_0_AXI_inst_n_29,
-      \axi_wstrb[3]_0\(1) => hdmi_text_controller_v1_0_AXI_inst_n_30,
-      \axi_wstrb[3]_0\(0) => hdmi_text_controller_v1_0_AXI_inst_n_31,
-      \axi_wstrb[3]_1\(3) => hdmi_text_controller_v1_0_AXI_inst_n_32,
-      \axi_wstrb[3]_1\(2) => hdmi_text_controller_v1_0_AXI_inst_n_33,
-      \axi_wstrb[3]_1\(1) => hdmi_text_controller_v1_0_AXI_inst_n_34,
-      \axi_wstrb[3]_1\(0) => hdmi_text_controller_v1_0_AXI_inst_n_35,
-      \axi_wstrb[3]_2\(3) => hdmi_text_controller_v1_0_AXI_inst_n_36,
-      \axi_wstrb[3]_2\(2) => hdmi_text_controller_v1_0_AXI_inst_n_37,
-      \axi_wstrb[3]_2\(1) => hdmi_text_controller_v1_0_AXI_inst_n_38,
-      \axi_wstrb[3]_2\(0) => hdmi_text_controller_v1_0_AXI_inst_n_39,
-      \axi_wstrb[3]_3\(3) => hdmi_text_controller_v1_0_AXI_inst_n_40,
-      \axi_wstrb[3]_3\(2) => hdmi_text_controller_v1_0_AXI_inst_n_41,
-      \axi_wstrb[3]_3\(1) => hdmi_text_controller_v1_0_AXI_inst_n_42,
-      \axi_wstrb[3]_3\(0) => hdmi_text_controller_v1_0_AXI_inst_n_43,
-      \axi_wstrb[3]_4\(3) => hdmi_text_controller_v1_0_AXI_inst_n_44,
-      \axi_wstrb[3]_4\(2) => hdmi_text_controller_v1_0_AXI_inst_n_45,
-      \axi_wstrb[3]_4\(1) => hdmi_text_controller_v1_0_AXI_inst_n_46,
-      \axi_wstrb[3]_4\(0) => hdmi_text_controller_v1_0_AXI_inst_n_47,
-      \axi_wstrb[3]_5\(3) => hdmi_text_controller_v1_0_AXI_inst_n_48,
-      \axi_wstrb[3]_5\(2) => hdmi_text_controller_v1_0_AXI_inst_n_49,
-      \axi_wstrb[3]_5\(1) => hdmi_text_controller_v1_0_AXI_inst_n_50,
-      \axi_wstrb[3]_5\(0) => hdmi_text_controller_v1_0_AXI_inst_n_51,
-      axi_wstrb_0_sp_1 => hdmi_text_controller_v1_0_AXI_inst_n_12,
+      axi_wready_reg_0 => axi_wready,
+      axi_wstrb(0) => axi_wstrb(0),
       axi_wvalid => axi_wvalid,
-      p_0_in => p_0_in,
-      wea_bram18_out => wea_bram18_out
-    );
-mem: entity work.Lab7MicroBlaze_hdmi_text_controller_1_0_mem_block
-     port map (
-      D(10 downto 2) => addrb(10 downto 2),
-      D(1 downto 0) => drawX(5 downto 4),
-      \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram\ => mem_n_7,
-      \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\(31 downto 0) => douta(31 downto 0),
-      \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1\ => hdmi_text_controller_v1_0_AXI_inst_n_54,
-      \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_2\ => hdmi_text_controller_v1_0_AXI_inst_n_53,
-      \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_3\ => hdmi_text_controller_v1_0_AXI_inst_n_11,
-      \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_4\(31 downto 0) => dina(31 downto 0),
-      \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_5\(0) => wea_bram18_out,
-      E(0) => hdmi_text_controller_v1_0_AXI_inst_n_52,
-      Q(6 downto 0) => doutb(14 downto 8),
-      addra(10 downto 0) => addra(10 downto 0),
-      axi_aclk => axi_aclk,
-      \axi_rdata_reg[31]\ => hdmi_text_controller_v1_0_AXI_inst_n_12,
       blue(3 downto 0) => blue(3 downto 0),
-      \douta_reg[31]_i_4_0\(3) => hdmi_text_controller_v1_0_AXI_inst_n_6,
-      \douta_reg[31]_i_4_0\(2) => hdmi_text_controller_v1_0_AXI_inst_n_7,
-      \douta_reg[31]_i_4_0\(1) => hdmi_text_controller_v1_0_AXI_inst_n_8,
-      \douta_reg[31]_i_4_0\(0) => hdmi_text_controller_v1_0_AXI_inst_n_9,
-      \douta_reg[31]_i_4_1\(3) => hdmi_text_controller_v1_0_AXI_inst_n_40,
-      \douta_reg[31]_i_4_1\(2) => hdmi_text_controller_v1_0_AXI_inst_n_41,
-      \douta_reg[31]_i_4_1\(1) => hdmi_text_controller_v1_0_AXI_inst_n_42,
-      \douta_reg[31]_i_4_1\(0) => hdmi_text_controller_v1_0_AXI_inst_n_43,
-      \douta_reg[31]_i_4_2\(3) => hdmi_text_controller_v1_0_AXI_inst_n_32,
-      \douta_reg[31]_i_4_2\(2) => hdmi_text_controller_v1_0_AXI_inst_n_33,
-      \douta_reg[31]_i_4_2\(1) => hdmi_text_controller_v1_0_AXI_inst_n_34,
-      \douta_reg[31]_i_4_2\(0) => hdmi_text_controller_v1_0_AXI_inst_n_35,
-      \douta_reg[31]_i_4_3\(3) => hdmi_text_controller_v1_0_AXI_inst_n_24,
-      \douta_reg[31]_i_4_3\(2) => hdmi_text_controller_v1_0_AXI_inst_n_25,
-      \douta_reg[31]_i_4_3\(1) => hdmi_text_controller_v1_0_AXI_inst_n_26,
-      \douta_reg[31]_i_4_3\(0) => hdmi_text_controller_v1_0_AXI_inst_n_27,
-      \douta_reg[31]_i_5_0\(3) => hdmi_text_controller_v1_0_AXI_inst_n_48,
-      \douta_reg[31]_i_5_0\(2) => hdmi_text_controller_v1_0_AXI_inst_n_49,
-      \douta_reg[31]_i_5_0\(1) => hdmi_text_controller_v1_0_AXI_inst_n_50,
-      \douta_reg[31]_i_5_0\(0) => hdmi_text_controller_v1_0_AXI_inst_n_51,
-      \douta_reg[31]_i_5_1\(3) => hdmi_text_controller_v1_0_AXI_inst_n_44,
-      \douta_reg[31]_i_5_1\(2) => hdmi_text_controller_v1_0_AXI_inst_n_45,
-      \douta_reg[31]_i_5_1\(1) => hdmi_text_controller_v1_0_AXI_inst_n_46,
-      \douta_reg[31]_i_5_1\(0) => hdmi_text_controller_v1_0_AXI_inst_n_47,
-      \douta_reg[31]_i_5_2\(3) => hdmi_text_controller_v1_0_AXI_inst_n_36,
-      \douta_reg[31]_i_5_2\(2) => hdmi_text_controller_v1_0_AXI_inst_n_37,
-      \douta_reg[31]_i_5_2\(1) => hdmi_text_controller_v1_0_AXI_inst_n_38,
-      \douta_reg[31]_i_5_2\(0) => hdmi_text_controller_v1_0_AXI_inst_n_39,
-      \douta_reg[31]_i_5_3\(3) => hdmi_text_controller_v1_0_AXI_inst_n_28,
-      \douta_reg[31]_i_5_3\(2) => hdmi_text_controller_v1_0_AXI_inst_n_29,
-      \douta_reg[31]_i_5_3\(1) => hdmi_text_controller_v1_0_AXI_inst_n_30,
-      \douta_reg[31]_i_5_3\(0) => hdmi_text_controller_v1_0_AXI_inst_n_31,
+      doutb(6 downto 0) => cm_data(14 downto 8),
       green(3 downto 0) => green(3 downto 0),
+      p_0_in => p_0_in,
       red(3 downto 0) => red(3 downto 0),
       \srl[36].srl16_i\ => vga_n_16,
-      \srl[36].srl16_i_0\ => vga_n_8,
-      \srl[36].srl16_i_1\ => vga_n_17,
-      vga_to_hdmi_i_102_0 => vga_n_12,
-      vga_to_hdmi_i_102_1 => vga_n_13,
-      vga_to_hdmi_i_220_0 => vga_n_11,
-      vga_to_hdmi_i_220_1 => vga_n_10,
-      vga_to_hdmi_i_220_2 => vga_n_9,
-      vga_to_hdmi_i_45 => vga_n_15,
-      vga_to_hdmi_i_45_0 => vga_n_14
+      \srl[36].srl16_i_0\ => vga_n_18,
+      \srl[36].srl16_i_1\ => vga_n_15,
+      vga_to_hdmi_i_118_0 => vga_n_11,
+      vga_to_hdmi_i_118_1 => vga_n_12,
+      vga_to_hdmi_i_272_0 => vga_n_10,
+      vga_to_hdmi_i_272_1 => vga_n_9,
+      vga_to_hdmi_i_272_2 => vga_n_8,
+      vga_to_hdmi_i_49 => vga_n_14,
+      vga_to_hdmi_i_49_0 => vga_n_13
     );
 vga: entity work.Lab7MicroBlaze_hdmi_text_controller_1_0_vga_controller
      port map (
-      D(8 downto 0) => addrb(10 downto 2),
-      Q(3 downto 2) => drawX(8 downto 7),
-      Q(1 downto 0) => drawX(5 downto 4),
+      \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram\ => vga_n_12,
+      \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_0\ => vga_n_13,
+      \DEVICE_7SERIES.NO_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.ram_1\ => vga_n_14,
+      Q(1 downto 0) => drawY(5 downto 4),
       S(1) => color_mapper_n_0,
       S(0) => color_mapper_n_1,
+      addrb(8 downto 0) => cm_addr(10 downto 2),
       clk_out1 => clk_25MHz,
-      \hc_reg[1]_0\ => vga_n_16,
-      \hc_reg[1]_1\ => vga_n_17,
-      \hc_reg[2]_0\ => vga_n_8,
+      doutb(6 downto 0) => cm_data(14 downto 8),
+      \hc_reg[1]_0\ => vga_n_15,
+      \hc_reg[1]_1\ => vga_n_16,
+      \hc_reg[2]_0\ => vga_n_18,
+      \hc_reg[8]_0\(3 downto 2) => drawX(8 downto 7),
+      \hc_reg[8]_0\(1 downto 0) => drawX(5 downto 4),
       hsync => hsync,
       p_0_in => p_0_in,
-      \vc_reg[0]_0\ => vga_n_9,
-      \vc_reg[0]_1\ => vga_n_10,
-      \vc_reg[0]_2\ => vga_n_11,
-      \vc_reg[0]_3\ => vga_n_12,
-      \vc_reg[0]_4\ => vga_n_13,
-      \vc_reg[0]_5\ => vga_n_14,
-      \vc_reg[0]_6\ => vga_n_15,
-      \vc_reg[5]_0\(1 downto 0) => drawY(5 downto 4),
+      \vc_reg[0]_rep_0\ => vga_n_8,
+      \vc_reg[0]_rep_1\ => vga_n_9,
+      \vc_reg[0]_rep_2\ => vga_n_10,
+      \vc_reg[0]_rep_3\ => vga_n_11,
       vde => vde,
-      vga_to_hdmi_i_16_0 => mem_n_7,
-      vga_to_hdmi_i_45_0(6 downto 0) => doutb(14 downto 8),
+      vga_to_hdmi_i_18_0 => hdmi_text_controller_v1_0_AXI_inst_n_13,
       vsync => vsync
     );
 vga_to_hdmi: entity work.Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_tx_0
@@ -24607,11 +23510,13 @@ GND: unisim.vcomponents.GND
 inst: entity work.Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v1_0
      port map (
       axi_aclk => axi_aclk,
-      axi_araddr(11 downto 0) => axi_araddr(13 downto 2),
+      axi_araddr(11) => axi_araddr(13),
+      axi_araddr(10 downto 0) => axi_araddr(10 downto 0),
       axi_aresetn => axi_aresetn,
       axi_arready => axi_arready,
       axi_arvalid => axi_arvalid,
-      axi_awaddr(11 downto 0) => axi_awaddr(13 downto 2),
+      axi_awaddr(11) => axi_awaddr(13),
+      axi_awaddr(10 downto 0) => axi_awaddr(10 downto 0),
       axi_awready => axi_awready,
       axi_awvalid => axi_awvalid,
       axi_bready => axi_bready,
@@ -24621,7 +23526,7 @@ inst: entity work.Lab7MicroBlaze_hdmi_text_controller_1_0_hdmi_text_controller_v
       axi_rvalid => axi_rvalid,
       axi_wdata(31 downto 0) => axi_wdata(31 downto 0),
       axi_wready => axi_wready,
-      axi_wstrb(3 downto 0) => axi_wstrb(3 downto 0),
+      axi_wstrb(0) => axi_wstrb(0),
       axi_wvalid => axi_wvalid,
       hdmi_clk_n => hdmi_clk_n,
       hdmi_clk_p => hdmi_clk_p,

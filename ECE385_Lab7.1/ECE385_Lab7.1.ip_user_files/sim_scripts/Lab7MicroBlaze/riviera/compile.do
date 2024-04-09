@@ -142,7 +142,6 @@ vlog -work blk_mem_gen_v8_4_5  -v2k5 "+incdir+../../../../ECE385_Lab7.1.gen/sour
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/ec67/hdl" "+incdir+../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/7698" "+incdir+../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4" \
 "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_lmb_bram_1/sim/Lab7MicroBlaze_lmb_bram_1.v" \
-"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/blk_mem_gen_0_1/sim/blk_mem_gen_0.v" \
 "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/encode.v" \
 "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/serdes_10_to_1.v" \
 "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/srldelay.v" \
@@ -150,14 +149,14 @@ vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../ECE385_Lab7.1.gen/sources_
 "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/sim/hdmi_tx_0.v" \
 "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0_clk_wiz.v" \
 "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0.v" \
+"../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/blk_mem_gen_0_1/sim/blk_mem_gen_0.v" \
 
 vlog -work xil_defaultlib  -sv2k12 "+incdir+../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/ec67/hdl" "+incdir+../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/7698" "+incdir+../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4" \
-"../../../bd/Lab7MicroBlaze/ipshared/afd5/src/Color_Mapper.sv" \
-"../../../bd/Lab7MicroBlaze/ipshared/afd5/src/VGA_controller.sv" \
-"../../../bd/Lab7MicroBlaze/ipshared/afd5/src/font_rom.sv" \
-"../../../bd/Lab7MicroBlaze/ipshared/afd5/src/hdmi_text_controller_v1_0_AXI.sv" \
-"../../../bd/Lab7MicroBlaze/ipshared/afd5/src/mem_block.sv" \
-"../../../bd/Lab7MicroBlaze/ipshared/afd5/src/hdmi_text_controller_v1_0.sv" \
+"../../../bd/Lab7MicroBlaze/ipshared/9c10/src/Color_Mapper.sv" \
+"../../../bd/Lab7MicroBlaze/ipshared/9c10/src/VGA_controller.sv" \
+"../../../bd/Lab7MicroBlaze/ipshared/9c10/src/font_rom.sv" \
+"../../../bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv" \
+"../../../bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0.sv" \
 "../../../bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/sim/Lab7MicroBlaze_hdmi_text_controller_1_0.sv" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/ec67/hdl" "+incdir+../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/7698" "+incdir+../../../../ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4" \

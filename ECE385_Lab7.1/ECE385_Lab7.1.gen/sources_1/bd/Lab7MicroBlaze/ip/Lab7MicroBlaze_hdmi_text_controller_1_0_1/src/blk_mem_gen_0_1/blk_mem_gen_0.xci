@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "blk_mem_gen_0",
-    "cell_name": "mem/bram",
+    "cell_name": "hdmi_text_controller_v1_0_AXI_inst/bram",
     "component_reference": "xilinx.com:ip:blk_mem_gen:8.4",
     "ip_revision": "5",
     "gen_directory": ".",

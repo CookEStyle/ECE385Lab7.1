@@ -1,6 +1,7 @@
-13:53:16 **** Incremental Build of project mb_usb_hdmi_top ****
-buildplatform.bat 54992 mb_usb_hdmi_top no_domain_build 
-XSDB Server Channel: tcfchan#2
+05:20:15 **** Incremental Build of project mb_usb_hdmi_top ****
+buildplatform.bat 61829 mb_usb_hdmi_top no_domain_build 
+XSDB Server Channel: tcfchan#1
+Reading the platform  : "mb_usb_hdmi_top"
 C:/Xilinx/Vitis/2022.2/gnu/microblaze/nt
 Building the BSP Library for domain  - standalone_microblaze_0 on processor microblaze_0
 make --no-print-directory seq_libs
@@ -103,7 +104,7 @@ te_sinit.o microblaze_0/lib/xuartlite_stats.o
 mb-ar: creating microblaze_0/lib/libxil.a
 'Finished building libraries'
 
-13:53:24 **** Incremental Build of configuration Debug for project mb_hdmi_text_controller ****
+05:20:27 **** Incremental Build of configuration Debug for project mb_hdmi_text_controller ****
 make all 
 'Building file: ../src/hdmi_text_controller.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -175,14 +176,14 @@ mb-size mb_hdmi_text_controller.elf  |tee "mb_hdmi_text_controller.elf.size"
   85484	   2096	   3172	  90752	  16280	mb_hdmi_text_controller.elf
 'Finished building: mb_hdmi_text_controller.elf.size'
 ' '
-13:53:26 **** Incremental Build of configuration Debug for project mb_hdmi_text_controller_system ****
+05:20:30 **** Incremental Build of configuration Debug for project mb_hdmi_text_controller_system ****
 make all 
 Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."
 Nothing to build in platform 'mb_usb_hdmi_top'
 
-13:54:13 **** Incremental Build of configuration Debug for project mb_hdmi_text_controller ****
+05:20:43 **** Incremental Build of configuration Debug for project mb_hdmi_text_controller ****
 make all 
 make: Nothing to be done for 'all'.
-13:54:14 **** Incremental Build of configuration Debug for project mb_hdmi_text_controller_system ****
+05:20:44 **** Incremental Build of configuration Debug for project mb_hdmi_text_controller_system ****
 make all 
 Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."
