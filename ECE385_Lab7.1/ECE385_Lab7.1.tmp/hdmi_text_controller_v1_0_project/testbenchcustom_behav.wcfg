@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
-      <ZoomEndTime time="8.100001 us"></ZoomEndTime>
-      <Cursor1Time time="1.420000 us"></Cursor1Time>
+      <ZoomStartTime time="1,491.030 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,164.031 ns"></ZoomEndTime>
+      <Cursor1Time time="3,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="257"></NameColumnWidth>
-      <ValueColumnWidth column_width="95"></ValueColumnWidth>
+      <ValueColumnWidth column_width="87"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="10" />
+   <WVObjectSize size="9" />
    <wvobject fp_name="/testbenchcustom/write_addr" type="array">
       <obj_property name="ElementShortName">write_addr[31:0]</obj_property>
       <obj_property name="ObjectShortName">write_addr[31:0]</obj_property>
@@ -52,16 +52,12 @@
       <obj_property name="ObjectShortName">drawY[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbenchcustom/hdmi_text_controller_v1_0_inst/hdmi_text_controller_v1_0_AXI_inst/S_AXI_WDATA" type="array">
-      <obj_property name="ElementShortName">S_AXI_WDATA[31:0]</obj_property>
-      <obj_property name="ObjectShortName">S_AXI_WDATA[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbenchcustom/hdmi_text_controller_v1_0_inst/hdmi_text_controller_v1_0_AXI_inst/palette" type="array">
-      <obj_property name="ElementShortName">palette[0:7][31:0]</obj_property>
-      <obj_property name="ObjectShortName">palette[0:7][31:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/testbenchcustom/hdmi_text_controller_v1_0_inst/color_mapper/cm_addr" type="array">
       <obj_property name="ElementShortName">cm_addr[11:0]</obj_property>
       <obj_property name="ObjectShortName">cm_addr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbenchcustom/hdmi_text_controller_v1_0_inst/hdmi_text_controller_v1_0_AXI_inst/cm_data" type="array">
+      <obj_property name="ElementShortName">cm_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cm_data[31:0]</obj_property>
    </wvobject>
 </wave_config>

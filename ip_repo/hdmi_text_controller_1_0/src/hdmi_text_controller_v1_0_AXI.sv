@@ -161,7 +161,6 @@ assign S_AXI_RVALID	= axi_rvalid;
 // axi_awready is asserted for one S_AXI_ACLK clock cycle when both
 // S_AXI_AWVALID and S_AXI_WVALID are asserted. axi_awready is
 // de-asserted when reset is low.
-
 always_ff @( posedge S_AXI_ACLK )
 begin
   if ( S_AXI_ARESETN == 1'b0 )
@@ -267,7 +266,13 @@ begin
 //			// '+:', you will need to understand how this operator works.
 //            slv_regs[axi_awaddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB]][(byte_index*8) +: 8] <= S_AXI_WDATA[(byte_index*8) +: 8];
 //          end  
-        w_data <= S_AXI_WDATA;
+//        w_data <= S_AXI_WDATA; //Old 7.2 Code
+        if (axi_awaddr[13] && slv_reg_wren) begin //Write A Palette 
+        palette[axi_awaddr[9:2]] <= S_AXI_WDATA;
+        end else if (~axi_awaddr[13] && slv_reg_wren) begin //Write A BRAM
+//        addra <= axi_awaddr;
+        dina <= S_AXI_WDATA;
+        end
       end
   end
 end    
@@ -370,6 +375,27 @@ end
 // Slave register read enable is asserted when valid address is available
 // and the slave is ready to accept the read address.
 assign slv_reg_rden = axi_arready & S_AXI_ARVALID & ~axi_rvalid;
+logic [1:0] ready_states, ready_states_next;
+
+always_comb begin
+    unique case(ready_states) 
+        (2'b00): ready_states_next = 2'b01;
+        (2'b01): ready_states_next = 2'b10;
+        (2'b10): begin
+            if(slv_reg_rden) begin
+                ready_states_next = 2'b00;
+            end else begin
+                ready_states_next = 2'b11;
+            end
+        end
+        default: ready_states_next = ready_states_next;
+    endcase
+end
+
+always_ff @(posedge S_AXI_ACLK) begin
+    ready_states <= ready_states_next;
+end
+
 always_comb
 begin
       // Address decoding for reading registers
@@ -391,7 +417,12 @@ begin
       // output the read dada 
       if (slv_reg_rden)
         begin
-          axi_rdata <= r_data;     // register read data
+//          axi_rdata <= r_data;     // register read data 7.2 Old Code
+          if (axi_araddr[13] && slv_reg_rden) begin //Read A Palette
+            axi_rdata <= palette[axi_awaddr[9:2]];
+          end else if(~axi_araddr[13] && slv_reg_rden) begin //Read A BRAM
+            axi_rdata <= douta;
+          end
         end   
     end
 end    
@@ -435,25 +466,42 @@ assign cm_palette = palette;
 //    end
 //end
 
-//Read/Write A Condition
-always_comb begin
-    if (axi_awaddr[13] && slv_reg_wren) begin //Write A Palette 
-        palette[axi_awaddr[9:2]] = w_data;
-    end else if (~axi_awaddr[13] && slv_reg_wren) begin //Write A BRAM
-        wea = S_AXI_WSTRB;
-        addra = axi_awaddr;
-        dina = w_data;
-    end else if (axi_araddr[13] && slv_reg_rden) begin //Read A Palette
-        r_data = palette[axi_awaddr[9:2]];
-    end else if(~axi_araddr[13] && slv_reg_rden) begin //Read A BRAM
-        wea = 4'h0;
-        addra = axi_araddr;
-        r_data = douta;
+////Read/Write A Condition
+//always_comb begin
+//    if (axi_awaddr[13] && slv_reg_wren) begin //Write A Palette 
+//        palette[axi_awaddr[9:2]] = S_AXI_WDATA;
+//    end else if (~axi_awaddr[13] && slv_reg_wren) begin //Write A BRAM
+//        wea = S_AXI_WSTRB;
+//        addra = axi_awaddr;
+//        dina = S_AXI_WDATA;
+//    end else if (axi_araddr[13] && slv_reg_rden) begin //Read A Palette
+//        r_data = palette[axi_awaddr[9:2]];
+//    end else if(~axi_araddr[13] && slv_reg_rden) begin //Read A BRAM
+//        wea = 4'h0;
+//        addra = axi_araddr;
+//        r_data = douta;
+//    end
+//end
+
+//A Address Select System
+always_ff @( posedge S_AXI_ACLK ) begin
+    if(slv_reg_wren) begin
+        addra <= axi_awaddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB];
+    end else if(slv_reg_rden) begin
+        addra <= axi_araddr[ADDR_LSB+OPT_MEM_ADDR_BITS:ADDR_LSB];
+    end else begin
+        addra <= addra;
     end
 end
-
-
-
+always_ff @( posedge S_AXI_ACLK ) begin
+    if(slv_reg_wren) begin
+        wea = S_AXI_WSTRB;
+    end else if (slv_reg_rden) begin
+        wea <= 4'b0;
+    end else begin
+        wea <= wea;
+    end
+end
 ////Read B Condition
 //always_comb begin
 //    if(cm_addr[13]) begin

@@ -9,7 +9,7 @@
 //Used for simulation of AXI4-Lite bus as well as generating
 //simulation video image for testing
 
-//`define SIM_VIDEO //Comment out to simulate AXI bus only
+`define SIM_VIDEO //Comment out to simulate AXI bus only
                     //Uncomment to simulate entire screen and write BMP (slow)
 
 module testbenchcustom();
@@ -265,29 +265,27 @@ module testbenchcustom();
         arstn = 0; //reset IP
         repeat (4) @(posedge aclk);
         arstn <= 1;
-        for(i=0; i < 8; i++) begin
-            int r_1, g_1, b_1, r_0, g_0, b_0;
-            r_1 = i << 21;
-            g_1 =  16 - i << 17;
-            b_1 = 0 << 13;
-            r_0 = 0 << 9;
-            g_0 =  16 - i << 5;
-            b_0 = i << 1;
-            repeat (4) @(posedge aclk) axi_write(4*(2048 + i), r_1 | g_1 | b_1 | r_0 | g_0 | b_0);
-//            repeat (4) @(posedge aclk) axi_write(4*(2048 + i), i);
-        end
+        //Fill Palette
+        axi_write(4*(12'h800 + 0), 4'hF << 21 | 4'h4 << 17 | 4'h0 << 13 | 4'hF << 9 | 4'h0 << 5 | 4'h0 << 1); //red-orange, red
+        axi_write(4*(12'h800 + 1), 4'hF << 21 | 4'hA << 17 | 4'h4 << 13 | 4'hF << 9 | 4'hA << 5 | 4'h0 << 1); //yellow-orange, orange
+        axi_write(4*(12'h800 + 2), 4'h9 << 21 | 4'hD << 17 | 4'h3 << 13 | 4'hF << 9 | 4'hF << 5 | 4'h0 << 1); //green-yellow, yellow
+        axi_write(4*(12'h800 + 3), 4'h0 << 21 | 4'h8 << 17 | 4'hF << 13 | 4'h0 << 9 | 4'hF << 5 | 4'h0 << 1); //blue-green, green
+        axi_write(4*(12'h800 + 4), 4'hF << 21 | 4'hA << 17 | 4'hF << 13 | 4'h0 << 9 | 4'h0 << 5 | 4'hF << 1); //purple-blue, blue
+        axi_write(4*(12'h800 + 5), 4'hA << 21 | 4'h0 << 17 | 4'hF << 13 | 4'hF << 9 | 4'h0 << 5 | 4'hF << 1); //indigo-purple, purple
+        axi_write(4*(12'h800 + 6), 4'hF << 21 | 4'hC << 17 | 4'hB << 13 | 4'hB << 9 | 4'h0 << 5 | 4'h8 << 1); //pink-indigo, indigo
+        axi_write(4*(12'h800 + 7), 4'hF << 21 | 4'hF << 17 | 4'hF << 13 | 4'h0 << 9 | 4'h0 << 5 | 4'h0 << 1); //white, pink
         
         for(i=0; i < 1200; i++) begin
             int c_1, f_1, b_1, c_0, f_0, b_0;
             c_1 = i << 24;
             f_1 =  (i % 16) << 20;
-            b_1 = (16 - (i % 16)) << 16;
+            b_1 = ((i + 1) % 16) << 16;
             c_0 = i << 8;
             f_0 =  (i % 16) << 4;
-            b_0 = 16 - (i % 16);
+            b_0 = (i + 1) % 16;
 		    repeat (4) @(posedge aclk) axi_write(4*i, c_1 | f_1 | b_1 | c_0 | f_0 | b_0);
 //		    repeat (4) @(posedge aclk) axi_write(4*i, i);
-//		    repeat (4) @(posedge aclk) axi_read(4*i, data);
+		    repeat (4) @(posedge aclk) axi_read(4*i, read_data);
         end
         
         //The following is the readback routine. It tests that your AXI IP is capable of reading back all 601
