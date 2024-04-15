@@ -106,10 +106,11 @@ module  color_mapper ( input  logic [9:0]  DrawX, DrawY,
     
 //    font_rom rom(.addr(addr), .data(data));
     
-    logic [5:0] g_x, g_y; //Glyph Dimensions
+    logic [6:0] g_x, g_y; //Glyph Dimensions
     logic [11:0] v_i, v_irec; //VRAM index 
     logic [31:0] word; //Word
-    logic [7:0] glyph, f_glyph, b_glyph;
+    logic [6:0] glyph;
+    logic [3:0] f_glyph, b_glyph;
     logic [10:0] addr;
     logic [7:0] data;
     logic pixel_on, pixel_on_rec, inv;
@@ -117,22 +118,23 @@ module  color_mapper ( input  logic [9:0]  DrawX, DrawY,
     logic [2:0] f_index, b_index; 
     
     font_rom rom(.addr(addr), .data(data));
-    
+    logic flag;
     always_comb
     begin: Shape_on_proc
-        g_x = DrawX[8:3]; //DrawX / 8 
-        g_y = DrawY[8:4]; //DrawY / 16
+        g_x = DrawX[9:3]; //DrawX / 8 
+        g_y = DrawY[9:4]; //DrawY / 16
         v_i = g_x + g_y * 80; //Figures out which index of VRAM to access by turning (glyphX, glyphY) to wrapping order
         cm_addr = v_i[11:1]; //v_i / 2, Rectifies v_i as each index has 2 glyphs
         word = cm_data; //Getting out 32 bit word
         
         //Gets our glyph info based off v_i[1:0]
+        flag = v_i[0];
         if(v_i[0]) begin
             glyph = word[30:24];
             f_glyph = word[23:20];
             b_glyph = word[19:16];
             inv = word[31];
-        end begin
+        end else begin
             glyph = word[14:8];
             f_glyph = word[7:4];
             b_glyph = word[3:0];

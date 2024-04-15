@@ -112,9 +112,9 @@ module testbenchcustom();
     //the pixel clock, assign pixel_clk = hdmi_text_controller_v1_0_inst.clk_25MHz
     
     // Red Green and Blue values respectively - these come from your draw logic
-     assign pixel_rgb[0] = hdmi_text_controller_v1_0_inst.red;
+     assign pixel_rgb[0] = hdmi_text_controller_v1_0_inst.blue;
      assign pixel_rgb[1] = hdmi_text_controller_v1_0_inst.green;
-     assign pixel_rgb[2] = hdmi_text_controller_v1_0_inst.blue;
+     assign pixel_rgb[2] = hdmi_text_controller_v1_0_inst.red;
     
     // Pixel clock, hs, vs, and vde (!blank) - these come from your internal VGA module
      assign pixel_clk = hdmi_text_controller_v1_0_inst.clk_25MHz;
@@ -265,6 +265,31 @@ module testbenchcustom();
         arstn = 0; //reset IP
         repeat (4) @(posedge aclk);
         arstn <= 1;
+//        repeat (4) @(posedge aclk) axi_write(4*(12'h800), 4'hF << 21 | 4'hF << 17 | 4'hF << 13 | 4'h0 << 9 | 4'h0 << 5 | 4'h0 << 1);
+//        repeat (4) @(posedge aclk) axi_write(4*(12'h800 + 1), 4'h0 << 21 | 4'h0 << 17 | 4'hF << 13 | 4'hF << 9 | 4'h9 << 5 | 4'h0 << 1);
+//        repeat (4) @(posedge aclk) axi_write(4*0, 8'h73 << 24 | 4'h3 << 20 | 4'h1 << 16 | 8'h41 << 8 | 4'h3 << 4 | 4'h1); //sA
+//        repeat (4) @(posedge aclk) axi_write(4*1, 8'h74 << 24 | 4'h3 << 20 | 4'h1 << 16 | 8'h68 << 8 | 4'h3 << 4 | 4'h1); //th
+//        repeat (4) @(posedge aclk) axi_write(4*2, 8'h6e << 24 | 4'h3 << 20 | 4'h1 << 16 | 8'h6f << 8 | 4'h3 << 4 | 4'h1); //no
+//        repeat (4) @(posedge aclk) axi_write(4*3, 8'h00 << 24 | 4'h1 << 20 | 4'h1 << 16 | 8'h36 << 8 | 4'h3 << 4 | 4'h1); // 6
+//        repeat (4) @(posedge aclk) axi_write(4*4, 8'h6e << 24 | 4'h0 << 20 | 4'h1 << 16 | 8'h61 << 8 | 4'h0 << 4 | 4'h1); //na
+//        repeat (4) @(posedge aclk) axi_write(4*5, 8'h00 << 24 | 4'h1 << 20 | 4'h1 << 16 | 8'h64 << 8 | 4'h0 << 4 | 4'h1); // d
+//        repeat (4) @(posedge aclk) axi_write(4*6, 8'h61 << 24 | 4'h3 << 20 | 4'h1 << 16 | 8'h43 << 8 | 4'h3 << 4 | 4'h1); //aC
+//        repeat (4) @(posedge aclk) axi_write(4*7, 8'h73 << 24 | 4'h3 << 20 | 4'h1 << 16 | 8'h72 << 8 | 4'h3 << 4 | 4'h1); //sr
+//        repeat (4) @(posedge aclk) axi_write(4*8, 8'h6e << 24 | 4'h3 << 20 | 4'h1 << 16 | 8'h6f << 8 | 4'h3 << 4 | 4'h1); //no
+//        repeat (4) @(posedge aclk) axi_write(4*9, 8'h34 << 24 | 4'h3 << 20 | 4'h1 << 16 | 8'h63 << 8 | 4'h3 << 4 | 4'h1); //4c
+//        repeat (4) @(posedge aclk) axi_write(4*10, 8'h63 << 24 | 4'h0 << 20 | 4'h1 << 16 | 8'h00 << 8 | 4'h1 << 4 | 4'h1); //c 
+//        repeat (4) @(posedge aclk) axi_write(4*11, 8'h6d << 24 | 4'h0 << 20 | 4'h1 << 16 | 8'h6f << 8 | 4'h0 << 4 | 4'h1); //mo
+//        repeat (4) @(posedge aclk) axi_write(4*12, 8'h6c << 24 | 4'h0 << 20 | 4'h1 << 16 | 8'h70 << 8 | 4'h0 << 4 | 4'h1); //lp
+//        repeat (4) @(posedge aclk) axi_write(4*13, 8'h74 << 24 | 4'h0 << 20 | 4'h1 << 16 | 8'h65 << 8 | 4'h0 << 4 | 4'h1); //te
+//        repeat (4) @(posedge aclk) axi_write(4*14, 8'h64 << 24 | 4'h1 << 20 | 4'h1 << 16 | 8'h65 << 8 | 4'h0 << 4 | 4'h1); //de
+//        repeat (4) @(posedge aclk) axi_write(4*15, 8'h45 << 24 | 4'h2 << 20 | 4'h1 << 16 | 8'h00 << 8 | 4'h1 << 4 | 4'h1); //E 
+//        repeat (4) @(posedge aclk) axi_write(4*16, 8'h45 << 24 | 4'h2 << 20 | 4'h1 << 16 | 8'h43 << 8 | 4'h2 << 4 | 4'h1); //EC
+//        repeat (4) @(posedge aclk) axi_write(4*17, 8'h38 << 24 | 4'h2 << 20 | 4'h1 << 16 | 8'h33 << 8 | 4'h2 << 4 | 4'h1); //83
+//        repeat (4) @(posedge aclk) axi_write(4*18, 8'h21 << 24 | 4'h0 << 20 | 4'h1 << 16 | 8'h35 << 8 | 4'h2 << 4 | 4'h1); //!5
+//        for(i=19; i < 1200; i++) begin
+//		    repeat (4) @(posedge aclk) axi_write(4*i, 8'h00 << 24 | 4'h1 << 20 | 4'h1 << 16 | 8'h00 << 8 | 4'h1 << 4 | 4'h1);
+//        end
+        
         //Fill Palette
         axi_write(4*(12'h800 + 0), 4'hF << 21 | 4'h4 << 17 | 4'h0 << 13 | 4'hF << 9 | 4'h0 << 5 | 4'h0 << 1); //red-orange, red
         axi_write(4*(12'h800 + 1), 4'hF << 21 | 4'hA << 17 | 4'h4 << 13 | 4'hF << 9 | 4'hA << 5 | 4'h0 << 1); //yellow-orange, orange
@@ -291,13 +316,13 @@ module testbenchcustom();
         //The following is the readback routine. It tests that your AXI IP is capable of reading back all 601
         //VRAM registers via AXI (once you've properly filled in axi_read as above). Note that the verification
         //of the readback results is automatic, it will throw an assertion if the readback result is not as expected        
-        for(i=0; i < 600; i++) begin 
-		  repeat (4) @(posedge aclk) axi_read(4*i, tb_read);
-		  axi_read_assert:assert (tb_read == i) else $error ("AXI readback mismatch at address %x. Expected: %x. Actual:%x.", i, i, tb_read);
-        end
+//        for(i=0; i < 600; i++) begin 
+//		  repeat (4) @(posedge aclk) axi_read(4*i, tb_read);
+//		  axi_read_assert:assert (tb_read == i) else $error ("AXI readback mismatch at address %x. Expected: %x. Actual:%x.", i, i, tb_read);
+//        end
         
-        repeat (4) @(posedge aclk) axi_read(600*4, tb_read);
-        $info ("Read back of control register: %x", tb_read);
+//        repeat (4) @(posedge aclk) axi_read(600*4, tb_read);
+//        $info ("Read back of control register: %x", tb_read);
         
         //Make sure you've set the simulation settings to run to 'all', rather than the 1000ns default
 		

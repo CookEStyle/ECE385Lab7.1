@@ -1,6 +1,6 @@
-05:20:43 **** Incremental Build of configuration Debug for project mb_hdmi_text_controller ****
+22:27:19 **** Incremental Build of configuration Debug for project mb_hdmi_text_controller ****
 make all 
 make: Nothing to be done for 'all'.
 
-05:20:43 Build Finished (took 270ms)
+22:27:19 Build Finished (took 214ms)
 

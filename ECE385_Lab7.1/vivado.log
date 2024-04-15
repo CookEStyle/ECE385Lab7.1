@@ -2,10 +2,10 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Tue Apr  9 16:30:01 2024
-# Process ID: 14204
+# Start of session at: Sun Apr 14 17:09:00 2024
+# Process ID: 18876
 # Current directory: C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent51312 C:\Users\merli\ECE385Lab7.1\ECE385_Lab7.1\ECE385_Lab7.1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent32984 C:\Users\merli\ECE385Lab7.1\ECE385_Lab7.1\ECE385_Lab7.1.xpr
 # Log file: C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/vivado.log
 # Journal file: C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1\vivado.jou
 # Running On: DESKTOP-129R2SH, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 16929 MB
@@ -82,4 +82,4 @@ INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/merli/RD_hdmi_ip2020'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
-open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:10 . Memory (MB): peak = 1144.469 ; gain = 355.617
+open_project: Time (s): cpu = 00:00:21 ; elapsed = 00:00:13 . Memory (MB): peak = 1157.668 ; gain = 379.484

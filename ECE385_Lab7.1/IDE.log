@@ -1503,3 +1503,29 @@ con
 
 05:21:07 INFO  : Launch script is exported to file 'C:\Users\merli\ECE385Lab7.1\ECE385_Lab7.1\mb_hdmi_text_controller_system\_ide\scripts\debugger_mb_hdmi_text_controller-default.tcl'
 16:18:44 INFO  : Disconnected from the channel tcfchan#2.
+23:17:43 DEBUG : Logs will be stored at 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/IDE.log'.
+23:19:13 DEBUG : Logs will be stored at 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/IDE.log'.
+23:20:49 DEBUG : Logs will be stored at 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/IDE.log'.
+23:23:02 DEBUG : Logs will be stored at 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/IDE.log'.
+23:32:31 DEBUG : Logs will be stored at 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/IDE.log'.
+15:16:55 DEBUG : Logs will be stored at 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/IDE.log'.
+15:17:53 DEBUG : Logs will be stored at 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/IDE.log'.
+15:28:47 DEBUG : Logs will be stored at 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/IDE.log'.
+15:31:56 DEBUG : Logs will be stored at 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/IDE.log'.
+15:31:56 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\merli\ECE385Lab7.1\ECE385_Lab7.1\temp_xsdb_launch_script.tcl
+15:31:59 INFO  : Platform repository initialization has completed.
+15:32:00 INFO  : Registering command handlers for Vitis TCF services
+15:32:01 INFO  : XSCT server has started successfully.
+15:32:01 INFO  : Successfully done setting XSCT server connection channel  
+15:32:01 INFO  : plnx-install-location is set to ''
+15:32:05 INFO  : Successfully done setting workspace for the tool. 
+15:32:05 INFO  : Successfully done query RDI_DATADIR 
+15:50:32 DEBUG : Logs will be stored at 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/IDE.log'.
+15:50:33 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\merli\ECE385Lab7.1\ECE385_Lab7.1\temp_xsdb_launch_script.tcl
+15:50:39 INFO  : XSCT server has started successfully.
+15:50:39 INFO  : plnx-install-location is set to ''
+15:50:39 INFO  : Successfully done setting XSCT server connection channel  
+15:50:39 INFO  : Successfully done setting workspace for the tool. 
+15:51:01 INFO  : Registering command handlers for Vitis TCF services
+15:51:01 INFO  : Platform repository initialization has completed.
+15:51:07 INFO  : Successfully done query RDI_DATADIR 

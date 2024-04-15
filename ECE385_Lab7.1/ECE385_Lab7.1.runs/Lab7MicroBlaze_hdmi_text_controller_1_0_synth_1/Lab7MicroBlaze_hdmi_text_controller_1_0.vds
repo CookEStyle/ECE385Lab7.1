@@ -2,8 +2,8 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Sat Apr  6 04:34:20 2024
-# Process ID: 1104
+# Start of session at: Sun Apr 14 15:56:55 2024
+# Process ID: 40184
 # Current directory: C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/Lab7MicroBlaze_hdmi_text_controller_1_0_synth_1
 # Command line: vivado.exe -log Lab7MicroBlaze_hdmi_text_controller_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Lab7MicroBlaze_hdmi_text_controller_1_0.tcl
 # Log file: C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/Lab7MicroBlaze_hdmi_text_controller_1_0_synth_1/Lab7MicroBlaze_hdmi_text_controller_1_0.vds
@@ -11,7 +11,7 @@
 # Running On: DESKTOP-129R2SH, OS: Windows, CPU Frequency: 2592 MHz, CPU Physical cores: 6, Host memory: 16929 MB
 #-----------------------------------------------------------
 source Lab7MicroBlaze_hdmi_text_controller_1_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 372.727 ; gain = 64.703
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 372.609 ; gain = 65.277
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/merli/RD_hdmi_ip2020'.
@@ -24,7 +24,7 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Device 21-403] Loading part xc7s50csga324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 34804
+INFO: [Synth 8-7075] Helper process launched with PID 40908
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 WARNING: [Synth 8-6901] identifier 'w_data' is used before its declaration [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:270]
 WARNING: [Synth 8-6901] identifier 'r_data' is used before its declaration [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:377]
@@ -34,7 +34,7 @@ WARNING: [Synth 8-11065] parameter 'CTRLTOKEN1' becomes localparam in 'encode' w
 WARNING: [Synth 8-11065] parameter 'CTRLTOKEN2' becomes localparam in 'encode' with formal parameter declaration list [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/encode.v:147]
 WARNING: [Synth 8-11065] parameter 'CTRLTOKEN3' becomes localparam in 'encode' with formal parameter declaration list [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/encode.v:148]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1188.945 ; gain = 408.148
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1188.566 ; gain = 407.953
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_hdmi_text_controller_1_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/synth/Lab7MicroBlaze_hdmi_text_controller_1_0.sv:53]
 INFO: [Synth 8-6157] synthesizing module 'hdmi_text_controller_v1_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0.sv:9]
@@ -275,18 +275,18 @@ WARNING: [Synth 8-7129] Port SSRA in module blk_mem_gen_prim_wrapper is either u
 WARNING: [Synth 8-7129] Port SSRB in module blk_mem_gen_prim_wrapper is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished RTL Elaboration : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:02 ; elapsed = 00:01:05 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:02 ; elapsed = 00:01:05 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.135 . Memory (MB): peak = 1527.957 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.076 . Memory (MB): peak = 1527.391 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -303,22 +303,22 @@ Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/so
 Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0_late.xdc] for cell 'inst/clk_wiz/inst'
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1527.957 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1527.391 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.121 . Memory (MB): peak = 1527.957 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1527.391 ; gain = 0.000
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:25 ; elapsed = 00:01:29 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Constraint Validation : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:25 ; elapsed = 00:01:29 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -328,7 +328,7 @@ Applied set_property KEEP_HIERARCHY = SOFT for inst/hdmi_text_controller_v1_0_AX
 Applied set_property KEEP_HIERARCHY = SOFT for inst/clk_wiz. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for inst/vga_to_hdmi. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:25 ; elapsed = 00:01:29 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-327] inferring latch for variable 'palette_reg[0]' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
 WARNING: [Synth 8-327] inferring latch for variable 'palette_reg[1]' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
@@ -343,7 +343,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'wea_reg' [c:/Users/merli/EC
 WARNING: [Synth 8-327] inferring latch for variable 'addra_reg' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:444]
 WARNING: [Synth 8-327] inferring latch for variable 'dina_reg' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:445]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:28 ; elapsed = 00:01:32 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:54 ; elapsed = 00:00:58 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -398,7 +398,7 @@ INFO: [Synth 8-3332] Sequential element (inst/hdmi_text_controller_v1_0_AXI_inst
 INFO: [Synth 8-3332] Sequential element (inst/hdmi_text_controller_v1_0_AXI_inst/wea_reg[2]) is unused and will be removed from module Lab7MicroBlaze_hdmi_text_controller_1_0.
 INFO: [Synth 8-3332] Sequential element (inst/hdmi_text_controller_v1_0_AXI_inst/wea_reg[1]) is unused and will be removed from module Lab7MicroBlaze_hdmi_text_controller_1_0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:15 ; elapsed = 00:02:19 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:21 ; elapsed = 00:01:25 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -419,19 +419,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:30 ; elapsed = 00:02:34 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:31 ; elapsed = 00:02:35 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Timing Optimization : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:32 ; elapsed = 00:02:36 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Technology Mapping : Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -449,37 +449,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:46 ; elapsed = 00:02:50 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished IO Insertion : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:46 ; elapsed = 00:02:50 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:46 ; elapsed = 00:02:50 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:46 ; elapsed = 00:02:50 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:46 ; elapsed = 00:02:50 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:46 ; elapsed = 00:02:50 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -530,18 +530,18 @@ Report Cell Usage:
 |20    |OBUFDS     |     4|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:46 ; elapsed = 00:02:50 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 246 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:37 ; elapsed = 00:02:44 . Memory (MB): peak = 1527.957 ; gain = 747.160
-Synthesis Optimization Complete : Time (s): cpu = 00:02:46 ; elapsed = 00:02:51 . Memory (MB): peak = 1527.957 ; gain = 747.160
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:01:38 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Synthesis Optimization Complete : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1527.957 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1527.391 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 504 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1527.957 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1527.391 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 332 instances were transformed.
   LD => LDCE: 332 instances
@@ -550,10 +550,10 @@ Synth Design complete, checksum: 30a426ce
 INFO: [Common 17-83] Releasing license: Synthesis
 74 Infos, 137 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:56 ; elapsed = 00:03:03 . Memory (MB): peak = 1527.957 ; gain = 1122.410
+synth_design: Time (s): cpu = 00:01:45 ; elapsed = 00:01:51 . Memory (MB): peak = 1527.391 ; gain = 1120.965
 INFO: [Common 17-1381] The checkpoint 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/Lab7MicroBlaze_hdmi_text_controller_1_0_synth_1/Lab7MicroBlaze_hdmi_text_controller_1_0.dcp' has been generated.
 INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP Lab7MicroBlaze_hdmi_text_controller_1_0, cache-ID = a6d3a862672bcf85
 INFO: [Coretcl 2-1174] Renamed 25 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/Lab7MicroBlaze_hdmi_text_controller_1_0_synth_1/Lab7MicroBlaze_hdmi_text_controller_1_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Lab7MicroBlaze_hdmi_text_controller_1_0_utilization_synth.rpt -pb Lab7MicroBlaze_hdmi_text_controller_1_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Apr  6 04:37:41 2024...
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 14 15:59:03 2024...
