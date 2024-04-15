@@ -9,7 +9,6 @@ WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 f
 WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'wea' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:522]
 WARNING: [VRFC 10-3091] actual bit length 12 differs from formal bit length 11 for port 'addrb' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:523]
 WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 1 for port 'web' [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/hdmi_text_controller_v1_0_AXI.sv:528]
-WARNING: [VRFC 10-3823] variable 'read_data' might have multiple concurrent drivers [c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/testbenchcustom.sv:264]
 Completed static elaboration
 Starting simulation data flow analysis
 WARNING: [XSIM 43-4099] "c:/users/merli/ece385lab7.1/ip_repo/hdmi_text_controller_1_0/src/VGA_controller.sv" Line 26. Module vga_controller doesn't have a timescale but at least one module in design has a timescale.

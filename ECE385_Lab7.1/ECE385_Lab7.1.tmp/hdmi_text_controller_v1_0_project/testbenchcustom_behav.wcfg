@@ -11,23 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="15,648,045.738 ns"></ZoomStartTime>
-      <ZoomEndTime time="15,648,410.853 ns"></ZoomEndTime>
-      <Cursor1Time time="15,648,350.000 ns"></Cursor1Time>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="72.520 ns"></ZoomEndTime>
+      <Cursor1Time time="140.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="351"></NameColumnWidth>
-      <ValueColumnWidth column_width="172"></ValueColumnWidth>
+      <NameColumnWidth column_width="152"></NameColumnWidth>
+      <ValueColumnWidth column_width="168"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
-   <wvobject fp_name="/testbenchcustom/write_addr" type="array">
-      <obj_property name="ElementShortName">write_addr[31:0]</obj_property>
-      <obj_property name="ObjectShortName">write_addr[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbenchcustom/write_data" type="array">
-      <obj_property name="ElementShortName">write_data[31:0]</obj_property>
-      <obj_property name="ObjectShortName">write_data[31:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/testbenchcustom/aclk" type="logic">
+      <obj_property name="ElementShortName">aclk</obj_property>
+      <obj_property name="ObjectShortName">aclk</obj_property>
    </wvobject>
    <wvobject fp_name="/testbenchcustom/read_addr" type="array">
       <obj_property name="ElementShortName">read_addr[31:0]</obj_property>
@@ -36,46 +31,29 @@
    <wvobject fp_name="/testbenchcustom/read_data" type="array">
       <obj_property name="ElementShortName">read_data[31:0]</obj_property>
       <obj_property name="ObjectShortName">read_data[31:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbenchcustom/pixel_rgb" type="array">
-      <obj_property name="ElementShortName">pixel_rgb[0:2][3:0]</obj_property>
-      <obj_property name="ObjectShortName">pixel_rgb[0:2][3:0]</obj_property>
+   <wvobject fp_name="/testbenchcustom/read_addr_valid" type="logic">
+      <obj_property name="ElementShortName">read_addr_valid</obj_property>
+      <obj_property name="ObjectShortName">read_addr_valid</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbenchcustom/drawX" type="array">
-      <obj_property name="ElementShortName">drawX[9:0]</obj_property>
-      <obj_property name="ObjectShortName">drawX[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/testbenchcustom/read_addr_ready" type="logic">
+      <obj_property name="ElementShortName">read_addr_ready</obj_property>
+      <obj_property name="ObjectShortName">read_addr_ready</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbenchcustom/drawY" type="array">
-      <obj_property name="ElementShortName">drawY[9:0]</obj_property>
-      <obj_property name="ObjectShortName">drawY[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/testbenchcustom/read_data_valid" type="logic">
+      <obj_property name="ElementShortName">read_data_valid</obj_property>
+      <obj_property name="ObjectShortName">read_data_valid</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbenchcustom/hdmi_text_controller_v1_0_inst/hdmi_text_controller_v1_0_AXI_inst/cm_data" type="array">
-      <obj_property name="ElementShortName">cm_data[31:0]</obj_property>
-      <obj_property name="ObjectShortName">cm_data[31:0]</obj_property>
+   <wvobject fp_name="/testbenchcustom/read_data_ready" type="logic">
+      <obj_property name="ElementShortName">read_data_ready</obj_property>
+      <obj_property name="ObjectShortName">read_data_ready</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbenchcustom/hdmi_text_controller_v1_0_inst/color_mapper/cm_addr" type="array">
-      <obj_property name="ElementShortName">cm_addr[11:0]</obj_property>
-      <obj_property name="ObjectShortName">cm_addr[11:0]</obj_property>
+   <wvobject fp_name="/testbenchcustom/read_prot" type="array">
+      <obj_property name="ElementShortName">read_prot[2:0]</obj_property>
+      <obj_property name="ObjectShortName">read_prot[2:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbenchcustom/hdmi_text_controller_v1_0_inst/color_mapper/v_i" type="array">
-      <obj_property name="ElementShortName">v_i[11:0]</obj_property>
-      <obj_property name="ObjectShortName">v_i[11:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbenchcustom/hdmi_text_controller_v1_0_inst/color_mapper/word" type="array">
-      <obj_property name="ElementShortName">word[31:0]</obj_property>
-      <obj_property name="ObjectShortName">word[31:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbenchcustom/hdmi_text_controller_v1_0_inst/color_mapper/glyph" type="array">
-      <obj_property name="ElementShortName">glyph[6:0]</obj_property>
-      <obj_property name="ObjectShortName">glyph[6:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbenchcustom/hdmi_text_controller_v1_0_inst/color_mapper/flag" type="logic">
-      <obj_property name="ElementShortName">flag</obj_property>
-      <obj_property name="ObjectShortName">flag</obj_property>
+   <wvobject fp_name="/testbenchcustom/read_resp" type="array">
+      <obj_property name="ElementShortName">read_resp[1:0]</obj_property>
+      <obj_property name="ObjectShortName">read_resp[1:0]</obj_property>
    </wvobject>
 </wave_config>

@@ -10,7 +10,6 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 source Lab7MicroBlaze_hdmi_text_controller_1_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 372.609 ; gain = 65.277
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/merli/ECE385Lab7.1/ip_repo/hdmi_text_controller_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/merli/RD_hdmi_ip2020'.
@@ -23,21 +22,24 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7s50'
 INFO: [Device 21-403] Loading part xc7s50csga324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 40908
+INFO: [Synth 8-7075] Helper process launched with PID 39016
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
-WARNING: [Synth 8-6901] identifier 'w_data' is used before its declaration [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:270]
-WARNING: [Synth 8-6901] identifier 'r_data' is used before its declaration [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:377]
-WARNING: [Synth 8-6901] identifier 'r_data' is used before its declaration [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:394]
+WARNING: [Synth 8-6901] identifier 'palette' is used before its declaration [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0_AXI.sv:271]
+WARNING: [Synth 8-6901] identifier 'dina' is used before its declaration [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0_AXI.sv:274]
+WARNING: [Synth 8-6901] identifier 'r_data' is used before its declaration [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0_AXI.sv:403]
+WARNING: [Synth 8-6901] identifier 'palette' is used before its declaration [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0_AXI.sv:422]
+WARNING: [Synth 8-6901] identifier 'douta' is used before its declaration [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0_AXI.sv:424]
 WARNING: [Synth 8-11065] parameter 'CTRLTOKEN0' becomes localparam in 'encode' with formal parameter declaration list [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/encode.v:145]
 WARNING: [Synth 8-11065] parameter 'CTRLTOKEN1' becomes localparam in 'encode' with formal parameter declaration list [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/encode.v:146]
 WARNING: [Synth 8-11065] parameter 'CTRLTOKEN2' becomes localparam in 'encode' with formal parameter declaration list [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/encode.v:147]
 WARNING: [Synth 8-11065] parameter 'CTRLTOKEN3' becomes localparam in 'encode' with formal parameter declaration list [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/encode.v:148]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1188.566 ; gain = 407.953
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1189.984 ; gain = 408.652
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Lab7MicroBlaze_hdmi_text_controller_1_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/synth/Lab7MicroBlaze_hdmi_text_controller_1_0.sv:53]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_text_controller_v1_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0.sv:9]
-INFO: [Synth 8-6157] synthesizing module 'hdmi_text_controller_v1_0_AXI' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:27]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_text_controller_v1_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_text_controller_v1_0_AXI' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0_AXI.sv:27]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0_AXI.sv:381]
 INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/blk_mem_gen_0_1/synth/blk_mem_gen_0.vhd:76]
 	Parameter C_FAMILY bound to: spartan7 - type: string 
 	Parameter C_XDEVICEFAMILY bound to: spartan7 - type: string 
@@ -116,9 +118,9 @@ INFO: [Synth 8-638] synthesizing module 'blk_mem_gen_0' [c:/Users/merli/ECE385La
 	Parameter C_EST_POWER_SUMMARY bound to: Estimated Power for IP     :     10.698 mW - type: string 
 INFO: [Synth 8-3491] module 'blk_mem_gen_v8_4_5' declared at 'c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/blk_mem_gen_0_1/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd:195321' bound to instance 'U0' of component 'blk_mem_gen_v8_4_5' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/blk_mem_gen_0_1/synth/blk_mem_gen_0.vhd:249]
 INFO: [Synth 8-256] done synthesizing module 'blk_mem_gen_0' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/blk_mem_gen_0_1/synth/blk_mem_gen_0.vhd:76]
-WARNING: [Synth 8-689] width (4) of port connection 'wea' does not match port width (1) of module 'blk_mem_gen_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:474]
-WARNING: [Synth 8-689] width (12) of port connection 'addrb' does not match port width (11) of module 'blk_mem_gen_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:475]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_text_controller_v1_0_AXI' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:27]
+WARNING: [Synth 8-689] width (4) of port connection 'wea' does not match port width (1) of module 'blk_mem_gen_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0_AXI.sv:522]
+WARNING: [Synth 8-689] width (12) of port connection 'addrb' does not match port width (11) of module 'blk_mem_gen_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0_AXI.sv:523]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_text_controller_v1_0_AXI' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0_AXI.sv:27]
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0.v:69]
 INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0_clk_wiz' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0_clk_wiz.v:69]
 INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:79852]
@@ -127,10 +129,10 @@ INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2022.2/scripts
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:1082]
 INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0_clk_wiz' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0_clk_wiz.v:69]
 INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0.v:69]
-INFO: [Synth 8-6157] synthesizing module 'vga_controller' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/VGA_controller.sv:26]
-INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/VGA_controller.sv:26]
-WARNING: [Synth 8-7071] port 'sync' of module 'vga_controller' is unconnected for instance 'vga' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0.sv:127]
-WARNING: [Synth 8-7023] instance 'vga' of module 'vga_controller' has 8 connections declared, but only 7 given [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0.sv:127]
+INFO: [Synth 8-6157] synthesizing module 'vga_controller' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/VGA_controller.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/VGA_controller.sv:26]
+WARNING: [Synth 8-7071] port 'sync' of module 'vga_controller' is unconnected for instance 'vga' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0.sv:127]
+WARNING: [Synth 8-7023] instance 'vga' of module 'vga_controller' has 8 connections declared, but only 7 given [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0.sv:127]
 INFO: [Synth 8-6157] synthesizing module 'hdmi_tx_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/synth/hdmi_tx_0.v:53]
 INFO: [Synth 8-6157] synthesizing module 'hdmi_tx_v1_0' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/hdmi_tx_v1_0.v:70]
 INFO: [Synth 8-6157] synthesizing module 'srldelay' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/srldelay.v:70]
@@ -153,43 +155,14 @@ INFO: [Synth 8-6157] synthesizing module 'OBUFDS' [C:/Xilinx/Vivado/2022.2/scrip
 INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (0#1) [C:/Xilinx/Vivado/2022.2/scripts/rt/data/unisim_comp.v:90676]
 INFO: [Synth 8-6155] done synthesizing module 'hdmi_tx_v1_0' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/hdmi_tx_v1_0.v:70]
 INFO: [Synth 8-6155] done synthesizing module 'hdmi_tx_0' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/synth/hdmi_tx_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'color_mapper' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/Color_Mapper.sv:17]
-INFO: [Synth 8-6157] synthesizing module 'font_rom' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/font_rom.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'font_rom' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/font_rom.sv:1]
-INFO: [Synth 8-6155] done synthesizing module 'color_mapper' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/Color_Mapper.sv:17]
-INFO: [Synth 8-6155] done synthesizing module 'hdmi_text_controller_v1_0' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0.sv:9]
+INFO: [Synth 8-6157] synthesizing module 'color_mapper' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/Color_Mapper.sv:17]
+INFO: [Synth 8-6157] synthesizing module 'font_rom' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/font_rom.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'font_rom' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/font_rom.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'color_mapper' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/Color_Mapper.sv:17]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_text_controller_v1_0' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0.sv:9]
 INFO: [Synth 8-6155] done synthesizing module 'Lab7MicroBlaze_hdmi_text_controller_1_0' (0#1) [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/synth/Lab7MicroBlaze_hdmi_text_controller_1_0.sv:53]
-WARNING: [Synth 8-87] always_comb on 'palette_reg[0]' did not result in combinational logic [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-87] always_comb on 'palette_reg[1]' did not result in combinational logic [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-87] always_comb on 'palette_reg[2]' did not result in combinational logic [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-87] always_comb on 'palette_reg[3]' did not result in combinational logic [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-87] always_comb on 'palette_reg[4]' did not result in combinational logic [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-87] always_comb on 'palette_reg[5]' did not result in combinational logic [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-87] always_comb on 'palette_reg[6]' did not result in combinational logic [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-87] always_comb on 'palette_reg[7]' did not result in combinational logic [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-87] always_comb on 'wea_reg' did not result in combinational logic [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:443]
-WARNING: [Synth 8-87] always_comb on 'addra_reg' did not result in combinational logic [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:444]
-WARNING: [Synth 8-87] always_comb on 'dina_reg' did not result in combinational logic [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:445]
-WARNING: [Synth 8-87] always_comb on 'r_data_reg' did not result in combinational logic [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:447]
+WARNING: [Synth 8-6014] Unused sequential element ready_states_reg was removed.  [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0_AXI.sv:396]
 WARNING: [Synth 8-6014] Unused sequential element hdmi_ctl1_reg was removed.  [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/hdmi_tx_0_3/hdl/hdmi_tx_v1_0.v:148]
-WARNING: [Synth 8-7129] Port DrawX[9] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port DrawY[9] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[31] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[30] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[29] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[28] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[27] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[26] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[25] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[24] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[23] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[22] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[21] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[20] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[19] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[18] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[17] in module color_mapper is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cm_data[16] in module color_mapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port palette[0][31] in module color_mapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port palette[0][30] in module color_mapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port palette[0][29] in module color_mapper is either unconnected or has no load
@@ -272,20 +245,38 @@ WARNING: [Synth 8-7129] Port SBITERR in module blk_mem_gen_prim_wrapper is eithe
 WARNING: [Synth 8-7129] Port DBITERR in module blk_mem_gen_prim_wrapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SSRA in module blk_mem_gen_prim_wrapper is either unconnected or has no load
 WARNING: [Synth 8-7129] Port SSRB in module blk_mem_gen_prim_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port SLEEP in module blk_mem_gen_prim_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port INJECTSBITERR in module blk_mem_gen_prim_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_gen_prim_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ECCPIPECE in module blk_mem_gen_prim_wrapper is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RSTA[0] in module blk_mem_gen_generic_cstr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEA[3] in module blk_mem_gen_generic_cstr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEA[2] in module blk_mem_gen_generic_cstr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEA[1] in module blk_mem_gen_generic_cstr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RSTB[0] in module blk_mem_gen_generic_cstr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEB[3] in module blk_mem_gen_generic_cstr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEB[2] in module blk_mem_gen_generic_cstr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port WEB[1] in module blk_mem_gen_generic_cstr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port INJECTSBITERR in module blk_mem_gen_generic_cstr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port INJECTDBITERR in module blk_mem_gen_generic_cstr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RSTA in module blk_mem_input_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port REGCEA in module blk_mem_input_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port RSTB in module blk_mem_input_block is either unconnected or has no load
+WARNING: [Synth 8-7129] Port REGCEB in module blk_mem_input_block is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished RTL Elaboration : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.076 . Memory (MB): peak = 1527.391 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.077 . Memory (MB): peak = 1529.285 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -302,22 +293,22 @@ Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/so
 Finished Parsing XDC File [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ip/Lab7MicroBlaze_hdmi_text_controller_1_0_1/src/clk_wiz_0_4/clk_wiz_0_late.xdc] for cell 'inst/clk_wiz/inst'
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1527.391 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1529.285 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.058 . Memory (MB): peak = 1527.391 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1529.285 ; gain = 0.000
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Constraint Validation : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7s50csga324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:45 ; elapsed = 00:00:47 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -327,22 +318,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for inst/hdmi_text_controller_v1_0_AX
 Applied set_property KEEP_HIERARCHY = SOFT for inst/clk_wiz. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for inst/vga_to_hdmi. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:00:56 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:45 ; elapsed = 00:00:48 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-327] inferring latch for variable 'palette_reg[0]' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-327] inferring latch for variable 'palette_reg[1]' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-327] inferring latch for variable 'palette_reg[2]' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-327] inferring latch for variable 'palette_reg[3]' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-327] inferring latch for variable 'palette_reg[4]' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-327] inferring latch for variable 'palette_reg[5]' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-327] inferring latch for variable 'palette_reg[6]' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-327] inferring latch for variable 'palette_reg[7]' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:414]
-WARNING: [Synth 8-327] inferring latch for variable 'r_data_reg' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:447]
-WARNING: [Synth 8-327] inferring latch for variable 'wea_reg' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:443]
-WARNING: [Synth 8-327] inferring latch for variable 'addra_reg' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:444]
-WARNING: [Synth 8-327] inferring latch for variable 'dina_reg' [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/9c10/src/hdmi_text_controller_v1_0_AXI.sv:445]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:54 ; elapsed = 00:00:58 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:47 ; elapsed = 00:00:49 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -358,13 +337,14 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input      1 Bit         XORs := 43    
 +---Registers : 
-	               32 Bit    Registers := 2     
+	               32 Bit    Registers := 10    
 	               16 Bit    Registers := 2     
+	               11 Bit    Registers := 1     
 	               10 Bit    Registers := 5     
 	                9 Bit    Registers := 3     
 	                8 Bit    Registers := 3     
 	                5 Bit    Registers := 3     
-	                4 Bit    Registers := 15    
+	                4 Bit    Registers := 16    
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 41    
 +---Muxes : 
@@ -374,9 +354,11 @@ Detailed RTL Component Info :
 	  22 Input   10 Bit        Muxes := 1     
 	   4 Input   10 Bit        Muxes := 2     
 	   2 Input    8 Bit        Muxes := 3     
+	   2 Input    7 Bit        Muxes := 1     
 	   2 Input    5 Bit        Muxes := 12    
-	   2 Input    4 Bit        Muxes := 14    
-	   2 Input    1 Bit        Muxes := 36    
+	   2 Input    4 Bit        Muxes := 22    
+	   2 Input    1 Bit        Muxes := 37    
+	   3 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -393,11 +375,9 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-INFO: [Synth 8-3332] Sequential element (inst/hdmi_text_controller_v1_0_AXI_inst/wea_reg[3]) is unused and will be removed from module Lab7MicroBlaze_hdmi_text_controller_1_0.
-INFO: [Synth 8-3332] Sequential element (inst/hdmi_text_controller_v1_0_AXI_inst/wea_reg[2]) is unused and will be removed from module Lab7MicroBlaze_hdmi_text_controller_1_0.
-INFO: [Synth 8-3332] Sequential element (inst/hdmi_text_controller_v1_0_AXI_inst/wea_reg[1]) is unused and will be removed from module Lab7MicroBlaze_hdmi_text_controller_1_0.
+WARNING: [Synth 8-3936] Found unconnected internal register 'wea_reg' and it is trimmed from '4' to '1' bits. [c:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.gen/sources_1/bd/Lab7MicroBlaze/ipshared/af99/src/hdmi_text_controller_v1_0_AXI.sv:498]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:21 ; elapsed = 00:01:25 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:15 ; elapsed = 00:01:17 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -418,19 +398,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:22 ; elapsed = 00:01:25 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:30 ; elapsed = 00:01:34 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Timing Optimization : Time (s): cpu = 00:01:22 ; elapsed = 00:01:25 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Technology Mapping : Time (s): cpu = 00:01:23 ; elapsed = 00:01:26 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -448,37 +428,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished IO Insertion : Time (s): cpu = 00:01:30 ; elapsed = 00:01:32 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:30 ; elapsed = 00:01:32 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:30 ; elapsed = 00:01:32 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:30 ; elapsed = 00:01:32 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:30 ; elapsed = 00:01:33 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:30 ; elapsed = 00:01:33 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -509,50 +489,49 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     3|
-|2     |CARRY4     |     3|
-|3     |LUT1       |     2|
-|4     |LUT2       |    17|
-|5     |LUT3       |    63|
-|6     |LUT4       |    44|
-|7     |LUT5       |   114|
-|8     |LUT6       |   606|
+|2     |CARRY4     |     4|
+|3     |LUT1       |     1|
+|4     |LUT2       |    20|
+|5     |LUT3       |    61|
+|6     |LUT4       |    39|
+|7     |LUT5       |   267|
+|8     |LUT6       |   614|
 |9     |MMCME2_ADV |     1|
-|10    |MUXF7      |   137|
-|11    |MUXF8      |    25|
+|10    |MUXF7      |    16|
+|11    |MUXF8      |     8|
 |12    |OSERDESE2  |     8|
 |14    |RAMB36E1   |     2|
 |15    |SRL16E     |    39|
-|16    |FDCE       |    66|
-|17    |FDRE       |   205|
+|16    |FDCE       |    69|
+|17    |FDRE       |   473|
 |18    |FDSE       |     1|
-|19    |LD         |   332|
-|20    |OBUFDS     |     4|
+|19    |OBUFDS     |     4|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:30 ; elapsed = 00:01:33 . Memory (MB): peak = 1529.285 ; gain = 747.953
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 246 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:55 ; elapsed = 00:01:38 . Memory (MB): peak = 1527.391 ; gain = 746.777
-Synthesis Optimization Complete : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 1527.391 ; gain = 746.777
+Synthesis finished with 0 errors, 0 critical warnings and 217 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:53 ; elapsed = 00:01:29 . Memory (MB): peak = 1529.285 ; gain = 747.953
+Synthesis Optimization Complete : Time (s): cpu = 00:01:30 ; elapsed = 00:01:33 . Memory (MB): peak = 1529.285 ; gain = 747.953
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1527.391 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 504 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1529.285 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 35 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1527.391 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1529.285 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 332 instances were transformed.
-  LD => LDCE: 332 instances
+No Unisim elements were transformed.
 
-Synth Design complete, checksum: 30a426ce
+Synth Design complete, checksum: 58df447
 INFO: [Common 17-83] Releasing license: Synthesis
-74 Infos, 137 Warnings, 0 Critical Warnings and 0 Errors encountered.
+72 Infos, 117 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:45 ; elapsed = 00:01:51 . Memory (MB): peak = 1527.391 ; gain = 1120.965
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.statsThreshold
 INFO: [Common 17-1381] The checkpoint 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/Lab7MicroBlaze_hdmi_text_controller_1_0_synth_1/Lab7MicroBlaze_hdmi_text_controller_1_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP Lab7MicroBlaze_hdmi_text_controller_1_0, cache-ID = a6d3a862672bcf85
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP Lab7MicroBlaze_hdmi_text_controller_1_0, cache-ID = 44e330f285509890
 INFO: [Coretcl 2-1174] Renamed 25 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/merli/ECE385Lab7.1/ECE385_Lab7.1/ECE385_Lab7.1.runs/Lab7MicroBlaze_hdmi_text_controller_1_0_synth_1/Lab7MicroBlaze_hdmi_text_controller_1_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Lab7MicroBlaze_hdmi_text_controller_1_0_utilization_synth.rpt -pb Lab7MicroBlaze_hdmi_text_controller_1_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Apr 14 15:59:03 2024...
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 14 19:50:20 2024...
